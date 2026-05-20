@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收費標準與項目｜福心專業照護：雙北醫院看護推薦與短期照護服務</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #D4A373;
+            --dusty-rose: #E8C5C8; 
+            --champagne-gold: #C5A880; 
+            --bg-ivory: #FDFBF7; 
+            --text-dark: #3A3535; 
+            --text-muted: #5A5252;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 導航列 */
+        .navbar {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+        }
+        .nav-link:hover {
+            color: var(--champagne-gold) !important;
+        }
+
+        /* 頁面車頭 Banner */
+        .page-header {
+            padding: 140px 0 60px 0;
+            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            text-align: center;
+        }
+
+        /* 核心內文樣式修正：統一全網頁內文字體大小 (16px) */
+        .premium-text-p {
+            font-size: 1rem !important; 
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        /* 價目表卡片樣式 */
+        .price-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        .price-card.featured {
+            background: linear-gradient(180deg, #FFFFFF 0%, #FDF6F6 100%);
+            border: 2px solid var(--dusty-rose);
+            box-shadow: 0 10px 30px rgba(232, 197, 200, 0.25);
+            position: relative;
+        }
+        .price-card.featured::before {
+            content: "熱門推薦";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--champagne-gold);
+            color: white;
+            padding: 4px 18px;
+            font-size: 0.8rem;
+            border-radius: 50px;
+            letter-spacing: 1px;
+        }
+        .price-amount {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 20px 0;
+        }
+        .price-unit {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #8C8282;
+        }
+
+        /* 特殊加成清單 */
+        .plus-item {
+            background: white;
+            border-left: 4px solid var(--champagne-gold);
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        /* 服務項目精緻卡片 */
+        .service-detail-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            border-radius: 16px;
+            padding: 35px;
+            height: 100%;
+        }
+        .service-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .service-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .service-list li:last-child {
+            margin-bottom: 0;
+        }
+        .service-list li i {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            color: var(--champagne-gold);
+        }
+
+        /* 底部轉換按鈕 */
+        .btn-gold {
+            background-color: var(--champagne-gold);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gold:hover {
+            background-color: #B39670;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone {
+            background-color: #ED6A6A; 
+            color: white;
+            font-size: 26px;
+        }
+        .float-phone:hover {
+            color: white;
+            background-color: #DF5959;
+        }
+        .float-line {
+            background-color: #06C755; 
+            color: white;
+            font-size: 30px;
+        }
+        .float-line:hover {
+            color: white;
+            background-color: #05A647;
+        }
+
+        footer {
+            background-color: #3A3535;
+            color: #E5DED4;
+            padding: 60px 0 30px 0;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .floating-contact-group {
+                bottom: 25px;
+                right: 25px;
+                gap: 12px;
+            }
+            .float-btn {
+                width: 54px;
+                height: 54px;
+            }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-contact-group">
+        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="fw-bold mb-3">收費標準 ｜ 項目</h1>
+            <div class="premium-text-p mx-auto" style="max-width: 650px;">
+                <p class="mb-2">福心提供全方位陪病與居家照護，針對不同場域與病況提供專業支持。</p>
+                <p class="mb-0">堅持價格公開透明，遵循雙北醫學中心標準。</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 border mb-2" style="color: var(--champagne-gold) !important;">PART 01</span>
+                <h2 class="fw-bold">基礎行情參考</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                    <div class="price-card">
+                        <h4 class="fw-bold text-muted">12 小時半日班</h4>
+                        <div class="price-amount">
+                            <span class="price-unit">每日約</span> 2,200 - 2,600 <span class="price-unit">元</span>
+                        </div>
+                        <p class="premium-text-p mb-0 small">適合日間檢查手術、家屬夜間換班喘息之彈性調配需求。</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="price-card featured">
+                        <h4 class="fw-bold">24 小時全日班</h4>
+                        <div class="price-amount" style="color: var(--champagne-gold);">
+                            <span class="price-unit">每日約</span> 3,000 - 3,600 <span class="price-unit">元</span>
+                        </div>
+                        <p class="premium-text-p mb-0 small">管家級全天候守護、資訊零斷層回報，提供最完整的病房靜養品質。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted"><i class="fas fa-info-circle me-1"></i>註：最終費用視病況複雜度、醫院地點及時數彈性調整。</p>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <h5 class="fw-bold mb-4 text-center"><i class="fas fa-calculator me-2" style="color: var(--dusty-rose)"></i>特殊加成說明</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="plus-item d-flex align-items-center">
+                            <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-weight"></i></div>
+                            <div>
+                                <strong class="d-block mb-1">體重加成</strong>
+                                <span class="premium-text-p small">患者體重超過一定標準，需增加翻身勞動力時另計。</span>
+                            </div>
+                        </div>
+                        <div class="plus-item d-flex align-items-center">
+                            <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-shield-virus"></i></div>
+                            <div>
+                                <strong class="d-block mb-1">傳染病照護</strong>
+                                <span class="premium-text-p small">如確診新冠、疥瘡或其他具傳染性疾病之特殊防護。</span>
+                            </div>
+                        </div>
+                        <div class="plus-item d-flex align-items-center">
+                            <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-calendar-day"></i></div>
+                            <div>
+                                <strong class="d-block mb-1">三節 / 國定假日</strong>
+                                <span class="premium-text-p small">依政府規定計算加給，並於媒合前預先告知，絕無事後任意加價。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge rounded-pill bg-light text-dark px-3 py-2 border mb-2" style="color: var(--champagne-gold) !important;">PART 02</span>
+                <h2 class="fw-bold">我們的服務項目</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="service-detail-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-hospital-user fa-lg"></i></div>
+                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">醫院陪病照護</h3>
+                        </div>
+                        <p class="premium-text-p mb-4 small">專為住院期間需要 24 小時或特定時段看護的家庭設計，確保病患在醫院獲得專業守護。</p>
+                        <ul class="service-list premium-text-p">
+                            <li><i class="fas fa-check-circle"></i><strong>基礎生理照顧：</strong>包含定時翻身、拍痰、排泄處理及病體清潔。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>膳食與管灌操作：</strong>提供精心餵食，並具備專業管灌飲食操作經驗。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>活動安全維護：</strong>協助安全轉位、下床活動，並嚴格預防跌倒等意外。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>即時現況回報：</strong>每日定時記錄生理狀況並透過 Line 回傳，讓您掌握安心資訊.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="service-detail-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-home fa-lg"></i></div>
+                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">居家自費陪護（彈性喘息）</h3>
+                        </div>
+                        <p class="premium-text-p mb-4 small">無需經過政府長照評估，解決突如其來的照護人力空窗，無縫銜接高階延伸健康復健。</p>
+                        <ul class="service-list premium-text-p">
+                            <li><i class="fas fa-check-circle"></i><strong>全自費預約制：</strong>一通 Line 即可即時安排專業人力進駐服務。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>家庭喘息支持：</strong>由合作看護夥伴換手照顧，讓原照顧者獲得適度休養。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>術後康復觀察：</strong>陪伴度過手術後返家初期、仍需密集觀察的過渡黃金期。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>就醫紀錄與復健銜接：</strong>協助回診就醫、紀錄醫囑與注意事項，精準落實日常復健引導。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-4">
+                <p class="fw-bold mb-3">讓福心成為您在病房與居家照護中最堅強的後盾</p>
+                <a href="https://lin.ee/Tm80P16" class="btn btn-gold px-5 py-3" target="_blank"><i class="fab fa-line me-2"></i>即刻透過 LINE 規劃專屬照護</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center text-lg-start">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold);">福心管理顧問股份有限公司</h5>
+                    <p class="small mb-2">聯絡專線：0963-590-368</p>
+                    <p class="small text-muted" style="line-height: 1.6;">
+                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

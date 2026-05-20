@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見問題｜福心專業照護：雙北醫院看護推薦與短期照護服務</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #D4A373;
+            --dusty-rose: #E8C5C8; 
+            --champagne-gold: #C5A880; 
+            --bg-ivory: #FDFBF7; 
+            --text-dark: #3A3535; 
+            --text-muted: #5A5252;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 導航列 */
+        .navbar {
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+        }
+        .nav-link:hover {
+            color: var(--champagne-gold) !important;
+        }
+
+        /* 頁面車頭 Banner */
+        .page-header {
+            padding: 140px 0 60px 0;
+            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            text-align: center;
+        }
+
+        /* 核心內文樣式修正：統一全網頁內文字體大小 (16px) */
+        .premium-text-p {
+            font-size: 1rem !important; 
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        /* FAQ 分類大標題 */
+        .faq-category-title {
+            color: var(--champagne-gold);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        .faq-category-title i {
+            margin-right: 10px;
+        }
+
+        /* FAQ 風琴面板精緻優化 */
+        .accordion-item {
+            background-color: white;
+            border: 1px solid rgba(197, 168, 128, 0.15) !important;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(197, 168, 128, 0.02);
+        }
+        .accordion-button {
+            background-color: white !important;
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            box-shadow: none !important;
+            padding: 22px 20px;
+            font-size: 1.05rem;
+        }
+        .accordion-button:not(.collapsed) {
+            color: var(--champagne-gold) !important;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
+        }
+        .accordion-body {
+            padding: 25px 20px;
+            background-color: #FCFAFA;
+        }
+
+        /* 亮點標籤 */
+        .badge-compliance {
+            background-color: #FFF9F3;
+            color: var(--champagne-gold);
+            border: 1px solid var(--champagne-gold);
+            font-size: 0.75rem;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        /* 底部轉換按鈕 */
+        .btn-gold {
+            background-color: var(--champagne-gold);
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gold:hover {
+            background-color: #B39670;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone {
+            background-color: #ED6A6A; 
+            color: white;
+            font-size: 26px;
+        }
+        .float-phone:hover {
+            color: white;
+            background-color: #DF5959;
+        }
+        .float-line {
+            background-color: #06C755; 
+            color: white;
+            font-size: 30px;
+        }
+        .float-line:hover {
+            color: white;
+            background-color: #05A647;
+        }
+
+        footer {
+            background-color: #3A3535;
+            color: #E5DED4;
+            padding: 60px 0 30px 0;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .floating-contact-group {
+                bottom: 25px;
+                right: 25px;
+                gap: 12px;
+            }
+            .float-btn {
+                width: 54px;
+                height: 54px;
+            }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-contact-group">
+        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="fw-bold mb-3">常見問題</h1>
+            <p class="premium-text-p mx-auto mb-0" style="max-width: 650px;">為您解答關於照護服務的各種疑問。從福心陪您在焦慮中找回秩序，讓透明的資訊成為您最堅定的依靠。</p>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 col-xl-8">
+                    
+                    <div class="mb-5">
+                        <h3 class="faq-category-title"><i class="far fa-calendar-check"></i>一、 預約與派案流程</h3>
+                        <div class="accordion" id="faqGroup1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                                        Q1. 如何預約福心的看護服務？
+                                    </button>
+                                </h2>
+                                <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqGroup1">
+                                    <div class="accordion-body premium-text-p">
+                                        您可以透過官方 Line 帳號點選「即時諮詢」。為了加快調度速度，建議提供以下資訊：<br>
+                                        • <strong>地點：</strong> 所在醫院與病房號<br>
+                                        • <strong>病況：</strong> 簡易現況說明（如：術後、需翻身、管路留置等）<br>
+                                        • <strong>時數：</strong> 預計照護的天數與時段<br>
+                                        我們收到訊息後會即刻啟動媒合，並主動向您回報目前的調度進度。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                                        Q2. 最快什麼時候可以安排人員到場？
+                                    </button>
+                                </h2>
+                                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqGroup1">
+                                    <div class="accordion-body premium-text-p">
+                                        若醫院地點位於雙北主要醫療院所（如台大、榮總、馬偕等），最快在預約當日即可安排專業夥伴到場接手服務，緩解您的突發空窗期。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                                        Q3. 可以預約短時數或特定的照護時段嗎？
+                                    </button>
+                                </h2>
+                                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqGroup1">
+                                    <div class="accordion-body premium-text-p">
+                                        可以。我們提供彈性的照護方案，無論是 24 小時全日陪病，或是特定的白天/夜間時段（12小時），皆可根據您的家庭實質需求與考量進行客製化安排。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="faq-category-title"><i class="fas fa-file-signature"></i>二、 費用與合約規範</h3>
+                        <div class="accordion" id="faqGroup2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+                                        Q4. 收費標準是如何計算的？
+                                    </button>
+                                </h2>
+                                <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faqGroup2">
+                                    <div class="accordion-body premium-text-p">
+                                        福心採取透明的收費制度，報價均已包含平台行政與管理費用。詳細服務項目與收費明細，在媒合成功、服務開始前都會與您確認簽約清楚，讓家屬能精準掌控預算，<strong>無需擔心任何隱形開銷</strong>。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+                                        Q5. 會不會有私下加價或收取紅包的情況？
+                                    </button>
+                                </h2>
+                                <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faqGroup2">
+                                    <div class="accordion-body premium-text-p">
+                                        <strong>絕對不會。</strong>除合約載明的必要費用（如特定三節加給、超時加班費）外，福心嚴禁夥伴私下向家屬索取額外加價、餐費或收取紅包。若家屬遇此類情形，請立即向平台反映，我們將嚴肅處理。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+                                        Q6. 如果臨時需要縮短或延長服務時間，費用怎麼算？
+                                    </button>
+                                </h2>
+                                <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faqGroup2">
+                                    <div class="accordion-body premium-text-p">
+                                        所有的變動皆依合約約定透明化處理。若照護中途因出院需提前結案或因病況延長天數，請提前告知福心官方 Line，客服專員會立即協助計算並調整最終費用，確保帳目清晰無誤。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h3 class="faq-category-title"><i class="fas fa-user-shield"></i>三、 專業品質與保障</h3>
+                        <div class="accordion" id="faqGroup3">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q7">
+                                        Q7. 派遣來的照服員是否有相關證照？ <span class="badge-compliance d-none d-sm-inline-block"><i class="fas fa-award me-1"></i>符合醫院規範</span>
+                                    </button>
+                                </h2>
+                                <div id="q7" class="accordion-collapse collapse" data-bs-parent="#faqGroup3">
+                                    <div class="accordion-body premium-text-p">
+                                        是的。福心所有的特約夥伴皆須通過嚴格審核，包含：<strong>政府核發之照顧服務員證照、半年內之體檢合格報告</strong>。我們在簽約派遣時也會主動提供合規名冊供護理站或醫院核備，確保合法合規。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q8">
+                                        Q8. 如果對目前的照服夥伴不滿意，可以更換嗎？
+                                    </button>
+                                </h2>
+                                <div id="q8" class="accordion-collapse collapse" data-bs-parent="#faqGroup3">
+                                    <div class="accordion-body premium-text-p">
+                                        福心設有靈活的「品質保障與協調機制」。我們在服務前期即透過嚴格初審與精準條件媒合，盡可能確保夥伴契合家庭習慣。在服務初期，專員會持續追蹤並協助雙方進行細節調適；若在深度溝通與適應後仍不符照護預期，我們將隨時為您啟動重新媒合，確保照護進度安心銜接不中斷。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q9">
+                                        Q9. 照服員在服務期間會回報狀況嗎？
+                                    </button>
+                                </h2>
+                                <div id="q9" class="accordion-collapse collapse" data-bs-parent="#faqGroup3">
+                                    <div class="accordion-body premium-text-p">
+                                        會的。福心極度重視「資訊零斷層」，特約照護夥伴會定期將病患的進食量、排泄、情緒及醫囑交代等生理狀況清晰記錄並回傳。讓無法在醫院時刻陪伴的家屬，也能透過手機安心掌握第一手消息。
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-3">
+                <p class="fw-bold mb-3">找不到想問的問題嗎？由專人即時為您解答</p>
+                <a href="https://lin.ee/Tm80P16" class="btn btn-gold px-5 py-3" target="_blank"><i class="fab fa-line me-2"></i>聯繫 LINE 官方客服專員</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center text-lg-start">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold);">福心管理顧問股份有限公司</h5>
+                    <p class="small mb-2">聯絡專線：0963-590-368</p>
+                    <p class="small text-muted" style="line-height: 1.6;">
+                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    </p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
