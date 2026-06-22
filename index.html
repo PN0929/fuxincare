@@ -23,17 +23,17 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
+            background-color: var(--bg-ivory);
             color: var(--text-dark);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 高級感導航列 */
+        /* 微調焦點 1：最上面那一條導覽列改為官方優雅粉紅（呼應 Logo 色系）並帶有高奢毛玻璃效果 */
         .navbar {
-            background-color: rgba(253, 251, 247, 0.95);
+            background-color: rgba(243, 232, 233, 0.96); 
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
         }
         .navbar-brand {
             font-weight: 700;
@@ -70,14 +70,14 @@
             margin-top: 20px;
         }
 
-        /* 微調焦點 1：讓 Logo 的白色外環變細（padding 從 15px 縮小至 6px） */
+        /* 精緻細外環 Logo 樣式 */
         .hero-logo-circle-wrapper {
             padding: 6px; 
             background: white;
             border-radius: 50%;
             display: inline-block;
             box-shadow: 0 10px 30px rgba(197, 168, 128, 0.15);
-            border: 1px solid rgba(197, 168, 128, 0.3); /* 優雅精緻細線 */
+            border: 1px solid rgba(197, 168, 128, 0.3);
             transition: all 0.4s ease;
         }
         .hero-logo-circle-wrapper:hover {
@@ -139,7 +139,7 @@
             padding: 30px;
             height: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03); /* 微調：更輕盈的卡片陰影 */
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
         }
         .premium-card:hover {
             transform: translateY(-5px);
@@ -181,11 +181,11 @@
             padding: 20px;
         }
 
-        /* 微調焦點 3：輕量化頁尾（減輕壓迫感，降低高度、改用暖灰深色） */
+        /* 人文感暖深灰頁尾 */
         footer {
-            background-color: #4A4444; /* 從 #3A3535 改為更具人文感的暖深灰 */
+            background-color: #4A4444; 
             color: #E5DED4;
-            padding: 45px 0 30px 0; /* 縮減高度，減少視覺厚重感 */
+            padding: 45px 0 30px 0; 
             border-top: 1px solid rgba(197, 168, 128, 0.15);
         }
 
@@ -466,8 +466,8 @@
 
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4">
-                <div class="col-lg-6">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
                     <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
                     
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
@@ -478,8 +478,8 @@
                         服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
                     </p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
