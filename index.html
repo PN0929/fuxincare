@@ -29,7 +29,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 微調焦點 1：最上面那一條導覽列改為官方優雅粉紅（呼應 Logo 色系）並帶有高奢毛玻璃效果 */
+        /* 最上面那一條導覽列改為官方優雅粉紅（呼應 Logo 色系）並帶有高奢毛玻璃效果 */
         .navbar {
             background-color: rgba(243, 232, 233, 0.96); 
             backdrop-filter: blur(10px);
@@ -189,6 +189,18 @@
             border-top: 1px solid rgba(197, 168, 128, 0.15);
         }
 
+        /* 高端精品滾動動畫基礎控制項 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* 右下角固定雙軌浮動按鈕群 */
         .floating-contact-group {
             position: fixed;
@@ -297,6 +309,7 @@
         </div>
     </nav>
 
+    <!-- 主視覺區塊（進場預設展示，不需綁定捲動動畫，確保首頁開啟時的流暢速度） -->
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
@@ -317,30 +330,31 @@
         </div>
     </section>
 
+    <!-- 區塊一：標準化管理（已掛載 fade-in-scroll 進場起動效） -->
     <section class="py-5">
         <div class="container py-4">
-            <div class="text-center max-width-700 mx-auto mb-5">
+            <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-3">打破傳統勞力看護模式，導入標準化管理</h2>
                 <div class="premium-text-p px-3 mx-auto" style="max-width: 650px;">
                     我們致力於降低再住院率的專業看護與服務。同時透過「資訊零斷層」回報機制，讓無法親臨現場的您，也能隨時掌握家人的生理細節。我們嚴守案家隱私，讓您在關鍵時刻，只需專注於最重要的決定。
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card">
                         <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
                         <h4 class="fw-bold mb-3">資訊零斷層回報</h4>
                         <p class="premium-text-p mb-0">不在現場也掌握家人細節，我們建立標準化回報機制，確保醫囑與家屬資訊精準對接，有效降低再住院風險。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card">
                         <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
                         <h4 class="fw-bold mb-3">管家式行政支援</h4>
                         <p class="premium-text-p mb-0">我們一站式處理繁瑣的住院行政事務和出院長照申請，把庶務瑣事留給福心，把高品質的陪伴留給家人。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card">
                         <div class="icon-circle"><i class="fas fa-notes-medical"></i></div>
                         <h4 class="fw-bold mb-3">高階醫囑落地</h4>
@@ -351,28 +365,29 @@
         </div>
     </section>
 
+    <!-- 區塊二：三大核心承諾（已掛載 fade-in-scroll） -->
     <section class="py-5">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-2">福心看護三大核心承諾</h2>
                 <p class="text-muted small">專為講究生活品質與細節的家庭，提供極致細緻的照護守護</p>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card text-center">
                         <div class="icon-circle mx-auto"><i class="fas fa-volume-mute"></i></div>
                         <h5 class="fw-bold">【專注安靜】</h5>
                         <p class="premium-text-p mb-0">嚴選具備專業自律的夥伴，確保病房不喧嘩、不播放擴音影片，守護靜養品質。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card text-center">
                         <div class="icon-circle mx-auto"><i class="fas fa-key"></i></div>
                         <h5 class="fw-bold">【嚴守隱私】</h5>
                         <p class="premium-text-p mb-0">接受專業倫理訓練，將案家隱私視為第一要務，提供最得體的專業陪伴。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="premium-card text-center">
                         <div class="icon-circle mx-auto"><i class="fas fa-clipboard-check"></i></div>
                         <h5 class="fw-bold">【專業回報】</h5>
@@ -383,25 +398,26 @@
         </div>
     </section>
 
+    <!-- 區塊三：服務項目（已掛載 fade-in-scroll） -->
     <section class="py-5">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 fade-in-scroll">
                 <h2 class="fw-bold">我們提供以下服務</h2>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 fade-in-scroll">
                     <div class="p-4 border rounded-3 text-center bg-light">
                         <i class="fas fa-procedures fa-2x mb-3" style="color: var(--champagne-gold);"></i>
                         <h5 class="fw-bold">醫院全天看護</h5>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 fade-in-scroll">
                     <div class="p-4 border rounded-3 text-center bg-light">
                         <i class="fas fa-user-md fa-2x mb-3" style="color: var(--champagne-gold);"></i>
                         <h5 class="fw-bold">術後特殊照護</h5>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6 fade-in-scroll">
                     <div class="p-4 border rounded-3 text-center bg-light">
                         <i class="fas fa-home fa-2x mb-3" style="color: var(--champagne-gold);"></i>
                         <h5 class="fw-bold">出院返家準備</h5>
@@ -411,13 +427,14 @@
         </div>
     </section>
 
+    <!-- 區塊四：常見問題（已掛載 fade-in-scroll） -->
     <section class="py-5">
         <div class="container py-4">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 fade-in-scroll">
                 <h2 class="fw-bold">常見問題</h2>
             </div>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-8 fade-in-scroll">
                     <div class="accordion" id="homeFaq">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -454,7 +471,7 @@
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
                                 <div class="accordion-body premium-text-p">
-                                    福心的核心目標是「入院時即為出院做好準備，有效降低再住院率」。我們與多領域專業人士合作（如物理治療顧問、呼吸治療顧問、營養師），協助案家對接合適的醫療資源，整合出院準備計畫。福心專業照護員將醫囑或復健計畫轉化為標準化執行清單，確保專業落地。
+                                    福心的核心目標是「入院時即為出院做好準備，有效降低再住院率」。我們與多領域專業人士合作（如物理治療顧問、呼吸治療顧問、營養師），協助案家對接合適的醫療資源，整合出院準備計畫。福心專業照護員將醫囑 or 復健計畫轉化為標準化執行清單，確保專業落地。
                                 </div>
                             </div>
                         </div>
@@ -469,11 +486,9 @@
             <div class="row g-4 align-items-center">
                 <div class="col-lg-7">
                     <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
                     </p>
-                    
                     <p class="small text-muted" style="line-height: 1.6;">
                         服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
                     </p>
@@ -487,5 +502,30 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 原生 JavaScript 滾動監聽交叉觀察器 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 建立 IntersectionObserver 實例
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.15 // 露出 15% 時平滑浮現
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 觸發後解除監聽，提升網頁效能
+                    }
+                });
+            }, observerOptions);
+
+            // 捕捉首頁所有已掛載標籤的區塊與卡片
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
