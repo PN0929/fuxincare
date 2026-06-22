@@ -23,7 +23,7 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
+            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
             color: var(--text-dark);
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
@@ -49,10 +49,10 @@
             color: var(--champagne-gold) !important;
         }
 
-        /* 微調焦點：將形象封面照片作為滿版大背景，並疊加一層高質感半透明粉白漸層遮罩 */
+        /* 主視覺 Banner */
         .hero-section {
             padding: 160px 0 100px 0;
-            background: linear-gradient(90deg, rgba(253, 251, 247, 0.96) 35%, rgba(243, 232, 233, 0.55) 100%), url('福心形象封面.jpg');
+            background: linear-gradient(90deg, rgba(253, 251, 247, 0.96) 35%, rgba(243, 232, 233, 0.78) 100%), url('福心形象封面.jpg');
             background-size: cover;
             background-position: center right;
             background-repeat: no-repeat;
@@ -70,29 +70,29 @@
             margin-top: 20px;
         }
 
-        /* 微調焦點：回歸精緻、單純的懸浮圓形 Logo 容器 */
+        /* 微調焦點 1：讓 Logo 的白色外環變細（padding 從 15px 縮小至 6px） */
         .hero-logo-circle-wrapper {
-            padding: 15px;
+            padding: 6px; 
             background: white;
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.15);
-            border: 1px solid rgba(197, 168, 128, 0.25);
+            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(197, 168, 128, 0.3); /* 優雅精緻細線 */
             transition: all 0.4s ease;
         }
         .hero-logo-circle-wrapper:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(197, 168, 128, 0.25);
+            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.25);
         }
         .hero-logo-img {
-            width: 180px; /* 適中大小，既精緻又清晰 */
+            width: 180px;
             height: 180px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
         }
 
-        /* 精品按鈕放大樣式 */
+        /* 精品按鈕規格 */
         .btn-gold {
             background-color: var(--champagne-gold);
             color: white;
@@ -123,7 +123,7 @@
             color: var(--text-dark);
         }
 
-        /* 核心內文樣式修正：確保全網頁內文字體大小一致 (16px) */
+        /* 核心內文樣式 */
         .premium-text-p {
             font-size: 1rem !important; 
             color: var(--text-muted);
@@ -134,15 +134,16 @@
         /* 圖卡通用樣式 */
         .premium-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(197, 168, 128, 0.12);
             border-radius: 16px;
             padding: 30px;
             height: 100%;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03); /* 微調：更輕盈的卡片陰影 */
         }
         .premium-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.1);
+            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
         }
         .icon-circle {
             width: 60px;
@@ -157,15 +158,10 @@
             font-size: 1.5rem;
         }
 
-        /* 核心承諾區塊 */
-        .promise-section {
-            background-color: #FDFBF7;
-        }
-
         /* FAQ 風琴面板樣式 */
         .accordion-item {
             background-color: white;
-            border: 1px solid rgba(197, 168, 128, 0.15) !important;
+            border: 1px solid rgba(197, 168, 128, 0.12) !important;
             margin-bottom: 15px;
             border-radius: 12px !important;
             overflow: hidden;
@@ -179,20 +175,21 @@
         }
         .accordion-button:not(.collapsed) {
             color: var(--champagne-gold) !important;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
         }
         .accordion-body {
             padding: 20px;
         }
 
-        /* 頁尾 Footer */
+        /* 微調焦點 3：輕量化頁尾（減輕壓迫感，降低高度、改用暖灰深色） */
         footer {
-            background-color: #3A3535;
+            background-color: #4A4444; /* 從 #3A3535 改為更具人文感的暖深灰 */
             color: #E5DED4;
-            padding: 60px 0 30px 0;
+            padding: 45px 0 30px 0; /* 縮減高度，減少視覺厚重感 */
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
         }
 
-        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        /* 右下角固定雙軌浮動按鈕群 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -239,7 +236,6 @@
         @media (max-width: 768px) {
             .hero-section {
                 padding: 120px 0 60px 0;
-                /* 手機版遮罩加深，確保小螢幕上的白色字體依然清晰好讀 */
                 background: linear-gradient(180deg, rgba(253, 251, 247, 0.98) 60%, rgba(243, 232, 233, 0.90) 100%), url('福心形象封面.jpg');
                 background-size: cover;
                 background-position: center;
@@ -262,6 +258,9 @@
             }
             .float-phone { font-size: 22px; }
             .float-line { font-size: 26px; }
+            footer {
+                padding: 35px 0 25px 0;
+            }
         }
     </style>
 </head>
@@ -318,7 +317,7 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-5">
         <div class="container py-4">
             <div class="text-center max-width-700 mx-auto mb-5">
                 <h2 class="fw-bold mb-3">打破傳統勞力看護模式，導入標準化管理</h2>
@@ -352,7 +351,7 @@
         </div>
     </section>
 
-    <section class="py-5 promise-section">
+    <section class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
                 <h2 class="fw-bold mb-2">福心看護三大核心承諾</h2>
@@ -384,7 +383,7 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-5">
         <div class="container py-4">
             <div class="text-center mb-5">
                 <h2 class="fw-bold">我們提供以下服務</h2>
@@ -480,7 +479,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍規的相聚留給家人</p>
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
