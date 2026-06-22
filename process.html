@@ -218,6 +218,19 @@
             margin-top: 80px;
         }
 
+        /* 微調焦點：高端精品滾動動畫基礎 Class */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        /* 當進入視窗被掛上 visible 後優雅平滑浮現 */
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         @media (min-width: 768px) {
             .timeline::after {
                 left: 50%;
@@ -306,21 +319,22 @@
             </div>
 
             <div class="timeline">
-                <div class="timeline-item timeline-item-left">
+                <!-- 微調焦點：為各個時間軸卡片掛載進場動畫標籤 fade-in-scroll -->
+                <div class="timeline-item timeline-item-left fade-in-scroll">
                     <div class="timeline-number">1</div>
                     <div class="timeline-content">
                         <h4 class="fw-bold" style="color: var(--champagne-gold);"><i class="far fa-comment-dots me-2"></i>需求諮詢</h4>
                         <p class="premium-text-p mb-0 small">透過官方 Line 告知病患狀況、醫院地點與預計時段，福心專業客服團隊將即刻為您回覆並記錄需求細節。</p>
                     </div>
                 </div>
-                <div class="timeline-item timeline-item-right">
+                <div class="timeline-item timeline-item-right fade-in-scroll">
                     <div class="timeline-number">2</div>
                     <div class="timeline-content">
                         <h4 class="fw-bold" style="color: var(--champagne-gold);"><i class="fas fa-user-check me-2"></i>即時媒合</h4>
                         <p class="premium-text-p mb-0 small">專員全程、即時向您回報派遣進度，並在夥伴上工前，主動提供該合適夥伴的專業認證背景資訊，讓您充分了解照護者。</p>
                     </div>
                 </div>
-                <div class="timeline-item timeline-item-left">
+                <div class="timeline-item timeline-item-left fade-in-scroll">
                     <div class="timeline-number">3</div>
                     <div class="timeline-content">
                         <div class="d-flex align-items-center justify-content-start justify-content-md-end gap-2 mb-2">
@@ -343,21 +357,22 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
+                <!-- 微調焦點：為三大保障卡片分別掛載動畫標籤 -->
+                <div class="col-md-4 fade-in-scroll">
                     <div class="guarantee-card">
                         <div class="fs-2 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-id-card"></i></div>
                         <h4 class="fw-bold fs-5">【資格透明】證照查驗</h4>
                         <p class="premium-text-p small mb-0 mt-3">每一位派遣的夥伴皆具備政府核發之照顧服務員證照、半年內之完整體檢表，完全符合各大醫學中心與地方醫院規範。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="guarantee-card">
                         <div class="fs-2 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-file-invoice-dollar"></i></div>
                         <h4 class="fw-bold fs-5">【價格契約化】杜絕加價</h4>
                         <p class="premium-text-p small mb-0 mt-3">合約報價即為最終費用。福心嚴格禁止夥伴在病房私下加價、索取計程車費或收取紅包，確保所有帳目清晰坦蕩。</p>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 fade-in-scroll">
                     <div class="guarantee-card">
                         <div class="fs-2 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-mobile-alt"></i></div>
                         <h4 class="fw-bold fs-5">【即時回報】紀錄銜接</h4>
@@ -378,21 +393,22 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-10 col-lg-8">
                     <div class="d-flex flex-column gap-3">
-                        <div class="qc-card">
+                        <!-- 微調焦點：為品質控管卡片分別掛載動畫標籤 -->
+                        <div class="qc-card fade-in-scroll">
                             <div class="qc-icon"><i class="fas fa-history"></i></div>
                             <div>
                                 <h5 class="fw-bold">【適任追蹤】服務履歷</h5>
                                 <p class="premium-text-p small mb-0">福心確保每位看護夥伴的服務歷程皆有跡可循，落實動態評價。依據家庭習慣與反饋持續優化，協助您找到最契合需求的照護職人。</p>
                             </div>
                         </div>
-                        <div class="qc-card">
+                        <div class="qc-card fade-in-scroll">
                             <div class="qc-icon"><i class="fas fa-sync-alt"></i></div>
                             <div>
                                 <h5 class="fw-bold">【無縫銜接】人力調度</h5>
                                 <p class="premium-text-p small mb-0">若服務期間遇合作夥伴因不可抗力因素（如突發疾病）需請假，福心平台將立即啟動人力調度支援機制，確保照護需求24小時不中中斷。</p>
                             </div>
                         </div>
-                        <div class="qc-card">
+                        <div class="qc-card fade-in-scroll">
                             <div class="qc-icon"><i class="fas fa-users"></i></div>
                             <div>
                                 <h5 class="fw-bold">【價值認同】共好社群</h5>
@@ -403,7 +419,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 pt-3">
+            <div class="text-center mt-5 pt-3 fade-in-scroll">
                 <p class="fw-bold mb-3">無論是醫院看護需求或是照護諮詢，請直接與我們聯繫</p>
                 <a href="https://lin.ee/Tm80P16" class="btn btn-gold px-5 py-3" target="_blank"><i class="fab fa-line me-2"></i>透過 LINE 官方帳號立即聯繫專員</a>
             </div>
@@ -425,7 +441,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍規的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
@@ -433,5 +449,32 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 微調焦點：輕量化原生 JavaScript 動態滾動偵測核心程式碼 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 建立觀察器
+            const observerOptions = {
+                root: null, // 以瀏覽器視窗作為觀察範圍
+                rootMargin: '0px',
+                threshold: 0.15 // 當元素露出 15% 時觸發動畫
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 當元素進入視區，掛上 visible 類別觸發動效
+                        entry.target.classList.add('visible');
+                        // 觸發後即取消觀察，確保動畫只會平滑執行一次，維持精品穩重質感
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // 抓取所有掛載了 fade-in-scroll 的流程節點與卡片進行動態觀察
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
