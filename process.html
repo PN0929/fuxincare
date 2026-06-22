@@ -23,12 +23,12 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
+            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
             color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 導航列 */
+        /* 導航列：微調為首頁最新款的官方溫暖粉紅底色 + 奢華毛玻璃效果 */
         .navbar {
             background-color: rgba(243, 232, 233, 0.96); 
             backdrop-filter: blur(10px);
@@ -69,13 +69,14 @@
             margin: 0 auto;
             padding: 20px 0;
         }
+        /* 微調焦點：讓時間軸中軸線精準藏在圓圈內，手機版防衝頂 */
         .timeline::after {
             content: '';
             position: absolute;
             width: 2px;
             background-color: var(--dusty-rose);
-            top: 0;
-            bottom: 0;
+            top: 32px;  /* 往下移 32px，精準隱藏在第一個圓圈中心 */
+            bottom: 40px; /* 底部縮緊，精緻收尾 */
             left: 30px;
             margin-left: -1px;
         }
@@ -98,19 +99,21 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            z-index: 1;
+            z-index: 2; /* 確保圓圈在線條上方，完美遮擋線條頂端 */
         }
         .timeline-content {
             padding: 25px;
             background-color: white;
             border: 1px solid rgba(197, 168, 128, 0.15);
             border-radius: 16px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.01);
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
         }
 
-        /* 三大保障區塊樣式 */
+        /* 三大保障區塊樣式（微調：呼應底色調降彩度，更輕盈透亮） */
         .guarantee-section {
-            background-color: #F8F4F0;
+            background-color: rgba(244, 236, 228, 0.4); 
+            border-top: 1px solid rgba(197, 168, 128, 0.1);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
         }
         .guarantee-card {
             background: white;
@@ -142,6 +145,7 @@
             padding: 25px;
             display: flex;
             align-items: flex-start;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
         }
         .qc-icon {
             font-size: 1.5rem;
@@ -150,7 +154,48 @@
             margin-top: 3px;
         }
 
-        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        /* 高端大按鈕樣式規格 */
+        .btn-gold {
+            background-color: var(--champagne-gold);
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gold:hover {
+            background-color: #B39670;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 人文感暖深灰頁尾（已輕量化，降低高度） */
+        footer {
+            background-color: #4A4444; 
+            color: #E5DED4;
+            padding: 45px 0 30px 0; 
+            margin-top: 80px;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 高端精品滾動動畫基礎控制項 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 右下角固定雙軌浮動按鈕群 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -193,47 +238,12 @@
             background-color: #05A647;
         }
 
-        .btn-gold {
-            background-color: var(--champagne-gold);
-            color: white;
-            border: none;
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-gold:hover {
-            background-color: #B39670;
-            color: white;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background-color: #3A3535;
-            color: #E5DED4;
-            padding: 60px 0 30px 0;
-            margin-top: 80px;
-        }
-
-        /* 微調焦點：高端精品滾動動畫基礎 Class */
-        .fade-in-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            will-change: opacity, transform;
-        }
-        /* 當進入視窗被掛上 visible 後優雅平滑浮現 */
-        .fade-in-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* 媒體查詢佈局控制 */
         @media (min-width: 768px) {
+            /* 微調焦點：確保電腦大螢幕版中軸線也是從數字 1 中心點開始畫，絕對不往上衝 */
             .timeline::after {
                 left: 50%;
+                top: 32px; 
             }
             .timeline-item {
                 width: 50%;
@@ -264,6 +274,12 @@
             }
             .float-phone { font-size: 22px; }
             .float-line { font-size: 26px; }
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 35px 0 25px 0;
+            }
         }
     </style>
 </head>
@@ -319,7 +335,6 @@
             </div>
 
             <div class="timeline">
-                <!-- 微調焦點：為各個時間軸卡片掛載進場動畫標籤 fade-in-scroll -->
                 <div class="timeline-item timeline-item-left fade-in-scroll">
                     <div class="timeline-number">1</div>
                     <div class="timeline-content">
@@ -357,7 +372,6 @@
             </div>
 
             <div class="row g-4">
-                <!-- 微調焦點：為三大保障卡片分別掛載動畫標籤 -->
                 <div class="col-md-4 fade-in-scroll">
                     <div class="guarantee-card">
                         <div class="fs-2 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-id-card"></i></div>
@@ -383,7 +397,7 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-5">
         <div class="container py-3">
             <div class="text-center mb-5">
                 <span class="badge rounded-pill bg-light text-dark px-3 py-2 border mb-2" style="color: var(--champagne-gold) !important;">PROCESS 03</span>
@@ -393,7 +407,6 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-10 col-lg-8">
                     <div class="d-flex flex-column gap-3">
-                        <!-- 微調焦點：為品質控管卡片分別掛載動畫標籤 -->
                         <div class="qc-card fade-in-scroll">
                             <div class="qc-icon"><i class="fas fa-history"></i></div>
                             <div>
@@ -421,27 +434,25 @@
 
             <div class="text-center mt-5 pt-3 fade-in-scroll">
                 <p class="fw-bold mb-3">無論是醫院看護需求或是照護諮詢，請直接與我們聯繫</p>
-                <a href="https://lin.ee/Tm80P16" class="btn btn-gold px-5 py-3" target="_blank"><i class="fab fa-line me-2"></i>透過 LINE 官方帳號立即聯繫專員</a>
+                <a href="https://lin.ee/Tm80P16" class="btn btn-gold" target="_blank"><i class="fab fa-line me-2"></i>透過 LINE 官方帳號立即聯繫專員</a>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4">
-                <div class="col-lg-6">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
                     <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
                     </p>
-                    
                     <p class="small text-muted" style="line-height: 1.6;">
                         服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
                     </p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍規的相聚留給家人</p>
+                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
@@ -450,28 +461,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- 微調焦點：輕量化原生 JavaScript 動態滾動偵測核心程式碼 -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // 建立觀察器
             const observerOptions = {
-                root: null, // 以瀏覽器視窗作為觀察範圍
+                root: null, 
                 rootMargin: '0px',
-                threshold: 0.15 // 當元素露出 15% 時觸發動畫
+                threshold: 0.15 
             };
 
             const observer = new IntersectionObserver(function (entries, observer) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // 當元素進入視區，掛上 visible 類別觸發動效
                         entry.target.classList.add('visible');
-                        // 觸發後即取消觀察，確保動畫只會平滑執行一次，維持精品穩重質感
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            // 抓取所有掛載了 fade-in-scroll 的流程節點與卡片進行動態觀察
             const animatedElements = document.querySelectorAll('.fade-in-scroll');
             animatedElements.forEach(el => observer.observe(el));
         });
