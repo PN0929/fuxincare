@@ -67,36 +67,66 @@
             margin-top: 20px;
         }
 
-        /* 專屬微調樣式：將原本心電圖位置替換為正圓形高質感 Logo 外框 */
-        .hero-logo-circle-wrapper {
-            padding: 30px;
-            background: white;
-            border-radius: 50%;
-            display: inline-block;
-            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.15);
+        /* 微調焦點：全新複合式大封面容器 (照片當底) */
+        .hero-cover-container {
+            position: relative;
+            width: 100%;
+            max-width: 540px;
+            height: 400px; /* 電腦版固定高度 */
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(58, 53, 53, 0.12);
             border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        /* 底層滿版照片樣式 */
+        .hero-bg-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* 微調焦點：絕對定位置中重疊的圓形 Logo 容器 */
+        .hero-logo-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px;
+            background: rgba(253, 251, 247, 0.92); /* 帶有微透明的象牙白，讓後方底圖隱約透出，極具高級感 */
+            backdrop-filter: blur(5px);
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(197, 168, 128, 0.3);
             transition: all 0.4s ease;
+            z-index: 2;
         }
-        .hero-logo-circle-wrapper:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(197, 168, 128, 0.25);
+        .hero-logo-overlay:hover {
+            transform: translate(-50%, -55%); /* 懸浮時優雅上移 */
+            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.3);
+            background: rgba(253, 251, 247, 0.98);
         }
+
+        /* 圓形 Logo 圖片本身尺寸 */
         .hero-logo-img {
-            width: 320px;
-            height: 320px;
+            width: 140px; /* 縮小尺寸，在底圖上顯得更精緻 */
+            height: 140px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
         }
 
-        /* 精品按鈕 */
+        /* 精品按鈕放大樣式 */
         .btn-gold {
             background-color: var(--champagne-gold);
             color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 16px 36px;
             border-radius: 50px;
             font-weight: 500;
+            font-size: 1.15rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
         }
@@ -108,8 +138,10 @@
         .btn-outline-rose {
             border: 1px solid var(--dusty-rose);
             color: var(--text-dark);
-            padding: 12px 28px;
+            padding: 16px 36px;
             border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.15rem;
             transition: all 0.3s ease;
         }
         .btn-outline-rose:hover {
@@ -229,9 +261,17 @@
             background-color: #05A647;
         }
 
+        /* 手機板佈局微調 */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 1.8rem;
+            }
+            .hero-cover-container {
+                height: 280px; /* 手機版自動調降高度，維持視覺完美比例 */
+            }
+            .hero-logo-img {
+                width: 100px; /* 手機版 Logo 同步縮小 */
+                height: 100px;
             }
             .floating-contact-group {
                 bottom: 25px;
@@ -287,14 +327,19 @@
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span>，福心為您守護</h1>
                     <p class="hero-subtitle fs-5">提供專業管家級的醫院看護服務。在照護的路上，福心是您最溫柔的專業後盾，從入院至出院一路陪伴您。</p>
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
-                        <a href="tel:0963590368" class="btn btn-gold px-4 py-3"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
-                        <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose px-4 py-3" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
+                        <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
+                        <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
                     </div>
                 </div>
-                <!-- 調整重點：回復為最原始的心電圖位置，並將內容優雅地替換為您的正圓形高端品牌 Logo -->
+                <!-- 調整重點：全新重組結構，照片當底，Logo 疊加置中 -->
                 <div class="col-lg-5 mt-5 mt-lg-0 text-center d-none d-lg-block">
-                    <div class="hero-logo-circle-wrapper">
-                        <img src="(沛恩) 福心照護logo (3).jpg" alt="福心管理顧問股份有限公司官方Logo" class="hero-logo-img">
+                    <div class="hero-cover-container">
+                        <!-- 底層封面照片 -->
+                        <img src="福心形象封面.jpg" alt="福心專業照護溫馨實景" class="hero-bg-photo">
+                        <!-- 置中重疊的圓形 Logo -->
+                        <div class="hero-logo-overlay">
+                            <img src="福心照護logo.jpg" alt="福心照護官方Logo" class="hero-logo-img">
+                        </div>
                     </div>
                 </div>
             </div>
