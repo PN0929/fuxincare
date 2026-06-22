@@ -23,12 +23,12 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
+            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
             color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 導航列 */
+        /* 導航列：霧面精品粉紅底色 + 奢華毛玻璃效果 */
         .navbar {
             background-color: rgba(243, 232, 233, 0.96); 
             backdrop-filter: blur(10px);
@@ -65,18 +65,27 @@
         /* 價目表卡片樣式 */
         .price-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.2);
+            border: 1px solid rgba(197, 168, 128, 0.15);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
             transition: all 0.3s ease;
             height: 100%;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
         }
         .price-card.featured {
             background: linear-gradient(180deg, #FFFFFF 0%, #FDF6F6 100%);
             border: 2px solid var(--dusty-rose);
             box-shadow: 0 10px 30px rgba(232, 197, 200, 0.25);
             position: relative;
+        }
+        .price-card.featured:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(232, 197, 200, 0.35);
         }
         .price-card.featured::before {
             content: "熱門推薦";
@@ -90,6 +99,7 @@
             font-size: 0.8rem;
             border-radius: 50px;
             letter-spacing: 1px;
+            font-weight: 500;
         }
         .price-amount {
             font-size: 2.2rem;
@@ -109,7 +119,10 @@
             border-left: 4px solid var(--champagne-gold);
             padding: 15px 20px;
             border-radius: 0 12px 12px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.03);
+            border-top: 1px solid rgba(197, 168, 128, 0.08);
+            border-right: 1px solid rgba(197, 168, 128, 0.08);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
         }
 
         /* 服務項目精緻卡片 */
@@ -119,6 +132,12 @@
             border-radius: 16px;
             padding: 35px;
             height: 100%;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
+            transition: all 0.3s ease;
+        }
+        .service-detail-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.06);
         }
         .service-list {
             list-style: none;
@@ -140,14 +159,15 @@
             color: var(--champagne-gold);
         }
 
-        /* 底部轉換按鈕 */
+        /* 高端精品按鈕規格 */
         .btn-gold {
             background-color: var(--champagne-gold);
             color: white;
             border: none;
-            padding: 14px 35px;
+            padding: 16px 40px;
             border-radius: 50px;
             font-weight: 500;
+            font-size: 1.15rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
             text-decoration: none;
@@ -159,7 +179,28 @@
             transform: translateY(-2px);
         }
 
-        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        /* 人文感暖深灰頁尾（已輕量化，調降高度） */
+        footer {
+            background-color: #4A4444; 
+            color: #E5DED4;
+            padding: 45px 0 30px 0; 
+            margin-top: 80px;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 微調焦點：高端精品滾動動畫基礎控制項 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 右下角固定雙軌浮動按鈕群 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -202,13 +243,6 @@
             background-color: #05A647;
         }
 
-        footer {
-            background-color: #3A3535;
-            color: #E5DED4;
-            padding: 60px 0 30px 0;
-            margin-top: 80px;
-        }
-
         @media (max-width: 768px) {
             .floating-contact-group {
                 bottom: 25px;
@@ -221,6 +255,9 @@
             }
             .float-phone { font-size: 22px; }
             .float-line { font-size: 26px; }
+            footer {
+                padding: 35px 0 25px 0;
+            }
         }
     </style>
 </head>
@@ -275,7 +312,7 @@
             </div>
             
             <div class="row g-4 justify-content-center">
-                <div class="col-md-5 col-lg-4">
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
                     <div class="price-card">
                         <h4 class="fw-bold text-muted">12 小時半日班</h4>
                         <div class="price-amount">
@@ -284,7 +321,7 @@
                         <p class="premium-text-p mb-0 small">適合日間檢查手術、家屬夜間換班喘息之彈性調配需求。</p>
                     </div>
                 </div>
-                <div class="col-md-5 col-lg-4">
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
                     <div class="price-card featured">
                         <h4 class="fw-bold">24 小時全日班</h4>
                         <div class="price-amount" style="color: var(--champagne-gold);">
@@ -295,29 +332,29 @@
                 </div>
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-4 fade-in-scroll">
                 <p class="small text-muted"><i class="fas fa-info-circle me-1"></i>註：最終費用視病況複雜度、醫院地點及時數彈性調整。</p>
             </div>
 
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-8">
-                    <h5 class="fw-bold mb-4 text-center"><i class="fas fa-calculator me-2" style="color: var(--dusty-rose)"></i>特殊加成說明</h5>
+                    <h5 class="fw-bold mb-4 text-center fade-in-scroll"><i class="fas fa-calculator me-2" style="color: var(--dusty-rose)"></i>特殊加成說明</h5>
                     <div class="d-flex flex-column gap-3">
-                        <div class="plus-item d-flex align-items-center">
+                        <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-weight"></i></div>
                             <div>
                                 <strong class="d-block mb-1">體重加成</strong>
                                 <span class="premium-text-p small">患者體重超過一定標準，需增加翻身勞動力時另計。</span>
                             </div>
                         </div>
-                        <div class="plus-item d-flex align-items-center">
+                        <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-shield-virus"></i></div>
                             <div>
                                 <strong class="d-block mb-1">傳染病照護</strong>
                                 <span class="premium-text-p small">如確診新冠、疥瘡或其他具傳染性疾病之特殊防護。</span>
                             </div>
                         </div>
-                        <div class="plus-item d-flex align-items-center">
+                        <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-calendar-day"></i></div>
                             <div>
                                 <strong class="d-block mb-1">三節 / 國定假日</strong>
@@ -331,15 +368,15 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <section class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 fade-in-scroll">
                 <span class="badge rounded-pill bg-light text-dark px-3 py-2 border mb-2" style="color: var(--champagne-gold) !important;">PART 02</span>
                 <h2 class="fw-bold">我們的服務項目</h2>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-6">
+                <div class="col-md-6 fade-in-scroll">
                     <div class="service-detail-card">
                         <div class="d-flex align-items-center mb-4">
                             <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-hospital-user fa-lg"></i></div>
@@ -355,7 +392,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 fade-in-scroll">
                     <div class="service-detail-card">
                         <div class="d-flex align-items-center mb-4">
                             <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-home fa-lg"></i></div>
@@ -372,9 +409,9 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 pt-4">
+            <div class="text-center mt-5 pt-4 fade-in-scroll">
                 <p class="fw-bold mb-3">讓福心成為您在病房與居家照護中最堅強的後盾</p>
-                <a href="https://lin.ee/Tm80P16" class="btn btn-gold px-5 py-3" target="_blank"><i class="fab fa-line me-2"></i>即刻透過 LINE 規劃專屬照護</a>
+                <a href="https://lin.ee/Tm80P16" class="btn btn-gold" target="_blank"><i class="fab fa-line me-2"></i>即刻透過 LINE 規劃專屬照護</a>
             </div>
 
         </div>
@@ -382,20 +419,18 @@
 
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4">
-                <div class="col-lg-6">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
                     <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
                     </p>
-                    
                     <p class="small text-muted" style="line-height: 1.6;">
                         服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
                     </p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
@@ -403,5 +438,29 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 建立 IntersectionObserver 實例
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.15 // 露出 15% 時平滑浮現
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 觸發後解除監聽，優化記憶體效能
+                    }
+                });
+            }, observerOptions);
+
+            // 捕捉收費頁所有已掛載標籤的區塊與卡片
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
