@@ -23,12 +23,12 @@
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
+            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
             color: var(--text-dark);
             -webkit-font-smoothing: antialiased;
         }
 
-        /* 導航列 */
+        /* 導航列：霧面精品粉紅底色 + 奢華毛玻璃效果 */
         .navbar {
             background-color: rgba(243, 232, 233, 0.96); 
             backdrop-filter: blur(10px);
@@ -65,23 +65,25 @@
         /* 核心高效聯絡按鈕 */
         .contact-action-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.2);
+            border: 1px solid rgba(197, 168, 128, 0.15);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.05);
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
             transition: all 0.3s ease;
         }
         .contact-action-card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
         }
         .btn-action-line {
             background-color: #06C755;
             color: white;
             border: none;
-            padding: 14px 30px;
+            padding: 16px 30px; /* 放大點擊尺寸 */
             border-radius: 50px;
             font-weight: 500;
+            font-size: 1.1rem;
             width: 100%;
             display: inline-block;
             text-decoration: none;
@@ -91,14 +93,16 @@
         .btn-action-line:hover {
             background-color: #05A647;
             color: white;
+            transform: translateY(-2px);
         }
         .btn-action-phone {
             background-color: var(--champagne-gold);
             color: white;
             border: none;
-            padding: 14px 30px;
+            padding: 16px 30px; /* 放大點擊尺寸 */
             border-radius: 50px;
             font-weight: 500;
+            font-size: 1.1rem;
             width: 100%;
             display: inline-block;
             text-decoration: none;
@@ -108,14 +112,16 @@
         .btn-action-phone:hover {
             background-color: #B39670;
             color: white;
+            transform: translateY(-2px);
         }
 
         /* 溫馨叮嚀 Memo 卡片 */
         .memo-card {
-            background-color: #FFFDFB;
+            background-color: white;
             border: 1px dashed var(--dusty-rose);
             border-radius: 16px;
             padding: 35px;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
         }
         .memo-item {
             display: flex;
@@ -138,17 +144,42 @@
         .hospital-badge {
             background-color: white;
             color: var(--text-dark);
-            border: 1px solid rgba(197, 168, 128, 0.25);
+            border: 1px solid rgba(197, 168, 128, 0.15);
             padding: 8px 18px;
             font-size: 0.9rem;
             border-radius: 50px;
             display: inline-block;
-            margin: 5px;
+            margin: 6px;
             font-weight: 400;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.02);
+            transition: all 0.3s ease;
+        }
+        .hospital-badge:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-2px);
         }
 
-        /* 右下角固定雙軌浮動按鈕群（電話 + LINE） */
+        /* 微調焦點：高端精品滾動動畫基礎控制項 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 人文感暖深灰頁尾 */
+        footer {
+            background-color: #4A4444; 
+            color: #E5DED4;
+            padding: 45px 0 30px 0; 
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 右下角固定雙軌浮動按鈕群 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -191,13 +222,6 @@
             background-color: #05A647;
         }
 
-        footer {
-            background-color: #3A3535;
-            color: #E5DED4;
-            padding: 60px 0 30px 0;
-            margin-top: 80px;
-        }
-
         @media (max-width: 768px) {
             .floating-contact-group {
                 bottom: 25px;
@@ -210,6 +234,9 @@
             }
             .float-phone { font-size: 22px; }
             .float-line { font-size: 26px; }
+            footer {
+                padding: 35px 0 25px 0;
+            }
         }
     </style>
 </head>
@@ -260,7 +287,8 @@
     <section class="py-5">
         <div class="container">
             <div class="row g-4 justify-content-center">
-                <div class="col-md-5 col-lg-4">
+                <!-- 微調焦點：聯絡字卡配署平滑滾動進場 -->
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
                     <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
                         <div>
                             <div class="fs-1 mb-3" style="color: #06C755;"><i class="fab fa-line"></i></div>
@@ -273,7 +301,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5 col-lg-4">
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
                     <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
                         <div>
                             <div class="fs-1 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-phone-alt"></i></div>
@@ -287,7 +315,8 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center mt-5">
+            <!-- 微調焦點：溫馨叮嚀大卡片掛載進場動效 -->
+            <div class="row justify-content-center mt-5 fade-in-scroll">
                 <div class="col-md-10 col-lg-8">
                     <div class="memo-card">
                         <h4 class="fw-bold fs-5 mb-4 text-center" style="color: #A67C52;"><i class="far fa-edit me-2"></i>給家屬的溫馨叮嚀</h4>
@@ -324,15 +353,16 @@
         </div>
     </section>
 
-    <section class="py-5 bg-white">
+    <!-- 微調焦點：移除 bg-white 回歸全站一體化奢華象牙白 -->
+    <section class="py-5">
         <div class="container py-3">
-            <div class="text-center mb-4">
+            <div class="text-center mb-4 fade-in-scroll">
                 <h2 class="fw-bold fs-4 mb-2">服務區域與合作據點</h2>
                 <p class="text-muted small">我們深耕雙北，派遣範圍完整涵蓋各大醫學中心與醫療院所</p>
             </div>
             
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
+                <div class="col-lg-8 text-center fade-in-scroll">
                     <p class="fw-bold small mb-3" style="color: var(--champagne-gold);"><i class="fas fa-map-marked-alt me-1"></i>服務區域：台北市、新北市各大醫療院所</p>
                     <div class="d-flex flex-wrap justify-content-center mt-2">
                         <span class="hospital-badge">國立臺灣大學醫學院附設醫院 (台大)</span>
@@ -348,7 +378,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-5 pt-3">
+            <div class="text-center mt-5 pt-3 fade-in-scroll">
                 <p class="small text-muted mb-0">讓福心成為您在病房與居家照護中最堅強的後盾。</p>
             </div>
         </div>
@@ -356,20 +386,18 @@
 
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4">
-                <div class="col-lg-6">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
                     <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
                     </p>
-                    
                     <p class="small text-muted" style="line-height: 1.6;">
                         服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
                     </p>
                 </div>
-                <div class="col-lg-6 text-center text-lg-end d-flex flex-column justify-content-center align-items-center align-items-lg-end">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose)">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
@@ -377,5 +405,30 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 原生 JavaScript 滾動監聽交叉觀察器 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 建立 IntersectionObserver 實例
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.15 // 露出 15% 時平滑浮現
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 觸發後解除監聽，優化記憶體效能
+                    }
+                });
+            }, observerOptions);
+
+            // 捕捉聯絡頁所有已掛載標籤的區塊與卡片
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
