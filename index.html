@@ -49,10 +49,13 @@
             color: var(--champagne-gold) !important;
         }
 
-        /* 主視覺 Banner */
+        /* 微調焦點：將形象封面照片作為滿版大背景，並疊加一層高質感半透明粉白漸層遮罩 */
         .hero-section {
-            padding: 140px 0 80px 0;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            padding: 160px 0 100px 0;
+            background: linear-gradient(90deg, rgba(253, 251, 247, 0.96) 35%, rgba(243, 232, 233, 0.78) 100%), url('福心形象封面.jpg');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
             position: relative;
         }
         .hero-title {
@@ -67,52 +70,23 @@
             margin-top: 20px;
         }
 
-        /* 微調焦點：全新複合式大封面容器 (照片當底) */
-        .hero-cover-container {
-            position: relative;
-            width: 100%;
-            max-width: 540px;
-            height: 400px; /* 電腦版固定高度 */
-            margin: 0 auto;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 45px rgba(58, 53, 53, 0.12);
-            border: 1px solid rgba(197, 168, 128, 0.2);
-        }
-
-        /* 底層滿版照片樣式 */
-        .hero-bg-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* 微調焦點：絕對定位置中重疊的圓形 Logo 容器 */
-        .hero-logo-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* 微調焦點：回歸精緻、單純的懸浮圓形 Logo 容器 */
+        .hero-logo-circle-wrapper {
             padding: 15px;
-            background: rgba(253, 251, 247, 0.92); /* 帶有微透明的象牙白，讓後方底圖隱約透出，極具高級感 */
-            backdrop-filter: blur(5px);
+            background: white;
             border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(197, 168, 128, 0.3);
+            display: inline-block;
+            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(197, 168, 128, 0.25);
             transition: all 0.4s ease;
-            z-index: 2;
         }
-        .hero-logo-overlay:hover {
-            transform: translate(-50%, -55%); /* 懸浮時優雅上移 */
-            box-shadow: 0 15px 35px rgba(197, 168, 128, 0.3);
-            background: rgba(253, 251, 247, 0.98);
+        .hero-logo-circle-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(197, 168, 128, 0.25);
         }
-
-        /* 圓形 Logo 圖片本身尺寸 */
         .hero-logo-img {
-            width: 140px; /* 縮小尺寸，在底圖上顯得更精緻 */
-            height: 140px;
+            width: 180px; /* 適中大小，既精緻又清晰 */
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
@@ -263,15 +237,19 @@
 
         /* 手機板佈局微調 */
         @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 0 60px 0;
+                /* 手機版遮罩加深，確保小螢幕上的白色字體依然清晰好讀 */
+                background: linear-gradient(180deg, rgba(253, 251, 247, 0.98) 60%, rgba(243, 232, 233, 0.90) 100%), url('福心形象封面.jpg');
+                background-size: cover;
+                background-position: center;
+            }
             .hero-title {
                 font-size: 1.8rem;
             }
-            .hero-cover-container {
-                height: 280px; /* 手機版自動調降高度，維持視覺完美比例 */
-            }
             .hero-logo-img {
-                width: 100px; /* 手機版 Logo 同步縮小 */
-                height: 100px;
+                width: 130px;
+                height: 130px;
             }
             .floating-contact-group {
                 bottom: 25px;
@@ -322,7 +300,7 @@
 
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center py-5">
+            <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span>，福心為您守護</h1>
                     <p class="hero-subtitle fs-5">提供專業管家級的醫院看護服務。在照護的路上，福心是您最溫柔的專業後盾，從入院至出院一路陪伴您。</p>
@@ -331,15 +309,9 @@
                         <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
                     </div>
                 </div>
-                <!-- 調整重點：全新重組結構，照片當底，Logo 疊加置中 -->
                 <div class="col-lg-5 mt-5 mt-lg-0 text-center d-none d-lg-block">
-                    <div class="hero-cover-container">
-                        <!-- 底層封面照片 -->
-                        <img src="福心形象封面.jpg" alt="福心專業照護溫馨實景" class="hero-bg-photo">
-                        <!-- 置中重疊的圓形 Logo -->
-                        <div class="hero-logo-overlay">
-                            <img src="福心照護logo.jpg" alt="福心照護官方Logo" class="hero-logo-img">
-                        </div>
+                    <div class="hero-logo-circle-wrapper">
+                        <img src="福心照護logo.jpg" alt="福心照護官方Logo" class="hero-logo-img">
                     </div>
                 </div>
             </div>
