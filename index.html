@@ -65,9 +65,10 @@
             line-height: 1.4;
         }
         .hero-subtitle {
-            font-weight: 300;
-            color: #6C6363;
+            font-weight: 500;
+            color: var(--champagne-gold);
             margin-top: 20px;
+            letter-spacing: 1px;
         }
 
         /* 精緻細外環 Logo 樣式 */
@@ -156,6 +157,27 @@
             margin-bottom: 20px;
             color: var(--champagne-gold);
             font-size: 1.5rem;
+        }
+
+        /* 證照圖片特製外框 */
+        .cert-img-wrapper {
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            background: #fff;
+            padding: 6px;
+        }
+        .cert-img {
+            width: 100%;
+            height: auto;
+            max-height: 280px;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+        .premium-card:hover .cert-img {
+            transform: scale(1.02);
         }
 
         /* FAQ 風琴面板樣式 */
@@ -314,8 +336,8 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
-                    <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span>，福心為您守護</h1>
-                    <p class="hero-subtitle fs-5">提供專業管家級的醫院看護服務。在照護的路上，福心是您最溫柔的專業後盾，從入院至出院一路陪伴您。</p>
+                    <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span></h1>
+                    <p class="hero-subtitle fs-5 fw-bold">政府立案新北私就字第 0 6 8 號</p>
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
                         <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
                         <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
@@ -398,29 +420,48 @@
         </div>
     </section>
 
-    <!-- 區塊三：服務項目（已掛載 fade-in-scroll） -->
-    <section class="py-5">
+    <!-- 區塊三：官方認證與專業實力區塊 -->
+    <section class="py-5 bg-white" style="border-top: 1px solid rgba(197, 168, 128, 0.08); border-bottom: 1px solid rgba(197, 168, 128, 0.08);">
         <div class="container py-4">
             <div class="text-center mb-5 fade-in-scroll">
-                <h2 class="fw-bold">我們提供以下服務</h2>
+                <h2 class="fw-bold mb-3">選擇福心，給家人真正合法的雙重保障</h2>
+                <div class="premium-text-p px-3 mx-auto" style="max-width: 700px;">
+                    我們深知您的焦慮與對品質的堅持。福心拒絕來路不明的非法黑工，用官方權威特准執照與深厚臨床照顧經驗，為案家撐起最安心、合法的照護防線。
+                </div>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4 col-sm-6 fade-in-scroll">
-                    <div class="p-4 border rounded-3 text-center bg-light">
-                        <i class="fas fa-procedures fa-2x mb-3" style="color: var(--champagne-gold);"></i>
-                        <h5 class="fw-bold">醫院全天看護</h5>
+            <div class="row g-5 justify-content-center">
+                <!-- 左側：政府立案許可證卡片 -->
+                <div class="col-lg-5 col-md-6 fade-in-scroll">
+                    <div class="premium-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="cert-img-wrapper text-center">
+                                <img src="license.jpg" alt="新北市政府私立就業服務機構許可證" class="cert-img">
+                            </div>
+                            <h4 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px;">【官方雙重認證】合法合規最安心</h4>
+                            <p class="premium-text-p mb-3">
+                                坊間許多看護機構僅有經濟部公司登記，卻缺乏法定的就業服務許可。福心管理顧問除了擁有合法公司法人身分，更榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
+                            </p>
+                            <p class="premium-text-p mb-0">
+                                雙重官方認證，代表我們的財務、流程與人力皆受政府嚴格審查，價格契約化、責任清晰化。請家屬務必選擇擁有雙重保障的合法機構，才能真正遠離黑工與無預警棄單的風險。
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 fade-in-scroll">
-                    <div class="p-4 border rounded-3 text-center bg-light">
-                        <i class="fas fa-user-md fa-2x mb-3" style="color: var(--champagne-gold);"></i>
-                        <h5 class="fw-bold">術後特殊照護</h5>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 fade-in-scroll">
-                    <div class="p-4 border rounded-3 text-center bg-light">
-                        <i class="fas fa-home fa-2x mb-3" style="color: var(--champagne-gold);"></i>
-                        <h5 class="fw-bold">出院返家準備</h5>
+                <!-- 右側：優秀居服員第一名卡片 -->
+                <div class="col-lg-5 col-md-6 fade-in-scroll">
+                    <div class="premium-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="cert-img-wrapper text-center">
+                                <img src="award.jpg" alt="照護團隊第一名優秀獎狀" class="cert-img">
+                            </div>
+                            <h4 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px;">【專業經驗團隊】嚴選具備深厚經驗人才</h4>
+                            <p class="premium-text-p mb-3">
+                                優質的照顧，來自於扎實的訓練與對細節的專注。福心的合作夥伴與照護團隊皆經過政府指派機構之專業特訓。
+                            </p>
+                            <p class="premium-text-p mb-0">
+                                旗下夥伴不僅具備合格證照，更有在專業班期中榮獲<strong>評定第一名結業</strong>的優秀照護人才。我們堅持引進擁有豐富臨床經驗、自律且懂得醫囑落地的夥伴，不只是勞力勞動，更是能讓家屬放心託付的專業陪伴。
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -445,8 +486,8 @@
                             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
                                 <div class="accordion-body premium-text-p">
                                     我們採取透明且合理的計費機制，費用會根據照護員的專業與個案需求進行規劃，提供最精準的守護：<br>
-                                    <strong>24 小時全日班：</strong> 每日約 3,500 - 4,000 元。<br>
-                                    <strong>12 小時半日班：</strong> 每日約 2,500 - 3,000 元。<br>
+                                    <strong>24 小時全日班：</strong> 每日約 3,200 - 4,000 元。<br>
+                                    <strong>12 小時半日班：</strong> 每日約 2,600 - 3,000 元。<br>
                                     福心確保每一分投入都能轉化為最高標準的照護品質。
                                 </div>
                             </div>
