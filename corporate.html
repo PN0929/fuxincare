@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業特約合作｜福心專業照護：落實 ESG/DEI，同仁照顧不離職的最強後盾</title>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #D4A373; 
+            --dusty-rose: #E8C5C8; 
+            --champagne-gold: #C5A880; 
+            --bg-ivory: #FDFBF7; 
+            --text-dark: #3A3535; 
+            --text-muted: #5A5252; 
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar {
+            background-color: rgba(243, 232, 233, 0.96); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            font-weight: 400;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--champagne-gold) !important;
+        }
+
+        /* 主視覺 Banner - 針對企業特約優化 */
+        .hero-section {
+            padding: 180px 0 110px 0;
+            background: linear-gradient(90deg, rgba(253, 251, 247, 0.96) 45%, rgba(243, 232, 233, 0.75) 100%), url('福心形象封面.jpg');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        .hero-title {
+            font-weight: 700;
+            font-size: 2.6rem;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+        .hero-subtitle {
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-top: 20px;
+            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        /* 按鈕規格 */
+        .btn-gold {
+            background-color: var(--champagne-gold);
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+        }
+        .btn-gold:hover {
+            background-color: #B39670;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .btn-outline-rose {
+            border: 1px solid var(--dusty-rose);
+            color: var(--text-dark);
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-rose:hover {
+            background-color: var(--dusty-rose);
+            color: var(--text-dark);
+        }
+
+        /* 核心內文 */
+        .premium-text-p {
+            font-size: 1rem !important; 
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* 圖卡通用樣式 */
+        .premium-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.12);
+            border-radius: 16px;
+            padding: 35px 30px;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
+        }
+        .premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
+        }
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #FBF4F4;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--champagne-gold);
+            font-size: 1.5rem;
+        }
+
+        /* 雙贏價值特製標題襯線 */
+        .win-title {
+            border-left: 4px solid var(--champagne-gold);
+            padding-left: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        /* 流程步驟樣式 */
+        .step-container {
+            position: relative;
+        }
+        .step-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.12);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--dusty-rose);
+            color: var(--text-dark);
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: -45px auto 15px auto;
+            border: 3px solid var(--bg-ivory);
+        }
+
+        /* 聯絡表單專區 */
+        .form-section {
+            background-color: #F5EFE6;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+        .form-control:focus {
+            border-color: var(--champagne-gold);
+            box-shadow: 0 0 0 0.25rem rgba(197, 168, 128, 0.25);
+        }
+
+        footer {
+            background-color: #4A4444; 
+            color: #E5DED4;
+            padding: 45px 0 30px 0; 
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 滾動動畫 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 右下角浮動按鈕 */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone { background-color: #ED6A6A; color: white; font-size: 26px; }
+        .float-phone:hover { color: white; background-color: #DF5959; }
+        .float-line { background-color: #06C755; color: white; font-size: 30px; }
+        .float-line:hover { color: white; background-color: #05A647; }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 140px 0 70px 0;
+                background: linear-gradient(180deg, rgba(253, 251, 247, 0.98) 55%, rgba(243, 232, 233, 0.90) 100%), url('福心形象封面.jpg');
+            }
+            .hero-title { font-size: 1.9rem; }
+            .floating-contact-group { bottom: 25px; right: 25px; gap: 12px; }
+            .float-btn { width: 54px; height: 54px; }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-contact-group">
+        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="corporate.html">企業特約合作</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 text-center text-lg-start">
+                    <h1 class="hero-title">同仁「照顧不離職」<br><span style="color: var(--champagne-gold);">企業最堅實的生活後盾</span></h1>
+                    <p class="hero-subtitle fs-5">
+                        福心提供零預算的特約合作方案，協助貴公司將關懷延伸至同仁家庭。<br>
+                        透過安全、專業、透明的一條龍照護媒合，有效提升員工留任率與職場專注度。
+                    </p>
+                    <div class="win-title border-0 p-0 mt-2">
+                        <span class="badge bg-secondary px-3 py-2 rounded-pill fw-normal" style="background-color: var(--champagne-gold) !important;">政府特許合法立案：新北私就字第 068 號</span>
+                    </div>
+                    <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#cooperate-form" class="btn btn-gold"><i class="fas fa-file-signature me-2"></i>立即線上洽詢特約</a>
+                        <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>專員即刻回覆</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
+                <h2 class="fw-bold mb-3">攜手福心，創造勞資雙贏價值</h2>
+                <p class="premium-text-p px-3 mx-auto" style="max-width: 650px;">
+                    當員工面臨家人突發住院的關鍵時刻，往往陷入工作與家庭兩難。福心第一時間介入，有效緩解照護壓力，穩固企業人力結構。
+                </p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-building-user"></i></div>
+                        <h4 class="win-title">對企業 —— 落實指標性 ESG 實績，降低離職風險</h4>
+                        <ul class="premium-text-p list-unstyled ps-0">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>永續報告加分：</strong> 將「照顧不離職」之具體行動納入年度永續報告書（ESG/DEI），向利害關係人展現員工福祉實踐成果。</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>留住核心人才：</strong> 緩解同仁因家庭照護引發的出勤波動或離職潮，有效降低高階與關鍵人才流失機率。</li>
+                            <li><i class="fas fa-check text-success me-2"></i><strong>穩固營運結構：</strong> 攜手人資第一時間介入關懷，減少缺勤對部門營運造成的潛在風險。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-heart-pulse"></i></div>
+                        <h4 class="win-title">對員工 —— 兼顧工作家庭，緩解燃眉之急</h4>
+                        <ul class="premium-text-p list-unstyled ps-0">
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>安穩踏實託付：</strong> 快速對接真正合法立案、安全專業的看護團隊，免去在醫院與公司間疲於奔命的身心煎熬。</li>
+                            <li class="mb-2"><i class="fas fa-check text-success me-2"></i><strong>維持職場專注：</strong> 在最安穩的狀態下重拾工作專注表現，不再陷入工作與家庭蠟燭兩頭燒的困境。</li>
+                            <li><i class="fas fa-check text-success me-2"></i><strong>身分識別快速：</strong> 特約企業同仁或其直系血親，僅需出示員工證照片或名片即可快速適用專屬福利。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white" style="border-top: 1px solid rgba(197, 168, 128, 0.08); border-bottom: 1px solid rgba(197, 168, 128, 0.08);">
+        <div class="container py-4">
+            <div class="text-center mb-5 fade-in-scroll">
+                <h2 class="fw-bold mb-2">為什麼企業選擇福心？</h2>
+                <p class="text-muted small">政府特許、專業嚴選，打造無縫銜接的頂級照護防線</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-shield-cat"></i></div>
+                        <h5 class="fw-bold mb-3">特許合法立案</h5>
+                        <p class="premium-text-p small mb-0">榮獲「新北市私立就業服務機構許可證（新北私就字第068號）」。保證合法派工，免除誤用非法黑工而面臨《就業服務法》最高 75 萬元罰鍰之風險。</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-user-user"></i></div>
+                        <h5 class="fw-bold mb-3">專業嚴選人力</h5>
+                        <p class="premium-text-p small mb-0">合作照服員皆具備政府合格之結業證書，並經嚴格背景篩選。行政團隊高效親切，且能開立正式醫療看護收據，保證商業保險理賠順暢不卡關。</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-people-arrows"></i></div>
+                        <h5 class="fw-bold mb-3">院後一條龍銜接</h5>
+                        <p class="premium-text-p small mb-0">提供從住院到返家的無縫照護。出院後若有外籍看護到府，台籍專業看護可特意「重疊留守1天」，手把手移交生活習慣與管路照護，完美度過空窗期。</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-in-scroll">
+                    <div class="premium-card">
+                        <div class="icon-circle"><i class="fas fa-language"></i></div>
+                        <h5 class="fw-bold mb-3">外語陪病零溝通</h5>
+                        <p class="premium-text-p small mb-0">針對外商企業與外籍同仁家庭，提供專精英語的全面協助。從病況溝通到住院起居精準轉譯，提供最具跨文化視野的雙語支持，免除醫療焦慮。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5 fade-in-scroll">
+                <h2 class="fw-bold mb-2">企業特約同仁專屬福利</h2>
+                <p class="text-muted small">出示員工識別證或名片，即享最實質且制度化的醫療減壓福利</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 fade-in-scroll">
+                    <div class="premium-card text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-gift"></i></div>
+                        <h5 class="fw-bold">個人專屬滿額贈</h5>
+                        <p class="premium-text-p mb-0 small">同仁委託照護服務，凡服務天數或金額達到指定門檻，即可獲專屬滿額回饋。具體機制將依雙方年度簽約時的約定執行，給予最實質的醫療減壓。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in-scroll">
+                    <div class="premium-card text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-headset"></i></div>
+                        <h5 class="fw-bold">免費即時長照諮詢</h5>
+                        <p class="premium-text-p mb-0 small">針對個案突發狀況，提供「住院照護、出院準備、政府長照 2.0 資源媒合」之免費 LINE@ 與電話一對一諮詢，由專家指引迅速釐清補助申請流程。</p>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in-scroll">
+                    <div class="premium-card text-center">
+                        <div class="icon-circle mx-auto"><i class="fas fa-chalkboard-user"></i></div>
+                        <h5 class="fw-bold">「職涯x家庭照護」講座</h5>
+                        <p class="premium-text-p mb-0 small">可對接企業既有之員工協助方案（EAP）。依公司需求量身規劃實務分享講座與長照資源盤點，協助員工在狀況發生前做好心理與資源準備。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 fade-in-scroll">
+                <p class="text-muted small">
+                    <i class="fas fa-info-circle me-1"></i> <strong>靈活合作期間：</strong>本特約合作案自簽署日起生效一年；若期滿雙方無異議則自動順延一年。<br>
+                    <i class="fas fa-info-circle me-1"></i> <strong>行政零負擔：</strong>福心主動提供精美宣傳海報（EDM）與內網文案包，不額外佔用人資或福委會行政資源。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white" style="border-top: 1px solid rgba(197, 168, 128, 0.08);">
+        <div class="container py-4">
+            <div class="text-center mb-5 fade-in-scroll">
+                <h2 class="fw-bold mb-2">福心 × 企業合作四步驟</h2>
+                <p class="text-muted small">流程高效流暢，迅速建立貼心與專業的夥伴關係</p>
+            </div>
+            
+            <div class="row g-4 step-container mt-2">
+                <div class="col-md-3 fade-in-scroll">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h5 class="fw-bold mb-2">專人聯繫</h5>
+                        <p class="premium-text-p small mb-0">企業透過 Email、電話或 LINE@ 即時洽詢特約合作事宜。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in-scroll">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h5 class="fw-bold mb-2">方案說明</h5>
+                        <p class="premium-text-p small mb-0">福心團隊協助評估合適的企業方案，彈性調整並確認內容。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in-scroll">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h5 class="fw-bold mb-2">合作確認</h5>
+                        <p class="premium-text-p small mb-0">雙方正式簽署合作意向書（MOU），建立長期互信夥伴關係。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 fade-in-scroll">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h5 class="fw-bold mb-2">展開服務</h5>
+                        <p class="premium-text-p small mb-0">依年度合作方案，全面展開企業家庭長照支持福利與宣傳。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cooperate-form" class="py-5 form-section">
+        <div class="container py-4">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 fade-in-scroll">
+                    <h2 class="fw-bold mb-4">立即開啟<br>企業特約合作諮詢</h2>
+                    <p class="premium-text-p mb-4">
+                        歡迎全台各企業人資、福委會或高階管理團隊聯繫。讓我們攜手為同仁撐起家中的照護重擔，打造最具溫度的友善職場環境。
+                    </p>
+                    
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="icon-circle mb-0 me-3" style="width: 45px; height: 45px; font-size: 1.1rem;"><i class="fas fa-building"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-0">福心管理顧問股份有限公司</h6>
+                            <small class="text-muted">統一編號：62179070</small>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="icon-circle mb-0 me-3" style="width: 45px; height: 45px; font-size: 1.1rem;"><i class="fas fa-id-card"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-0">專案聯絡人</h6>
+                            <small class="text-muted">陳怡心 經理</small>
+                        </div>
+                    </div>
+                    <div class="mb-3 d-flex align-items-center">
+                        <div class="icon-circle mb-0 me-3" style="width: 45px; height: 45px; font-size: 1.1rem;"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-0">服務專線</h6>
+                            <small class="text-muted">02-2967-0360</small>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="icon-circle mb-0 me-3" style="width: 45px; height: 45px; font-size: 1.1rem;"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-0">官方網站</h6>
+                            <small class="text-muted"><a href="https://fuxincare.com.tw/" class="text-decoration-none" style="color: var(--champagne-gold);">fuxincare.com.tw</a></small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7 fade-in-scroll">
+                    <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border" style="border-color: rgba(197, 168, 128, 0.15) !important;">
+                        <h4 class="fw-bold mb-4" style="color: var(--text-dark); text-align: center;">特約合作線上申請意向</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">公司/機構全銜</label>
+                                    <input type="text" class="form-control rounded-pill px-3" placeholder="例如：福心股份有限公司" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">統一編號</label>
+                                    <input type="text" class="form-control rounded-pill px-3" placeholder="請輸入8碼統編">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">聯絡人姓名 / 職稱</label>
+                                    <input type="text" class="form-control rounded-pill px-3" placeholder="例如：王小姐 (HRBP)" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold">聯絡專線 / 手機</label>
+                                    <input type="tel" class="form-control rounded-pill px-3" placeholder="例如：02-XXXX-XXXX" required>
+                                </div>
+                                <div class="col-112">
+                                    <label class="form-label small fw-bold">電子郵件信箱</label>
+                                    <input type="email" class="form-control rounded-pill px-3" placeholder="例如：hr@company.com" required>
+                                </div>
+                                <div class="col-112">
+                                    <label class="form-label small fw-bold">預估貴司內部員工規模</label>
+                                    <select class="form-select rounded-pill px-3">
+                                        <option selected>請選擇...</option>
+                                        <option value="1">50人以下</option>
+                                        <option value="2">51-200人</option>
+                                        <option value="3">201-500人</option>
+                                        <option value="4">501人以上大集團</option>
+                                    </select>
+                                </div>
+                                <div class="col-112 text-center mt-4">
+                                    <button type="submit" class="btn btn-gold w-100 rounded-pill py-3">送出特約洽詢意向</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center text-lg-start">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-7">
+                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
+                    <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
+                    </p>
+                    <p class="small text-muted" style="line-height: 1.6;">
+                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    </p>
+                </div>
+                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.15 
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
