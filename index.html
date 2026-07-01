@@ -120,6 +120,7 @@
             color: var(--text-dark);
         }
 
+        /* ─── 表格優化區 ─── */
         .table-container-holder {
             border: 1px solid rgba(197, 168, 128, 0.25); 
             border-radius: 20px;
@@ -133,21 +134,22 @@
             margin-bottom: 0;
             border-collapse: collapse;
             width: 100%;
-            table-layout: fixed; /* 鎖死大表格物理寬度 */
+            table-layout: auto; /* ✨ 允許表格依字數自動縮緊 */
         }
         
         .custom-comparison-table th {
             background-color: #F6F3ED; 
             color: var(--text-dark);
             font-weight: 700;
-            padding: 26px 20px;
-            text-align: center;
+            padding: 18px 12px; /* ✨ 減少內距以縮小空白 */
+            text-align: center; /* ✨ 文字置中 */
             border-bottom: 1px solid rgba(197, 168, 128, 0.22); 
             letter-spacing: 1px;
         }
         
         .custom-comparison-table td {
-            padding: 26px 20px; 
+            padding: 16px 12px; /* ✨ 減少內距以縮小空白 */
+            text-align: center; /* ✨ 文字置中 */
             border-bottom: 1px solid rgba(197, 168, 128, 0.12); 
         }
         
@@ -159,7 +161,6 @@
             background-color: #F7F5F0 !important; 
         }
         
-        /* 展開時大標列的同步優雅高亮底色 */
         .clickable-row.ui-expanded td {
             background-color: #FAF8F4 !important;
             border-bottom-color: transparent !important;
@@ -169,7 +170,6 @@
             font-weight: 700;
             color: var(--text-dark);
             background-color: #FDFCF9; 
-            text-align: center;
             font-size: 0.95rem;
             letter-spacing: 0.5px;
             border-right: 1px solid rgba(197, 168, 128, 0.12);
@@ -216,7 +216,6 @@
             font-size: 1.05rem; 
         }
 
-        /* 🔒 關鍵修復：細節列移除寫死的 display: none，交給 Bootstrap 原生控制 */
         .detail-row td {
             padding: 0 !important;
             border-bottom: 1px solid rgba(197, 168, 128, 0.12);
@@ -226,16 +225,17 @@
             border-right: 1px solid rgba(197, 168, 128, 0.12);
         }
 
-        /* 獨立的高度與寬度包覆體，完全解耦 Table 排版干擾 */
         .pure-collapse-wrapper {
             width: 100%;
             overflow: hidden;
         }
 
+        /* ✨ 展開後詳細小字的樣式優化 */
         .table-detail-text {
             display: block;
-            font-size: 0.88rem;
-            line-height: 1.85;
+            font-size: 0.95rem; /* ✨ 從 0.88rem 放大至 0.95rem */
+            line-height: 1.7;
+            text-align: center; /* ✨ 小字也維持置中對齊 */
         }
 
         .fuxin-arrow-wrapper {
@@ -408,7 +408,7 @@
                 display: block; 
             }
             .custom-comparison-table td {
-                padding: 22px 14px;
+                padding: 16px 10px;
             }
         }
         @media (max-width: 768px) {
@@ -481,7 +481,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span></h1>
-                    <p class="hero-subtitle fs-5 fw-bold">政府立案新北私就字第 0 6 8 號</p>
+                    <p class="hero-subtitle fs-5 fw-bold">政府立案新北私就字第 0 6 號</p>
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
                         <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
                         <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
@@ -512,9 +512,9 @@
                     <table class="table custom-comparison-table">
                         <thead>
                             <tr>
-                                <th scope="col" style="width: 15%;">項目</th>
+                                <th scope="col" style="width: 16%;">項目</th>
                                 <th scope="col" style="width: 28%;">傳統仲介</th>
-                                <th scope="col" class="fuxin-header" style="width: 29%;">
+                                <th scope="col" class="fuxin-header" style="width: 28%;">
                                     <div class="fuxin-badge"><i class="fas fa-star me-1"></i>專業首選</div><br>
                                     <i class="fas fa-shield-heart text-champagne-gold me-2"></i>福心看護
                                 </th>
@@ -522,7 +522,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- 項目 1 大標列 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-1">
                                 <td class="table-criterion">1. 合法立案</td>
                                 <td>
@@ -536,27 +535,25 @@
                                     <span class="table-focus-text">⚠️ 家屬自行確認證照</span>
                                 </td>
                             </tr>
-                            <!-- 項目 1 詳細小字區 (🔒 完美結合 Bootstrap 原生 Collapse 核心) -->
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-1" class="collapse pure-collapse-wrapper">
-                                        <div class="d-flex" style="width: 100%; background-color: #FAF8F4;">
-                                            <div style="width: 32.9%; padding: 24px 24px 30px 20px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">通常只有一般工商登記，甚至連登記都沒有。一旦派到非法黑工，家屬面臨法律責任。</span>
+                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">通常只有一般工商登記，甚至連登記都沒有。一旦派到非法黑工，家屬面臨法律責任。</span>
                                             </div>
-                                            <div style="width: 34.1%; padding: 24px 20px 30px 20px; background-color: #FAF3E6; box-sizing: border-box;">
+                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
                                                 <span class="table-detail-text" style="color: #805E33; font-weight: 500;">100% 依法守法，省去家屬對黑工的焦慮。</span>
                                             </div>
-                                            <div style="width: 33%; padding: 24px 20px 30px 24px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">屬第三方平台，家屬需自行確認是否遵守法規。</span>
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">屬第三方平台，家屬需自行確認是否遵守法規。</span>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <!-- 項目 2 大標列 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-2">
                                 <td class="table-criterion">2. 人力管理</td>
                                 <td>
@@ -570,27 +567,25 @@
                                     <span class="table-focus-text">⚠️ 找人責任落在家屬</span>
                                 </td>
                             </tr>
-                            <!-- 項目 2 詳細小字區 -->
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-2" class="collapse pure-collapse-wrapper">
-                                        <div class="d-flex" style="width: 100%; background-color: #FAF8F4;">
-                                            <div style="width: 32.9%; padding: 24px 24px 30px 20px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">無法全面查證其專業經驗與背景，照顧品質落差大。</span>
+                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">無法全面查證其專業經驗與背景，照顧品質落差大。</span>
                                             </div>
-                                            <div style="width: 34.1%; padding: 24px 20px 30px 20px; background-color: #FAF3E6; box-sizing: border-box;">
+                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
                                                 <span class="table-detail-text" style="color: #805E33; font-weight: 500;">由福心嚴格篩選、管理態度良好的台籍看護。</span>
                                             </div>
-                                            <div style="width: 33%; padding: 24px 20px 30px 24px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">平台有審核證照，但家屬仍需自行篩選，不知從何著手。</span>
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">平台有審核證照，但家屬仍需自行篩選，不知從何著手。</span>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <!-- 項目 3 大標列 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-3">
                                 <td class="table-criterion">3. 臨時空窗</td>
                                 <td>
@@ -604,27 +599,25 @@
                                     <span class="table-focus-text">⚠️ 存在開天窗的風險</span>
                                 </td>
                             </tr>
-                            <!-- 項目 3 詳細小字區 -->
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-3" class="collapse pure-collapse-wrapper">
-                                        <div class="d-flex" style="width: 100%; background-color: #FAF8F4;">
-                                            <div style="width: 32.9%; padding: 24px 24px 30px 20px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">遇到突發狀況或雙方不合，往往仲介態度越來越差、兩手一攤。</span>
+                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">遇到突發狀況或雙方不合，往往仲介態度越來越差、兩手一攤。</span>
                                             </div>
-                                            <div style="width: 34.1%; padding: 24px 20px 30px 20px; background-color: #FAF3E6; box-sizing: border-box;">
+                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
                                                 <span class="table-detail-text" style="color: #805E33; font-weight: 500;">若因不可抗力需請假，福心將積極尋求調度替補。</span>
                                             </div>
-                                            <div style="width: 33%; padding: 24px 20px 30px 24px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">若臨時取消或請假，只能讓您重新送出需求、被動等待媒合。</span>
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">若臨時取消或請假，只能讓您重新送出需求、被動等待媒合。</span>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <!-- 項目 4 大標列 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-4">
                                 <td class="table-criterion">4. 費用請款</td>
                                 <td>
@@ -638,54 +631,51 @@
                                     <span class="table-focus-text">⚠️ 手續費用，可能疊加</span>
                                 </td>
                             </tr>
-                            <!-- 項目 4 詳細小字區 -->
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-4" class="collapse pure-collapse-wrapper">
-                                        <div class="d-flex" style="width: 100%; background-color: #FAF8F4;">
-                                            <div style="width: 32.9%; padding: 24px 24px 30px 20px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">即便面臨不合理加價，卻因擔心後續照顧不佳只能無奈隱忍。</span>
+                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">即便面臨不合理加價，卻因擔心後續照顧不佳只能無奈隱忍。</span>
                                             </div>
-                                            <div style="width: 34.1%; padding: 24px 20px 30px 20px; background-color: #FAF3E6; box-sizing: border-box;">
+                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
                                                 <span class="table-detail-text" style="color: #805E33; font-weight: 500;">以報價單約定照顧項目，拒絕巧立名目加價。</span>
                                             </div>
-                                            <div style="width: 33%; padding: 24px 20px 30px 24px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">需注意額外疊加的平台費、手續費；遇到特殊需求，較無議價彈性。</span>
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">需注意額外疊加的平台費、手續費；遇到特殊需求，較無議價彈性。</span>
                                             </div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <!-- 項目 5 大標列 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-5">
                                 <td class="table-criterion">5. 客訴處理</td>
                                 <td>
                                     <span class="table-focus-text">⚠️ 無實名評鑑，不怕負評</span>
                                 </td>
                                 <td class="fuxin-column">
-                                    <span class="table-focus-text">✅ 一通電話馬上處理，讓您少操心</span>
+                                    <span class="table-focus-text">✅ 一通電話馬上處理</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
                                 <td>
-                                    <span class="table-focus-text">⚠️ 文字客服冷冰冰，糾紛自行協調</span>
+                                    <span class="table-focus-text">⚠️ 文字客服，糾紛自行協調</span>
                                 </td>
                             </tr>
-                            <!-- 項目 5 詳細小字區 -->
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-5" class="collapse pure-collapse-wrapper">
-                                        <div class="d-flex" style="width: 100%; background-color: #FAF8F4;">
-                                            <div style="width: 32.9%; padding: 24px 24px 30px 20px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">部分業者沒有正式登記，就算被留了負評，改個名字就能重頭來過、毫無約束力。</span>
+                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">部分業者沒有正式登記，就算被留了負評，改個名字就能重頭來過、毫無約束力。</span>
                                             </div>
-                                            <div style="width: 34.1%; padding: 24px 20px 30px 20px; background-color: #FAF3E6; box-sizing: border-box;">
+                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
                                                 <span class="table-detail-text" style="color: #805E33; font-weight: 500;">福心作為合法登記、永續經營的品牌，有負責任的行政督導。</span>
                                             </div>
-                                            <div style="width: 33%; padding: 24px 20px 30px 24px; box-sizing: border-box;">
-                                                <span class="table-detail-text" style="color: #665E5E;">客服多為線上處理，若發生照顧糾紛通常較晚介入、無法到場及時處理。</span>
+                                            <div class="col-4" style="padding: 16px 20px;">
+                                                <span class="table-detail-text text-muted">客服多為線上處理，若發生照顧糾紛通常較晚介入、無法到場及時處理。</span>
                                             </div>
                                         </div>
                                     </div>
@@ -839,11 +829,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             const tableBody = document.querySelector('.custom-comparison-table tbody');
             
-            // 監聽展開事件，切換高亮 UI 底色
             tableBody.addEventListener('show.bs.collapse', function (e) {
                 const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
                 if (triggerRow) {
-                    // 自動關閉其他已展開的面板，達成「手風琴單一開合」極致體驗
                     document.querySelectorAll('.clickable-row').forEach(row => {
                         if (row !== triggerRow && row.classList.contains('ui-expanded')) {
                             const targetId = row.getAttribute('data-bs-target');
@@ -858,13 +846,11 @@
                 }
             });
 
-            // 監聽關閉事件，恢復原本的列外觀
             tableBody.addEventListener('hide.bs.collapse', function (e) {
                 const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
                 if (triggerRow) triggerRow.classList.remove('ui-expanded');
             });
 
-            // 滾動漸顯觀察器 (Scroll Fade-in)
             const observerOptions = {
                 root: null, 
                 rootMargin: '0px',
