@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 📈 SEO 技術優化：鎖定雙北醫院看護費用行情、1966長照補助銜接等核心搜尋詞 -->
-    <title>2026雙北醫院看護費用行情：拒絕病房現場隨意加價與隱藏餐費陷阱｜福心照護</title>
+    <title>2026雙北醫院看護費用行情：拒絕病房現場隨意加價與隱藏陷阱｜福心照護</title>
     <meta name="description" content="2026年台北、新北醫院看護一日多少錢？24小時與12小時陪病價格行情。福心專業照護為您解析如何搭配政府1966長照補助、防範地下個體戶與非法黑工加價陷阱，提供定價契約化、政府立案的台籍短期看護派遣。">
     
     <link rel="icon" type="image/png" href="favicon.png">
@@ -25,6 +25,7 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: var(--bg-ivory);
             color: var(--text-dark);
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         .navbar {
@@ -32,8 +33,21 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(197, 168, 128, 0.15);
         }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            font-weight: 400;
+        }
+        .nav-link:hover {
+            color: var(--champagne-gold) !important;
+        }
         .page-header {
-            padding: 140px 0 60px 0;
+            padding: 160px 0 60px 0;
             background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
             text-align: center;
         }
@@ -63,17 +77,102 @@
             color: #E5DED4;
             padding: 45px 0 30px 0; 
             margin-top: 80px;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 📱 雙軌固定懸浮聯絡按鈕群（與首頁完全同步） */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone {
+            background-color: #ED6A6A; 
+            color: white;
+            font-size: 26px;
+        }
+        .float-phone:hover {
+            color: white;
+            background-color: #DF5959;
+        }
+        .float-line {
+            background-color: #06C755; 
+            color: white;
+            font-size: 30px;
+        }
+        .float-line:hover {
+            color: white;
+            background-color: #05A647;
+        }
+
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 120px 0 60px 0;
+            }
+            .floating-contact-group {
+                bottom: 25px;
+                right: 25px;
+                gap: 12px;
+            }
+            .float-btn {
+                width: 54px;
+                height: 54px;
+            }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- 導覽列（與全站一致） -->
+    <!-- 📱 雙軌固定懸浮聯絡按鈕群 -->
+    <div class="floating-contact-group">
+        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
+    </div>
+
+    <!-- 💻 標準頂部導覽列（與主網頁規格完美一體化） -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html" style="letter-spacing: 2px;">福心照護</a>
-            <div class="justify-content-end">
-                <a href="index.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">返回首頁</a>
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -112,7 +211,7 @@
             <p>然而，在「剛出院返家」的頭幾週，長輩的管路（如鼻胃管、尿管）往往還沒拆除，身體機能最脆弱，非常需要 24 小時全天候有人在旁守護，以防跌倒或發生突發狀況。由於長照 3.0 的居服員一天能提供的時數有限（通常為 1 至 2 小時），在等待外籍看護入境的 3 個月空窗期內，單靠計時的居服員在實務上看顧壓力依然沉重。此時，許多家庭會選擇採用政府的長照 3.0 居服員作為基底，在夜間或密集觀察期，搭配福心的合法台籍短期看護進行全日對接，才能確保長輩的安全與家屬的喘息品質。</p>
 
             <h2>三、 傳統自費看護常見的四個加價陷阱</h2>
-            <p>缺乏法規約束的個人看板或地下仲介，口頭報價往往含糊，到現場常以各式理由要求案家貼補紅包，最常見的狀況包括：</p>
+            <p>缺乏法規约束的個人看板或地下仲介，口頭報價往往含糊，到現場常以各式理由要求案家貼補紅包，最常見的狀況包括：</p>
             <ol>
                 <li><strong>翻身拍背與技術加價：</strong> 以患者體重過重、需要頻繁翻身拍痰，或是身上帶有管路為由，在現場要求每日加收 $200-$300 不等的技術費。</li>
                 <li><strong>要求每日補貼餐費：</strong> 許多個體戶會要求案家額外支付一日三餐的伙食費，或是要求由家屬負責準備便當。</li>
@@ -120,11 +219,11 @@
                 <li><strong>缺少永續經營的履約保證：</strong> 個體戶看護若遇到突發狀況、生病請假或雙方照顧觀念不合，往往兩手一攤直接離開，讓家屬在病房內頓失依靠。</li>
             </ol>
 
-            <h2>四、 福心專業照護的合規承諾：價格契約化，開立正式收據</h2>
+            <h2>四、 福心專業照護的合規承諾：價格契約化，開立正式發票</h2>
             <p>福心管理顧問股份有限公司作為政府特許立案（新北私就字第 068 號）的正規機構，所有自費派遣服務皆遵循嚴謹的法人規範：</p>
             <p><strong>1. 正式報價單約定，拒絕巧立名目：</strong> 在確認派案當下，福心會開立正式的服務契約與報價單，明確載明每日費用與包含的照護項目。合約簽定後，現場人員絕對不能向案家索取任何額外加價或餐費紅包。</p>
             <p><strong>2. 完整的行政與後援團隊：</strong> 服務期間若因不可抗力因素需要請假，福心的行政團隊會負責調度合格的台籍夥伴，確保長輩的照顧不中斷。</p>
-            <p><strong>3. 可開立發票供保險與企業請款：</strong> 我們具備完整的公司法人資格（統一編號：62179070），所有費用皆開立正式收據。不論是企業特約員工需要福委會補助，或是家屬要申請商業醫療險的住院陪病理賠，皆有憑有據、流程完全合規。</p>
+            <p><strong>3. 可開立發票供保險與企業請款：</strong> 我們具備完整的公司法人資格（統一編號：62179070），所有費用皆開立正式發票。不論是企業特約員工需要福委會補助，或是家屬要申請商業醫療險的住院陪病理賠，皆有憑有據、流程完全合規。</p>
             
             <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold); font-size: 1.15rem;">把照護的重擔交給合法的福心，把珍貴的相聚與安心留給家人。</p>
         </div>
@@ -136,10 +235,11 @@
 
     <footer class="text-center py-4">
         <div class="container">
-            <p class="small mb-1">福心管理顧問股份有限公司 © 2026 版權所有</p>
-            <p class="small text-muted mb-0">政府立案新北私就字第 068 號 | 統一編號 62179070</p>
+            <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
+            <p class="small text-muted mb-0">© 2026 福心管理顧問股份有限公司 版權所有。新北私就字第 068 號</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
