@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雙北醫院看護推薦｜福心專業照護：24小時陪病與短期看護服務</title>
+    <title>雙北醫院看護第一推薦｜福心醫院看護：全天24小時看護及短期看護服務</title>
     
     <link rel="icon" type="image/png" href="favicon.png">
     
@@ -264,7 +264,7 @@
             background-color: #FAF6EE !important; 
         }
 
-        /* ─── 📱 新增：手機版方案 B（Tabs 切換二欄對比表）─── */
+        /* ─── 📱 手機版方案 B（Tabs 切換二欄對比表）─── */
         .mobile-tab-view {
             display: none;
         }
@@ -357,38 +357,57 @@
             color: #8A6D45;
         }
 
-        /* ─── 共用與卡片樣式 ─── */
+        /* ─── 💎 精修：減少字數後的精緻型卡片樣式 ─── */
         .premium-text-p {
-            font-size: 1rem !important; 
+            font-size: 1.05rem !important; 
             color: var(--text-muted);
             line-height: 1.75;
             font-weight: 400;
         }
 
+        .compact-card-wrapper {
+            max-width: 380px; /* ✨ 限制最大寬度，避免字少時卡片過寬顯得空洞 */
+            margin: 0 auto;
+        }
+
         .premium-card {
             background: white;
             border: 1px solid rgba(197, 168, 128, 0.12);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 20px; /* ✨ 稍微加圓潤度更具現代高級感 */
+            padding: 35px 24px; /* ✨ 重新分配內距，上高左右緊實 */
             height: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
+            box-shadow: 0 6px 25px rgba(168, 124, 67, 0.03);
         }
         .premium-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(168, 124, 67, 0.08);
         }
         .icon-circle {
-            width: 60px;
-            height: 60px;
-            background-color: #FBF4F4;
+            width: 64px;
+            height: 64px;
+            background-color: #FBF6EE; /* ✨ 改用更柔和的品牌象牙暖色底 */
             border-radius: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             color: var(--champagne-gold);
-            font-size: 1.5rem;
+            font-size: 1.65rem;
+        }
+        
+        /* ✨ 放大卡片內部標題與小字 */
+        .card-title-heavy {
+            font-size: 1.25rem !important;
+            font-weight: 700 !important;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+        }
+        .card-text-comfort {
+            font-size: 1.08rem !important; /* ✨ 放大字體，從 1rem 提升至 1.08rem */
+            line-height: 1.8 !important; /* ✨ 加寬行高，讓少字排版更加舒展大方 */
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         .cert-img-wrapper {
@@ -496,10 +515,10 @@
         /* ─── 📱 響應式斷點控制 ─── */
         @media (max-width: 767px) {
             .table-container-holder {
-                display: none; /* 手機版隱藏大表格 */
+                display: none; 
             }
             .mobile-tab-view {
-                display: block; /* 手機版啟動固定福心之兩欄切換 Tabs */
+                display: block; 
             }
             .hero-section {
                 padding: 120px 0 60px 0;
@@ -527,6 +546,9 @@
             .float-line { font-size: 26px; }
             footer {
                 padding: 35px 0 25px 0;
+            }
+            .compact-card-wrapper {
+                max-width: 100%;
             }
         }
     </style>
@@ -594,7 +616,6 @@
                 </div>
             </div>
 
-            <!-- ─── 💻 電腦與平版版：四欄對比表格 ─── -->
             <div class="table-container-holder fade-in-scroll">
                 <div class="table-responsive">
                     <table class="table custom-comparison-table">
@@ -610,7 +631,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- 項目 1 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-1">
                                 <td class="table-criterion">1. 合法立案</td>
                                 <td><span class="table-focus-text">⚠️ 雇用黑工，面臨罰鍰</span></td>
@@ -633,7 +653,6 @@
                                 </td>
                             </tr>
 
-                            <!-- 項目 2 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-2">
                                 <td class="table-criterion">2. 人力管理</td>
                                 <td><span class="table-focus-text">⚠️ 顧到人不見、態度差</span></td>
@@ -650,13 +669,12 @@
                                         <div class="row g-0 justify-content-center">
                                             <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">無法全面查證其專業經驗與背景，照顧品質落差大。</span></div>
                                             <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">由福心嚴格篩選、管理態度良好的台籍看護。</span></div>
-                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">平台有審核證照，但家屬仍需自行篩選，不知從何著手。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">平台有審核證照，但家屬仍需自行篩選，不知從何著手.</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
-                            <!-- 項目 3 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-3">
                                 <td class="table-criterion">3. 臨時空窗</td>
                                 <td><span class="table-focus-text">⚠️ 兩手一攤，無人可換</span></td>
@@ -679,7 +697,6 @@
                                 </td>
                             </tr>
 
-                            <!-- 項目 4 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-4">
                                 <td class="table-criterion">4. 費用請款</td>
                                 <td><span class="table-focus-text">⚠️ 報價含糊，現場加價</span></td>
@@ -702,7 +719,6 @@
                                 </td>
                             </tr>
 
-                            <!-- 項目 5 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-5">
                                 <td class="table-criterion">5. 客訴處理</td>
                                 <td><span class="table-focus-text">⚠️ 沒有實名，不怕負評</span></td>
@@ -729,25 +745,20 @@
                 </div>
             </div>
 
-            <!-- ─── 📱 手機版方案 B：永遠固定福心在左側的二欄式 Tabs ─── -->
             <div class="mobile-tab-view px-2">
-                <!-- 切換鈕選單 -->
                 <div class="mobile-toggle-nav">
                     <button type="button" class="mobile-toggle-btn active" onclick="switchMobileTab('agency', this)">與傳統仲介對比</button>
                     <button type="button" class="mobile-toggle-btn" onclick="switchMobileTab('platform', this)">與網路平台對比</button>
                 </div>
 
-                <!-- 混合對比大表 -->
                 <table class="mobile-split-table">
                     <thead>
                         <tr>
                             <th class="m-fuxin-header">🏆 福心專業照護</th>
-                            <!-- 右側標題會跟著 JS 改字 -->
                             <th class="m-target-header" id="mobile-right-header">傳統仲介</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- 1. 立案 -->
                         <tr><td colspan="2" class="m-criterion-title">1. 合法立案</td></tr>
                         <tr>
                             <td class="m-fuxin-cell">
@@ -764,7 +775,6 @@
                             </td>
                         </tr>
 
-                        <!-- 2. 管理 -->
                         <tr><td colspan="2" class="m-criterion-title">2. 人力管理</td></tr>
                         <tr>
                             <td class="m-fuxin-cell">
@@ -781,7 +791,6 @@
                             </td>
                         </tr>
 
-                        <!-- 3. 空窗 -->
                         <tr><td colspan="2" class="m-criterion-title">3. 臨時空窗</td></tr>
                         <tr>
                             <td class="m-fuxin-cell">
@@ -798,7 +807,6 @@
                             </td>
                         </tr>
 
-                        <!-- 4. 費用 -->
                         <tr><td colspan="2" class="m-criterion-title">4. 費用請款</td></tr>
                         <tr>
                             <td class="m-fuxin-cell">
@@ -811,11 +819,10 @@
                             </td>
                             <td class="m-target-cell d-none" data-tab-content="platform">
                                 <span class="mobile-split-text-bold">⚠️ 手續費用可能疊加</span>
-                                <span class="mobile-split-text-detail">需注意額外衍生疊加的平台媒合服務費、第三方金流手續費。</span>
+                                <span class="mobile-split-text-detail">需注意額外衍生疊加的平台服務費與信用卡手續費。</span>
                             </td>
                         </tr>
 
-                        <!-- 5. 客訴 -->
                         <tr><td colspan="2" class="m-criterion-title">5. 客訴處理</td></tr>
                         <tr>
                             <td class="m-fuxin-cell">
@@ -849,26 +856,30 @@
                     無法到場的家屬也能隨時掌握家人的復原狀況。
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card">
-                        <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
-                        <h4 class="fw-bold mb-3">資訊零斷層</h4>
-                        <p class="premium-text-p mb-0">建立標準化回報機制，確保醫囑與家屬資訊精準對接。</p>
+            <div class="row g-4 justify-content-center"> <div class="col-md-4 fade-in-scroll">
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center"> <div class="icon-circle mx-auto"><i class="fas fa-chart-line"></i></div>
+                            <h4 class="card-title-heavy mb-3">資訊零斷層</h4>
+                            <p class="card-text-comfort mb-0">建立標準化回報機制，確保醫囑與家屬資訊精準對接。</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card">
-                        <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
-                        <h4 class="fw-bold mb-3">專業行政支援</h4>
-                        <p class="premium-text-p mb-0">一條龍式處理繁瑣手續、各項申請，把庶務留給福心，把陪伴留給家人。</p>
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center">
+                            <div class="icon-circle mx-auto"><i class="fas fa-user-shield"></i></div>
+                            <h4 class="card-title-heavy mb-3">專業行政支援</h4>
+                            <p class="card-text-comfort mb-0">一條龍式處理繁瑣手續、各項申請，把庶務留給福心，把陪伴留給家人。</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card">
-                        <div class="icon-circle"><i class="fas fa-notes-medical"></i></div>
-                        <h4 class="fw-bold mb-3">完整醫囑執行</h4>
-                        <p class="premium-text-p mb-0">結合專業顧問（如物理治療、呼吸治療、營養師），協助案家整合出院準備計畫。</p>
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center">
+                            <div class="icon-circle mx-auto"><i class="fas fa-notes-medical"></i></div>
+                            <h4 class="card-title-heavy mb-3">完整醫囑執行</h4>
+                            <p class="card-text-comfort mb-0">結合專業顧問（如物理治療、呼吸治療、營養師），協助案家整合出院準備計畫。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -879,28 +890,33 @@
         <div class="container py-4">
             <div class="text-center mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-2">福心看護三大核心承諾</h2>
-                <p class="text-muted small">為講究休養品質的家庭，提供細緻的照護守護</p>
+                <p class="text-muted small fs-6">為講究休養品質的家庭，提供細緻的照護守護</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card text-center">
-                        <div class="icon-circle mx-auto"><i class="fas fa-volume-mute"></i></div>
-                        <h5 class="fw-bold">【專注安靜】</h5>
-                        <p class="premium-text-p mb-0">具備專業自律的夥伴，確保病房靜養品質。</p>
+            <div class="row g-4 justify-content-center"> <div class="col-md-4 fade-in-scroll">
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center">
+                            <div class="icon-circle mx-auto"><i class="fas fa-volume-mute"></i></div>
+                            <h5 class="card-title-heavy mb-3">【專注安靜】</h5>
+                            <p class="card-text-comfort mb-0">具備專業自律的夥伴，確保病房靜養品質。</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card text-center">
-                        <div class="icon-circle mx-auto"><i class="fas fa-key"></i></div>
-                        <h5 class="fw-bold">【嚴守隱私】</h5>
-                        <p class="premium-text-p mb-0">接受專業倫理訓練，提供得體的專業陪伴。</p>
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center">
+                            <div class="icon-circle mx-auto"><i class="fas fa-key"></i></div>
+                            <h5 class="card-title-heavy mb-3">【嚴守隱私】</h5>
+                            <p class="card-text-comfort mb-0">接受專業倫理訓練，提供得體的專業陪伴。</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
-                    <div class="premium-card text-center">
-                        <div class="icon-circle mx-auto"><i class="fas fa-clipboard-check"></i></div>
-                        <h5 class="fw-bold">【近況回報】</h5>
-                        <p class="premium-text-p mb-0">將照護日常，轉化為清晰易懂的進度更新。</p>
+                    <div class="compact-card-wrapper">
+                        <div class="premium-card text-center">
+                            <div class="icon-circle mx-auto"><i class="fas fa-clipboard-check"></i></div>
+                            <h5 class="card-title-heavy mb-3">【近況回報】</h5>
+                            <p class="card-text-comfort mb-0">將照護日常，轉化為清晰易懂的進度更新。</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -977,11 +993,9 @@
     <script>
         // 📱 手機版切換 Tabs 邏輯
         function switchMobileTab(targetType, btnElement) {
-            // 1. 切換按鈕 active 樣式
             document.querySelectorAll('.mobile-toggle-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
 
-            // 2. 更改右側 Header 表頭標題文字
             const rightHeader = document.getElementById('mobile-right-header');
             if(targetType === 'agency') {
                 rightHeader.innerText = '傳統仲介';
@@ -989,7 +1003,6 @@
                 rightHeader.innerText = '網路平台';
             }
 
-            // 3. 控制表格內容欄位隱現
             document.querySelectorAll('.mobile-split-table td[data-tab-content]').forEach(td => {
                 if(td.getAttribute('data-tab-content') === targetType) {
                     td.classList.remove('d-none');
