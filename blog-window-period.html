@@ -25,6 +25,7 @@
             font-family: 'Noto Sans TC', sans-serif;
             background-color: var(--bg-ivory);
             color: var(--text-dark);
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
         .navbar {
@@ -32,8 +33,21 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(197, 168, 128, 0.15);
         }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            font-weight: 400;
+        }
+        .nav-link:hover {
+            color: var(--champagne-gold) !important;
+        }
         .page-header {
-            padding: 140px 0 60px 0;
+            padding: 160px 0 60px 0;
             background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
             text-align: center;
         }
@@ -72,6 +86,7 @@
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
         }
         .btn-gold:hover {
             background-color: #B39670;
@@ -83,20 +98,107 @@
             color: #E5DED4;
             padding: 45px 0 30px 0; 
             margin-top: 80px;
+            border-top: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        /* 📱 雙軌固定懸浮聯絡按鈕群（與全站完全同步） */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone {
+            background-color: #ED6A6A; 
+            color: white;
+            font-size: 26px;
+        }
+        .float-phone:hover {
+            color: white;
+            background-color: #DF5959;
+        }
+        .float-line {
+            background-color: #06C755; 
+            color: white;
+            font-size: 30px;
+        }
+        .float-line:hover {
+            color: white;
+            background-color: #05A647;
+        }
+
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 120px 0 60px 0;
+            }
+            .floating-contact-group {
+                bottom: 25px;
+                right: 25px;
+                gap: 12px;
+            }
+            .float-btn {
+                width: 54px;
+                height: 54px;
+            }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- 📱 雙軌固定懸浮聯絡按鈕群 -->
+    <div class="floating-contact-group">
+        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
+    </div>
+
+    <!-- 💻 標準頂部導覽列 -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">福心照護</a>
-            <div class="justify-content-end">
-                <a href="index.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">返回首頁</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
+    <!-- 車頭 Banner -->
     <header class="page-header">
         <div class="container">
             <span class="badge rounded-pill bg-white text-dark px-3 py-2 border mb-3" style="color: var(--champagne-gold) !important;">照護知識</span>
@@ -105,11 +207,12 @@
         </div>
     </header>
 
+    <!-- 文章主體 -->
     <main class="container my-5" style="max-width: 800px;">
         <div class="article-body">
             <p>當家中有長輩因中風、跌倒骨折突然住院，家屬在焦頭爛額之餘，往往會想趕快申請一名外籍看護來減輕家庭的照顧重擔。尤其現行政策規定，只要家屬年滿 80 歲以上，申請外籍看護就免經過傳統繁瑣的「巴氏量表」醫療評估，直接憑身分證即可提出申請。這項便民措施，讓許多家庭省去了跑醫院鑑定的大半心力。</p>
 
-            <p>然而，這也造成了另一個嚴峻的現實：申請門檻降低後，外籍勞工在市場上呈現供不應求的緊繃狀態。加上勞動部於今年（2026年）4月13日起，正式開放家有一名12歲以下孩童的家庭即可申請「外籍家庭幫傭」，官方預估將有高達140萬個家庭受惠。這項新制推出後，大量外籍人力被分流至幫傭市場，導致家庭外籍看護的引進與入境速度嚴重受阻，平均空窗期被拉長至 3 到 4 個月。如果此時家中的長輩病況複雜、照顧條件較辛苦，往往更難在第一時間聘請到合適的移工。</p>
+            <p>然而，這也造成了另一個嚴峻的現實：申請門檻降低後，外籍勞工在市場上呈現供不應求的緊繃狀態。加上勞動部於今年（2026年）4月13日起，正式開放家有一名12歲以下孩童的家庭即可申請「外籍家庭幫傭」，官方預估將有高達140萬個家庭受惠。項新制推出後，大量外籍人力被分流至幫傭市場，導致家庭外籍看護的引進與入境速度嚴重受阻，平均空窗期被拉長至 3 到 4 個月。如果此時家中的長輩病況複雜、照顧條件較辛苦，往往更難在第一時間聘請到合適的移工。</p>
 
             <h2>一、 出院回家，撥打 1966 長照專線夠用嗎？</h2>
             <p>許多家屬知道，長輩出院返家後可以申請政府的公費補助，只要透過手機或市話直撥<strong>「1966 長照專線」</strong>，就能申請政府推行的<strong>「長照 3.0」居服員服務（居家照顧服務）</strong>。居服員可以到家裡幫長輩洗澡、備餐、翻身拍背或協助陪同就醫，費用還有政府補助，確實能減輕不少負擔。</p>
@@ -124,20 +227,20 @@
             </ul>
 
             <div class="info-blockquote">
-                <h4 class="fw-bold mb-2" style="color: var(--primary-pink);"><i class="fas fa-heart-circle-check me-2"></i>福心台籍短期看護：合法且彈性的過渡方案</h4>
+                <h3 class="fw-bold mb-2" style="color: var(--primary-pink); font-size: 1.25rem;"><i class="fas fa-heart-circle-check me-2"></i>福心台籍短期看護：合法且彈性的過渡方案</h3>
                 <p class="mb-0 small">福心照護（新北私就字第 068 號）專為這段「外籍空窗期」提供純自費、免手續的合格台籍照服員派遣。不論是需要幾週的短天數陪伴，或是返家初期的全天候密集看顧，都能與政府的 1966 居服員服務互相搭配，提供最即時的合法全日後援，讓家庭喘息不開天窗。</p>
             </div>
 
             <h2>三、 什麼是真正的「出院返家一條龍銜接」？</h2>
             <p>長輩從大醫院移轉回居家的前幾週，是身體康復的黃金期，也是家屬最手忙腳亂的時候。福心照護打破傳統仲介只派人、不管理的做法，提供全方位的專業對接：</p>
-            <p><strong>1. 院內與居家的人力無縫交接：</strong> 
+            <p><strong>1. 院內與居家的人力無縫交接：</strong> <br>
             在醫院病房陪伴長輩的福心看護夥伴，最了解長輩的用藥、作息與醫囑。出院當天，同一個照護夥伴可以直接跟著長輩回到家中，將院內的高品質照顧無縫延續到居家空間。長輩不需重新適應陌生人，照顧資訊更不會出現斷層。</p>
             
-            <p><strong>2. 整合專業顧問，協助落實居家復健：</strong> 
+            <p><strong>2. 整合專業顧問，協助落實居家復健：</strong> <br>
             福心內部整合了物理治療、呼吸照護與營養師等專家顧問資源。長輩返家初期，我們會協助家屬檢視居家防跌動線、床邊扶手配置，確保醫囑在出院後能被精準執行，加速長輩身體機能的復原。</p>
 
             <h2>四、 價格契約化，給家庭最安心的保障</h2>
-            <p>在等待外籍看護入境的這段過渡期，家屬不需要再承受地下業者隨意喊價、臨時落跑的壓力。福心堅持價格契約化，不論是 12 小時半日班還是 24 小時全日班，皆在派案前提供正式報價單與法人契約保障。所有費用均開立正式收據，讓有需要申請理賠或企業補助的家屬，能夠順利請款、有憑有據。</p>
+            <p>在等待外籍看護入境的這段過渡期，家屬不需要再承受地下業者隨意喊價、臨時落跑的壓力。福心堅持價格契約化，不論是 12 小時半日班還是 24 小時全日班，皆在派案前提供正式報價單與法人契約保障。所有費用均開立正式發票，讓有需要申請理賠或企業補助的家屬，能夠順利請款、有憑有據。</p>
             
             <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold);">把照顧的重擔留給福心，把珍貴的相聚與安心留給家人。在長照的路上，福心是您最穩固、合法的後盾。</p>
         </div>
@@ -147,12 +250,14 @@
         </div>
     </main>
 
+    <!-- 頁尾 -->
     <footer class="text-center">
         <div class="container">
-            <h5 class="fw-bold mb-3" style="color: var(--champagne-gold);">福心管理顧問股份有限公司</h5>
+            <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
             <p class="small text-muted mb-0">© 2026 福心管理顧問股份有限公司 版權所有。新北私就字第 068 號</p>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
