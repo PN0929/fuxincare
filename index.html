@@ -120,7 +120,7 @@
             color: var(--text-dark);
         }
 
-        /* ─── 表格優化區 ─── */
+        /* ─── 💻 電腦版表格優化區 ─── */
         .table-container-holder {
             border: 1px solid rgba(197, 168, 128, 0.25); 
             border-radius: 20px;
@@ -134,22 +134,22 @@
             margin-bottom: 0;
             border-collapse: collapse;
             width: 100%;
-            table-layout: auto; /* ✨ 允許表格依字數自動縮緊 */
+            table-layout: auto; 
         }
         
         .custom-comparison-table th {
             background-color: #F6F3ED; 
             color: var(--text-dark);
             font-weight: 700;
-            padding: 18px 12px; /* ✨ 減少內距以縮小空白 */
-            text-align: center; /* ✨ 文字置中 */
+            padding: 18px 12px; 
+            text-align: center; 
             border-bottom: 1px solid rgba(197, 168, 128, 0.22); 
             letter-spacing: 1px;
         }
         
         .custom-comparison-table td {
-            padding: 16px 12px; /* ✨ 減少內距以縮小空白 */
-            text-align: center; /* ✨ 文字置中 */
+            padding: 16px 12px; 
+            text-align: center; 
             border-bottom: 1px solid rgba(197, 168, 128, 0.12); 
         }
         
@@ -159,11 +159,6 @@
         }
         .custom-comparison-table tbody tr.clickable-row:hover td {
             background-color: #F7F5F0 !important; 
-        }
-        
-        .clickable-row.ui-expanded td {
-            background-color: #FAF8F4 !important;
-            border-bottom-color: transparent !important;
         }
 
         .custom-comparison-table td.table-criterion {
@@ -197,12 +192,6 @@
             margin-bottom: 6px;
             box-shadow: 0 2px 8px rgba(168, 124, 67, 0.25);
         }
-        .clickable-row:hover td.fuxin-column {
-            background-color: #F3EAD9 !important;
-        }
-        .clickable-row.ui-expanded td.fuxin-column {
-            background-color: #FAF3E6 !important;
-        }
 
         .table-focus-text {
             display: block;
@@ -230,12 +219,11 @@
             overflow: hidden;
         }
 
-        /* ✨ 展開後詳細小字的樣式優化 */
         .table-detail-text {
             display: block;
-            font-size: 0.95rem; /* ✨ 從 0.88rem 放大至 0.95rem */
+            font-size: 0.95rem; 
             line-height: 1.7;
-            text-align: center; /* ✨ 小字也維持置中對齊 */
+            text-align: center; 
         }
 
         .fuxin-arrow-wrapper {
@@ -260,14 +248,116 @@
             50% { transform: translateY(4px); }
         }
 
-        .scroll-hint {
-            display: none;
-            color: var(--champagne-gold);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            text-align: right;
+        /* ─── 🌟 電腦版：點擊高亮與全面淡化機制 ─── */
+        .custom-comparison-table.table-active-mode tbody tr {
+            opacity: 0.35; 
+            transition: opacity 0.3s ease, background-color 0.3s ease;
+        }
+        .custom-comparison-table.table-active-mode tbody tr.ui-expanded,
+        .custom-comparison-table.table-active-mode tbody tr.expanded-detail {
+            opacity: 1; 
+        }
+        .custom-comparison-table tbody tr.ui-expanded td {
+            background-color: #EFEBE4 !important; 
+        }
+        .custom-comparison-table tbody tr.expanded-detail td {
+            background-color: #FAF6EE !important; 
         }
 
+        /* ─── 📱 新增：手機版方案 B（Tabs 切換二欄對比表）─── */
+        .mobile-tab-view {
+            display: none;
+        }
+        .mobile-toggle-nav {
+            background-color: #EFECE6;
+            border-radius: 50px;
+            padding: 5px;
+            display: flex;
+            margin-bottom: 25px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+        .mobile-toggle-btn {
+            flex: 1;
+            border: none;
+            background: none;
+            padding: 12px 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .mobile-toggle-btn.active {
+            background-color: var(--champagne-gold);
+            color: white;
+            box-shadow: 0 4px 12px rgba(197, 168, 128, 0.3);
+        }
+        
+        .mobile-split-table {
+            width: 100%;
+            background-color: white;
+            border-collapse: collapse;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            box-shadow: 0 15px 40px rgba(168, 124, 67, 0.05);
+        }
+        .mobile-split-table th {
+            padding: 14px 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .mobile-split-table td {
+            padding: 18px 12px;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.1);
+        }
+        .mobile-split-table .m-criterion-title {
+            background-color: #FDFCF9;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-bottom: 2px solid #F2E7D5;
+            color: var(--text-dark);
+            padding: 12px 10px;
+        }
+        .mobile-split-table .m-fuxin-cell {
+            background-color: #FAF5EC;
+            width: 50%;
+            border-right: 1px solid rgba(197, 168, 128, 0.15);
+        }
+        .mobile-split-table .m-fuxin-header {
+            background-color: #F2E7D5;
+            color: #6B4D24;
+            width: 50%;
+        }
+        .mobile-split-table .m-target-cell {
+            width: 50%;
+        }
+        .mobile-split-table .m-target-header {
+            background-color: #F6F3ED;
+            color: var(--text-dark);
+            width: 50%;
+        }
+        .mobile-split-text-bold {
+            display: block;
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+        .m-fuxin-cell .mobile-split-text-bold {
+            color: #805E33;
+        }
+        .mobile-split-text-detail {
+            display: block;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: var(--text-muted);
+        }
+        .m-fuxin-cell .mobile-split-text-detail {
+            color: #8A6D45;
+        }
+
+        /* ─── 共用與卡片樣式 ─── */
         .premium-text-p {
             font-size: 1rem !important; 
             color: var(--text-muted);
@@ -403,15 +493,14 @@
             background-color: #05A647;
         }
 
-        @media (max-width: 991px) {
-            .scroll-hint {
-                display: block; 
+        /* ─── 📱 響應式斷點控制 ─── */
+        @media (max-width: 767px) {
+            .table-container-holder {
+                display: none; /* 手機版隱藏大表格 */
             }
-            .custom-comparison-table td {
-                padding: 16px 10px;
+            .mobile-tab-view {
+                display: block; /* 手機版啟動固定福心之兩欄切換 Tabs */
             }
-        }
-        @media (max-width: 768px) {
             .hero-section {
                 padding: 120px 0 60px 0;
                 background: linear-gradient(180deg, rgba(253, 251, 247, 0.98) 60%, rgba(243, 232, 233, 0.90) 100%), url('福心形象封面.jpg');
@@ -481,7 +570,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span></h1>
-                    <p class="hero-subtitle fs-5 fw-bold">政府立案新北私就字第 0 6 號</p>
+                    <p class="hero-subtitle fs-5 fw-bold">政府立案新北私就字第 0 6 8 號</p>
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
                         <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
                         <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
@@ -501,12 +590,11 @@
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-3">住院看護怎麼選？</h2>
                 <div class="premium-text-p px-3 mx-auto" style="max-width: 650px;">
-                    家屬常在傳統仲介、網路平台之間迷惘，福心為您比對差異，<strong>請點擊展開說明</strong>
+                    福心為您比對與傳統仲介、網路平台的差異。<strong>點擊表格可查閱細節說明</strong>。
                 </div>
             </div>
 
-            <div class="scroll-hint fade-in-scroll"><i class="fas fa-arrows-alt-h me-1"></i> 請左右滑動查看</div>
-
+            <!-- ─── 💻 電腦與平版版：四欄對比表格 ─── -->
             <div class="table-container-holder fade-in-scroll">
                 <div class="table-responsive">
                     <table class="table custom-comparison-table">
@@ -522,161 +610,116 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- 項目 1 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-1">
                                 <td class="table-criterion">1. 合法立案</td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 雇用黑工面臨罰鍰</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 雇用黑工，面臨罰鍰</span></td>
                                 <td class="fuxin-column">
-                                    <span class="table-focus-text">✅ 政府特許合法立案</span>
+                                    <span class="table-focus-text">✅ 政府特許，合法立案</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 家屬自行確認證照</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 家屬自行 確認證照</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-1" class="collapse pure-collapse-wrapper">
-                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">通常只有一般工商登記，甚至連登記都沒有。一旦派到非法黑工，家屬面臨法律責任。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
-                                                <span class="table-detail-text" style="color: #805E33; font-weight: 500;">100% 依法守法，省去家屬對黑工的焦慮。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">屬第三方平台，家屬需自行確認是否遵守法規。</span>
-                                            </div>
+                                        <div class="row g-0 justify-content-center">
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">通常只有一般工商登記，甚至連登記都沒有。一旦派到非法黑工，家屬面臨法律責任。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">100% 依法守法，省去家屬對黑工的焦慮。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">屬第三方平台，家屬需自行確認是否遵守法規。</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
+                            <!-- 項目 2 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-2">
                                 <td class="table-criterion">2. 人力管理</td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 顧到人不見、態度差</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 顧到人不見、態度差</span></td>
                                 <td class="fuxin-column">
-                                    <span class="table-focus-text">✅ 專業看護拒絕零工心態</span>
+                                    <span class="table-focus-text">✅ 看護拒絕零工心態</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 找人責任落在家屬</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 找人責任落在家屬</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-2" class="collapse pure-collapse-wrapper">
-                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">無法全面查證其專業經驗與背景，照顧品質落差大。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
-                                                <span class="table-detail-text" style="color: #805E33; font-weight: 500;">由福心嚴格篩選、管理態度良好的台籍看護。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">平台有審核證照，但家屬仍需自行篩選，不知從何著手。</span>
-                                            </div>
+                                        <div class="row g-0 justify-content-center">
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">無法全面查證其專業經驗與背景，照顧品質落差大。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">由福心嚴格篩選、管理態度良好的台籍看護。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">平台有審核證照，但家屬仍需自行篩選，不知從何著手。</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
+                            <!-- 項目 3 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-3">
                                 <td class="table-criterion">3. 臨時空窗</td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 兩手一攤無人可換</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 兩手一攤，無人可換</span></td>
                                 <td class="fuxin-column">
                                     <span class="table-focus-text">✅ 後援團隊照顧不中斷</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 存在開天窗的風險</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 存在開天窗風險</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-3" class="collapse pure-collapse-wrapper">
-                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">遇到突發狀況或雙方不合，往往仲介態度越來越差、兩手一攤。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
-                                                <span class="table-detail-text" style="color: #805E33; font-weight: 500;">若因不可抗力需請假，福心將積極尋求調度替補。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">若臨時取消或請假，只能讓您重新送出需求、被動等待媒合。</span>
-                                            </div>
+                                        <div class="row g-0 justify-content-center">
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">遇到突發狀況或雙方不合，往往仲介態度越來越差、兩手一攤。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">若因不可抗力需請假，福心將積極尋求調度替補。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">若臨時取消或請假，只能讓您重新送出需求、被動等待媒合。</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
+                            <!-- 項目 4 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-4">
                                 <td class="table-criterion">4. 費用請款</td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 報價含糊，現場加價</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 報價含糊，現場加價</span></td>
                                 <td class="fuxin-column">
                                     <span class="table-focus-text">✅ 定價透明，有憑有據</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 手續費用，可能疊加</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 手續費用，可能疊加</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-4" class="collapse pure-collapse-wrapper">
-                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">即便面臨不合理加價，卻因擔心後續照顧不佳只能無奈隱忍。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
-                                                <span class="table-detail-text" style="color: #805E33; font-weight: 500;">以報價單約定照顧項目，拒絕巧立名目加價。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">需注意額外疊加的平台費、手續費；遇到特殊需求，較無議價彈性。</span>
-                                            </div>
+                                        <div class="row g-0 justify-content-center">
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">即便面臨不合理加價，卻因擔心後續照顧不佳只能無奈隱忍。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">以報價單約定照顧項目，拒絕巧立名目加價。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">需注意額外疊加的平台費、手續費；遇到特殊需求，較無議價彈性。</span></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
 
+                            <!-- 項目 5 -->
                             <tr class="clickable-row" data-bs-toggle="collapse" data-bs-target="#panel-detail-5">
                                 <td class="table-criterion">5. 客訴處理</td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 無實名評鑑，不怕負評</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 沒有實名，不怕負評</span></td>
                                 <td class="fuxin-column">
-                                    <span class="table-focus-text">✅ 一通電話馬上處理</span>
+                                    <span class="table-focus-text">✅ 一通電話，馬上處理</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td>
-                                    <span class="table-focus-text">⚠️ 文字客服，糾紛自行協調</span>
-                                </td>
+                                <td><span class="table-focus-text">⚠️ 文字客服，協調延遲</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
                                 <td colspan="3">
                                     <div id="panel-detail-5" class="collapse pure-collapse-wrapper">
-                                        <div class="row g-0 justify-content-center" style="background-color: #FAF8F4;">
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">部分業者沒有正式登記，就算被留了負評，改個名字就能重頭來過、毫無約束力。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px; background-color: #FAF3E6;">
-                                                <span class="table-detail-text" style="color: #805E33; font-weight: 500;">福心作為合法登記、永續經營的品牌，有負責任的行政督導。</span>
-                                            </div>
-                                            <div class="col-4" style="padding: 16px 20px;">
-                                                <span class="table-detail-text text-muted">客服多為線上處理，若發生照顧糾紛通常較晚介入、無法到場及時處理。</span>
-                                            </div>
+                                        <div class="row g-0 justify-content-center">
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">部分業者沒有正式登記，就算被留了負評，改個名字就能重頭來過、毫無約束力。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px; background-color: #FAF3E6;"><span class="table-detail-text" style="color: #805E33; font-weight: 500;">福心作為合法登記、永續經營的品牌，有負責任的行政督導。</span></div>
+                                            <div class="col-4" style="padding: 18px 20px;"><span class="table-detail-text text-muted">客服多為線上處理，若發生照顧糾紛通常較晚介入、無法到場及時處理。</span></div>
                                         </div>
                                     </div>
                                 </td>
@@ -684,6 +727,112 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- ─── 📱 手機版方案 B：永遠固定福心在左側的二欄式 Tabs ─── -->
+            <div class="mobile-tab-view px-2">
+                <!-- 切換鈕選單 -->
+                <div class="mobile-toggle-nav">
+                    <button type="button" class="mobile-toggle-btn active" onclick="switchMobileTab('agency', this)">與傳統仲介對比</button>
+                    <button type="button" class="mobile-toggle-btn" onclick="switchMobileTab('platform', this)">與網路平台對比</button>
+                </div>
+
+                <!-- 混合對比大表 -->
+                <table class="mobile-split-table">
+                    <thead>
+                        <tr>
+                            <th class="m-fuxin-header">🏆 福心專業照護</th>
+                            <!-- 右側標題會跟著 JS 改字 -->
+                            <th class="m-target-header" id="mobile-right-header">傳統仲介</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 1. 立案 -->
+                        <tr><td colspan="2" class="m-criterion-title">1. 合法立案</td></tr>
+                        <tr>
+                            <td class="m-fuxin-cell">
+                                <span class="mobile-split-text-bold">✅ 政府特許合法立案</span>
+                                <span class="mobile-split-text-detail">100% 依法守法，省去家屬法律連帶責任的焦慮。</span>
+                            </td>
+                            <td class="m-target-cell" data-tab-content="agency">
+                                <span class="mobile-split-text-bold">⚠️ 雇用黑工面臨罰鍰</span>
+                                <span class="mobile-split-text-detail">通常只有一般工商登記。一旦派到黑工，家屬直接面臨重罰風險。</span>
+                            </td>
+                            <td class="m-target-cell d-none" data-tab-content="platform">
+                                <span class="mobile-split-text-bold">⚠️ 家屬自行確認證照</span>
+                                <span class="mobile-split-text-detail">屬第三方平台媒合，法規與安全把關責任主要仍在案家。</span>
+                            </td>
+                        </tr>
+
+                        <!-- 2. 管理 -->
+                        <tr><td colspan="2" class="m-criterion-title">2. 人力管理</td></tr>
+                        <tr>
+                            <td class="m-fuxin-cell">
+                                <span class="mobile-split-text-bold">✅ 專業看護拒絕零工心態</span>
+                                <span class="mobile-split-text-detail">由福心嚴格篩選、親自行政管理態度良好的台籍看護。</span>
+                            </td>
+                            <td class="m-target-cell" data-tab-content="agency">
+                                <span class="mobile-split-text-bold">⚠️ 顧到人不見、態度差</span>
+                                <span class="mobile-split-text-detail">多為臨時拉人，無法全面查證背景，品質落差非常懸殊。</span>
+                            </td>
+                            <td class="m-target-cell d-none" data-tab-content="platform">
+                                <span class="mobile-split-text-bold">⚠️ 找人責任落在家屬</span>
+                                <span class="mobile-split-text-detail">有名單但無指派權，家屬仍需自行篩選通訊、不知從何挑起。</span>
+                            </td>
+                        </tr>
+
+                        <!-- 3. 空窗 -->
+                        <tr><td colspan="2" class="m-criterion-title">3. 臨時空窗</td></tr>
+                        <tr>
+                            <td class="m-fuxin-cell">
+                                <span class="mobile-split-text-bold">✅ 後援團隊照顧不中斷</span>
+                                <span class="mobile-split-text-detail">若因不可抗力需請假，福心行政團隊將積極尋求總部調度替補。</span>
+                            </td>
+                            <td class="m-target-cell" data-tab-content="agency">
+                                <span class="mobile-split-text-bold">⚠️ 兩手一攤無人可換</span>
+                                <span class="mobile-split-text-detail">遇到看護請假突發狀況，仲介常兩手一攤，家屬被迫請假。</span>
+                            </td>
+                            <td class="m-target-cell d-none" data-tab-content="platform">
+                                <span class="mobile-split-text-bold">⚠️ 存在開天窗的風險</span>
+                                <span class="mobile-split-text-detail">若對方取消，系統只能讓您重新送出媒合，陷入被動等待。</span>
+                            </td>
+                        </tr>
+
+                        <!-- 4. 費用 -->
+                        <tr><td colspan="2" class="m-criterion-title">4. 費用請款</td></tr>
+                        <tr>
+                            <td class="m-fuxin-cell">
+                                <span class="mobile-split-text-bold">✅ 定價透明，有憑有據</span>
+                                <span class="mobile-split-text-detail">以正式報價單約定照顧項目與天數，拒絕巧立名目現場加價。</span>
+                            </td>
+                            <td class="m-target-cell" data-tab-content="agency">
+                                <span class="mobile-split-text-bold">⚠️ 報價含糊，現場加價</span>
+                                <span class="mobile-split-text-detail">案前報價含糊，現場常因翻身、拍背或抽痰要求額外加紅包。</span>
+                            </td>
+                            <td class="m-target-cell d-none" data-tab-content="platform">
+                                <span class="mobile-split-text-bold">⚠️ 手續費用可能疊加</span>
+                                <span class="mobile-split-text-detail">需注意額外衍生疊加的平台媒合服務費、第三方金流手續費。</span>
+                            </td>
+                        </tr>
+
+                        <!-- 5. 客訴 -->
+                        <tr><td colspan="2" class="m-criterion-title">5. 客訴處理</td></tr>
+                        <tr>
+                            <td class="m-fuxin-cell">
+                                <span class="mobile-split-text-bold">✅ 一通電話馬上處理</span>
+                                <span class="mobile-split-text-detail">福心品牌永續經營，擁有負責的行政督導直接到場或協調。</span>
+                            </td>
+                            <td class="m-target-cell" data-tab-content="agency">
+                                <span class="mobile-split-text-bold">⚠️ 無實名評鑑不怕負評</span>
+                                <span class="mobile-split-text-detail">多屬地下媒介。就算被投訴，改個暱稱名號即可重新營業。</span>
+                            </td>
+                            <td class="m-target-cell d-none" data-tab-content="platform">
+                                <span class="mobile-split-text-bold">⚠️ 文字客服糾紛自行協調</span>
+                                <span class="mobile-split-text-detail">客服回應緩慢，發生品質糾紛時通常較晚介入，較無到場支援。</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             
             <div class="text-center mt-5 fade-in-scroll">
@@ -697,7 +846,7 @@
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-3">打破傳統勞力看護模式，導入標準化管理</h2>
                 <div class="premium-text-p px-3 mx-auto" style="max-width: 650px;">
-                    我們致力於降低再住院率的專業看護與服務。同時透過「資訊零斷層」回報機制，讓無法親臨現場的您，也能隨時掌握家人的生理細節。我們嚴守案家隱私，讓您在關鍵時刻，只需專注於最重要的決定。
+                    We致力於降低再住院率的專業看護與服務。同時透過「資訊零斷層」回報機制，讓無法親臨現場的您，也能隨時掌握家人的生理細節。我們嚴守案家隱私，讓您在關鍵時刻，只需專注於最重要的決定。
                 </div>
             </div>
             <div class="row g-4">
@@ -775,7 +924,7 @@
                             </div>
                             <h4 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px;">【官方雙重認證】合法合規最安心</h4>
                             <p class="premium-text-p mb-3">
-                                坊間許多看護機構僅有經濟部公司登記，卻缺乏法定的就業服務許可。福心管理顧問除了擁有合法公司法人身分，更榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
+                                坊間許多看護機構僅有經濟部公司登記，卻缺乏法定的就業服務許可。福心管理顧問除了擁有合法 company 法人身分，更榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
                             </p>
                             <p class="premium-text-p mb-0">
                                 雙重官方認證，代表我們的財務、流程與人力皆受政府嚴格審查，價格契約化、責任清晰化。請家屬務必選擇擁有雙重保障的合法機構，才能真正遠離黑工與無預警棄單的風險。
@@ -826,9 +975,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // 📱 手機版切換 Tabs 邏輯
+        function switchMobileTab(targetType, btnElement) {
+            // 1. 切換按鈕 active 樣式
+            document.querySelectorAll('.mobile-toggle-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // 2. 更改右側 Header 表頭標題文字
+            const rightHeader = document.getElementById('mobile-right-header');
+            if(targetType === 'agency') {
+                rightHeader.innerText = '傳統仲介';
+            } else {
+                rightHeader.innerText = '網路平台';
+            }
+
+            // 3. 控制表格內容欄位隱現
+            document.querySelectorAll('.mobile-split-table td[data-tab-content]').forEach(td => {
+                if(td.getAttribute('data-tab-content') === targetType) {
+                    td.classList.remove('d-none');
+                } else {
+                    td.classList.add('d-none');
+                }
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
+            const tableEl = document.querySelector('.custom-comparison-table');
             const tableBody = document.querySelector('.custom-comparison-table tbody');
             
+            // 💻 電腦版：摺疊面板高亮與其餘變淡邏輯
             tableBody.addEventListener('show.bs.collapse', function (e) {
                 const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
                 if (triggerRow) {
@@ -842,15 +1017,34 @@
                             }
                         }
                     });
+                    
+                    tableEl.classList.add('table-active-mode');
                     triggerRow.classList.add('ui-expanded');
+                    
+                    const detailRow = triggerRow.nextElementSibling;
+                    if (detailRow && detailRow.classList.contains('detail-row')) {
+                        detailRow.classList.add('expanded-detail');
+                    }
                 }
             });
 
             tableBody.addEventListener('hide.bs.collapse', function (e) {
                 const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
-                if (triggerRow) triggerRow.classList.remove('ui-expanded');
+                if (triggerRow) {
+                    triggerRow.classList.remove('ui-expanded');
+                    
+                    const detailRow = triggerRow.nextElementSibling;
+                    if (detailRow) detailRow.classList.remove('expanded-detail');
+                }
+                
+                setTimeout(() => {
+                    if (!tableBody.querySelectorAll('.ui-expanded').length) {
+                        tableEl.classList.remove('table-active-mode');
+                    }
+                }, 100);
             });
 
+            // 滾動觀察器
             const observerOptions = {
                 root: null, 
                 rootMargin: '0px',
