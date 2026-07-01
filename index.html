@@ -3,13 +3,34 @@
 <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>雙北醫院看護第一推薦｜福心醫院看護：全天24小時看護及短期看護服務</title>
     
+    <title>雙北醫院看護派遣推薦｜福心照護：24小時陪病與短期居家銜接服務</title>
+    
+    <meta name="description" content="福心專業雙北醫院看護派遣（新北私就字第068號）。提供台大、北榮、馬偕等各大醫院24小時/12小時照護。定價契約化透明放心，專精外籍看護空窗期短期銜接、出院居家照顧一條龍服務。">
+    <meta name="keywords" content="醫院看護, 雙北看護推薦, 24小時看護, 短期看護, 外籍看護空窗期, 出院照顧">
+    
+    <meta property="og:title" content="雙北醫院看護第一推薦｜福心專業照護">
+    <meta property="og:description" content="把照護的辛勞交給福心，把珍貴的相聚留給家人。政府特許立案，價格透明一條龍服務。">
+    <meta property="og:image" content="福心照護logo.jpg">
+    <meta property="og:type" content="website">
+
     <link rel="icon" type="image/png" href="favicon.png">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "福心管理顧問股份有限公司",
+      "description": "專業雙北醫院看護派遣與居家照顧一條龍服務",
+      "telePhone": "0963-590-368",
+      "areaServed": ["台北市", "新北市"],
+      "taxID": "62179070"
+    }
+    </script>
     
     <style>
         :root {
@@ -366,15 +387,15 @@
         }
 
         .compact-card-wrapper {
-            max-width: 380px; /* ✨ 限制最大寬度，避免字少時卡片過寬顯得空洞 */
+            max-width: 380px; 
             margin: 0 auto;
         }
 
         .premium-card {
             background: white;
             border: 1px solid rgba(197, 168, 128, 0.12);
-            border-radius: 20px; /* ✨ 稍微加圓潤度更具現代高級感 */
-            padding: 35px 24px; /* ✨ 重新分配內距，上高左右緊實 */
+            border-radius: 20px; 
+            padding: 35px 24px; 
             height: 100%;
             transition: all 0.3s ease;
             box-shadow: 0 6px 25px rgba(168, 124, 67, 0.03);
@@ -386,7 +407,7 @@
         .icon-circle {
             width: 64px;
             height: 64px;
-            background-color: #FBF6EE; /* ✨ 改用更柔和的品牌象牙暖色底 */
+            background-color: #FBF6EE; 
             border-radius: 50px;
             display: flex;
             align-items: center;
@@ -396,7 +417,6 @@
             font-size: 1.65rem;
         }
         
-        /* ✨ 放大卡片內部標題與小字 */
         .card-title-heavy {
             font-size: 1.25rem !important;
             font-weight: 700 !important;
@@ -404,8 +424,8 @@
             letter-spacing: 0.5px;
         }
         .card-text-comfort {
-            font-size: 1.08rem !important; /* ✨ 放大字體，從 1rem 提升至 1.08rem */
-            line-height: 1.8 !important; /* ✨ 加寬行高，讓少字排版更加舒展大方 */
+            font-size: 1.08rem !important; 
+            line-height: 1.8 !important; 
             color: var(--text-muted);
             font-weight: 400;
         }
@@ -779,7 +799,7 @@
                         <tr>
                             <td class="m-fuxin-cell">
                                 <span class="mobile-split-text-bold">✅ 專業看護拒絕零工心態</span>
-                                <span class="mobile-split-text-detail">由福心嚴格篩選、親自行政管理態度良好的台籍看護。</span>
+                                <span class="mobile-split-text-detail">由福心嚴格篩選、親自行政管理態度良好的台籍看護.</span>
                             </td>
                             <td class="m-target-cell" data-tab-content="agency">
                                 <span class="mobile-split-text-bold">⚠️ 顧到人不見、態度差</span>
@@ -848,7 +868,19 @@
         </div>
     </section>
 
-    <section class="py-5">
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <h2 class="fw-bold mb-3">最新照護知識與公告</h2>
+                <div class="premium-text-p px-3 mx-auto" style="max-width: 650px;">
+                    福心為您整理最透明、實用的健康與照護指南，協助家屬做出最好的選擇。
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center" id="news-container"></div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background-color: #F9F6F0;">
         <div class="container py-4">
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-3">福心打破傳統看護模式，導入標準化管理</h2>
@@ -856,10 +888,12 @@
                     無法到場的家屬也能隨時掌握家人的復原狀況。
                 </div>
             </div>
-            <div class="row g-4 justify-content-center"> <div class="col-md-4 fade-in-scroll">
+            <div class="row g-4 justify-content-center"> 
+                <div class="col-md-4 fade-in-scroll">
                     <div class="compact-card-wrapper">
-                        <div class="premium-card text-center"> <div class="icon-circle mx-auto"><i class="fas fa-chart-line"></i></div>
-                            <h4 class="card-title-heavy mb-3">資訊零斷層</h4>
+                        <div class="premium-card text-center"> 
+                            <div class="icon-circle mx-auto"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="card-title-heavy mb-3">資訊零斷層</h3>
                             <p class="card-text-comfort mb-0">建立標準化回報機制，確保醫囑與家屬資訊精準對接。</p>
                         </div>
                     </div>
@@ -868,7 +902,7 @@
                     <div class="compact-card-wrapper">
                         <div class="premium-card text-center">
                             <div class="icon-circle mx-auto"><i class="fas fa-user-shield"></i></div>
-                            <h4 class="card-title-heavy mb-3">專業行政支援</h4>
+                            <h3 class="card-title-heavy mb-3">專業行政支援</h3>
                             <p class="card-text-comfort mb-0">一條龍式處理繁瑣手續、各項申請，把庶務留給福心，把陪伴留給家人。</p>
                         </div>
                     </div>
@@ -877,7 +911,7 @@
                     <div class="compact-card-wrapper">
                         <div class="premium-card text-center">
                             <div class="icon-circle mx-auto"><i class="fas fa-notes-medical"></i></div>
-                            <h4 class="card-title-heavy mb-3">完整醫囑執行</h4>
+                            <h3 class="card-title-heavy mb-3">完整醫囑執行</h3>
                             <p class="card-text-comfort mb-0">結合專業顧問（如物理治療、呼吸治療、營養師），協助案家整合出院準備計畫。</p>
                         </div>
                     </div>
@@ -892,11 +926,12 @@
                 <h2 class="fw-bold mb-2">福心看護三大核心承諾</h2>
                 <p class="text-muted small fs-6">為講究休養品質的家庭，提供細緻的照護守護</p>
             </div>
-            <div class="row g-4 justify-content-center"> <div class="col-md-4 fade-in-scroll">
+            <div class="row g-4 justify-content-center"> 
+                <div class="col-md-4 fade-in-scroll">
                     <div class="compact-card-wrapper">
                         <div class="premium-card text-center">
                             <div class="icon-circle mx-auto"><i class="fas fa-volume-mute"></i></div>
-                            <h5 class="card-title-heavy mb-3">【專注安靜】</h5>
+                            <h3 class="card-title-heavy mb-3">【專注安靜】</h3>
                             <p class="card-text-comfort mb-0">具備專業自律的夥伴，確保病房靜養品質。</p>
                         </div>
                     </div>
@@ -905,7 +940,7 @@
                     <div class="compact-card-wrapper">
                         <div class="premium-card text-center">
                             <div class="icon-circle mx-auto"><i class="fas fa-key"></i></div>
-                            <h5 class="card-title-heavy mb-3">【嚴守隱私】</h5>
+                            <h3 class="card-title-heavy mb-3">【嚴守隱私】</h3>
                             <p class="card-text-comfort mb-0">接受專業倫理訓練，提供得體的專業陪伴。</p>
                         </div>
                     </div>
@@ -914,7 +949,7 @@
                     <div class="compact-card-wrapper">
                         <div class="premium-card text-center">
                             <div class="icon-circle mx-auto"><i class="fas fa-clipboard-check"></i></div>
-                            <h5 class="card-title-heavy mb-3">【近況回報】</h5>
+                            <h3 class="card-title-heavy mb-3">【近況回報】</h3>
                             <p class="card-text-comfort mb-0">將照護日常，轉化為清晰易懂的進度更新。</p>
                         </div>
                     </div>
@@ -938,7 +973,7 @@
                             <div class="cert-img-wrapper text-center">
                                 <img src="license.jpg" alt="新北市政府私立就業服務機構許可證" class="cert-img">
                             </div>
-                            <h4 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px;">【官方雙重認證】合法合規最安心</h4>
+                            <h3 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px; font-size: 1.25rem;">【官方雙重認證】合法合規最安心</h3>
                             <p class="premium-text-p mb-3">
                                 坊間許多看護機構僅有經濟部公司登記，卻缺乏法定的就業服務許可。福心榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
                             </p>
@@ -954,7 +989,7 @@
                             <div class="cert-img-wrapper text-center">
                                 <img src="award.jpg" alt="照護團隊第一名優秀獎狀" class="cert-img">
                             </div>
-                            <h4 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px;">【專業經驗團隊】嚴選細心看護</h4>
+                            <h3 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px; font-size: 1.25rem;">【專業經驗團隊】嚴選細心看護</h3>
                             <p class="premium-text-p mb-3">
                                 優質的照顧，來自於扎實的訓練與對細節的專注。福心的合作夥伴皆受政府指派機構之專業特訓。
                             </p>
@@ -972,7 +1007,7 @@
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-7">
-                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
+                    <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
                     </p>
@@ -1075,6 +1110,34 @@
 
             const animatedElements = document.querySelectorAll('.fade-in-scroll');
             animatedElements.forEach(el => observer.observe(el));
+
+            // 🔄 這裡自動從 GitHub 上的 news.json 抓取最新文章填入首頁文章區塊
+            fetch('news.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('news-container');
+                    if (container) {
+                        container.innerHTML = ''; 
+                        const latestPosts = data.slice(0, 3); // 限制首頁永遠只抓最新 3 篇
+
+                        latestPosts.forEach(post => {
+                            const cardHtml = `
+                                <div class="col-md-4">
+                                    <div class="premium-card d-flex flex-column justify-content-between p-4" style="height: 100%;">
+                                        <div>
+                                            <span class="badge mb-2" style="background-color: var(--champagne-gold) !important; color: white;">${post.tag}</span>
+                                            <h3 class="fw-bold mb-3" style="font-size: 1.15rem; line-height: 1.5; color: var(--text-dark);">${post.title}</h3>
+                                            <p class="small text-muted mb-4"><i class="far fa-calendar-alt me-2"></i>${post.date}</p>
+                                        </div>
+                                        <a href="${post.link}" class="text-decoration-none fw-bold" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></a>
+                                    </div>
+                                </div>
+                            `;
+                            container.innerHTML += cardHtml;
+                        });
+                    }
+                })
+                .catch(error => console.error('最新消息讀取失敗，請確認 news.json 檔案是否存在:', error));
         });
     </script>
 </body>
