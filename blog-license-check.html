@@ -18,6 +18,7 @@
             --dusty-rose: #E8C5C8; 
             --champagne-gold: #C5A880; 
             --bg-ivory: #FDFBF7; 
+            --bg-warm-khaki: #F9F6F0;
             --text-dark: #3A3535; 
             --text-muted: #5A5252;
         }
@@ -93,6 +94,27 @@
             color: white;
             transform: translateY(-2px);
         }
+        
+        /* ─── 💎 延伸閱讀與推薦區塊精品樣式 ─── */
+        .recommend-card-link {
+            text-decoration: none !important;
+            color: inherit !important;
+            display: block;
+        }
+        .recommend-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 124, 67, 0.02);
+        }
+        .recommend-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
+            border-color: var(--dusty-rose);
+        }
+
         footer {
             background-color: #4A4444; 
             color: #E5DED4;
@@ -101,7 +123,7 @@
             border-top: 1px solid rgba(197, 168, 128, 0.15);
         }
 
-        /* 📱 雙軌固定懸浮聯絡按鈕群（與首頁完全同步） */
+        /* 📱 雙軌固定懸浮聯絡按鈕群 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -174,7 +196,7 @@
         </a>
     </div>
 
-    <!-- 💻 標準頂部導覽列（與主網頁規格完美一體化） -->
+    <!-- 💻 標準頂部導覽列 -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">福心照護</a>
@@ -244,19 +266,49 @@
 
             <div class="step-box">
                 <h3 class="fw-bold" style="color: var(--champagne-gold); font-size: 1.2rem;"><i class="fas fa-id-card me-2"></i>步驟 3：現場核對照服員雙證件</h3>
-                <p class="mb-0 small text-muted">當看護夥伴抵達病房或家中時，合法機構的行政督導會配合出示看護夥伴的「中華民國國民身分證」與政府核發的「照顧服務員訓練結業證書（或照服員單一級技術士證照）」，確保來的人員具備專業資格，且完全無黑工疑慮。</p>
+                <p class="mb-0 small text-muted">當看護夥伴抵達病房或家中時，合法機構的行政督導會配合出示看護夥伴的「中華民國國民身分證 animate」與政府核發的「照顧服務員訓練結業證書（或照服員單一級技術士證照）」，確保來的人員具備專業資格，且完全無黑工疑慮。</p>
             </div>
 
             <h2>三、 選擇福心：政府特許立案，值得信賴的法人規格</h2>
             <p>福心管理顧問股份有限公司作為大雙北地區深耕專業的指標廠商，我們不僅在經濟部正式登記（統一編號：62179070），更是榮獲新北市政府核發<strong>「私立就業服務機構許可證」（新北私就字第 068 號）</strong>的特許正規廠商。</p>
             
-            <p>因為我們百分之百合法合規、流程受政府嚴格監督，我們具備完整的對接法人（公司對公司）配合能力，能開立正式收據、提供定價契約化保障，這也是為什麼許多中大型企業指名福心作為「企業員工家屬照護特約廠商」的核心原因。</p>
+            <p>因為我們百分之百合法合規、流程受政府嚴格監督，我們具備完整的對接法人（公司對公司）配合能力，能開立正式發票、提供定價契約化保障，這也是為什麼許多中大型企業指名福心作為「企業員工家屬照護特約廠商」的核心原因。</p>
             
             <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold);">把照護的安全防線交給合法的福心，把相聚的平靜留給家人。</p>
-        </div>
+            
+            <div class="text-center my-5">
+                <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥福心官方專線：0963-590-368</a>
+            </div>
 
-        <div class="text-center mt-5">
-            <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥福心官方專線：0963-590-368</a>
+            <hr class="my-5" style="border-top: 1px solid rgba(197, 168, 128, 0.2);">
+
+            <!-- ─── 🔗 新增：延伸閱讀與核心推薦跳轉區塊（採大範圍點擊精品方框） ─── -->
+            <div class="mt-5">
+                <h4 class="fw-bold mb-4" style="font-size: 1.2rem; color: var(--text-dark); border-left: 4px solid var(--dusty-rose); padding-left: 10px;">延伸閱讀與推薦服務</h4>
+                <div class="row g-4">
+                    <!-- 左邊卡片：直達核心價目項目頁 -->
+                    <div class="col-md-6">
+                        <a href="services.html" class="recommend-card-link">
+                            <div class="recommend-card">
+                                <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">服務項目</span>
+                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">2026 雙北看護收費標準與照護項目細節</h4>
+                                <p class="small text-muted mb-0">點擊查看福心醫院陪病照護、出院返家銜接的計費標準與完整契約內容。 <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 右邊卡片：引導閱讀另一篇高流量政策文 -->
+                    <div class="col-md-6">
+                        <a href="blog-window-period.html" class="recommend-card-link">
+                            <div class="recommend-card">
+                                <span class="badge mb-2" style="background-color: var(--dusty-rose); color: var(--text-dark);">過渡指南</span>
+                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">等外籍看護空窗期要3個月？長照3.0銜接攻略</h4>
+                                <p class="small text-muted mb-0">深度解析 2026 免巴氏量表與家庭幫傭新制下，如何活用 1966 專線進行短天數自費對接。 <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -268,6 +320,5 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
