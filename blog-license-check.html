@@ -95,11 +95,12 @@
             transform: translateY(-2px);
         }
         
-        /* ─── 💎 延伸閱讀與推薦區塊精品樣式 ─── */
+        /* ─── 💎 延伸閱讀與推薦區塊精品樣式（強效等高自適應） ─── */
         .recommend-card-link {
             text-decoration: none !important;
             color: inherit !important;
-            display: block;
+            display: flex; /* ✨ 讓 <a> 變為 Flex 容器 */
+            height: 100%; /* ✨ 強制拉滿父層高度 */
         }
         .recommend-card {
             background: white;
@@ -108,6 +109,7 @@
             padding: 24px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(168, 124, 67, 0.02);
+            width: 100%; /* ✨ 寬度填滿 */
         }
         .recommend-card:hover {
             transform: translateY(-4px);
@@ -123,7 +125,7 @@
             border-top: 1px solid rgba(197, 168, 128, 0.15);
         }
 
-        /* 📱 雙軌固定懸浮聯絡按鈕群 */
+        /* 📱 雙軌固定懸浮聯絡按鈕群（與首頁完全同步） */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -196,7 +198,7 @@
         </a>
     </div>
 
-    <!-- 💻 標準頂部導覽列 -->
+    <!-- 💻 標準頂部導覽列（與主網頁規格完美一體化） -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">福心照護</a>
@@ -232,12 +234,12 @@
     <!-- 文章主體 -->
     <main class="container my-5" style="max-width: 800px;">
         <div class="article-body">
-            <p>當長輩突然住院，全家人往往一陣手忙腳亂，只要打聽到病房現場「有人明天可以來顧」，通常就立刻付錢簽約，完全無暇細查照服員的身分。然而，台灣醫療與照護人力市場中，隱藏著許多未經政府許可、私下媒介人力的非正規廠商與非法黑工。</p>
+            <p>當長輩突然住院，全家人往往一陣手忙腳亂，只要打聽到病房現場「有人明天可以來顧」，通常就立刻付錢簽約，完全無暇細查照服員的身分。然而，台灣醫療與照護人力市場中，隱藏著許多未經政府許可、私下媒介人力的非正規廠商與非法個體戶。</p>
 
             <p>許多家屬常有一個誤解：「只要對方拿得出蓋有公司章的收據，應該就是合法機構吧？」這在法規上其實是很大的盲點。今天福心照護團隊就教您如何在簽約前，透過簡單的官方管道查驗仲介的真實資格，保護家人也保護自己的權益。</p>
 
             <h2>一、 核心法規：有「公司登記」不等於可以「派遣看護」</h2>
-            <p>這是最常見的法律漏洞。很多地下不肖業者會去經濟部申請一個「XX管理顧問公司」或「XX企業社」的工商登記，並拿這張核准函向家屬宣稱自己合法。但根據中華民國就業服務法規定，<strong>凡是涉及「媒介、派遣台籍照顧服務員（看護）或外籍移工」之業務，屬於政府嚴格管制的特許行業，機構必須額外取得地方政府核發的「私立就業服務機構許可證」才能合法營業。</strong></p>
+            <p>這是最常見的法律漏洞。很多地下不肖業者會去經濟部申請一個「XX管理顧問公司」或「XX企業社」的工商登記，並拿這張核准函向家屬宣稱自己合法。但根據中華民國就業服務法規定，<strong>凡是涉及「媒介、派遣台籍照顧服務員（看護）或外籍移工」之業務，屬於政府嚴格管制的特許行業，機構必須額外取得勞動部或地方政府核發的「私立就業服務機構許可證」才能合法營業。</strong></p>
             <p>如果一家仲介只有一般工商登記，卻拿不出許可證字號，在法規上依然屬於非法媒介。一旦他們派來的短期人力出現竊盜、不當照顧，甚至是非法外籍黑工（逃逸移工），這類地下業者往往直接將聯絡方式封鎖便人間蒸發，家屬不僅求償無門，還必須承擔雇用非法外籍勞工的連帶法律責任。</p>
 
             <h2>二、 正確查驗合法看護廠商的 3 個步驟</h2>
@@ -270,7 +272,7 @@
             </div>
 
             <h2>三、 選擇福心：政府特許立案，值得信賴的法人規格</h2>
-            <p>福心管理顧問股份有限公司作為大雙北地區深耕專業的指標廠商，我們不僅在經濟部正式登記（統一編號：62179070），更是榮獲新北市政府核發<strong>「私立就業服務機構許可證」（新北私就字第 068 號）</strong>的特許正規廠商。</p>
+            <p>福心管理顧問股份有限公司作為大雙北地區深耕專業的指標廠商，我們傾心在經濟部正式登記（統一編號：62179070），更是榮獲新北市政府核發<strong>「私立就業服務機構許可證」（新北私就字第 068 號）</strong>的特許正規廠商。</p>
             
             <p>因為我們百分之百合法合規、流程受政府嚴格監督，我們具備完整的對接法人（公司對公司）配合能力，能開立正式發票、提供定價契約化保障，這也是為什麼許多中大型企業指名福心作為「企業員工家屬照護特約廠商」的核心原因。</p>
             
@@ -282,27 +284,33 @@
 
             <hr class="my-5" style="border-top: 1px solid rgba(197, 168, 128, 0.2);">
 
-            <!-- ─── 🔗 新增：延伸閱讀與核心推薦跳轉區塊（採大範圍點擊精品方框） ─── -->
+            <!-- ─── 🔗 延伸閱讀與核心推薦跳轉區塊（✨ 已修復：格線具備彈性且絕對等高） ─── -->
             <div class="mt-5">
                 <h4 class="fw-bold mb-4" style="font-size: 1.2rem; color: var(--text-dark); border-left: 4px solid var(--dusty-rose); padding-left: 10px;">延伸閱讀與推薦服務</h4>
-                <div class="row g-4">
+                <div class="row g-4 d-flex align-items-stretch"> <!-- ✨ 確保 row 底下子元件能同等拉長 -->
                     <!-- 左邊卡片：直達核心價目項目頁 -->
                     <div class="col-md-6">
                         <a href="services.html" class="recommend-card-link">
-                            <div class="recommend-card">
-                                <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">服務項目</span>
-                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">2026 雙北看護收費標準與照護項目細節</h4>
-                                <p class="small text-muted mb-0">點擊查看福心醫院陪病照護、出院返家銜接的計費標準與完整契約內容。 <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 卡片內部元件上下對稱 -->
+                                <div>
+                                    <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">服務項目</span>
+                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">2026 雙北看護收費標準與照護項目細節</h4>
+                                    <p class="small text-muted mb-3">點擊查看福心醫院陪病照護、出院返家銜接的計費標準與完整契約內容。</p>
+                                </div>
+                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
                             </div>
                         </a>
                     </div>
                     <!-- 右邊卡片：引導閱讀另一篇高流量政策文 -->
                     <div class="col-md-6">
                         <a href="blog-window-period.html" class="recommend-card-link">
-                            <div class="recommend-card">
-                                <span class="badge mb-2" style="background-color: var(--dusty-rose); color: var(--text-dark);">過渡指南</span>
-                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">等外籍看護空窗期要3個月？長照3.0銜接攻略</h4>
-                                <p class="small text-muted mb-0"> 2026 免巴氏量表與家庭幫傭新制下，1966專線與短天數喘息自費如何活用？ <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 即使字少也強迫與左方同高 -->
+                                <div>
+                                    <span class="badge mb-2" style="background-color: var(--dusty-rose); color: var(--text-dark);">過渡指南</span>
+                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">等外籍看護空窗期要3個月？長照3.0銜接攻略</h4>
+                                    <p class="small text-muted mb-3">2026 免巴氏量表與家庭幫傭新制下，1966專線與短天數喘息自費如何活用？</p>
+                                </div>
+                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
                             </div>
                         </a>
                     </div>
@@ -320,5 +328,6 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
