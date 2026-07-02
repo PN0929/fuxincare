@@ -72,6 +72,27 @@
             border-left: 4px solid var(--champagne-gold);
             color: #805E33;
         }
+        
+        /* ─── 💎 延伸閱讀與推薦區塊精品樣式 ─── */
+        .recommend-card-link {
+            text-decoration: none !important;
+            color: inherit !important;
+            display: block;
+        }
+        .recommend-card {
+            background: white;
+            border: 1px solid rgba(197, 168, 128, 0.15);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(168, 124, 67, 0.02);
+        }
+        .recommend-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
+            border-color: var(--dusty-rose);
+        }
+
         footer {
             background-color: #4A4444; 
             color: #E5DED4;
@@ -208,10 +229,10 @@
             <h2>二、 搭配 1966 長照專線與居服員的補助銜接</h2>
             <p>許多家庭會考慮透過手機直撥 <strong>1966 長照專線</strong>，為長輩申請政府的<strong>長照 3.0 居服員服務（居家照顧服務）</strong>。這項政策對於返家休養的長輩提供了良好的公費點到點照顧，例如協助洗澡、備餐或陪同回診。</p>
             
-            <p>然而，在「剛出院返家」的頭幾週，長輩的管路（如鼻胃管、尿管）往往還沒拆除，身體機能最脆弱，非常需要 24 小時全天候有人在旁守護，以防跌倒或發生突發狀況。由於長照 3.0 的居服員一天能提供的時數有限（通常為 1 至 2 小時），在等待外籍看護入境的 3 個月空窗期內，單靠計時的居服員在實務上看顧壓力依然沉重。此時，許多家庭會選擇採用政府的長照 3.0 居服員作為基底，在夜間或密集觀察期，搭配福心的合法台籍短期看護進行全日對接，才能確保長輩的安全與家屬的喘息品質。</p>
+            <p>然而，在「剛出院返家」的頭幾週，長輩的管路（如鼻胃管、尿管）往往還沒拆除，身體機能最脆弱，非常需要 24 小時全天候有人在旁守護，以防跌倒或發生突發狀況。由於長照 3.0 的居服員一天能提供的時數有限（通常為 1 至 2 小時），在等待外籍看護入境的 3 個月空窗期內，單靠計時的居服員在實務上看顧压力依然沉重。此時，許多家庭會選擇採用政府的長照 3.0 居服員作為基底，在夜間或密集觀察期，搭配福心的合法台籍短期看護進行全日對接，才能確保長輩的安全與家屬的喘息品質。</p>
 
             <h2>三、 傳統自費看護常見的四個加價陷阱</h2>
-            <p>缺乏法規约束的個人看板或地下仲介，口頭報價往往含糊，到現場常以各式理由要求案家貼補紅包，最常見的狀況包括：</p>
+            <p>缺乏法規約束的個人看板或地下仲介，口頭報價往往含糊，到現場常以各式理由要求案家貼補紅包，最常見的狀況包括：</p>
             <ol>
                 <li><strong>翻身拍背與技術加價：</strong> 以患者體重過重、需要頻繁翻身拍痰，或是身上帶有管路為由，在現場要求每日加收 $200-$300 不等的技術費。</li>
                 <li><strong>要求每日補貼餐費：</strong> 許多個體戶會要求案家額外支付一日三餐的伙食費，或是要求由家屬負責準備便當。</li>
@@ -226,10 +247,40 @@
             <p><strong>3. 可開立發票供保險與企業請款：</strong> 我們具備完整的公司法人資格（統一編號：62179070），所有費用皆開立正式發票。不論是企業特約員工需要福委會補助，或是家屬要申請商業醫療險的住院陪病理賠，皆有憑有據、流程完全合規。</p>
             
             <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold); font-size: 1.15rem;">把照護的重擔交給合法的福心，把珍貴的相聚與安心留給家人。</p>
-        </div>
+            
+            <div class="text-center my-5">
+                <a href="tel:0963590368" class="btn btn-lg px-5 py-3 text-white" style="background-color: var(--champagne-gold); border-radius: 50px; box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3); font-size: 1.1rem; text-decoration: none; display: inline-block;"><i class="fas fa-phone-alt me-2"></i>直撥福心官方專線：0963-590-368</a>
+            </div>
 
-        <div class="text-center mt-5">
-            <a href="tel:0963590368" class="btn btn-lg px-5 py-3 text-white" style="background-color: var(--champagne-gold); border-radius: 50px; box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3); font-size: 1.1rem; text-decoration: none; display: inline-block;"><i class="fas fa-phone-alt me-2"></i>直撥福心官方專線：0963-590-368</a>
+            <hr class="my-5" style="border-top: 1px solid rgba(197, 168, 128, 0.2);">
+
+            <!-- ─── 🔗 延伸閱讀與核心推薦跳轉區塊（採大範圍點擊精品方框） ─── -->
+            <div class="mt-5">
+                <h4 class="fw-bold mb-4" style="font-size: 1.2rem; color: var(--text-dark); border-left: 4px solid var(--dusty-rose); padding-left: 10px;">延伸閱讀與推薦服務</h4>
+                <div class="row g-4">
+                    <!-- 左邊卡片：引導閱讀政策過渡指南 -->
+                    <div class="col-md-6">
+                        <a href="blog-window-period.html" class="recommend-card-link">
+                            <div class="recommend-card">
+                                <span class="badge mb-2" style="background-color: var(--dusty-rose); color: var(--text-dark);">過渡指南</span>
+                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">等外籍看護空窗期要3個月？長照3.0銜接攻略</h4>
+                                <p class="small text-muted mb-0">深度解析 2026 免巴氏量表與家庭幫傭新制下，如何活用 1966 專線進行短天數自費對接。 <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- 右邊卡片：引導閱讀法規識別指南 -->
+                    <div class="col-md-6">
+                        <a href="blog-license-check.html" class="recommend-card-link">
+                            <div class="recommend-card">
+                                <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">法規安全</span>
+                                <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">如何識別合法看護仲介？3步驟避開非法黑工</h4>
+                                <p class="small text-muted mb-0">教您避開官方系統盲點，直接看廠商是否能主動出示新北私就字第 068 號實體許可證。 <i class="fas fa-arrow-right ms-1" style="color: var(--champagne-gold);"></i></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
