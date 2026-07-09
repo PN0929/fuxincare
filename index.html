@@ -95,6 +95,19 @@
             letter-spacing: 1px;
         }
 
+        /* 📋 優化：上班時間提示小區塊（Notice Badge 樣式） */
+        .work-time-badge {
+            display: inline-block;
+            background-color: #F4EFE6;
+            color: #615757;
+            font-weight: 400;
+            font-size: 0.88rem !important;
+            padding: 6px 16px;
+            border-radius: 50px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            letter-spacing: 0.5px;
+        }
+
         .hero-logo-circle-wrapper {
             padding: 6px; 
             background: white;
@@ -147,7 +160,7 @@
             color: var(--text-dark);
         }
 
-        /* 🏷️ 新增：紅框處「四大核心服務列」專用樣式 */
+        /* 🏷️ 紅框處「四大核心服務列」樣式 */
         .hero-quick-services {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -179,7 +192,7 @@
             white-space: nowrap;
         }
 
-        /* ─── 💻 電腦版表格優化區 ─── */
+        /* ─── 💻 電腦版表格區 ─── */
         .table-container-holder {
             border: 1px solid rgba(197, 168, 128, 0.25); 
             border-radius: 20px;
@@ -307,7 +320,6 @@
             50% { transform: translateY(4px); }
         }
 
-        /* ─── 🌟 電腦版：點擊高亮與全面淡化機制 ─── */
         .custom-comparison-table.table-active-mode tbody tr {
             opacity: 0.35; 
             transition: opacity 0.3s ease, background-color 0.3s ease;
@@ -323,7 +335,7 @@
             background-color: #FAF6EE !important; 
         }
 
-        /* ─── 📱 手機版方案 B（Tabs 切換二欄對比表）─── */
+        /* ─── 📱 手機版二欄對比表 ─── */
         .mobile-tab-view {
             display: none;
         }
@@ -416,7 +428,6 @@
             color: #8A6D45;
         }
 
-        /* ─── 💎 精修：精緻型卡片樣式 ─── */
         .premium-text-p {
             font-size: 1.05rem !important; 
             color: var(--text-muted);
@@ -495,39 +506,31 @@
             transform: scale(1.02);
         }
 
-        .accordion-item {
-            background-color: white;
-            border: 1px solid rgba(197, 168, 128, 0.12) !important;
-            margin-bottom: 15px;
-            border-radius: 12px !important;
-            overflow: hidden;
-        }
-        .accordion-button {
-            background-color: white !important;
-            color: var(--text-dark) !important;
-            font-weight: 500;
-            box-shadow: none !important;
-            padding: 20px;
-        }
-        .accordion-button:not(.collapsed) {
-            color: var(--champagne-gold) !important;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
-        }
-        .accordion-body {
-            padding: 20px;
-        }
-
+        /* ─── 💎 精修：頁尾視覺大減重樣式 ─── */
         footer {
-            background-color: #4A4444; 
+            background-color: #3D3838; /* 換成更有呼吸感、內斂的暖深褐灰 */
             color: #E5DED4;
-            padding: 45px 0 30px 0; 
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
+            padding: 55px 0 35px 0; 
+            border-top: 1px solid rgba(197, 168, 128, 0.12);
+        }
+        .footer-divider {
+            border-top: 1px solid rgba(229, 222, 212, 0.1);
+            margin: 25px 0;
+            width: 100%;
+        }
+        /* 讓大量 SEO 字眼退回背景的隱形霧灰樣式 */
+        .footer-seo-text {
+            font-size: 0.82rem !important;
+            line-height: 1.7;
+            color: #8C847A !important; /* 精緻霧灰，不刺眼、不沉重，完美平衡存在感 */
+            text-align: justify;
         }
 
+        /* ─── ✨ 核心全站動畫機制 ─── */
         .fade-in-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            transform: translateY(35px);
+            transition: opacity 0.85s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.85s cubic-bezier(0.215, 0.610, 0.355, 1.000);
             will-change: opacity, transform;
         }
         .fade-in-scroll.visible {
@@ -622,7 +625,7 @@
             .float-phone { font-size: 22px; }
             .float-line { font-size: 26px; }
             footer {
-                padding: 35px 0 25px 0;
+                padding: 40px 0 25px 0;
             }
             .compact-card-wrapper {
                 max-width: 100%;
@@ -632,7 +635,7 @@
 </head>
 <body>
 
-    <!-- 📱 右下角固定懸浮聯絡按鈕：全面改為市話優先與一鍵撥打 -->
+    <!-- 📱 右下角懸浮按鈕：市話一鍵撥打優先 -->
     <div class="floating-contact-group">
         <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
             <i class="fas fa-phone-alt"></i>
@@ -668,33 +671,35 @@
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center d-flex">
-                <div class="col-lg-7 text-center text-lg-start">
+                <!-- ✨ 已加入動畫：第一屏主文案進場動畫 -->
+                <div class="col-lg-7 text-center text-lg-start fade-in-scroll">
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span></h1>
                     <div class="hero-subtitle fs-5 fw-bold">
                         政府立案新北私就字第 068 號
                         <span class="d-block mt-2 text-muted fw-normal fs-6" style="letter-spacing: 0.5px; line-height: 1.6;">
                             <i class="fas fa-circle-info me-1 text-gold"></i> 很多家屬不知道，看護機構不只要商業登記，更需要<strong>特許立案和每年評鑑！</strong>
                         </span>
-                        <!-- 📞 強化通聯備註：強調市話優先、上班時間與 LINE@ 留言機制 -->
-                        <span class="d-block mt-2 text-success fw-normal fs-6" style="letter-spacing: 0.5px; line-height: 1.6;">
-                            <i class="far fa-clock me-1"></i> 上班時間 08:00 - 21:30 撥打 OK！其餘時間歡迎 LINE@ 留言，我們將盡快處理。
-                        </span>
+                        <!-- 📋 優化：優雅的 Notice Badge 提示小區塊，完美融合主視覺調性 -->
+                        <div class="mt-3">
+                            <span class="work-time-badge">
+                                <i class="far fa-clock me-1 text-gold"></i> 上班時間 08:00 - 21:30 撥打 OK！其餘時間歡迎 LINE@ 留言，我們將盡快處理。
+                            </span>
+                        </div>
                     </div>
-                    <!-- ☎️ 按鈕區：調整為市話一鍵撥打優先 -->
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
                         <a href="tel:0229670360" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥市話 02-2967-0360</a>
                         <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專人即刻回覆</a>
                     </div>
                 </div>
-                <div class="col-lg-5 mt-4 mt-lg-0 text-center d-none d-lg-block">
+                <div class="col-lg-5 mt-4 mt-lg-0 text-center d-none d-lg-block fade-in-scroll">
                     <div class="hero-logo-circle-wrapper">
                         <img src="福心照護logo.jpg" alt="福心照護官方Logo" class="hero-logo-img">
                     </div>
                 </div>
             </div>
 
-            <!-- 🎯 新增（原截圖紅框處）：四大核心服務快速導覽列 -->
-            <div class="hero-quick-services">
+            <!-- ✨ 已加入動畫：四大核心服務快速導覽列 -->
+            <div class="hero-quick-services fade-in-scroll">
                 <div class="row g-0 align-items-center">
                     <div class="col-md-3 col-12">
                         <div class="service-mini-card">
@@ -705,7 +710,7 @@
                     <div class="col-md-3 col-12">
                         <div class="service-mini-card">
                             <div class="service-mini-icon"><i class="fas fa-baby-carriage"></i></div>
-                            <h2 class="service-mini-title">待產安胎專業照護</h2>
+                            <h2 class="service-mini-title">待產安胎床邊照護</h2>
                         </div>
                     </div>
                     <div class="col-md-3 col-12">
@@ -726,7 +731,7 @@
         </div>
     </section>
 
-    <!-- ✨ 區塊 1：對比表格（保持暖杏色底區隔） -->
+    <!-- ✨ 區塊 1：對比表格 -->
     <section class="py-5" style="background-color: var(--bg-warm-khaki);">
         <div class="container py-4">
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
@@ -802,7 +807,7 @@
                                     <span class="table-focus-text">✅ 後援團隊照顧不中斷</span>
                                     <div class="fuxin-arrow-wrapper"><i class="fas fa-chevron-down arrow-icon"></i></div>
                                 </td>
-                                <td><span class="table-focus-text">⚠️ 存在開天窗風險</span></td>
+                                <td><span class="table-focus-text">⚠️ 存在開天窗风险</span></td>
                             </tr>
                             <tr class="detail-row">
                                 <td class="detail-criterion-space"></td>
@@ -1062,7 +1067,7 @@
         </div>
     </section>
 
-    <!-- ✨ 區塊 5：證照保障（新增新關鍵字語意優化） -->
+    <!-- ✨ 區塊 5：證照保障 -->
     <section class="py-5" style="background-color: var(--bg-warm-khaki); border-top: 1px solid rgba(197, 168, 128, 0.08); border-bottom: 1px solid rgba(197, 168, 128, 0.08);">
         <div class="container py-4">
             <div class="text-center mb-5 fade-in-scroll">
@@ -1108,22 +1113,31 @@
         </div>
     </section>
 
-    <!-- 頁尾 (Footer)：在說明文案中低調埋設海外台人開放態度、英文收據與 hospital caregiver 關鍵字，預留給潛在 TA 觀看 -->
+    <!-- 💎 精修頁尾 (Footer)：結構分隔化、SEO 長說明文字淡化，大幅減輕存在感與壓迫感 -->
     <footer>
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-7">
                     <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
-                    <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #E5DED4;">
                         聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府特許立案
                     </p>
-                    <p class="small text-muted" style="line-height: 1.6;">
+                </div>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-0" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                </div>
+            </div>
+            
+            <!-- 優雅的淡色細分隔線 -->
+            <div class="footer-divider"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <!-- 🛠️ 大量 SEO 關鍵字在此完美淡化：保留搜尋紅利，同時解放使用者的視覺感受 -->
+                    <p class="footer-seo-text mb-2">
                         服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎照護、各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
                     </p>
-                </div>
-                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
-                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                    <p class="small text-center text-lg-start mt-3 mb-0" style="color: #6C645A; font-size: 0.78rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
         </div>
@@ -1132,7 +1146,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // 📱 手機版切換 Tabs 邏輯
         function switchMobileTab(targetType, btnElement) {
             document.querySelectorAll('.mobile-toggle-btn').forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
@@ -1157,7 +1170,6 @@
             const tableEl = document.querySelector('.custom-comparison-table');
             const tableBody = document.querySelector('.custom-comparison-table tbody');
             
-            // 💻 電腦版：摺疊面板高亮與其餘變淡邏輯
             if (tableBody) {
                 tableBody.addEventListener('show.bs.collapse', function (e) {
                     const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
@@ -1199,11 +1211,11 @@
                 });
             }
 
-            // 滾動觀察器
+            // 滾動與載入觀察器（支援第一屏進場動畫）
             const observerOptions = {
                 root: null, 
                 rootMargin: '0px',
-                threshold: 0.15 
+                threshold: 0.05 
             };
 
             const observer = new IntersectionObserver(function (entries, observer) {
