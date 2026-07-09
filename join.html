@@ -128,7 +128,7 @@
             background-color: var(--champagne-gold);
             color: white;
             border: none;
-            padding: 16px 36px; /* 放大內距更易點擊 */
+            padding: 16px 36px; 
             border-radius: 50px;
             font-weight: 500;
             font-size: 1.1rem;
@@ -145,7 +145,7 @@
         .btn-outline-rose-recruitment {
             border: 1px solid var(--dusty-rose);
             color: var(--text-dark);
-            padding: 16px 36px; /* 放大內距更易點擊 */
+            padding: 16px 36px; 
             border-radius: 50px;
             font-weight: 500;
             font-size: 1.1rem;
@@ -171,16 +171,26 @@
             transform: translateY(0);
         }
 
-        /* 人文感暖深灰頁尾 */
+        /* ─── 🧱 完全同步首頁：Footer 輕量化降噪樣式 ─── */
         footer {
-            background-color: #4A4444; 
-            color: #E5DED4;
-            padding: 45px 0 30px 0; 
+            background-color: #433D3D; 
+            color: #ECE6DD;
+            padding: 45px 0 25px 0; 
             margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
+            border-top: 1px solid rgba(197, 168, 128, 0.12);
+        }
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 20px 0;
+        }
+        .footer-seo-text {
+            font-size: 0.82rem !important;
+            line-height: 1.6;
+            color: #6E6666 !important; /* 人眼視覺弱化淡化 */
+            text-align: justify;
         }
 
-        /* 右下角固定雙軌浮動按鈕群 */
+        /* 右下角固定雙軌浮動按鈕群：改為核心市話優先 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -243,11 +253,12 @@
 </head>
 <body>
 
+    <!-- 📱 右下角一鍵直撥懸浮按鈕：同步改為核心市話優先 -->
     <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打招募專線">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
             <i class="fas fa-phone-alt"></i>
         </a>
-        <a href="https://line.me/R/ti/p/~0963590368" class="float-btn float-line" target="_blank" title="LINE搜尋 0963590368 加好友">
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
             <i class="fab fa-line"></i>
         </a>
     </div>
@@ -267,8 +278,9 @@
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    <!-- 🌐 同步首頁：EN 按鈕正確連結至 en.html -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
                     </li>
                 </ul>
             </div>
@@ -288,7 +300,6 @@
 
     <section class="py-5">
         <div class="container">
-            <!-- 微調焦點：與福心並肩核心引言配置平滑進場動畫 -->
             <div class="row justify-content-center mb-5 fade-in-scroll">
                 <div class="col-lg-8 text-center">
                     <div class="premium-text-p fs-5 text-dark" style="line-height: 1.8;">
@@ -298,7 +309,6 @@
                 </div>
             </div>
 
-            <!-- 微調焦點：三大合作福利卡片配置平滑捲動淡入 -->
             <div class="row g-4 mt-2">
                 <div class="col-md-4 fade-in-scroll">
                     <div class="benefit-card">
@@ -315,17 +325,16 @@
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
-                    <div class="benefit-card">
+                    <div class="premium-card benefit-card">
                         <div class="icon-box"><i class="fas fa-chart-line fa-2x"></i></div>
                         <h4 class="fw-bold fs-5 mb-3">3. 專業證照，待遇提升</h4>
-                        <p class="premium-text-p small mb-0">針對持有單一級證照或護理師執照的專業夥伴，福心全方位協助您對接高階需求，追求更高的尊榮收入。若想更進一步，福心也會全力協助您取得相關衍生健康復健等專業認證。</p>
+                        <p class="premium-text-p small mb-0">針對持有單一級證照或護理師執照的專業夥伴，福心全方位協助您對接高階需求（如待產安胎、專業陪病等），追求更高收入。若想更進一步，福心也會全力協助您取得多元健康照護專業認證。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 微調焦點：移除 bg-white 色塊，全站由上至下完美流暢延伸奢華象牙白底色 -->
     <section class="py-5">
         <div class="container py-3">
             <div class="text-center mb-5 fade-in-scroll">
@@ -333,20 +342,20 @@
                 <p class="text-muted small">精簡所有行政壁壘，專注於您的照護專業</p>
             </div>
 
-            <!-- 微調焦點：加入福心簡單三步驟字卡群配置滾動動畫 -->
             <div class="row g-4">
                 <div class="col-md-4 fade-in-scroll">
                     <div class="join-step-box">
                         <span class="join-step-badge">STEP 01</span>
                         <h4 class="fw-bold fs-5 mb-3">資格認證</h4>
-                        <p class="premium-text-p small mb-0">請透過 LINE 搜尋電話號碼 <strong>0963590368</strong> 加好友，或於服務時間直撥專線 <strong>0963-590-368</strong> 與招募部聯繫，繳交照服員證照、半年內體檢報告與良民證，由專人迅速協助審查。</p>
+                        <!-- 📱 招募聯繫：提供雙軌制，同時預留手機搜尋 LINE 與官方市話 -->
+                        <p class="premium-text-p small mb-0">請透過 LINE 搜尋手機號碼 <strong>0963590368</strong> 加好友，或於上班時間（08:00 - 21:30）直撥招募部市話 <strong>02-2967-0360</strong> 聯繫，繳交照服員證照、半年內體檢報告與良民證，由專人迅速協助審查。</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
                     <div class="join-step-box">
                         <span class="join-step-badge">STEP 02</span>
                         <h4 class="fw-bold fs-5 mb-3">面談交流</h4>
-                        <p class="premium-text-p small mb-0">我們會誠摯邀請您進行溫馨面談接洽，深度了解您的照護專長（如：術後照護、急性病房等）、實質需求與理想的服務區域，為您客製化媒合。</p>
+                        <p class="premium-text-p small mb-0">我們會誠摯邀請您進行溫馨面談接洽，深度了解您的照護專長（如：一般陪病、待產安胎、術後照顧等）、實質需求與理想的服務區域，為您客製化媒合案源。</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in-scroll">
@@ -358,17 +367,16 @@
                 </div>
             </div>
 
-            <!-- 微調焦點：底部聯繫大按鈕配置滾動動畫 -->
+            <!-- 📱 按鈕區雙軌優化：LINE 加好友與直撥市話招募 -->
             <div class="text-center mt-5 pt-4 fade-in-scroll">
                 <p class="fw-bold mb-2">準備好與福心並肩，開啟更有品質的照護職涯嗎？</p>
                 <p class="text-muted small mb-4">誠摯邀請具備服務熱忱的夥伴加入我們，共創更友善的照護環境。</p>
                 <div class="d-grid d-sm-flex gap-3 justify-content-center">
-                    <a href="https://line.me/R/ti/p/~0963590368" class="btn btn-gold-recruitment px-4 py-3" target="_blank"><i class="fab fa-line me-2"></i>LINE搜尋 0963590368 加好友</a>
-                    <a href="tel:0963590368" class="btn btn-outline-rose-recruitment px-4 py-3"><i class="fas fa-phone-alt me-2"></i>直撥招募專線 0963-590-368</a>
+                    <a href="https://line.me/R/ti/p/~0963590368" class="btn btn-gold-recruitment px-4 py-3" target="_blank"><i class="fab fa-line me-2"></i>LINE 搜尋 0963590368 加好友</a>
+                    <a href="tel:0229670360" class="btn btn-outline-rose-recruitment px-4 py-3"><i class="fas fa-phone-alt hide-icon me-2"></i>直撥招募市話 02-2967-0360</a>
                 </div>
             </div>
 
-            <!-- 微調焦點：法律關係免責特別說明配置滾動動畫 -->
             <div class="row justify-content-center mt-5 fade-in-scroll">
                 <div class="col-lg-10 col-xl-9">
                     <div class="legal-disclaimer">
@@ -380,21 +388,29 @@
         </div>
     </section>
 
+    <!-- 🧱 ✨ 完全同步首頁：輕量化降噪高質感頁尾 (Footer) -->
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
-                        聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
-                    </p>
-                    <p class="small text-muted" style="line-height: 1.6;">
-                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #D5CEE4; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 政府特許立案
                     </p>
                 </div>
-                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
-                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <p class="footer-seo-text mb-0">
+                        服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎專業照護、各大醫療院所之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
+                    </p>
                 </div>
             </div>
         </div>
@@ -402,26 +418,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- 原生 JavaScript 滾動監聽交叉觀察器 -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // 建立 IntersectionObserver 實例
             const observerOptions = {
                 root: null, 
                 rootMargin: '0px',
-                threshold: 0.15 // 當元件露出 15% 時平滑浮現
+                threshold: 0.15 
             };
 
             const observer = new IntersectionObserver(function (entries, observer) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // 觸發後解除監聽，優化記憶體效能
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
 
-            // 捕捉招募頁所有已掛載標籤的區塊與職人福利圖卡
             const animatedElements = document.querySelectorAll('.fade-in-scroll');
             animatedElements.forEach(el => observer.observe(el));
         });
