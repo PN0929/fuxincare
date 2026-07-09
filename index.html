@@ -7,11 +7,11 @@
     <!-- 📈 SEO 優化標題：語意流暢，避免關鍵字重複堆疊扣分 -->
     <title>雙北醫院看護派遣推薦｜福心照護：24小時陪病與短期居家銜接服務</title>
     
-    <!-- 🎯 新增：Meta Description，掌控在 Google 搜尋結果看到的摘要，提高點閱率 -->
-    <meta name="description" content="福心專業雙北醫院看護派遣（新北私就字第068號）。提供台大、北榮、馬偕等各大醫院24小時/12小時照護。定價契約化透明放心，專精外籍看護空窗期短期銜接、出院居家照顧一條龍服務。">
-    <meta name="keywords" content="醫院看護, 雙北看護推薦, 24小時看護, 短期看護, 外籍看護空窗期, 出院照顧">
+    <!-- 🎯 Meta Description：融入新關鍵字（待產安胎、陪病、hospital caregiver），掌控 Google 搜尋結果摘要 -->
+    <meta name="description" content="福心專業雙北醫院看護派遣（新北私就字第068號）。提供台大、北榮、馬偕等各大醫院24小時/12小時照護與陪病服務。定價契約化透明放心，專精待產安胎、外籍看護空窗期短期銜接、出院居家照顧一條龍服務。">
+    <meta name="keywords" content="醫院看護, 雙北看護推薦, 24小時看護, 短期看護, 外籍看護空窗期, 出院照顧, 待產安胎, 醫院陪病, hospital caregiver, 海外台人長輩照顧, 可開英文收據">
     
-    <!-- 📱 新增：LINE/Facebook 分享標籤，讓轉傳時有漂亮小字和縮圖 -->
+    <!-- 📱 LINE/Facebook 分享標籤 -->
     <meta property="og:title" content="雙北醫院看護第一推薦｜福心專業照護">
     <meta property="og:description" content="把照護的辛勞交給福心，把珍貴的相聚留給家人。政府特許立案，價格透明一條龍服務。">
     <meta property="og:image" content="福心照護logo.jpg">
@@ -23,14 +23,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <!-- 🤖 新增：Google 結構化資料 (Schema)，直接向 Google 本署遞交合法營利法人名片，極大化提升 YMYL 產業信任權威 -->
+    <!-- 🤖 Google 結構化資料 (Schema)：電話更新為核心市話，提升在地 YMYL 產業信任權威 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "福心管理顧問股份有限公司",
       "description": "專業雙北醫院看護派遣與居家照顧一條龍服務",
-      "telePhone": "0963-590-368",
+      "telephone": "02-2967-0360",
       "areaServed": ["台北市", "新北市"],
       "taxID": "62179070"
     }
@@ -75,7 +75,7 @@
         }
 
         .hero-section {
-            padding: 160px 0 100px 0;
+            padding: 150px 0 60px 0;
             background: linear-gradient(90deg, rgba(253, 251, 247, 0.96) 35%, rgba(243, 232, 233, 0.78) 100%), url('福心形象封面.jpg');
             background-size: cover;
             background-position: center right;
@@ -91,7 +91,7 @@
         .hero-subtitle {
             font-weight: 500;
             color: var(--champagne-gold);
-            margin-top: 20px;
+            margin-top: 15px;
             letter-spacing: 1px;
         }
 
@@ -120,10 +120,10 @@
             background-color: var(--champagne-gold);
             color: white;
             border: none;
-            padding: 16px 36px;
+            padding: 14px 32px;
             border-radius: 50px;
             font-weight: 500;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
         }
@@ -135,16 +135,48 @@
         .btn-outline-rose {
             border: 1px solid var(--dusty-rose);
             color: var(--text-dark);
-            padding: 16px 36px;
+            padding: 14px 32px;
             border-radius: 50px;
             font-weight: 500;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: none;
         }
         .btn-outline-rose:hover {
             background-color: var(--dusty-rose);
             color: var(--text-dark);
+        }
+
+        /* 🏷️ 新增：紅框處「四大核心服務列」專用樣式 */
+        .hero-quick-services {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(197, 168, 128, 0.25);
+            border-radius: 16px;
+            padding: 24px 15px;
+            box-shadow: 0 10px 30px rgba(168, 124, 67, 0.05);
+            margin-top: 40px;
+        }
+        .service-mini-card {
+            text-align: center;
+            padding: 10px 5px;
+            border-right: 1px solid rgba(197, 168, 128, 0.2);
+        }
+        .service-mini-card:last-child {
+            border-right: none;
+        }
+        .service-mini-icon {
+            color: var(--champagne-gold);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .service-mini-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+            white-space: nowrap;
         }
 
         /* ─── 💻 電腦版表格優化區 ─── */
@@ -384,7 +416,7 @@
             color: #8A6D45;
         }
 
-        /* ─── 💎 精修：減少字數後的精緻型卡片樣式 ─── */
+        /* ─── 💎 精修：精緻型卡片樣式 ─── */
         .premium-text-p {
             font-size: 1.05rem !important; 
             color: var(--text-muted);
@@ -436,7 +468,6 @@
             font-weight: 400;
         }
 
-        /* 整張知識卡片大範圍點擊專用超連結樣式 */
         .news-card-link {
             text-decoration: none !important;
             color: inherit !important;
@@ -555,7 +586,7 @@
                 display: block; 
             }
             .hero-section {
-                padding: 120px 0 60px 0;
+                padding: 110px 0 40px 0;
                 background: linear-gradient(180deg, rgba(253, 251, 247, 0.98) 60%, rgba(243, 232, 233, 0.90) 100%), url('福心形象封面.jpg');
                 background-size: cover;
                 background-position: center;
@@ -566,6 +597,18 @@
             .hero-logo-img {
                 width: 130px;
                 height: 130px;
+            }
+            .hero-quick-services {
+                margin-top: 25px;
+                padding: 15px 5px;
+            }
+            .service-mini-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+                padding: 12px 0;
+            }
+            .service-mini-card:last-child {
+                border-bottom: none;
             }
             .floating-contact-group {
                 bottom: 25px;
@@ -589,8 +632,9 @@
 </head>
 <body>
 
+    <!-- 📱 右下角固定懸浮聯絡按鈕：全面改為市話優先與一鍵撥打 -->
     <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
@@ -626,15 +670,20 @@
             <div class="row align-items-center d-flex">
                 <div class="col-lg-7 text-center text-lg-start">
                     <h1 class="hero-title">福心專業醫院看護<br><span style="color: var(--champagne-gold);">給家人最有尊嚴的陪伴</span></h1>
-                    <p class="hero-subtitle fs-5 fw-bold">
-                        政府立案新北私就字第 0 6 號
+                    <div class="hero-subtitle fs-5 fw-bold">
+                        政府立案新北私就字第 068 號
                         <span class="d-block mt-2 text-muted fw-normal fs-6" style="letter-spacing: 0.5px; line-height: 1.6;">
-                            <i class="fas fa-circle-info me-1 text-gold"></i> 很多家屬不知道，看護機構不只要商業登記、公司登記，更需要<strong>特許立案和每年評鑑！</strong>
+                            <i class="fas fa-circle-info me-1 text-gold"></i> 很多家屬不知道，看護機構不只要商業登記，更需要<strong>特許立案和每年評鑑！</strong>
                         </span>
-                    </p>
+                        <!-- 📞 強化通聯備註：強調市話優先、上班時間與 LINE@ 留言機制 -->
+                        <span class="d-block mt-2 text-success fw-normal fs-6" style="letter-spacing: 0.5px; line-height: 1.6;">
+                            <i class="far fa-clock me-1"></i> 上班時間 08:00 - 21:30 撥打 OK！其餘時間歡迎 LINE@ 留言，我們將盡快處理。
+                        </span>
+                    </div>
+                    <!-- ☎️ 按鈕區：調整為市話一鍵撥打優先 -->
                     <div class="mt-4 d-grid d-sm-flex gap-3 justify-content-center justify-content-lg-start">
-                        <a href="tel:0963590368" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥 0963-590-368</a>
-                        <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專員即刻回覆</a>
+                        <a href="tel:0229670360" class="btn btn-gold"><i class="fas fa-phone-alt me-2"></i>直撥市話 02-2967-0360</a>
+                        <a href="https://lin.ee/Tm80P16" class="btn btn-outline-rose" target="_blank"><i class="fab fa-line me-2" style="color: #06C755;"></i>LINE 專人即刻回覆</a>
                     </div>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0 text-center d-none d-lg-block">
@@ -643,10 +692,41 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 🎯 新增（原截圖紅框處）：四大核心服務快速導覽列 -->
+            <div class="hero-quick-services">
+                <div class="row g-0 align-items-center">
+                    <div class="col-md-3 col-12">
+                        <div class="service-mini-card">
+                            <div class="service-mini-icon"><i class="fas fa-user-md"></i></div>
+                            <h2 class="service-mini-title">24Ｈ醫院看護陪病</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="service-mini-card">
+                            <div class="service-mini-icon"><i class="fas fa-baby-carriage"></i></div>
+                            <h2 class="service-mini-title">待產安胎專業照護</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="service-mini-card">
+                            <div class="service-mini-icon"><i class="fas fa-home"></i></div>
+                            <h2 class="service-mini-title">醫院返家居家照顧</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-12">
+                        <div class="service-mini-card">
+                            <div class="service-mini-icon"><i class="fas fa-file-invoice"></i></div>
+                            <h2 class="service-mini-title">入院出院手續代辦</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- ✨ 區塊 1：統一改為標準暗底 var(--bg-warm-khaki) -->
+    <!-- ✨ 區塊 1：對比表格（保持暖杏色底區隔） -->
     <section class="py-5" style="background-color: var(--bg-warm-khaki);">
         <div class="container py-4">
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
@@ -785,6 +865,7 @@
                 </div>
             </div>
 
+            <!-- 手機版對比區塊 -->
             <div class="mobile-tab-view px-2">
                 <div class="mobile-toggle-nav">
                     <button type="button" class="mobile-toggle-btn active" onclick="switchMobileTab('agency', this)">與傳統仲介對比</button>
@@ -883,12 +964,12 @@
             </div>
             
             <div class="text-center mt-5 fade-in-scroll">
-                <a href="tel:0963590368" class="btn btn-gold px-5 py-3"><i class="fas fa-phone-alt me-2"></i>一通電話，為您少操心：0963-590-368</a>
+                <a href="tel:0229670360" class="btn btn-gold px-5 py-3"><i class="fas fa-phone-alt me-2"></i>一通市話，為您少操心：02-2967-0360</a>
             </div>
         </div>
     </section>
 
-    <!-- ✨ 區塊 2：統一改為純白亮底 var(--bg-ivory) -->
+    <!-- ✨ 區塊 2：照護知識公告 -->
     <section class="py-5" style="background-color: var(--bg-ivory);">
         <div class="container">
             <div class="text-center mb-5 fade-in-scroll">
@@ -901,7 +982,7 @@
         </div>
     </section>
 
-    <!-- ✨ 區塊 3：統一改為標準暗底 var(--bg-warm-khaki) -->
+    <!-- ✨ 區塊 3：標準化管理 -->
     <section class="py-5" style="background-color: var(--bg-warm-khaki);">
         <div class="container py-4">
             <div class="text-center max-width-700 mx-auto mb-5 fade-in-scroll">
@@ -942,7 +1023,7 @@
         </div>
     </section>
 
-    <!-- ✨ 區塊 4：統一改為純白亮底 var(--bg-ivory) -->
+    <!-- ✨ 區塊 4：三大核心承諾 -->
     <section class="py-5" style="background-color: var(--bg-ivory);">
         <div class="container py-4">
             <div class="text-center mb-5 fade-in-scroll">
@@ -981,13 +1062,13 @@
         </div>
     </section>
 
-    <!-- ✨ 區塊 5：統一改為標準暗底 var(--bg-warm-khaki) -->
+    <!-- ✨ 區塊 5：證照保障（新增新關鍵字語意優化） -->
     <section class="py-5" style="background-color: var(--bg-warm-khaki); border-top: 1px solid rgba(197, 168, 128, 0.08); border-bottom: 1px solid rgba(197, 168, 128, 0.08);">
         <div class="container py-4">
             <div class="text-center mb-5 fade-in-scroll">
                 <h2 class="fw-bold mb-3">選擇福心，給家人安心合法的雙重保障</h2>
                 <div class="premium-text-p px-3 mx-auto" style="max-width: 700px;">
-                    福心深知家庭的焦慮與對品質的堅持，為案家提供最安心、合法的照護服務。
+                    福心深知在地家庭的焦慮與對品質的堅持，精專雙北醫院陪病照護與特別待產安胎派遣，提供最安心、合法的優質人力。
                 </div>
             </div>
             <div class="row g-5 justify-content-center">
@@ -999,7 +1080,7 @@
                             </div>
                             <h3 class="fw-bold mb-3" style="color: var(--text-dark); border-left: 4px solid var(--champagne-gold); padding-left: 10px; font-size: 1.25rem;">【官方雙重認證】合法合規最安心</h3>
                             <p class="premium-text-p mb-3">
-                                坊間許多看護機構僅有經濟部 company 登記，卻缺乏法定的就業服務許可。福心榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
+                                坊間許多看護機構僅有經濟部商業登記，卻缺乏法定的就業服務許可。福心榮獲<strong>新北市政府核發之「私立就業服務機構許可證」（新北私就字第 068 號）</strong>。
                             </p>
                             <p class="premium-text-p mb-0">
                                 雙重官方認證，代表我們的財務、流程與人力皆受政府嚴格審查。<strong>請家屬務必選擇擁有雙重保障的合法機構，才能遠離非法黑工風險。</strong>
@@ -1027,20 +1108,21 @@
         </div>
     </section>
 
+    <!-- 頁尾 (Footer)：在說明文案中低調埋設海外台人開放態度、英文收據與 hospital caregiver 關鍵字，預留給潛在 TA 觀看 -->
     <footer>
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-7">
                     <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
                     <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
-                        聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府特許立案
                     </p>
                     <p class="small text-muted" style="line-height: 1.6;">
-                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                        服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎照護、各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
                     </p>
                 </div>
                 <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的辛勞交給福心，把珍規的相聚留給家人</p>
+                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
                     <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
@@ -1076,45 +1158,46 @@
             const tableBody = document.querySelector('.custom-comparison-table tbody');
             
             // 💻 電腦版：摺疊面板高亮與其餘變淡邏輯
-            tableBody.addEventListener('show.bs.collapse', function (e) {
-                const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
-                if (triggerRow) {
-                    document.querySelectorAll('.clickable-row').forEach(row => {
-                        if (row !== triggerRow && row.classList.contains('ui-expanded')) {
-                            const targetId = row.getAttribute('data-bs-target');
-                            const collapseEl = document.querySelector(targetId);
-                            if (collapseEl) {
-                                const bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
-                                bsCollapse.hide();
+            if (tableBody) {
+                tableBody.addEventListener('show.bs.collapse', function (e) {
+                    const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
+                    if (triggerRow) {
+                        document.querySelectorAll('.clickable-row').forEach(row => {
+                            if (row !== triggerRow && row.classList.contains('ui-expanded')) {
+                                const targetId = row.getAttribute('data-bs-target');
+                                const collapseEl = document.querySelector(targetId);
+                                if (collapseEl) {
+                                    const bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
+                                    bsCollapse.hide();
+                                }
                             }
+                        });
+                        
+                        tableEl.classList.add('table-active-mode');
+                        triggerRow.classList.add('ui-expanded');
+                        
+                        const detailRow = triggerRow.nextElementSibling;
+                        if (detailRow && detailRow.classList.contains('detail-row')) {
+                            detailRow.classList.add('expanded-detail');
                         }
-                    });
-                    
-                    tableEl.classList.add('table-active-mode');
-                    triggerRow.classList.add('ui-expanded');
-                    
-                    const detailRow = triggerRow.nextElementSibling;
-                    if (detailRow && detailRow.classList.contains('detail-row')) {
-                        detailRow.classList.add('expanded-detail');
                     }
-                }
-            });
+                });
 
-            tableBody.addEventListener('hide.bs.collapse', function (e) {
-                const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
-                if (triggerRow) {
-                    triggerRow.classList.remove('ui-expanded');
-                    
-                    const detailRow = triggerRow.nextElementSibling;
-                    if (detailRow) detailRow.classList.remove('expanded-detail');
-                }
-                
-                setTimeout(() => {
-                    if (!tableBody.querySelectorAll('.ui-expanded').length) {
-                        tableEl.classList.remove('table-active-mode');
+                tableBody.addEventListener('hide.bs.collapse', function (e) {
+                    const triggerRow = tableBody.querySelector(`[data-bs-target="#${e.target.id}"]`);
+                    if (triggerRow) {
+                        triggerRow.classList.remove('ui-expanded');
+                        const detailRow = triggerRow.nextElementSibling;
+                        if (detailRow) detailRow.classList.remove('expanded-detail');
                     }
-                }, 100);
-            });
+                    
+                    setTimeout(() => {
+                        if (!tableBody.querySelectorAll('.ui-expanded').length) {
+                            tableEl.classList.remove('table-active-mode');
+                        }
+                    }, 100);
+                });
+            }
 
             // 滾動觀察器
             const observerOptions = {
@@ -1135,7 +1218,7 @@
             const animatedElements = document.querySelectorAll('.fade-in-scroll');
             animatedElements.forEach(el => observer.observe(el));
 
-            // 🔄 自動從 GitHub 上的 news.json 抓取最新文章填入首頁文章區塊（整張卡片大範圍點擊）
+            // 🔄 從 news.json 抓取最新文章
             fetch('news.json')
                 .then(response => response.json())
                 .then(data => {
@@ -1163,7 +1246,7 @@
                         });
                     }
                 })
-                .catch(error => console.error('最新消息讀取失敗，請確認 news.json 檔案是否存在:', error));
+                .catch(error => console.error('最新消息讀取失敗:', error));
         });
     </script>
 </body>
