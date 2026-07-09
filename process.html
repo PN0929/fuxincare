@@ -69,7 +69,6 @@
             margin: 0 auto;
             padding: 40px 0;
         }
-        /* 微調焦點：數字移入卡片後，中間線條改為極簡貫穿純直線 */
         .timeline::after {
             content: '';
             position: absolute;
@@ -79,15 +78,14 @@
             bottom: 0; 
             left: 30px;
             margin-left: -1px;
-            opacity: 0.6; /* 讓純直線淡淡的呈現，更具陪襯的高級感 */
+            opacity: 0.6;
         }
         .timeline-item {
-            padding: 15px 15px 35px 60px; /* 縮減間距，因為線條已變成純背景襯托 */
+            padding: 15px 15px 35px 60px;
             position: relative;
             background-color: inherit;
         }
         
-        /* 微調焦點：全新融入卡片內部的精緻數字標籤 */
         .inline-number {
             width: 28px;
             height: 28px;
@@ -177,13 +175,23 @@
             transform: translateY(-2px);
         }
 
-        /* 人文感暖深灰頁尾 */
+        /* ─── 🧱 完全同步首頁：Footer 輕量化降噪樣式 ─── */
         footer {
-            background-color: #4A4444; 
-            color: #E5DED4;
-            padding: 45px 0 30px 0; 
+            background-color: #433D3D; 
+            color: #ECE6DD;
+            padding: 45px 0 25px 0; 
             margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
+            border-top: 1px solid rgba(197, 168, 128, 0.12);
+        }
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 20px 0;
+        }
+        .footer-seo-text {
+            font-size: 0.82rem !important;
+            line-height: 1.6;
+            color: #6E6666 !important; /* 人眼視覺淡化弱化 */
+            text-align: justify;
         }
 
         /* 進場動畫 Class */
@@ -198,7 +206,7 @@
             transform: translateY(0);
         }
 
-        /* 右下角固定雙軌浮動按鈕群 */
+        /* 右下角固定雙軌浮動按鈕群：改為核心市話優先 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -258,11 +266,10 @@
                 left: 50%;
             }
             
-            /* 在大螢幕交錯排版時，左側卡片的數字維持在文字左邊 */
             .timeline-item-left .inline-number {
                 margin-right: 0;
                 margin-left: 10px;
-                order: 2; /* 讓左邊卡片的數字依循語意在排版上靠右，維持對稱平衡 */
+                order: 2; 
             }
             .timeline-item-left h4 {
                 display: inline-flex;
@@ -292,8 +299,9 @@
 </head>
 <body>
 
+    <!-- 📱 右下角一鍵直撥懸浮按鈕：同步首頁改為市話優先 -->
     <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
@@ -316,8 +324,9 @@
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
                     <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    <!-- 🌐 同步首頁：EN 按鈕正確連結至 en.html -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
                     </li>
                 </ul>
             </div>
@@ -329,7 +338,7 @@
             <h1 class="fw-bold mb-3">服務流程</h1>
             <div class="premium-text-p mx-auto" style="max-width: 650px;">
                 <p class="mb-2">專業、透明、即時回報。</p>
-                <p class="mb-0">無論是醫院看護需求或是照護諮詢，我們用標準化流程守護您的安心。</p>
+                <p class="mb-0">無論是醫院陪病、待產安胎看護需求或是出入院代辦諮詢，我們用標準化流程守護您的安心。</p>
             </div>
         </div>
     </header>
@@ -348,7 +357,7 @@
                         <h4 class="fw-bold" style="color: var(--champagne-gold);">
                             <span class="inline-number">1</span><i class="far fa-comment-dots me-2"></i>需求諮詢
                         </h4>
-                        <p class="premium-text-p mb-0 small mt-2">透過官方 Line 告知病患狀況、醫院地點與預計時段，福心專業客服團隊將即刻為您回覆並記錄需求細節。</p>
+                        <p class="premium-text-p mb-0 small mt-2">透過官方 Line 或直撥市話專線，告知病患狀況、待產或住院地點與時段，福心專業客服團隊將即刻為您回覆並記錄細節。</p>
                     </div>
                 </div>
                 
@@ -357,7 +366,7 @@
                         <h4 class="fw-bold" style="color: var(--champagne-gold);">
                             <span class="inline-number">2</span><i class="fas fa-user-check me-2"></i>即時媒合
                         </h4>
-                        <p class="premium-text-p mb-0 small mt-2">專員全程、即時向您回報派遣進度，並在夥伴上工前，主動提供該合適夥伴的專業認證背景資訊，讓您充分了解照護者。</p>
+                        <p class="premium-text-p mb-0 small mt-2">專員全程、即時向您回報派遣進度，並在夥伴上工前，主動提供特約夥伴的專業認證背景資訊，讓您充分了解照護者。</p>
                     </div>
                 </div>
                 
@@ -365,12 +374,12 @@
                     <div class="timeline-content">
                         <h4 class="fw-bold" style="color: var(--champagne-gold);">
                             <div class="d-flex align-items-center justify-content-start justify-content-md-end gap-2 flex-wrap">
-                                <span class="badge-digital order-3 order-md-1"><i class="fas fa-fingerprint me-1"></i>數位簽約</span>
+                                <span class="badge rounded-pill bg-light text-dark border order-3 order-md-1" style="font-size: 0.8rem; font-weight: 500; color: var(--champagne-gold) !important;"><i class="fas fa-fingerprint me-1"></i>數位簽約</span>
                                 <span class="inline-number order-1 order-md-3">3</span>
                                 <span class="order-2"><i class="far fa-file-alt me-2"></i>確認簽約</span>
                             </div>
                         </h4>
-                        <p class="premium-text-p mb-0 small mt-2">雙方確認服務細節與費用後，簽署數位或實體合約。契約條款清晰，全方位保障案家與病患的法定權益。</p>
+                        <p class="premium-text-p mb-0 small mt-2">雙方確認服務項目與費用後，簽署數位或實體合約。契約條款清晰，全方位保障案家與病患的法定權益。</p>
                     </div>
                 </div>
             </div>
@@ -432,7 +441,7 @@
                             <div class="qc-icon"><i class="fas fa-sync-alt"></i></div>
                             <div>
                                 <h5 class="fw-bold">【無縫銜接】人力調度</h5>
-                                <p class="premium-text-p small mb-0">若服務期間遇合作夥伴因不可抗力因素（如突發疾病）需請假，福心平台將立即啟動人力調度支援機制，確保照護需求24小時不中中斷。</p>
+                                <p class="premium-text-p small mb-0">若服務期間遇合作夥伴因不可抗力因素（如突發疾病）需請假，福心平台將立即啟動人力調度支援機制，確保照護需求24小時不中斷。</p>
                             </div>
                         </div>
                         <div class="qc-card fade-in-scroll">
@@ -447,27 +456,35 @@
             </div>
 
             <div class="text-center mt-5 pt-3 fade-in-scroll">
-                <p class="fw-bold mb-3">無論是醫院看護需求或是照護諮詢，請直接與我們聯繫</p>
+                <p class="fw-bold mb-3">無論是醫院看護、待產安胎需求或是照護諮詢，請直接與我們聯繫</p>
                 <a href="https://lin.ee/Tm80P16" class="btn btn-gold" target="_blank"><i class="fab fa-line me-2"></i>透過 LINE 官方帳號立即聯繫專員</a>
             </div>
         </div>
     </section>
 
+    <!-- 🧱 ✨ 完全同步首頁：輕量化降噪高質感頁尾 (Footer) -->
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
-                        聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
-                    </p>
-                    <p class="small text-muted" style="line-height: 1.6;">
-                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #D5CEE4; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 政府特許立案
                     </p>
                 </div>
-                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
-                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <p class="footer-seo-text mb-0">
+                        服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎專業照護、各大醫療院所之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
+                    </p>
                 </div>
             </div>
         </div>
