@@ -179,13 +179,23 @@
             transform: translateY(-2px);
         }
 
-        /* 人文感暖深灰頁尾（已輕量化，調降高度） */
+        /* ─── 🧱 完全同步首頁：Footer 輕量化降噪樣式 ─── */
         footer {
-            background-color: #4A4444; 
-            color: #E5DED4;
-            padding: 45px 0 30px 0; 
+            background-color: #433D3D; 
+            color: #ECE6DD;
+            padding: 45px 0 25px 0; 
             margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
+            border-top: 1px solid rgba(197, 168, 128, 0.12);
+        }
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 20px 0;
+        }
+        .footer-seo-text {
+            font-size: 0.82rem !important;
+            line-height: 1.6;
+            color: #6E6666 !important; /* 人眼視覺弱化淡化 */
+            text-align: justify;
         }
 
         /* 微調焦點：高端精品滾動動畫基礎控制項 */
@@ -200,7 +210,7 @@
             transform: translateY(0);
         }
 
-        /* 右下角固定雙軌浮動按鈕群 */
+        /* 右下角固定雙軌浮動按鈕群：改為核心市話優先 */
         .floating-contact-group {
             position: fixed;
             bottom: 30px;
@@ -263,8 +273,9 @@
 </head>
 <body>
 
+    <!-- 📱 右下角一鍵直撥懸浮按鈕：同步首頁改為市話優先 -->
     <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
             <i class="fas fa-phone-alt"></i>
         </a>
         <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
@@ -287,8 +298,9 @@
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
                     <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
+                    <!-- 🌐 同步首頁：EN 按鈕正確連結至 en.html -->
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
                     </li>
                 </ul>
             </div>
@@ -299,8 +311,8 @@
         <div class="container">
             <h1 class="fw-bold mb-3">收費標準 ｜ 項目</h1>
             <div class="premium-text-p mx-auto" style="max-width: 650px;">
-                <p class="mb-2">福心提供全方位陪病與居家照護，針對不同場域與病況提供專業支持。</p>
-                <p class="mb-0">堅持價格公開透明，遵循雙北醫學中心標準。</p>
+                <p class="mb-2">福心提供全方位陪病與專業母嬰、居家照護，針對不同場域與病況提供合規支持。</p>
+                <p class="mb-0">堅持價格公開透明契約化，遵循雙北醫學中心合理行情基準。</p>
             </div>
         </div>
     </header>
@@ -319,7 +331,7 @@
                         <div class="price-amount">
                             <span class="price-unit">每日約</span> 2,600 - 3,000 <span class="price-unit">元</span>
                         </div>
-                        <p class="premium-text-p mb-0 small">適合日間檢查手術、家屬夜間換班喘息之彈性調配需求。</p>
+                        <p class="premium-text-p mb-0 small">適合日間檢查手術、特定手續代辦或家屬夜間換班喘息之彈性調配需求。</p>
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-4 fade-in-scroll">
@@ -328,13 +340,13 @@
                         <div class="price-amount" style="color: var(--champagne-gold);">
                             <span class="price-unit">每日約</span> 3,200 - 4,000 <span class="price-unit">元</span>
                         </div>
-                        <p class="premium-text-p mb-0 small">管家級全天候守護、資訊零斷層回報，提供最完整的病房靜養品質。</p>
+                        <p class="premium-text-p mb-0 small">管家級全天候守護、資訊零斷層回報，提供24H醫院看護與最完整的待產安胎、病房靜養品質。</p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-4 fade-in-scroll">
-                <p class="small text-muted"><i class="fas fa-info-circle me-1"></i>註：最終費用視病況複雜度、醫院地點及時數彈性調整。</p>
+                <p class="small text-muted"><i class="fas fa-info-circle me-1"></i>註：最終費用視病況複雜度、特殊照護需求、醫院地點及天數時數彈性調整。</p>
             </div>
 
             <div class="row justify-content-center mt-5">
@@ -344,22 +356,22 @@
                         <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-weight"></i></div>
                             <div>
-                                <strong class="d-block mb-1">體重加成</strong>
-                                <span class="premium-text-p small">患者體重超過一定標準，需增加翻身勞動力時另計。</span>
+                                <strong class="d-block mb-1">體重與照顧勞度加成</strong>
+                                <span class="premium-text-p small">患者體重超過一定標準，或屬於重症、多管路、需高頻率翻身拍痰等勞動力需求顯著增加時另計。</span>
                             </div>
                         </div>
                         <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-shield-virus"></i></div>
                             <div>
-                                <strong class="d-block mb-1">傳染病照護</strong>
-                                <span class="premium-text-p small">如確診新冠、疥瘡或其他具傳染性疾病之特殊防護。</span>
+                                <strong class="d-block mb-1">傳染病照護防護費</strong>
+                                <span class="premium-text-p small">如確診新冠、疥瘡或其他具高度傳染性疾病，需落實特殊隔離、密集耗材防護與環境清消時。</span>
                             </div>
                         </div>
                         <div class="plus-item d-flex align-items-center fade-in-scroll">
                             <div class="me-3 fs-4" style="color: var(--champagne-gold);"><i class="fas fa-calendar-day"></i></div>
                             <div>
-                                <strong class="d-block mb-1">三節 / 國定假日</strong>
-                                <span class="premium-text-p small">依政府規定計算加給，並於媒合前預先告知，絕無事後任意加價。</span>
+                                <strong class="d-block mb-1">三節 / 春節國定假日</strong>
+                                <span class="premium-text-p small">依政府法定國定假日與傳統春節計算加給，並於媒合派案前與家屬預先約定，絕無事後現場任意加價。</span>
                             </div>
                         </div>
                     </div>
@@ -381,14 +393,15 @@
                     <div class="service-detail-card">
                         <div class="d-flex align-items-center mb-4">
                             <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-hospital-user fa-lg"></i></div>
-                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">醫院陪病照護</h3>
+                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">24H 醫院看護與陪病照護</h3>
                         </div>
-                        <p class="premium-text-p mb-4 small">專為住院期間需要 24 小時或特定時段看護的家庭設計，確保病患在醫院獲得專業守護。</p>
+                        <p class="premium-text-p mb-4 small">專為住院期間、待產期間需要高密度照護的家庭設計，確保在各大醫療院所獲得安全、有尊嚴的守護。</p>
                         <ul class="service-list premium-text-p">
-                            <li><i class="fas fa-check-circle"></i><strong>基礎生理照顧：</strong>包含定時翻身、拍痰、排泄處理及病體清潔。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>膳食與管灌操作：</strong>提供精心餵食，並具備專業管灌飲食操作經驗。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>活動安全維護：</strong>協助安全轉位、下床活動，並嚴格預防跌倒等意外。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>即時現況回報：</strong>每日定時記錄生理狀況並透過 Line 回傳，讓您掌握安心資訊.</li>
+                            <li><i class="fas fa-check-circle"></i><strong>基礎生理與陪病照顧：</strong>包含定時安全翻身拍背、排泄更換、病體清潔與舒適護理。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>待產安胎與母嬰照護：</strong>針對高風險孕期安胎、產前密集陪產，提供細緻、溫柔且專業的身心陪伴。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>膳食餵食與管灌操作：</strong>提供悉心的日常餵食，並具備合規、專業的鼻胃管管灌飲食操作經驗。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>入院出院手續代辦：</strong>協助家屬一條龍處理入院登記、各項繁瑣文件、出院結帳等代辦庶務。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>即時生理現況回報：</strong>每日定時詳實記錄並透過 Line 官方帳號回傳生理數據，讓家屬安心掌握。</li>
                         </ul>
                     </div>
                 </div>
@@ -397,14 +410,14 @@
                     <div class="service-detail-card">
                         <div class="d-flex align-items-center mb-4">
                             <div class="p-3 bg-light rounded-3 me-3 text-center" style="width: 55px; color: var(--champagne-gold);"><i class="fas fa-home fa-lg"></i></div>
-                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">居家照顧（接續出院返家）</h3>
+                            <h3 class="fw-bold mb-0" style="font-size: 1.4rem;">居家照顧（出院返家銜接）</h3>
                         </div>
-                        <p class="premium-text-p mb-4 small">出院後可延續住院期間的高品質服務，無縫銜接健康復健。</p>
+                        <p class="premium-text-p mb-4 small">出院返家初期，提供自費預約制的高品質照顧，無縫銜接外籍看護空窗期或剛性喘息期。</p>
                         <ul class="service-list premium-text-p">
-                            <li><i class="fas fa-check-circle"></i><strong>全自費預約制：</strong>一通 Line 即可延續專業人力服務進駐居家空間。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>家庭喘息支持：</strong>合作看護夥伴延續院內照顧服務，讓家屬也獲得適度調適。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>術後康復觀察：</strong>陪伴度過手術後返家初期、仍需密集觀察的過渡黃金期。</li>
-                            <li><i class="fas fa-check-circle"></i><strong>就醫紀錄與復健銜接：</strong>協助回診就醫、紀錄醫囑與注意事項，精準落實日常復健引導。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>出院返家一條龍：</strong>一通 Line 即可讓專業台籍人力由病房延續進駐居家空間，照顧不中斷。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>術後黃金康復觀察：</strong>陪伴度過手術後返家、仍需密集注意傷口、管路與生命徵象的黃金過渡期。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>日常就醫與復健引導：</strong>陪同定期回診就醫、精準記錄醫囑，並落實物理/呼吸治療等日常復健與翻身引導。</li>
+                            <li><i class="fas fa-check-circle"></i><strong>家庭喘息與品質兼顧：</strong>由受過自律與隱私特訓的夥伴分擔照顧重擔，把珍貴的相聚時間留給家人。</li>
                         </ul>
                     </div>
                 </div>
@@ -418,21 +431,29 @@
         </div>
     </section>
 
+    <!-- 🧱 ✨ 完全同步首頁：輕量化降噪高質感頁尾 (Footer) -->
     <footer>
         <div class="container text-center text-lg-start">
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h5 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px;">福心管理顧問股份有限公司</h5>
-                    <p class="small mb-2" style="letter-spacing: 0.5px; color: #E5DED4;">
-                        聯絡專線：0963-590-368 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.6;">•</span> 政府立案
-                    </p>
-                    <p class="small text-muted" style="line-height: 1.6;">
-                        服務說明： 本公司提供專業雙北醫院看護派遣，專精於各大醫療院所（如：台大、北榮、亞東、長庚、馬偕等）之24小時/12小時陪病照護。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找住院看護推薦、短期看護服務時的最佳夥伴。
+                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #D5CEE4; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 政府特許立案
                     </p>
                 </div>
-                <div class="col-lg-5 text-center text-lg-center d-flex flex-column justify-content-center align-items-center">
-                    <p class="fw-bold mb-3" style="color: var(--dusty-rose); letter-spacing: 0.5px;">把照護的重擔交給福心，把珍貴的相聚留給家人</p>
-                    <p class="small text-muted">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                    <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <p class="footer-seo-text mb-0">
+                        服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎專業照護、各大醫療院所之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
+                    </p>
                 </div>
             </div>
         </div>
@@ -442,23 +463,21 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // 建立 IntersectionObserver 實例
             const observerOptions = {
                 root: null, 
                 rootMargin: '0px',
-                threshold: 0.15 // 露出 15% 時平滑浮現
+                threshold: 0.15 
             };
 
             const observer = new IntersectionObserver(function (entries, observer) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // 觸發後解除監聽，優化記憶體效能
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
 
-            // 捕捉收費頁所有已掛載標籤的區塊與卡片
             const animatedElements = document.querySelectorAll('.fade-in-scroll');
             animatedElements.forEach(el => observer.observe(el));
         });
