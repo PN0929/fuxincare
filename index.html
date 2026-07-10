@@ -871,7 +871,7 @@
             <!-- 手機版對比 -->
             <div class="mobile-tab-view px-2">
                 <div class="mobile-toggle-nav">
-                    <button type="button" class="mobile-toggle-btn active" onclick="switchMobileTab('agency', this)">與傳統仲介對比</button>
+                    <button type="button" class="mobile-toggle-btn active" onclick="switchMobileTab('agency', this)">與無照仲介對比</button>
                     <button type="button" class="mobile-toggle-btn" onclick="switchMobileTab('platform', this)">與網路平台對比</button>
                 </div>
 
@@ -879,7 +879,7 @@
                     <thead>
                         <tr>
                             <th class="m-fuxin-header">🏆 福心專業照護</th>
-                            <th class="m-target-header" id="mobile-right-header">傳統仲介</th>
+                            <th class="m-target-header" id="mobile-right-header">無照仲介</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1148,7 +1148,7 @@
 
             const rightHeader = document.getElementById('mobile-right-header');
             if(targetType === 'agency') {
-                rightHeader.innerText = '傳統仲介';
+                rightHeader.innerText = '無照仲介';
             } else {
                 rightHeader.innerText = '網路平台';
             }
