@@ -12,6 +12,9 @@
 <meta content="福心照護logo.jpg" property="og:image"/>
 <meta content="website" property="og:type"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
+<link rel="preload" as="image" href="福心形象封面.jpg" fetchpriority="high"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
@@ -89,10 +92,33 @@
         .nav-link:hover { color: var(--primary-dark) !important; }
 
         .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
             padding: 155px 0 76px;
-            background:
-                linear-gradient(90deg, rgba(253,251,247,.98) 38%, rgba(253,251,247,.82) 68%, rgba(232,197,200,.42) 100%),
-                url('福心形象封面.jpg') center right / cover no-repeat;
+            background: var(--ivory);
+        }
+        .hero-media {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center right;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(253,251,247,.98) 38%, rgba(253,251,247,.82) 68%, rgba(232,197,200,.42) 100%);
         }
         .hero-title {
             font-size: clamp(2.35rem, 5vw, 4.15rem);
@@ -343,12 +369,14 @@
         .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 991px) {
-            .hero { background-position: 65% center; }
+            .hero-media img { object-position: 65% center; }
             .service-ribbon-item { border-bottom: 1px solid var(--line); }
         }
         @media (max-width: 767px) {
             .section-space { padding: 68px 0; }
-            .hero { padding: 118px 0 54px; background: linear-gradient(180deg, rgba(253,251,247,.98) 62%, rgba(232,197,200,.65) 100%), url('福心形象封面.jpg') center / cover no-repeat; }
+            .hero { padding: 118px 0 54px; }
+            .hero-media img { object-position: center; }
+            .hero::after { background: linear-gradient(180deg, rgba(253,251,247,.98) 62%, rgba(232,197,200,.65) 100%); }
             .hero-copy { font-size: 1rem; }
             .floating-contact-group { right: 18px; bottom: 18px; }
             .float-btn { width: 52px; height: 52px; }
@@ -433,6 +461,9 @@
 </div>
 </nav>
 <header class="hero">
+<div class="hero-media" aria-hidden="true">
+<img src="福心形象封面.jpg" alt="" loading="eager" fetchpriority="high" decoding="async"/>
+</div>
 <div class="container">
 <div class="row align-items-center">
 <div class="col-lg-7">
@@ -448,7 +479,7 @@
 </div>
 <div class="col-lg-5 hero-logo-panel">
 <div class="hero-logo-frame">
-<img src="福心照護logo.jpg" alt="福心照護官方 Logo"/>
+<img src="福心照護logo.jpg" alt="福心照護官方 Logo" width="210" height="210" loading="eager" fetchpriority="high" decoding="async"/>
 </div>
 </div>
 </div>
@@ -496,7 +527,7 @@
 <th>網路平台</th>
 </tr>
 </thead>
-<tbody><tr class="comparison-static-row"><td class="criterion"><strong>需求了解</strong></td><td><strong>需求評估簡化容易有溝通斷層</strong><p>多由家屬提供需求，再轉交合作看護人員評估是否承接。若需求內容未充分釐清，而增加日後溝通與調整的需求。</p></td><td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td><td><strong>家屬自行填寫與搜尋</strong><p>平台提供篩選工具或公開資料，需求判斷與條件設定通常由家屬自行完成。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>人選來源</strong></td><td><strong>資訊多仰賴仲介說明</strong><p>家屬較難在媒合前掌握完整合作紀錄、篩選依據與不同人選之間的差異。</p></td><td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td><td><strong>可查看資料與評價</strong><p>公開評價有助於初步了解，但每個家庭的病況、照護強度與相處需求不同，仍需自行判斷。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>媒合與溝通</strong></td><td><strong>通常由仲介聯繫安排</strong><p>溝通速度可能較快，但服務條件與照護細節是否完整傳達，仍取決於個別作業方式。</p></td><td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td><td><strong>家屬自行逐一聯繫</strong><p>需自行詢問檔期、經驗、費用與工作內容，並投入時間比較、溝通與確認。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>服務期間</strong></td><td><strong>後續協助依業者而異</strong><p>部分傳統仲介與既有照護人員合作緊密，發生爭議時可能先維持原安排，更換意願與方式依個別業者而定。</p></td><td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td><td><strong>多由雙方自行管理</strong><p>平台功能通常集中在搜尋與媒合，開始服務後的日常溝通，多由家屬與照護人員自行處理。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>合作不適合</strong></td><td><strong>換人彈性視人力而定</strong><p>若現有人力有限，或仲介傾向維持原合作，重新安排可能需要較多協調。</p></td><td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td><td><strong>家屬自行溝通離開</strong><p>中途相處不合時，通常需由家屬自行溝通停止服務，再重新搜尋、聯繫與安排下一位人選。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>適合情況</strong></td><td><strong>已有信任窗口</strong><p>適合熟悉特定仲介、需求較單純，或希望由既有窗口快速聯繫安排的家庭。</p></td><td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td><td><strong>願意自行比較管理</strong><p>適合能投入時間搜尋、訪談與溝通，並自行管理合作關係的家庭。</p></td></tr></tbody>
+<tbody><tr class="comparison-static-row"><td class="criterion"><strong>需求了解</strong></td><td><strong>需求評估簡化容易有溝通斷層</strong><p>多由家屬提供需求，再轉交合作看護人員評估是否承接。若需求內容未充分釐清，而增加日後溝通與調整的需求。</p></td><td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td><td><strong>家屬自行填寫與搜尋</strong><p>平台提供篩選工具或公開資料，需求判斷與條件設定通常由家屬自行完成。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>人選來源</strong></td><td><strong>資訊多仰賴仲介說明</strong><p>家屬較難在媒合前掌握完整合作紀錄、篩選依據與不同人選之間的差異。</p></td><td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td><td><strong>可查看資料與評價</strong><p>公開評價有助於初步了解，但每個家庭的病況、照護強度與相處需求不同，仍需自行判斷。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>媒合與溝通</strong></td><td><strong>通常由仲介聯繫安排</strong><p>溝通速度可能較快，但服務條件與照護細節是否完整傳達，仍取決於個別作業方式。</p></td><td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td><td><strong>家屬自行逐一聯繫</strong><p>需自行詢問檔期、經驗、費用與工作內容，並投入時間比較、溝通與確認。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>服務期間</strong></td><td><strong>後續協助依業者而異</strong><p>部分傳統仲介與既有照護人員合作緊密，發生爭議時可能先維持原安排，更換意願與方式依個別業者而定。</p></td><td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td><td><strong>多由雙方自行管理</strong><p>平台功能通常集中在搜尋與媒合，開始服務後的日常溝通，多由家屬與照護人員自行處理。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>合作不適合</strong></td><td><strong>換人彈性視人力而定</strong><p>若現有人力有限，或仲介傾向維持原合作，重新安排可能需要較多協調。</p></td><td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td><td><strong>家屬自行溝通離開</strong><p>中途相處不合時，通常需由家屬自行溝通停止服務，再重新搜尋、聯繫與安排下一位人選。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>適合情況</strong></td><td><strong>已有信任窗口</strong><p>適合熟悉特定仲介、需求較單純，或希望由既有窗口快速聯繫安排的家庭。</p></td><td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td><td><strong>願意自行比較管理</strong><p>適合能投入時間搜尋、訪談與溝通，並自行管理合作關係的家庭。</p></td></tr></tbody>
 </table>
 </div>
 </div>
@@ -548,7 +579,7 @@
 <div class="col-lg-5 col-md-6">
 <div class="legal-card fade-in-scroll">
 <div class="cert-img-wrapper text-center">
-<img class="cert-img" src="license.jpg" alt="新北市政府私立就業服務機構許可證"/>
+<img class="cert-img" src="license.jpg" alt="新北市政府私立就業服務機構許可證" loading="lazy" decoding="async" fetchpriority="low"/>
 </div>
 <h3>公司設立與就業服務許可</h3>
 <p class="mb-0">福心依法完成公司設立，並取得新北市政府核發之私立就業服務機構許可證（新北私就字第 068 號）。相關資格代表福心依規範提供就業服務與媒合業務，也是我們建立正式服務流程的基礎。</p>
@@ -557,10 +588,10 @@
 <div class="col-lg-5 col-md-6">
 <div class="legal-card fade-in-scroll">
 <div class="cert-img-wrapper text-center">
-<img class="cert-img" src="award.jpg" alt="照護訓練與合作經驗證明"/>
+<img class="cert-img" src="award.jpg" alt="照護訓練與合作經驗證明" loading="lazy" decoding="async" fetchpriority="low"/>
 </div>
 <h3>合作經驗與服務回饋</h3>
-<p class="mb-0">合作照護人員除需提供基本資格與相關文件，我們也會持續累積合作紀錄、服務表現與回饋，作為後續媒合的重要參考。每次媒合仍會依個別需求重新評估，不以單一證明取代實際評估。</p>
+<p class="mb-0">合作照護人員除需提供基本資格與相關文件，福心也會持續累積合作紀錄、服務表現與回饋，作為後續媒合的重要參考。每次媒合仍會依個別需求重新評估，不以單一證明取代實際評估。</p>
 </div>
 </div>
 </div>
