@@ -128,7 +128,7 @@
             font-size: clamp(2.35rem, 5vw, 4.15rem);
             line-height: 1.22;
             font-weight: 700;
-            letter-spacing: -0.02em;
+           letter-spacing: -0.02em;
             max-width: 760px;
         }
         .hero-title span { color: var(--primary-dark); }
@@ -437,6 +437,78 @@
         .comparison-static-row:hover td.fuxin-cell { background-color: #F0E5D4 !important; }
         .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) { opacity: .34; }
         .comparison-chevron, .comparison-detail-row { display: none !important; }
+
+        /* 手機版雙表格呈現機制與福心置左排版 */
+        .mobile-comparison-container {
+            display: none;
+        }
+        @media (max-width: 767px) {
+            /* 在手機上隱藏原本笨重的 4 欄桌機表格 */
+            .desktop-comparison-container {
+                display: none !important;
+            }
+            /* 顯示專門為手機優化的雙表格對照區 */
+            .mobile-comparison-container {
+                display: block;
+            }
+            /* 調整手機表格，讓它完全貼合螢幕不需要捲動 */
+            .mobile-comparison-table {
+                width: 100% !important;
+                min-width: unset !important;
+                margin-bottom: 0px;
+                background: #fff;
+                border-radius: 16px;
+                overflow: hidden;
+            }
+            .mobile-comparison-table th, .mobile-comparison-table td {
+                padding: 14px 12px !important;
+                font-size: 0.88rem !important;
+            }
+            /* 撐開寬度各佔約 50% 達到精美並排 */
+            .mobile-comparison-table td, .mobile-comparison-table th {
+                width: 50%;
+            }
+            /* 區塊標題（如：需求了解、服務期間）橫跨整列 */
+            .mobile-section-header {
+                background: #F4EFE7 !important;
+                color: var(--text);
+                font-weight: 700;
+                text-align: center;
+            }
+
+            /* 【優化】手機版切換按鈕（Tab）樣式 */
+            .mobile-tab-switch {
+                display: flex;
+                background: rgba(183, 138, 88, 0.1);
+                border-radius: 99px;
+                padding: 4px;
+                margin-bottom: 24px;
+                border: 1px solid var(--line);
+            }
+            .mobile-tab-btn {
+                flex: 1;
+                border: 0;
+                background: transparent;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: var(--muted);
+                border-radius: 99px;
+                transition: all 0.25s ease;
+            }
+            .mobile-tab-btn.active {
+                background: var(--primary);
+                color: #fff;
+                box-shadow: 0 4px 12px rgba(183, 138, 88, 0.25);
+            }
+            /* 控制對照內容的顯示/隱藏 */
+            .mobile-comparison-panel {
+                display: none;
+            }
+            .mobile-comparison-panel.active {
+                display: block;
+            }
+        }
 </style>
 </head>
 <body>
@@ -488,7 +560,7 @@
 <div class="license-line"><i class="fas fa-shield-heart"></i> 政府核准立案｜新北私就字第 068 號</div>
 <div class="d-grid d-sm-flex gap-3 mt-4">
 <a class="btn btn-primary-soft" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line me-2"></i>立即諮詢照護需求</a>
-<a class="btn btn-outline-soft" href="process.html"><i class="fas fa-arrow-right me-2"></i>了解服務流程</a>
+<a class="btn btn-outline-soft" href="tel:0229670360"><i class="fas fa-phone-alt me-2"></i>撥打電話諮詢</a>
 </div>
 <p class="mt-3 mb-0 text-muted small"><i class="far fa-clock me-1"></i> 上班時間 08:00 - 21:30 撥打電話 OK！其餘時間歡迎 LINE@ 留言，我們將盡快處理。</p>
 </div>
@@ -540,7 +612,8 @@
 <div class="section-kicker">Service Comparison</div>
 <h2 class="section-title">不同媒合方式，服務責任也不同</h2>
 </div>
-<div class="comparison-wrap fade-in-scroll">
+
+<div class="comparison-wrap fade-in-scroll desktop-comparison-container">
 <div class="table-responsive">
 <table class="table comparison-table">
 <thead>
@@ -555,6 +628,105 @@
 </table>
 </div>
 </div>
+
+<div class="mobile-comparison-container fade-in-scroll">
+    
+    <div class="mobile-tab-switch">
+        <button class="mobile-tab-btn active" onclick="switchMobileTab('agency')">福心 VS 傳統仲介</button>
+        <button class="mobile-tab-btn" onclick="switchMobileTab('platform')">福心 VS 網路平台</button>
+    </div>
+
+    <div id="panel-agency" class="mobile-comparison-panel active">
+        <div class="comparison-wrap">
+            <table class="table mobile-comparison-table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fuxin-head text-center" style="background: #EDE1CF;">福心照護（優勢）</th>
+                        <th class="text-center" style="background: #F4EFE7;">傳統仲介</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>1. 需求了解</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td>
+                        <td><strong>需求評估簡化</strong><p>多由家屬提供需求，再轉交合作看護評估。若需求未充分釐清，容易有溝通斷層並增加日後調整需求。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>2. 人選來源</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td>
+                        <td><strong>資訊仰賴仲介說明</strong><p>家屬較難在媒合前掌握完整合作紀錄、篩選依據與不同人選之間的差異。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>3. 媒合與溝通</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td>
+                        <td><strong>通常由仲介聯繫安排</strong><p>溝通速度可能較快，但服務條件與照護細節是否完整傳達，仍取決於個別作業方式。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>4. 服務期間</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td>
+                        <td><strong>後續協助依業者而異</strong><p>部分傳統仲介與既有照護人員合作緊密，發生爭議時可能先維持原安排，更換意願依個別業者而定。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>5. 合作不適合</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td>
+                        <td><strong>換人彈性視人力而定</strong><p>若現有人力有限，或仲介傾向維持原合作，重新安排可能需要較多協調。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>6. 適合情況</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td>
+                        <td><strong>已有信任窗口</strong><p>適合熟悉特定仲介、需求較單純，或希望由既有窗口快速聯繫安排的家庭。</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="panel-platform" class="mobile-comparison-panel">
+        <div class="comparison-wrap">
+            <table class="table mobile-comparison-table mb-0">
+                <thead>
+                    <tr>
+                        <th class="fuxin-head text-center" style="background: #EDE1CF;">福心照護（優勢）</th>
+                        <th class="text-center" style="background: #F4EFE7;">網路平台</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>1. 需求了解</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td>
+                        <td><strong>家屬自行填寫與搜尋</strong><p>平台提供篩選工具或公開資料，需求判斷與條件設定通常由家屬自行完成。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>2. 人選來源</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td>
+                        <td><strong>可查看資料與評價</strong><p>公開評價有助於初步了解，但每個家庭的病況、照護強度與相處需求不同，仍需自行判斷。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>3. 媒合與溝通</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td>
+                        <td><strong>家屬自行逐一聯繫</strong><p>需自行詢問檔期、經驗、費用與工作內容，並投入時間比較、溝通與確認。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>4. 服務期間</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td>
+                        <td><strong>多由雙方自行管理</strong><p>平台功能通常集中在搜尋與媒合，開始服務後的日常溝通，多由家屬與照護人員自行處理。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>5. 合作不適合</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td>
+                        <td><strong>家屬自行溝通離開</strong><p>中途相處不合時，通常需由家屬自行溝通停止服務，再重新搜尋、聯繫與安排下一位人選。</p></td>
+                    </tr>
+                    <tr><td colspan="2" class="mobile-section-header"><strong>6. 適合情況</strong></td></tr>
+                    <tr>
+                        <td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td>
+                        <td><strong>願意自行比較管理</strong><p>適合能投入時間搜尋、訪談與溝通，並自行管理合作關係的家庭。</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 </div>
 </section>
 <section class="section-space">
@@ -661,6 +833,27 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+        // 【新增】控制手機版比較表切換的 JavaScript 函數
+        function switchMobileTab(target) {
+            // 1. 切換按鈕 active 樣式
+            const buttons = document.querySelectorAll('.mobile-tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // 根據點擊目標將對應的按鈕加上 active
+            if (target === 'agency') {
+                buttons[0].classList.add('active');
+            } else {
+                buttons[1].classList.add('active');
+            }
+
+            // 2. 切換面板顯示狀態
+            const panels = document.querySelectorAll('.mobile-comparison-panel');
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+            document.getElementById('panel-' + target).classList.add('active');
+        }
 
         document.addEventListener('DOMContentLoaded', function () {
             const observer = new IntersectionObserver(function (entries, observer) {
