@@ -33,16 +33,16 @@
     </script>
 <style>
         :root {
-            --primary: #B78A58;
-            --primary-dark: #8D683F;
-            --rose: #E8C5C8;
-            --gold: #C5A880;
-            --ivory: #FDFBF7;
-            --sand: #F6F1E8;
+            --primary: #C97886;
+            --primary-dark: #92525F;
+            --rose: #E9CCD2;
+            --gold: #B5A078;
+            --ivory: #FBF7EF;
+            --sand: #F3ECDF;
             --white: #FFFFFF;
-            --text: #3A3535;
-            --muted: #655D5D;
-            --line: rgba(183, 138, 88, 0.18);
+            --text: #40383A;
+            --muted: #6B6261;
+            --line: rgba(181, 160, 120, 0.24);
         }
 
         html { scroll-behavior: smooth; }
@@ -56,7 +56,7 @@
         a { text-decoration: none; }
         .section-space { padding: 88px 0; }
         .section-kicker {
-            color: var(--primary-dark);
+            color: #79643F;
             font-size: 0.86rem;
             font-weight: 700;
             letter-spacing: 0.16em;
@@ -77,7 +77,7 @@
         }
 
         .navbar {
-            background: rgba(253, 251, 247, 0.94);
+            background: rgba(251, 247, 239, 0.95);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--line);
         }
@@ -114,7 +114,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center right;
-            background: linear-gradient(135deg, #FDFBF7 0%, #F5E7E8 100%);
+            background: linear-gradient(135deg, #FBF7EF 0%, #F5E7E3 52%, #E9CCD2 100%);
         }
         .hero::after {
             content: "";
@@ -122,7 +122,7 @@
             inset: 0;
             z-index: -1;
             pointer-events: none;
-            background: linear-gradient(90deg, rgba(253,251,247,.98) 38%, rgba(253,251,247,.82) 68%, rgba(232,197,200,.42) 100%);
+            background: linear-gradient(90deg, rgba(251,247,239,.98) 38%, rgba(251,247,239,.86) 68%, rgba(233,204,210,.58) 100%);
         }
         .hero-title {
             font-size: clamp(2.35rem, 5vw, 4.15rem);
@@ -159,12 +159,12 @@
             transition: .25s ease;
         }
         .btn-primary-soft {
-            background: var(--primary);
+            background: var(--primary-dark);
             color: #fff;
-            border: 1px solid var(--primary);
-            box-shadow: 0 10px 25px rgba(141,104,63,.18);
+            border: 1px solid var(--primary-dark);
+            box-shadow: 0 10px 25px rgba(152,81,96,.18);
         }
-        .btn-primary-soft:hover { background: var(--primary-dark); color: #fff; transform: translateY(-2px); }
+        .btn-primary-soft:hover { background: #7F4250; color: #fff; transform: translateY(-2px); }
         .btn-outline-soft {
             color: var(--text);
             border: 1px solid rgba(58,53,53,.2);
@@ -177,11 +177,11 @@
             background: rgba(255,255,255,.9);
             border: 1px solid var(--line);
             border-radius: 22px;
-            box-shadow: 0 18px 45px rgba(141,104,63,.08);
+            box-shadow: 0 18px 45px rgba(152,81,96,.08);
             overflow: hidden;
         }
         .service-ribbon-item { padding: 23px 16px; text-align: center; height: 100%; }
-        .service-ribbon-item i { color: var(--primary); font-size: 1.4rem; margin-bottom: 9px; }
+        .service-ribbon-item i { color: #9B8358; font-size: 1.4rem; margin-bottom: 9px; }
         .service-ribbon-item strong { display: block; font-size: .98rem; }
 
         .journey-section { background: var(--sand); }
@@ -197,7 +197,7 @@
         .journey-step .number {
             width: 34px; height: 34px; border-radius: 50%;
             display: inline-flex; align-items: center; justify-content: center;
-            background: var(--sand); color: var(--primary-dark); font-weight: 700;
+            background: var(--sand); color: #806B47; font-weight: 700;
             margin-bottom: 12px;
         }
         .journey-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
@@ -209,17 +209,17 @@
             border-radius: 20px;
             padding: 30px 25px;
             height: 100%;
-            box-shadow: 0 10px 30px rgba(141,104,63,.04);
+            box-shadow: 0 10px 30px rgba(152,81,96,.05);
             transition: .25s ease;
         }
         .process-card:hover, .principle-card:hover, .article-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 18px 38px rgba(141,104,63,.09);
+            box-shadow: 0 18px 38px rgba(152,81,96,.10);
         }
         .icon-circle {
             width: 54px; height: 54px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            background: var(--sand); color: var(--primary-dark); font-size: 1.28rem;
+            background: var(--sand); color: #8B7650; font-size: 1.28rem;
             margin-bottom: 19px;
         }
         .process-card h3, .principle-card h3 { font-size: 1.18rem; font-weight: 700; margin-bottom: 12px; }
@@ -230,7 +230,7 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 18px 45px rgba(141,104,63,.07);
+            box-shadow: 0 18px 45px rgba(152,81,96,.08);
         }
         .comparison-table { margin: 0; min-width: 920px; }
         .comparison-table th, .comparison-table td {
@@ -240,22 +240,22 @@
             line-height: 1.7;
         }
         .comparison-table thead th {
-            background: #F4EFE7;
+            background: #F4EDDF;
             text-align: center;
             font-size: 1.02rem;
             color: var(--text);
         }
         .comparison-table thead th.fuxin-head {
-            background: #EDE1CF;
+            background: #F1D9DE;
             color: var(--primary-dark);
         }
         .comparison-table .criterion {
             width: 16%;
             font-weight: 700;
-            background: #FCFAF6;
+            background: #FCF9F3;
             color: var(--text);
         }
-        .comparison-table .fuxin-cell { background: #FBF5EA; }
+        .comparison-table .fuxin-cell { background: #FBEEF1; }
         .comparison-table strong { display: block; margin-bottom: 5px; color: var(--text); }
         .comparison-table .fuxin-cell strong { color: var(--primary-dark); }
         .comparison-note {
@@ -266,11 +266,11 @@
         }
 
         .management-panel {
-            background: linear-gradient(135deg, #4B4343 0%, #312C2C 100%);
+            background: linear-gradient(135deg, #5A4148 0%, #3D3034 100%);
             color: #fff;
             border-radius: 28px;
             padding: clamp(34px, 6vw, 64px);
-            box-shadow: 0 26px 70px rgba(49,44,44,.18);
+            box-shadow: 0 26px 70px rgba(61,46,51,.18);
         }
         .management-panel .section-lead { color: rgba(255,255,255,.76); }
         .management-point {
@@ -278,7 +278,7 @@
             padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.11);
         }
         .management-point:last-child { border-bottom: 0; }
-        .management-point i { color: #E4C99C; margin-top: 5px; }
+        .management-point i { color: #D8C49A; margin-top: 5px; }
         .management-point strong { display: block; margin-bottom: 4px; }
         .management-point span { color: rgba(255,255,255,.7); line-height: 1.7; font-size: .94rem; }
 
@@ -293,8 +293,8 @@
             padding: 8px;
             border-radius: 50%;
             background: rgba(255,255,255,.94);
-            border: 1px solid rgba(154,127,90,.24);
-            box-shadow: 0 18px 45px rgba(93,72,48,.15);
+            border: 1px solid rgba(181,160,120,.32);
+            box-shadow: 0 18px 45px rgba(104,81,62,.12);
         }
         .hero-logo-frame img {
             width: 100%;
@@ -341,15 +341,15 @@
 
         .cta-section { padding: 76px 0; }
         .cta-box {
-            background: linear-gradient(135deg, #F1E5D4 0%, #F5E7E8 100%);
+            background: linear-gradient(135deg, #F3ECDF 0%, #F2DDE1 100%);
             border: 1px solid var(--line);
             border-radius: 28px;
             padding: clamp(34px, 6vw, 62px);
         }
 
         footer {
-            background: #433D3D;
-            color: #ECE6DD;
+            background: #49383E;
+            color: #F7ECEF;
             padding: 48px 0 26px;
         }
         .footer-divider { border-top: 1px solid rgba(255,255,255,.09); margin: 22px 0; }
@@ -380,7 +380,7 @@
             .section-space { padding: 68px 0; }
             .hero { padding: 118px 0 54px; }
             .hero-media img { object-position: center; }
-            .hero::after { background: linear-gradient(180deg, rgba(253,251,247,.98) 62%, rgba(232,197,200,.65) 100%); }
+            .hero::after { background: linear-gradient(180deg, rgba(251,247,239,.98) 62%, rgba(233,204,210,.72) 100%); }
             .hero-copy { font-size: 1rem; }
             .floating-contact-group { right: 18px; bottom: 18px; }
             .float-btn { width: 52px; height: 52px; }
@@ -389,7 +389,7 @@
         /* Accordion comparison interaction */
         .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
         .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #F4EFE7 !important; }
+        .comparison-summary-row:hover td { background-color: #F4EDDF !important; }
         .comparison-summary-row:hover td.fuxin-cell { background-color: #F0E5D4 !important; }
         .comparison-summary-row.is-open td { background-color: #EFE9E0 !important; }
         .comparison-summary-row.is-open td.fuxin-cell { background-color: #EADCC6 !important; }
@@ -405,7 +405,7 @@
         /* Comparison accordion: multiple rows may stay open */
         .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
         .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #F4EFE7 !important; }
+        .comparison-summary-row:hover td { background-color: #F4EDDF !important; }
         .comparison-summary-row:hover td.fuxin-cell { background-color: #F0E5D4 !important; }
         .comparison-summary-row.is-open td { background-color: #EFE9E0 !important; }
         .comparison-summary-row.is-open td.fuxin-cell { background-color: #EADCC6 !important; }
@@ -433,7 +433,7 @@
         .comparison-static-row td { transition: background-color .24s ease, opacity .24s ease; }
         .comparison-static-row td p { margin: 8px 0 0; color: var(--muted); line-height: 1.7; font-size: .94rem; }
         .comparison-static-row td.fuxin-cell p { color: var(--primary-dark); }
-        .comparison-static-row:hover td { background-color: #F4EFE7 !important; }
+        .comparison-static-row:hover td { background-color: #F4EDDF !important; }
         .comparison-static-row:hover td.fuxin-cell { background-color: #F0E5D4 !important; }
         .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) { opacity: .34; }
         .comparison-chevron, .comparison-detail-row { display: none !important; }
@@ -470,7 +470,7 @@
             }
             /* 區塊標題（如：需求了解、服務期間）橫跨整列 */
             .mobile-section-header {
-                background: #F4EFE7 !important;
+                background: #F4EDDF !important;
                 color: var(--text);
                 font-weight: 700;
                 text-align: center;
@@ -479,7 +479,7 @@
             /* 【優化】手機版切換按鈕（Tab）樣式 */
             .mobile-tab-switch {
                 display: flex;
-                background: rgba(183, 138, 88, 0.1);
+                background: rgba(181,160,120,.14);
                 border-radius: 99px;
                 padding: 4px;
                 margin-bottom: 24px;
@@ -497,9 +497,9 @@
                 transition: all 0.25s ease;
             }
             .mobile-tab-btn.active {
-                background: var(--primary);
+                background: var(--primary-dark);
                 color: #fff;
-                box-shadow: 0 4px 12px rgba(183, 138, 88, 0.25);
+                box-shadow: 0 4px 12px rgba(152,81,96,.25);
             }
             /* 控制對照內容的顯示/隱藏 */
             .mobile-comparison-panel {
@@ -641,8 +641,8 @@
             <table class="table mobile-comparison-table mb-0">
                 <thead>
                     <tr>
-                        <th class="fuxin-head text-center" style="background: #EDE1CF;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #F4EFE7;">傳統仲介</th>
+                        <th class="fuxin-head text-center" style="background: #F1D9DE;">福心照護（優勢）</th>
+                        <th class="text-center" style="background: #F4EDDF;">傳統仲介</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -686,8 +686,8 @@
             <table class="table mobile-comparison-table mb-0">
                 <thead>
                     <tr>
-                        <th class="fuxin-head text-center" style="background: #EDE1CF;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #F4EFE7;">網路平台</th>
+                        <th class="fuxin-head text-center" style="background: #F1D9DE;">福心照護（優勢）</th>
+                        <th class="text-center" style="background: #F4EDDF;">網路平台</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -734,7 +734,7 @@
 <div class="text-center mb-5 fade-in-scroll">
 <div class="section-kicker">Care Guides</div>
 <h2 class="section-title">照護知識與實用指南</h2>
-<p class="section-lead mx-auto">整理住院陪病、返家照護與合作溝通的常見問題，協助家庭在安排照護前掌握實用資訊。</p>
+<p class="section-lead mx-auto">從住院行李、家人輪班到看護費用，整理第一次陪病最常遇到的問題，協助家庭在慌亂中找到下一步。</p>
 </div>
 <div class="row g-4" id="news-container">
 <div class="col-md-4">
@@ -747,18 +747,18 @@
 </div>
 <div class="col-md-4">
 <article class="article-card fade-in-scroll">
-<span class="tag">照護銜接</span>
-<h3>住院照護、返家照護與長照服務，有哪些差別？</h3>
-<p>從服務場域、照護時間、需求強度與資源申請，了解不同階段該如何安排。</p>
-<a class="article-link" href="article-care-options.html">閱讀主題摘要 <i class="fas fa-arrow-right ms-1"></i></a>
+<span class="tag">陪病分工</span>
+<h3>一家人怎麼輪流陪病？排班與交班實用指南</h3>
+<p>一起考量工作、孩子與交通，安排白天和夜間人選，並用陪病交班表留下重要資訊。</p>
+<a aria-label="閱讀一家人怎麼輪流陪病完整指南" class="article-link" href="blog-family-caregiving-shifts.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
 </article>
 </div>
 <div class="col-md-4">
 <article class="article-card fade-in-scroll">
-<span class="tag">合作管理</span>
-<h3>照護期間遇到問題，如何讓合作更順利？</h3>
-<p>從需求變化、溝通方式、服務調整到重新媒合，整理常見情況與處理方向。</p>
-<a class="article-link" href="article-care-coordination.html">閱讀主題摘要 <i class="fas fa-arrow-right ms-1"></i></a>
+<span class="tag">費用指南</span>
+<h3>醫院看護一天多少錢？先看懂費用組成</h3>
+<p>分清住院整合照護、自費看護與出院後長照，並用互動工具整理需求、比較兩份報價。</p>
+<a aria-label="閱讀醫院看護費用完整指南" class="article-link" href="blog-hospital-caregiver-cost.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
 </article>
 </div>
 </div>
@@ -816,7 +816,7 @@
 <div class="row g-4 align-items-start">
 <div class="col-lg-7">
 <h2 class="fw-bold mb-2" style="color:var(--gold);font-size:1.2rem;">福心管理顧問股份有限公司</h2>
-<p class="small mb-0" style="color:#D5CEE4;">聯絡專線：02-2967-0360 <span class="mx-2">•</span> 統一編號：62179070 <span class="mx-2">•</span> 新北私就字第 068 號</p>
+<p class="small mb-0" style="color:#E8D8DD;">聯絡專線：02-2967-0360 <span class="mx-2">•</span> 統一編號：62179070 <span class="mx-2">•</span> 新北私就字第 068 號</p>
 </div>
 <div class="col-lg-5 text-lg-end">
 <p class="fw-bold mb-1" style="color:var(--rose);">陪伴家庭做好每一個照護安排</p>
@@ -825,7 +825,7 @@
 </div>
 <div class="footer-divider"></div>
 <div class="footer-note">
-<p class="mb-2"><strong style="color:#D9C6A6;">雙北醫院/桃園醫院看護媒合與照護服務說明</strong></p>
+<p class="mb-2"><strong style="color:#D8C49A;">雙北醫院/桃園醫院看護媒合與照護服務說明</strong></p>
 <p class="mb-2">福心服務範圍以台北市、新北市、桃園市為主，提供醫院看護媒合、住院陪病照護需求了解、24 小時或短期照護人員安排、服務期間追蹤與溝通協調，並可依家庭需求說明出院返家、居家照護及後續長照資源的銜接方向。</p>
 <p class="mb-0">實際可安排的合作照護人員、服務時間、費用與照護內容，須依病人狀況、所在醫院、照護強度、人員檔期及雙方確認結果為準。網站內容提供一般照護服務與醫院看護媒合資訊。</p>
 </div>
