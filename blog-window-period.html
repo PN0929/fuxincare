@@ -3,319 +3,913 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 📈 SEO 核心關鍵字再升級：融入 1966長照專線、長照3.0、居服員服務 -->
-    <title>等外籍看護要3個月？2026免巴氏量表與1966長照3.0居服員出院銜接指南｜福心照護</title>
-    <meta name="description" content="2026年外籍看護申請大變動，80歲以上免巴氏量表、家庭幫傭新制導致移工供不應求。出院回家若長照3.0居服員時間無法配合，福心專業照護提供1966方案以外的24小時與短期台籍看護銜接方案。">
-    
+    <title>家人怎麼輪流陪病？陪病交班表、問醫師與醫療資訊整理｜福心照護</title>
+    <meta name="description" content="家人怎麼安排白天與夜間陪病？本文整理陪病輪班、五分鐘交班法、問醫師的五個問題及重要醫療資訊，並提供可填寫、複製的互動表單。">
+    <meta name="author" content="福心照護小編">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:site_name" content="福心照護">
+    <meta property="og:title" content="家人怎麼輪流陪病？陪病交班表、問醫師與醫療資訊整理">
+    <meta property="og:description" content="從家人分工到交班、醫病溝通與醫療資訊整理，一篇掌握陪病期間最重要的資訊協作。">
+    <meta property="article:published_time" content="2026-07-31">
+    <meta property="article:modified_time" content="2026-07-31">
+    <meta property="article:section" content="家人陪病">
+    <meta property="article:tag" content="陪病輪班">
+    <meta property="article:tag" content="陪病交班表">
+    <meta property="article:tag" content="醫病溝通">
+
     <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "家人怎麼輪流陪病？陪病交班表、問醫師與醫療資訊整理",
+      "description": "整理家人陪病輪班、交班內容、醫病溝通與重要醫療資訊，並提供可填寫的互動表單。",
+      "datePublished": "2026-07-31",
+      "dateModified": "2026-07-31",
+      "inLanguage": "zh-TW",
+      "articleSection": "家人陪病",
+      "keywords": ["家人怎麼輪流陪病", "陪病交班表", "問醫師的問題", "醫療資訊整理"],
+      "author": {
+        "@type": "Organization",
+        "name": "福心照護小編"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "福心管理顧問股份有限公司"
+      }
+    }
+    </script>
+
     <style>
         :root {
-            --primary-pink: #D4A373;
-            --dusty-rose: #E8C5C8; 
-            --champagne-gold: #C5A880; 
-            --bg-ivory: #FDFBF7; 
-            --text-dark: #3A3535; 
-            --text-muted: #5A5252;
+            --primary: #B78A58;
+            --primary-dark: #8D683F;
+            --rose: #E8C5C8;
+            --gold: #C5A880;
+            --ivory: #FDFBF7;
+            --sand: #F6F1E8;
+            --white: #FFFFFF;
+            --text: #3A3535;
+            --muted: #655D5D;
+            --line: rgba(183, 138, 88, .2);
+            --green: #658168;
         }
+
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
-            color: var(--text-dark);
+            margin: 0;
+            background: var(--ivory);
+            color: var(--text);
+            font-family: "Noto Sans TC", sans-serif;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
+        a { color: var(--primary-dark); }
+        .reading-progress {
+            position: fixed;
+            inset: 0 0 auto;
+            z-index: 1100;
+            height: 4px;
+        }
+        .reading-progress span {
+            display: block;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, var(--rose), var(--primary));
+        }
         .navbar {
-            background-color: rgba(243, 232, 233, 0.96); 
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            background: rgba(253, 251, 247, .95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
         }
         .navbar-brand {
+            color: var(--text) !important;
             font-weight: 700;
-            color: var(--text-dark) !important;
-            letter-spacing: 2px;
+            letter-spacing: .12em;
         }
-        .nav-link {
-            color: var(--text-dark) !important;
-            margin: 0 10px;
-            font-weight: 400;
-        }
-        .nav-link:hover {
-            color: var(--champagne-gold) !important;
-        }
+        .nav-link { color: var(--text) !important; margin: 0 6px; }
+        .nav-link:hover { color: var(--primary-dark) !important; }
         .page-header {
-            padding: 160px 0 60px 0;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            padding: 142px 0 54px;
+            text-align: center;
+            background: linear-gradient(135deg, #FFF9F7 0%, #F3E8E9 58%, #F1E5D4 100%);
+        }
+        .breadcrumbs {
+            margin-bottom: 24px;
+            color: var(--muted);
+            font-size: .88rem;
+        }
+        .breadcrumbs a { text-decoration: none; }
+        .article-tag {
+            display: inline-flex;
+            padding: 7px 13px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255,255,255,.8);
+            color: var(--primary-dark);
+            font-size: .82rem;
+            font-weight: 700;
+        }
+        .page-header h1 {
+            max-width: 960px;
+            margin: 18px auto 16px;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1.3;
+            letter-spacing: -.02em;
+        }
+        .article-summary {
+            max-width: 820px;
+            margin: 0 auto;
+            color: var(--muted);
+            font-size: 1.08rem;
+            line-height: 1.9;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 22px;
+            margin-top: 24px;
+            color: var(--muted);
+            font-size: .88rem;
+        }
+        .article-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 760px) 250px;
+            gap: 54px;
+            align-items: start;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 72px 22px 30px;
+        }
+        .article-body {
+            padding: clamp(26px, 5vw, 54px);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: var(--white);
+            box-shadow: 0 14px 40px rgba(86,63,43,.05);
+        }
+        .article-body p, .article-body li {
+            color: var(--muted);
+            font-size: 1.04rem;
+            line-height: 1.9;
+        }
+        .article-body p { margin-bottom: 1.4rem; }
+        .article-body h2 {
+            margin: 3.2rem 0 1.2rem;
+            padding-left: 15px;
+            border-left: 5px solid var(--gold);
+            font-size: 1.55rem;
+            line-height: 1.45;
+            font-weight: 700;
+            scroll-margin-top: 96px;
+        }
+        .article-body h3 {
+            margin: 2rem 0 .9rem;
+            font-size: 1.18rem;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+        .article-body ul { padding-left: 1.35rem; }
+        .lead-answer {
+            padding: 22px 24px;
+            border-radius: 16px;
+            background: var(--sand);
+            font-weight: 500;
+        }
+        .quote {
+            margin: 30px 0;
+            padding: 20px 22px;
+            border-left: 5px solid var(--primary);
+            background: var(--sand);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .wisdom-box, .role-box, .privacy-box, .notice-box {
+            margin: 26px 0;
+            padding: 24px;
+            border-radius: 18px;
+        }
+        .wisdom-box {
+            border: 1px solid rgba(232,197,200,.8);
+            background: #FFF6F2;
+        }
+        .role-box { border: 1px solid var(--line); background: #F7F2EA; }
+        .privacy-box { border: 1px solid #DCE5DD; background: #F3F7F3; }
+        .notice-box { border: 1px solid #E5E1DB; background: #F8F8F6; }
+        .wisdom-box h3, .role-box h3, .privacy-box h3, .notice-box h3 { margin-top: 0; }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin: 22px 0;
+        }
+        .shift-card {
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 17px;
+            background: #fff;
+        }
+        .shift-card h3 { margin-top: 0; color: var(--primary-dark); }
+        .shift-card ul { margin-bottom: 0; }
+        .form-card {
+            margin: 34px 0;
+            padding: clamp(22px, 4vw, 32px);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: linear-gradient(145deg, #FFFDFC, #F8F2E9);
+            box-shadow: 0 12px 32px rgba(86,63,43,.06);
+        }
+        .form-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+        .form-card-header h2 {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .form-badge {
+            flex: 0 0 auto;
+            padding: 7px 11px;
+            border-radius: 999px;
+            background: var(--rose);
+            color: var(--text);
+            font-size: .78rem;
+            font-weight: 700;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+        .field { display: flex; flex-direction: column; gap: 7px; }
+        .field.full { grid-column: 1 / -1; }
+        .field label, .question-label {
+            color: var(--text);
+            font-size: .92rem;
+            font-weight: 700;
+        }
+        .field input, .field select, .field textarea {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid rgba(141,104,63,.24);
+            border-radius: 11px;
+            background: #fff;
+            color: var(--text);
+            font: inherit;
+        }
+        .field textarea { min-height: 94px; resize: vertical; }
+        .field input:focus, .field select:focus, .field textarea:focus {
+            border-color: var(--primary);
+            outline: 3px solid rgba(183,138,88,.12);
+        }
+        .question-row {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            gap: 10px;
+            align-items: start;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--line);
+        }
+        .question-row:last-child { border-bottom: 0; }
+        .question-row input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 3px;
+            accent-color: var(--primary);
+        }
+        .question-row textarea {
+            width: 100%;
+            min-height: 70px;
+            margin-top: 9px;
+            padding: 10px 12px;
+            border: 1px solid rgba(141,104,63,.22);
+            border-radius: 10px;
+            font: inherit;
+            resize: vertical;
+        }
+        .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+        .btn-primary-soft, .btn-quiet, .btn-line {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+        .btn-primary-soft {
+            border: 1px solid var(--primary);
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-quiet {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--primary-dark);
+        }
+        .btn-line { border: 1px solid #06C755; background: #06C755; color: #fff; }
+        .btn-primary-soft:hover, .btn-line:hover { color: #fff; transform: translateY(-2px); }
+        .btn-quiet:hover { background: var(--sand); }
+        .generated-summary {
+            display: none;
+            margin-top: 22px;
+            padding: 18px;
+            border: 1px dashed var(--primary);
+            border-radius: 14px;
+            background: #fff;
+            white-space: pre-wrap;
+            color: var(--muted);
+            font-size: .94rem;
+            line-height: 1.8;
+        }
+        .generated-summary.is-visible { display: block; }
+        .toc {
+            position: sticky;
+            top: 96px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #fff;
+        }
+        .toc h2 { margin: 0 0 10px; font-size: 1rem; font-weight: 700; }
+        .toc a {
+            display: block;
+            padding: 7px 0;
+            color: var(--muted);
+            font-size: .9rem;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+        .toc a:hover, .toc a.is-active {
+            color: var(--primary-dark);
+            font-weight: 700;
+            transform: translateX(4px);
+        }
+        .action-box {
+            margin-top: 46px;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #F1E5D4, #F5E7E8);
             text-align: center;
         }
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            text-align: justify;
+        .sources {
+            margin-top: 42px;
+            padding-top: 30px;
+            border-top: 1px solid var(--line);
         }
-        .article-body h2 {
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            border-left: 5px solid var(--champagne-gold);
-            padding-left: 15px;
+        .sources h2 { margin-top: 0; }
+        .sources li { margin-bottom: 10px; font-size: .92rem; }
+        .related {
+            max-width: 1120px;
+            margin: 30px auto 0;
+            padding: 30px 22px 74px;
         }
-        .info-blockquote {
-            background: white;
-            border-left: 4px solid var(--dusty-rose);
-            padding: 20px;
-            border-radius: 0 12px 12px 0;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.03);
-            margin: 2rem 0;
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
-        .btn-gold {
-            background-color: var(--champagne-gold);
-            color: white;
-            border: none;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 1.15rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
-        }
-        .btn-gold:hover {
-            background-color: #B39670;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* ─── 💎 延伸閱讀與推薦區塊精品樣式（強效等高自適應） ─── */
-        .recommend-card-link {
-            text-decoration: none !important;
-            color: inherit !important;
-            display: flex; /* ✨ 讓 <a> 變為 Flex 容器 */
-            height: 100%; /* ✨ 強制拉滿父層高度 */
-        }
-        .recommend-card {
-            background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(168, 124, 67, 0.02);
-            width: 100%; /* ✨ 寬度填滿 */
-        }
-        .recommend-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
-            border-color: var(--dusty-rose);
-        }
-
-        footer {
-            background-color: #4A4444; 
-            color: #E5DED4;
-            padding: 45px 0 30px 0; 
-            margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
-        }
-
-        /* 📱 雙軌固定懸浮聯絡按鈕群（與首頁完全同步） */
-        .floating-contact-group {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
+        .related-card {
             display: flex;
             flex-direction: column;
-            gap: 15px; 
-            z-index: 9999;
+            min-height: 220px;
+            padding: 24px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: #fff;
+            color: var(--text);
+            text-decoration: none;
+            transition: .2s ease;
+        }
+        .related-card:hover {
+            color: var(--text);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(86,63,43,.08);
+        }
+        .related-card .small { color: var(--muted); line-height: 1.7; }
+        .related-card .more { margin-top: auto; color: var(--primary-dark); font-weight: 700; }
+        footer { padding: 44px 0 28px; background: #433D3D; color: #ECE6DD; }
+        .floating-contact-group {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
         }
         .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
-            transition: all 0.3s ease;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            color: #fff;
             text-decoration: none;
+            box-shadow: 0 8px 22px rgba(0,0,0,.16);
         }
-        .float-btn:hover {
-            transform: scale(1.08);
+        .float-phone { background: #ED6A6A; }
+        .float-line { background: #06C755; font-size: 1.4rem; }
+        .toast-message {
+            position: fixed;
+            left: 50%;
+            bottom: 28px;
+            z-index: 1200;
+            padding: 11px 18px;
+            border-radius: 999px;
+            background: #433D3D;
+            color: #fff;
+            opacity: 0;
+            pointer-events: none;
+            transform: translate(-50%, 12px);
+            transition: .25s ease;
         }
-        .float-phone {
-            background-color: #ED6A6A; 
-            color: white;
-            font-size: 26px;
+        .toast-message.is-visible { opacity: 1; transform: translate(-50%, 0); }
+        @media (max-width: 991px) {
+            .article-layout { grid-template-columns: 1fr; }
+            .toc { display: none; }
+            .related-grid { grid-template-columns: 1fr; }
         }
-        .float-phone:hover {
-            color: white;
-            background-color: #DF5959;
-        }
-        .float-line {
-            background-color: #06C755; 
-            color: white;
-            font-size: 30px;
-        }
-        .float-line:hover {
-            color: white;
-            background-color: #05A647;
-        }
-
         @media (max-width: 767px) {
-            .page-header {
-                padding: 120px 0 60px 0;
-            }
-            .floating-contact-group {
-                bottom: 25px;
-                right: 25px;
-                gap: 12px;
-            }
-            .float-btn {
-                width: 54px;
-                height: 54px;
-            }
-            .float-phone { font-size: 22px; }
-            .float-line { font-size: 26px; }
+            .page-header { padding-top: 116px; }
+            .article-layout { padding-top: 142px; }
+            .article-body { border-radius: 18px; }
+            .comparison-grid, .form-grid { grid-template-columns: 1fr; }
+            .field.full { grid-column: auto; }
+            .form-card-header { display: block; }
+            .form-badge { margin-top: 8px; }
+            .form-actions > * { width: 100%; }
+            .floating-contact-group { right: 16px; bottom: 16px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition-duration: .01ms !important; }
         }
     </style>
 </head>
 <body>
-
-    <!-- 📱 雙軌固定懸浮聯絡按鈕群 -->
-    <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
-            <i class="fab fa-line"></i>
-        </a>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
+    <div class="floating-contact-group" aria-label="快速聯絡">
+        <a aria-label="撥打福心市話" class="float-btn float-phone" href="tel:0229670360"><i class="fas fa-phone-alt"></i></a>
+        <a aria-label="加入福心 LINE" class="float-btn float-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line"></i></a>
     </div>
 
-    <!-- 💻 標準頂部導覽列 -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">福心照護</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button aria-label="開啟選單" class="navbar-toggler border-0" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
+                <ul class="navbar-nav align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-sm btn-outline-secondary rounded-pill px-3" href="en.html">EN</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- 車頭 Banner -->
     <header class="page-header">
         <div class="container">
-            <span class="badge rounded-pill bg-white text-dark px-3 py-2 border mb-3" style="color: var(--champagne-gold) !important;">照護知識</span>
-            <h1 class="fw-bold mb-3" style="font-size: 1.8rem; line-height: 1.4;">外籍看護空窗期拉長？2026新制下的出院照顧與長照3.0居家銜接攻略</h1>
-            <p class="text-muted small mb-0"><i class="far fa-calendar-alt me-2"></i>2026-06-15 | 由 福心照護團隊 撰寫</p>
+            <div class="breadcrumbs"><a href="index.html">首頁</a> ／ 家人怎麼輪流陪病</div>
+            <span class="article-tag">家人陪病</span>
+            <h1>長輩住院怎麼輪流陪病？輪班、交班與分工重點一次看！<br>陪病交班、問醫師與醫療資訊整理</h1>
+            <p class="article-summary">陪病是時間、責任和資訊的分工。這篇整理白天與夜間分工、五分鐘交班、問醫師的問題，以及家人共同使用的醫療資訊摘要。</p>
+            <div class="article-meta">
+                <span><i class="far fa-calendar-alt me-2"></i>發布日期：2026-07-31</span>
+                <span><i class="fas fa-rotate me-2"></i>最後更新：2026-07-31</span>
+                <span><i class="far fa-user me-2"></i>內容整理：福心照護小編</span>
+            </div>
         </div>
     </header>
 
-    <!-- 文章主體 -->
-    <main class="container my-5" style="max-width: 800px;">
-        <div class="article-body">
-            <p>當家中有長輩因中風、跌倒骨折突然住院，家屬在焦頭爛額之餘，往往會想趕快申請一名外籍看護來減輕家庭的照顧重擔。尤其現行政策規定，只要家屬年滿 80 歲以上，申請外籍看護就免經過傳統繁瑣的「巴氏量表」醫療評估，直接憑身分證即可提出申請。這項便民措施，讓許多家庭省去了跑醫院鑑定的大半心力。</p>
+    <main class="article-layout">
+        <article class="article-body">
+            <p class="lead-answer"><strong>家人住院需要輪流照顧嗎？小編幫您整理家人輪流陪病時，最重要的三件事：</strong>確認病房規定、指定一位主要聯絡人，並建立所有人都看得懂的交班方式。小編在醫院的觀察發現，這種住院陪病的公平分工不一定是大家在病房坐得一樣久，而是每個來照顧的家人依照時間、體力和家庭條件，各自協調配合喔！</p>
 
-            <p>然而，這也造成了另一個嚴峻的現實：申請門檻降低後，外籍勞工在市場上呈現供不應求的緊繃狀態。加上勞動部於今年（2026年）4月13日起，正式開放家有一名12歲以下孩童的家庭即可申請「外籍家庭幫傭」，官方預估將有高達140萬個家庭受惠。項新制推出後，大量外籍人力被分流至幫傭市場，導致家庭外籍看護的引進與入境速度嚴重受阻，平均空窗期被拉長至 3 到 4 個月。如果此時家中的長輩病況複雜、照顧條件較辛苦，往往更難在第一時間聘請到合適的移工。</p>
+            <p>當家人住院後，群組裡很快就會出現「明天誰可以去？」、「我只能下班後到」、「醫師今天說了什麼？」。小編心疼地往往是一種常見的結果：最會處理事情，或最不會拒絕的人，把所有陪病的重任默默承擔起來，但一定得如此嗎？</p>
+            <blockquote class="quote">輪流陪病，不只是為了確保病床邊隨時有人照應，也是為了讓照顧者有喘息與休息的時間，別讓任何一個人在病人康復前就先累垮！</blockquote>
 
-            <h2>一、 出院回家，撥打 1966 長照專線夠用嗎？</h2>
-            <p>許多家屬知道，長輩出院返家後可以申請政府的公費補助，只要透過手機或市話直撥<strong>「1966 長照專線」</strong>，就能申請政府推行的<strong>「長照 3.0」居服員服務（居家照顧服務）</strong>。居服員可以到家裡幫長輩洗澡、備餐、翻身拍背或協助陪同就醫，費用還有政府補助，確實能減輕不少負擔。</p>
-            
-            <p>但家屬在實際操作時常會遇到現實的限制：長輩剛出院的前幾週，通常也是身體機能最不穩定、最需要 24 小時寸步不離看顧的黃金復健期。而政府的長照 3.0 居服員服務是屬於「計時、點到點」的服務，一天通常只能調派 1 到 2 個小時。當居服員做完規定的服務項目離開後，剩下的 22 個小時，或者是最容易發生跌倒、發生突發狀況的深夜夜間，照顧的重擔依然會全數落回焦慮的家屬身上。特別是在等待外籍看護入境的這 3 個月空窗期中，單靠每天 1、2 個小時的居服員，在實務看顧上往往是遠遠不夠的。</p>
+            <h2 id="rules">請先確認病房的陪病與探視規定</h2>
+            <p>不同醫院、病房及照護單位的陪病方式可能不同。排班前先確認是否需要家屬持續陪伴、同時可有幾位陪病者、夜間能否換班、是否需要證件，以及探視與感染管制規定。</p>
+            <p>如果病人能自行活動並清楚表達，也不一定需要家人 24 小時都在床邊。可以直接詢問護理人員：「以他目前的狀況，哪些時段比較需要家屬在場？」</p>
 
-            <h2>二、 空窗期長達數月，案家常見的兩大兩難</h2>
-            <p>外籍看護還在跑媒合、辦簽證流程，長輩返家後的長時間照顧責任，便會瞬間形成家庭壓力。在慌亂之中，家屬常面臨以下兩種抉擇：</p>
+            <h2 id="day-night">誰適合白天，誰適合晚上</h2>
+            <div class="comparison-grid">
+                <section class="shift-card">
+                    <h3><i class="far fa-sun me-2"></i>白天陪病者</h3>
+                    <ul>
+                        <li>能記錄醫師、護理師與其他專業人員的說明</li>
+                        <li>願意整理問題，不懂時能立即詢問</li>
+                        <li>可以陪同檢查、處理文件與行政事項</li>
+                        <li>能將重要消息整理給其他家人</li>
+                    </ul>
+                </section>
+                <section class="shift-card">
+                    <h3><i class="far fa-moon me-2"></i>夜間陪病者</h3>
+                    <ul>
+                        <li>夜間精神與體力相對穩定</li>
+                        <li>知道病人需要協助時如何找護理人員</li>
+                        <li>隔天不需疲勞駕駛或從事高風險工作</li>
+                        <li>能在睡眠不足時主動提出換班</li>
+                    </ul>
+                </section>
+            </div>
+            <p>沒有辦法長時間留在病房的家人，仍可負責送餐、補充用品、接送、照顧孩子或寵物。即使無法親自在床邊，也可以打電話或視訊關心，陪病人聊聊天、分散對病痛的注意力。沒有坐在病床旁，不代表沒有參與照護；每一種分工與陪伴，都是重要的支持～</p>
+
+            <h2 id="life">把工作、孩子和交通一起排進去</h2>
+            <p>如果只排「誰去醫院」，班表很快就會失效。排班時也要問：誰能請假、誰負責接送孩子、夜間還有沒有交通、睡眠不足的人是否適合開車，以及家中原本由病人負責的事情由誰接手。</p>
+            <div class="wisdom-box">
+                <h3> \高級大人才知道/ </h3>
+                <p class="mb-0">先排接下來 24 至 48 小時就好。剛住院時，病情、檢查和預計天數可能還不確定，不必第一天就排完整個星期。</p>
+            </div>
+
+            <h2 id="responsibility">請不要讓最有責任感的人默默扛下全部</h2>
+            <p>不要只問「你還可以排班照顧嗎？」因為最有責任感的人通常會回答可以。更有效的支援，是互相支持、接下明確的工作：</p>
             <ul>
-                <li><strong>由家人輪流請假照顧：</strong> 許多子女必須在工作與家庭間兩頭燒，甚至考慮留職停薪。但剛出院的長輩往往需要密集的復健與高度的照顧體力，家人很快就會面臨身心崩潰的臨界點。</li>
-                <li><strong>私下尋找非法的個體戶：</strong> 醫院周邊常有非法仲介私下遞名片，聲稱能立刻派短期人力支援。許多家屬抱著應急的心態雇用，卻不知對方派遣的極可能是非法逃逸黑工，一旦在病房或家中被查獲，家屬將面臨就業服務法高達 15 萬至 75 萬元的重罰，風險極高。</li>
+                <li>「今天晚上我可以接班，你回家睡。」</li>
+                <li>「用品我去買，你只要把清單傳給我。」</li>
+                <li>「孩子和家裡的事情我處理，明天白天你專心在醫院。」</li>
             </ul>
 
-            <div class="info-blockquote">
-                <h3 class="fw-bold mb-2" style="color: var(--primary-pink); font-size: 1.25rem;"><i class="fas fa-heart-circle-check me-2"></i>福心台籍短期看護：合法且彈性的過渡方案</h3>
-                <p class="mb-0 small">福心照護（新北私就字第 068 號）專為這段「外籍空窗期」提供純自費、免手續的合格台籍照服員派遣。不論是需要幾週的短天數陪伴，或是返家初期的全天候密集看顧，都能與政府的 1966 居服員服務互相搭配，提供最即時的合法全日後援，讓家庭喘息不開天窗。</p>
+            <h2 id="decision">意見不同時，先分清楚決策和執行</h2>
+            <div class="role-box">
+                <h3>三個角色不要混在一起</h3>
+                <p><strong>病人的意願：</strong>如果病人可以理解並表達，先聽見病人怎麼想～ </p>
+                <p><strong>醫療決策與同意：</strong>涉及檢查、治療或醫療同意時，應依醫療人員說明與院方流程進行，不靠家族群組投票。</p>
+                <p class="mb-0"><strong>現場執行：</strong>誰請假、誰陪病、誰送用品與誰接送，屬於家庭分工。提出安排的人，也可以說明自己能負責哪一部分。</p>
             </div>
 
-            <h2>三、 什麼是真正的「出院返家一條龍銜接」？</h2>
-            <p>長輩從大醫院移轉回居家的前幾週，是身體康復的黃金期，也是家屬最手忙腳亂的時候。福心照護打破傳統仲介只派人、不管理的做法，提供全方位的專業對接：</p>
-            <p><strong>1. 院內與居家的人力無縫交接：</strong> <br>
-            在醫院病房陪伴長輩的福心看護夥伴，最了解長輩的用藥、作息與醫囑。出院當天，同一個照護夥伴可以直接跟著長輩回到家中，將院內的高品質照顧無縫延續到居家空間。長輩不需重新適應陌生人，照顧資訊更不會出現斷層。</p>
-            
-            <p><strong>2. 整合專業顧問，協助落實居家復健：</strong> <br>
-            福心內部整合了物理治療、呼吸照護與營養師等專家顧問資源。長輩返家初期，我們會協助家屬檢視居家防跌動線、床邊扶手配置，確保醫囑在出院後能被精準執行，加速長輩身體機能的復原。</p>
+            <h2 id="handover">交班時至少要說哪幾件事</h2>
+            <p>「今天還好」、「醫師有來，沒説什麼」都不足以代表完整交班喔。下一班家人至少要知道：今天做過哪些檢查、醫師說了什麼、病人吃了多少與睡得如何、有哪些不舒服、下一班要注意什麼，以及明天有哪些安排。</p>
+            <p>如果時間很趕，福心小編推薦可以使用「 5 分鐘交班法」：</p>
+            <ol>
+                <li>1. 今天做了什麼？</li>
+                <li>2. 醫療人員說了什麼？</li>
+                <li>3. 病人現在怎麼樣？</li>
+                <li>4. 下一班要注意什麼？</li>
+                <li>5. 明天有安排哪些檢查或尚未完成的事？</li>
+            </ol>
 
-            <h2>四、 價格契約化，給家庭最安心的保障</h2>
-            <p>在等待外籍看護入境的這段過渡期，家屬不需要再承受地下業者隨意喊價、臨時落跑的壓力。福心堅持價格契約化，不論是 12 小時半日班還是 24 小時全日班，皆在派案前提供正式報價單與法人契約保障。所有費用均開立正式發票，讓有需要申請理賠或企業補助的家屬，能夠順利請款、有憑有據。</p>
-            
-            <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold);">把照顧的重擔留給福心，把珍貴的相聚與安心留給家人。在長照的路上，福心是您最穩固、合法的後盾。</p>
-            
-            <div class="text-center mt-5">
-                <a href="https://lin.ee/Tm80P16" class="btn btn-gold" target="_blank"><i class="fab fa-line me-2"></i>透過 LINE 預約空窗期短期看護</a>
-            </div>
-
-            <hr class="my-5" style="border-top: 1px solid rgba(197, 168, 128, 0.2);">
-
-            <!-- ─── 🔗 延伸閱讀與核心推薦跳轉區塊（✨ 已修復：格線具備彈性且絕對等高） ─── -->
-            <div class="mt-5">
-                <h4 class="fw-bold mb-4" style="font-size: 1.2rem; color: var(--text-dark); border-left: 4px solid var(--dusty-rose); padding-left: 10px;">延伸閱讀與推薦服務</h4>
-                <div class="row g-4 d-flex align-items-stretch"> <!-- ✨ 確保 row 底下子元件能同等拉長 -->
-                    <!-- 左邊卡片：直達核心價目項目頁 -->
-                    <div class="col-md-6">
-                        <a href="services.html" class="recommend-card-link">
-                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 卡片內部元件上下對稱 -->
-                                <div>
-                                    <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">服務項目</span>
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">2026 福心看護收費標準與照護項目</h4>
-                                    <p class="small text-muted mb-3">點擊查看福心醫院24H看護、出院返家銜接的計費標準。</p>
-                                </div>
-                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
-                            </div>
-                        </a>
+            <section class="form-card" id="handover-form-card" aria-labelledby="handover-form-title">
+                <div class="form-card-header">
+                    <div>
+                        <h2 id="handover-form-title">陪病交班表</h2>
+                        <p class="mb-0">填寫後可產生一段交班摘要，複製給下一班家人。</p>
                     </div>
-                    <!-- 右邊卡片：引導閱讀法規識別指南 -->
-                    <div class="col-md-6">
-                        <a href="blog-license-check.html" class="recommend-card-link">
-                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 即使字少也強迫與左方同高 -->
-                                <div>
-                                    <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">法規安全</span>
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">如何識別合法看護仲介？3步驟避開非法黑工</h4>
-                                    <p class="small text-muted mb-3">仲介不只需要公司登記，更需要有合法就服證照！</p>
-                                </div>
-                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
-                            </div>
-                        </a>
-                    </div>
+                    <span class="form-badge">互動表單</span>
                 </div>
+                <form id="handover-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="handover-date">日期與時間</label>
+                            <input id="handover-date" name="日期與時間" type="datetime-local">
+                        </div>
+                        <div class="field">
+                            <label for="handover-people">交班者 → 接班者</label>
+                            <input id="handover-people" name="交班者與接班者" type="text" placeholder="例如：姊姊 → 弟弟">
+                        </div>
+                        <div class="field full">
+                            <label for="handover-tests">今天做過哪些檢查或治療？</label>
+                            <textarea id="handover-tests" name="今天的檢查或治療" placeholder="記錄名稱、時間與是否已完成；不確定的內容不要自行解讀。"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="handover-doctor">醫師或護理師說了什麼？</label>
+                            <textarea id="handover-doctor" name="醫療人員說明" placeholder="盡量記錄重點與原話。"></textarea>
+                        </div>
+                        <div class="field">
+                            <label for="handover-food">病人今天吃了多少？</label>
+                            <input id="handover-food" name="飲食情況" type="text" placeholder="例如：午餐約吃一半">
+                        </div>
+                        <div class="field">
+                            <label for="handover-sleep">睡眠情況</label>
+                            <select id="handover-sleep" name="睡眠情況">
+                                <option value="">請選擇</option>
+                                <option>睡得穩定</option>
+                                <option>時睡時醒</option>
+                                <option>幾乎沒有睡</option>
+                                <option>其他，請在不舒服欄補充</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="handover-discomfort">有哪些不舒服或狀況變化？</label>
+                            <textarea id="handover-discomfort" name="不舒服或狀況變化" placeholder="寫清楚時間、部位、變化與已經如何處理。"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="handover-attention">下一班要注意什麼？</label>
+                            <textarea id="handover-attention" name="下一班注意事項"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="handover-tomorrow">明天有哪些安排？</label>
+                            <textarea id="handover-tomorrow" name="明日安排" placeholder="例如：上午檢查、等待巡房、需要家屬攜帶文件。"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary-soft" type="button" data-generate="handover-form" data-output="handover-summary"><i class="fas fa-wand-magic-sparkles"></i>產生交班摘要</button>
+                        <button class="btn-quiet" type="reset"><i class="fas fa-rotate-left"></i>清空</button>
+                    </div>
+                </form>
+                <div class="generated-summary" id="handover-summary" tabindex="-1"></div>
+            </section>
+
+            <h2 id="communication">怎麼跟醫師和護理師溝通？</h2>
+            <p>通常醫生時間寶貴，福心小編建議家屬先把想問的問題記下來，由一位主要家屬統整資訊，可以減少重複詢問與不同版本。醫生巡房時清楚說明從什麼時候開始、哪裡不舒服、和昨天相比有什麼變化，以及程度如何。</p>
+            <p>聽不懂時可以直接問：「這一段我們沒有完全理解，可以請您換一個方式說明嗎？」也可以在最後確認：「所以我們現在要做的是＿＿＿，這樣理解對嗎？」</p>
+
+            <h3>哪些問題問醫師、哪些可以先問護理師？</h3>
+            <p><strong>診斷、治療選擇、檢查結果、病況預後與出院條件</strong>，通常需要由醫師說明；<strong>病房作息、日常照護、用藥時間、下床與飲食等執行問題</strong>，可先詢問護理師。實際分工依醫院與個案而異，不確定時直接問「這個問題適合請教哪一位？」即可。</p>
+            <div class="wisdom-box">
+                <h3>不要在群組裡轉述自己不確定的內容</h3>
+                <p class="mb-0">可以寫「我目前記得醫師提到＿＿＿，但這一點還要再確認」，不要把推測寫成確定消息！如果資訊很重要，請回到護理站確認。</p>
             </div>
 
-        </div>
+            <section class="form-card" id="doctor-form-card" aria-labelledby="doctor-form-title">
+                <div class="form-card-header">
+                    <div>
+                        <h2 id="doctor-form-title">問醫師的五個基本問題</h2>
+                        <p class="mb-0">巡房前先勾選想問的問題，並把回答記在下方。</p>
+                    </div>
+                    <span class="form-badge">互動提問單</span>
+                </div>
+                <form id="doctor-form">
+                    <div class="question-row">
+                        <input id="q1" type="checkbox">
+                        <div>
+                            <label class="question-label" for="q1">目前最主要的問題是什麼？</label>
+                            <textarea name="目前最主要的問題" aria-label="目前最主要的問題之回答" placeholder="記錄醫療人員的回答"></textarea>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <input id="q2" type="checkbox">
+                        <div>
+                            <label class="question-label" for="q2">接下來會做哪些檢查或治療？</label>
+                            <textarea name="接下來的檢查或治療" aria-label="接下來檢查或治療之回答"></textarea>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <input id="q3" type="checkbox">
+                        <div>
+                            <label class="question-label" for="q3">我們需要注意哪些變化？</label>
+                            <textarea name="需要注意的變化" aria-label="需要注意哪些變化之回答"></textarea>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <input id="q4" type="checkbox">
+                        <div>
+                            <label class="question-label" for="q4">大約符合哪些條件後可以出院？</label>
+                            <textarea name="出院條件" aria-label="出院條件之回答"></textarea>
+                        </div>
+                    </div>
+                    <div class="question-row">
+                        <input id="q5" type="checkbox">
+                        <div>
+                            <label class="question-label" for="q5">出院後需要哪些協助或回診安排？</label>
+                            <textarea name="出院後協助與回診" aria-label="出院後協助或回診安排之回答"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary-soft" type="button" data-generate="doctor-form" data-output="doctor-summary"><i class="fas fa-wand-magic-sparkles"></i>整理問診紀錄</button>
+                        <button class="btn-quiet" type="reset"><i class="fas fa-rotate-left"></i>清空</button>
+                    </div>
+                </form>
+                <div class="generated-summary" id="doctor-summary" tabindex="-1"></div>
+            </section>
+
+            <h2 id="medical-info">重要醫療資訊怎麼整理？</h2>
+            <p>重要資訊不要只存在某一位家人的記憶裡！至少整理慢性病與重大病史、固定用藥、過敏、過去開刀與住院紀錄、平常就診的醫院與醫師、緊急聯絡人，以及重要檢查和醫師說明。</p>
+            <p>記錄時以日期、事實與原話為主，不急著替檢查結果下結論。用藥資訊最好保留藥名、劑量和使用方式，或直接拍攝完整藥袋。</p>
+
+            <section class="form-card" id="medical-form-card" aria-labelledby="medical-form-title">
+                <div class="form-card-header">
+                    <div>
+                        <h2 id="medical-form-title">住院醫療資訊摘要</h2>
+                        <p class="mb-0">填寫當次住院需要交接的基本資訊，再複製給主要家屬留存。</p>
+                    </div>
+                    <span class="form-badge">互動表單</span>
+                </div>
+                <div class="privacy-box">
+                    <h3><i class="fas fa-shield-halved me-2"></i>隱私提醒</h3>
+                    <p class="mb-0">這份頁面不會自動上傳或長期儲存你輸入的內容。請避免在公共電腦填寫，複製後也只傳給確實需要知道的家人或照護人員。</p>
+                </div>
+                <form id="medical-form">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="patient-label">病人稱呼或代號</label>
+                            <input id="patient-label" name="病人稱呼或代號" type="text" placeholder="可用家人稱呼，不一定要填全名">
+                        </div>
+                        <div class="field">
+                            <label for="emergency-contact">主要聯絡人</label>
+                            <input id="emergency-contact" name="主要聯絡人" type="text" placeholder="姓名／關係／電話">
+                        </div>
+                        <div class="field full">
+                            <label for="conditions">慢性病與重大病史</label>
+                            <textarea id="conditions" name="慢性病與重大病史"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="medications">固定服用的藥物</label>
+                            <textarea id="medications" name="固定用藥" placeholder="藥名、劑量、使用方式；不確定時可註明已拍藥袋。"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="allergies">藥物、食物或材質過敏</label>
+                            <textarea id="allergies" name="過敏資訊"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="surgeries">過去開刀與住院紀錄</label>
+                            <textarea id="surgeries" name="過去開刀與住院紀錄" placeholder="年份／醫院／原因"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="providers">平常就診的醫院與醫師</label>
+                            <textarea id="providers" name="平常就診醫院與醫師"></textarea>
+                        </div>
+                        <div class="field full">
+                            <label for="results">重要檢查與醫師說明</label>
+                            <textarea id="results" name="重要檢查與醫師說明" placeholder="日期／檢查名稱／醫師說明重點"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn-primary-soft" type="button" data-generate="medical-form" data-output="medical-summary"><i class="fas fa-wand-magic-sparkles"></i>產生醫療資訊摘要</button>
+                        <button class="btn-quiet" type="reset"><i class="fas fa-rotate-left"></i>清空</button>
+                    </div>
+                </form>
+                <div class="generated-summary" id="medical-summary" tabindex="-1"></div>
+            </section>
+
+            <div class="action-box">
+                <h2 class="border-0 p-0 mt-0">家庭人力不夠，或不知道怎麼安排？</h2>
+                <p>如果家中只有一兩個人能陪病，或正在評估照護人力，可以透過 LINE 告訴福心目前所在醫院、需要的時段與照護情況，讓福心來協助您！</p>
+                <a class="btn-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line"></i>LINE 詢問福心</a>
+            </div>
+
+            <section class="sources" aria-labelledby="sources-title">
+                <h2 id="sources-title">資料來源</h2>
+                <ol>
+                    <li><a href="https://www.mohw.gov.tw/cp-16-45967-1.html" rel="noopener" target="_blank">衛生福利部｜一張健康提問單，讓您看病免煩惱</a></li>
+                    <li><a href="https://www.patientsafety.mohw.gov.tw/xmdoc/cont?xsmsid=0N219559051110045469" rel="noopener" target="_blank">台灣病人安全資訊網｜醫病共享決策醫療機構實踐運動</a></li>
+                    <li><a href="https://www.patientsafety.mohw.gov.tw/xmdoc/cont?xsmsid=0M105605848630361810" rel="noopener" target="_blank">台灣病人安全資訊網｜病人安全週：醫病夥伴關係</a></li>
+                </ol>
+            </section>
+
+            <section class="notice-box">
+                <h3>一般性資訊聲明</h3>
+                <p class="mb-0">本文及互動表單提供一般住院陪病、家庭分工與資訊整理參考，不代替醫療判斷或個別醫療建議。各醫院規定、醫療團隊分工及個案需求可能不同，請以院方與醫療人員說明為準。</p>
+            </section>
+        </article>
+
+        <aside class="toc" aria-label="文章目錄">
+            <h2>文章目錄</h2>
+            <a href="#rules">陪病與探視規定</a>
+            <a href="#day-night">白天與夜間分工</a>
+            <a href="#life">工作、孩子與交通</a>
+            <a href="#responsibility">別讓一個人全扛</a>
+            <a href="#decision">決策與執行</a>
+            <a href="#handover">陪病交班</a>
+            <a href="#communication">跟醫護溝通</a>
+            <a href="#medical-info">醫療資訊整理</a>
+        </aside>
     </main>
 
-    <footer class="text-center">
-        <div class="container">
-            <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
-            <p class="small text-muted mb-0">© 2026 福心管理顧問股份有限公司 版權所有。新北私就字第 068 號</p>
+    <section class="related" aria-labelledby="related-title">
+        <h2 id="related-title" class="fw-bold mb-4">相關文章</h2>
+        <div class="related-grid">
+            <a class="related-card" href="blog-hospital-packing-list.html">
+                <span class="article-tag align-self-start">住院準備</span>
+                <h3 class="h5 fw-bold mt-3">第一次住院要帶什麼？病人與陪病者完整清單</h3>
+                <p class="small">用五個袋子整理證件、用藥、生活用品及急診過夜保暖用品。</p>
+                <span class="more">閱讀文章 <i class="fas fa-arrow-right ms-1"></i></span>
+            </a>
+            <a class="related-card" href="faq.html">
+                <span class="article-tag align-self-start">常見問題</span>
+                <h3 class="h5 fw-bold mt-3">住院照護安排前，家屬還需要確認哪些事情？</h3>
+                <p class="small">從服務時間、照護內容到合作方式，先查看福心整理的常見問題。</p>
+                <span class="more">查看常見問題 <i class="fas fa-arrow-right ms-1"></i></span>
+            </a>
+            <a class="related-card" href="services.html">
+                <span class="article-tag align-self-start">照護安排</span>
+                <h3 class="h5 fw-bold mt-3">家庭人力不足時，可以怎麼安排住院照護？</h3>
+                <p class="small">了解福心的醫院照護媒合、需求整理與服務期間協調方式。</p>
+                <span class="more">了解服務 <i class="fas fa-arrow-right ms-1"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <h2 class="fw-bold mb-2" style="color:var(--gold);font-size:1.2rem;">福心管理顧問股份有限公司</h2>
+            <p class="small mb-1">02-2967-0360　•　新北私就字第 068 號</p>
+            <p class="small mb-0" style="color:#BDB4B4;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
         </div>
     </footer>
 
+    <div class="toast-message" id="toast" role="status" aria-live="polite">已複製摘要</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toast = document.getElementById("toast");
+
+            document.querySelectorAll("[data-generate]").forEach(function (button) {
+                button.addEventListener("click", function () {
+                    const form = document.getElementById(button.dataset.generate);
+                    const output = document.getElementById(button.dataset.output);
+                    const title = form.closest(".form-card").querySelector("h2").textContent.trim();
+                    const lines = ["【" + title + "】"];
+
+                    form.querySelectorAll("input:not([type='checkbox']), select, textarea").forEach(function (field) {
+                        const value = field.value.trim();
+                        if (!value) return;
+                        lines.push((field.name || "補充") + "：" + value);
+                    });
+
+                    if (lines.length === 1) {
+                        output.textContent = "請先填寫至少一項內容。";
+                        output.classList.add("is-visible");
+                        output.focus();
+                        return;
+                    }
+
+                    output.textContent = lines.join("\n");
+                    output.classList.add("is-visible");
+                    output.focus();
+
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(output.textContent).then(function () {
+                            showToast("摘要已產生並複製");
+                        }).catch(function () {
+                            showToast("摘要已產生，可手動選取複製");
+                        });
+                    } else {
+                        showToast("摘要已產生，可手動選取複製");
+                    }
+                });
+            });
+
+            document.querySelectorAll("form").forEach(function (form) {
+                form.addEventListener("reset", function () {
+                    const output = form.closest(".form-card").querySelector(".generated-summary");
+                    window.setTimeout(function () {
+                        output.textContent = "";
+                        output.classList.remove("is-visible");
+                    }, 0);
+                });
+            });
+
+            function showToast(message) {
+                toast.textContent = message;
+                toast.classList.add("is-visible");
+                window.setTimeout(function () { toast.classList.remove("is-visible"); }, 2200);
+            }
+
+            const readingBar = document.getElementById("reading-progress-bar");
+            function updateReadingProgress() {
+                const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+                const percent = scrollable > 0 ? Math.min(100, (window.scrollY / scrollable) * 100) : 0;
+                readingBar.style.width = percent + "%";
+            }
+            window.addEventListener("scroll", updateReadingProgress, { passive: true });
+            updateReadingProgress();
+
+            const tocLinks = Array.from(document.querySelectorAll(".toc a"));
+            const sectionObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    tocLinks.forEach(function (link) {
+                        link.classList.toggle("is-active", link.getAttribute("href") === "#" + entry.target.id);
+                    });
+                });
+            }, { rootMargin: "-20% 0px -65% 0px", threshold: 0 });
+
+            tocLinks.forEach(function (link) {
+                const section = document.querySelector(link.getAttribute("href"));
+                if (section) sectionObserver.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
