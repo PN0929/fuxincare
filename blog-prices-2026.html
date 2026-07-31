@@ -1,304 +1,352 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
+<!doctype html>
+<html lang="zh-Hant-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 📈 SEO 技術優化：鎖定雙北醫院看護費用行情、1966長照補助銜接等核心搜尋詞 -->
-    <title>2026雙北醫院看護費用行情：拒絕病房現場隨意加價與隱藏陷阱｜福心照護</title>
-    <meta name="description" content="2026年台北、新北醫院看護一日多少錢？24小時與12小時陪病價格行情。福心專業照護為您解析如何搭配政府1966長照補助、防範地下個體戶與非法黑工加價陷阱，提供定價契約化、政府立案的台籍短期看護派遣。">
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-pink: #D4A373; 
-            --dusty-rose: #E8C5C8; 
-            --champagne-gold: #C5A880; 
-            --bg-ivory: #FDFBF7; 
-            --text-dark: #3A3535; 
-            --text-muted: #5A5252; 
-        }
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: var(--bg-ivory);
-            color: var(--text-dark);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        .navbar {
-            background-color: rgba(243, 232, 233, 0.96); 
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
-        }
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--text-dark) !important;
-            letter-spacing: 2px;
-        }
-        .nav-link {
-            color: var(--text-dark) !important;
-            margin: 0 10px;
-            font-weight: 400;
-        }
-        .nav-link:hover {
-            color: var(--champagne-gold) !important;
-        }
-        .page-header {
-            padding: 160px 0 60px 0;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
-            text-align: center;
-        }
-        .article-body p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: var(--text-muted);
-            text-align: justify;
-        }
-        .article-body h2 {
-            font-weight: 700;
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
-            border-left: 5px solid var(--champagne-gold);
-            padding-left: 15px;
-        }
-        .alert-gold {
-            background-color: #FAF5EC;
-            border-left: 4px solid var(--champagne-gold);
-            color: #805E33;
-        }
-        
-        /* ─── 💎 延伸閱讀與推薦區塊精品樣式（強效等高自適應） ─── */
-        .recommend-card-link {
-            text-decoration: none !important;
-            color: inherit !important;
-            display: flex; /* ✨ 讓 <a> 變成 Flex 容器 */
-            height: 100%; /* ✨ 強制拉滿父層高度 */
-        }
-        .recommend-card {
-            background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15 rgba(168, 124, 67, 0.02);
-            width: 100%; /* ✨ 寬度填滿 */
-        }
-        .recommend-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
-            border-color: var(--dusty-rose);
-        }
-
-        footer {
-            background-color: #4A4444; 
-            color: #E5DED4;
-            padding: 45px 0 30px 0; 
-            margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.15);
-        }
-
-        /* 📱 雙軌固定懸浮聯絡按鈕群（與首頁完全同步） */
-        .floating-contact-group {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px; 
-            z-index: 9999;
-        }
-        .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-        .float-btn:hover {
-            transform: scale(1.08);
-        }
-        .float-phone {
-            background-color: #ED6A6A; 
-            color: white;
-            font-size: 26px;
-        }
-        .float-phone:hover {
-            color: white;
-            background-color: #DF5959;
-        }
-        .float-line {
-            background-color: #06C755; 
-            color: white;
-            font-size: 30px;
-        }
-        .float-line:hover {
-            color: white;
-            background-color: #05A647;
-        }
-
-        @media (max-width: 767px) {
-            .page-header {
-                padding: 120px 0 60px 0;
-            }
-            .floating-contact-group {
-                bottom: 25px;
-                right: 25px;
-                gap: 12px;
-            }
-            .float-btn {
-                width: 54px;
-                height: 54px;
-            }
-            .float-phone { font-size: 22px; }
-            .float-line { font-size: 26px; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>醫院看護一天多少錢？2026 費用組成、詢價清單與照護選擇一次看！｜福心照護</title>
+  <meta name="description" content="醫院看護一天多少錢？先分清住院整合照護、自費一對一看護與出院後長照。福心整理影響費用的條件、書面報價檢查表、雙方案試算與詢價需求表。">
+  <meta name="author" content="福心照護小編">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://fuxincare.com/blog-hospital-caregiver-cost.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="福心照護">
+  <meta property="og:title" content="醫院看護一天多少錢？2026 費用組成、詢價清單與照護選擇一次看！">
+  <meta property="og:description" content="看懂醫院看護費用怎麼組成，用互動工具比較兩份報價，並整理詢價前要說清楚的照護需求。">
+  <meta property="og:url" content="https://fuxincare.com/blog-hospital-caregiver-cost.html">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"醫院看護一天多少錢？2026 費用組成、詢價清單與照護選擇一次看！",
+    "description":"醫院看護費用組成、詢價清單、照護模式與互動式報價比較工具。",
+    "datePublished":"2026-07-31",
+    "dateModified":"2026-07-31",
+    "inLanguage":"zh-Hant-TW",
+    "author":{"@type":"Organization","name":"福心照護小編"},
+    "publisher":{"@type":"Organization","name":"福心照護"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://fuxincare.com/blog-hospital-caregiver-cost.html"}
+  }
+  </script>
+  <style>
+    :root{--rose:#f3e8e9;--rose-2:#fff5f5;--gold:#b58b57;--gold-pale:#faf5ec;--ink:#3a3535;--muted:#665f5f;--ivory:#fdfbf7;--line:#e7ddd2;--green:#397a5b}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{font-family:"Noto Sans TC",sans-serif;background:var(--ivory);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased}
+    a{color:#7c5d35}
+    .navbar{background:rgba(243,232,233,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(181,139,87,.15)}
+    .navbar-brand{font-weight:700;letter-spacing:2px;color:var(--ink)!important}
+    .nav-link{color:var(--ink)!important;margin:0 7px}
+    .nav-link:hover{color:var(--gold)!important}
+    .reading-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:1100}
+    .page-header{padding:145px 0 66px;background:linear-gradient(135deg,var(--rose-2),var(--rose));text-align:center}
+    .eyebrow{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:#80623c;font-size:.85rem;font-weight:700}
+    .page-header h1{max-width:850px;margin:18px auto 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.35}
+    .lead-copy{max-width:720px;margin:auto;color:var(--muted);font-size:1.06rem}
+    .layout{display:grid;grid-template-columns:235px minmax(0,760px);gap:48px;justify-content:center;align-items:start}
+    .toc{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 30px rgba(70,50,40,.04)}
+    .toc-title{font-weight:700;margin-bottom:10px}
+    .toc a{display:block;text-decoration:none;color:var(--muted);font-size:.9rem;padding:7px 9px;border-left:2px solid transparent}
+    .toc a.active,.toc a:hover{color:#7c5d35;border-left-color:var(--gold);background:var(--gold-pale)}
+    .article{min-width:0}
+    .article p{color:var(--muted);margin-bottom:1.25rem}
+    .article h2{font-size:1.55rem;margin:3.5rem 0 1.2rem;padding-left:15px;border-left:5px solid var(--gold);line-height:1.45}
+    .article h3{font-size:1.15rem;margin:2rem 0 .8rem}
+    .article li{margin-bottom:.55rem;color:var(--muted)}
+    .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:9px 18px;color:var(--muted);font-size:.88rem}
+    .summary,.note,.official,.warning{border-radius:16px;padding:22px;margin:24px 0}
+    .summary{background:#fff;border:1px solid var(--line)}
+    .note{background:var(--gold-pale);border-left:4px solid var(--gold)}
+    .official{background:#eef7f2;border-left:4px solid var(--green)}
+    .warning{background:#fff1ef;border-left:4px solid #c66d60}
+    .choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+    .choice-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+    .choice-card strong{display:block;margin-bottom:8px}
+    .choice-card p{font-size:.92rem;margin:0}
+    .tool{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;margin:28px 0;box-shadow:0 10px 35px rgba(70,50,40,.05)}
+    .tool-head{display:flex;justify-content:space-between;gap:16px;align-items:start;margin-bottom:18px}
+    .tool-head h3{margin:0}
+    .privacy{font-size:.78rem;color:var(--muted);white-space:nowrap}
+    .quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    fieldset{border:1px solid var(--line);border-radius:14px;padding:18px}
+    legend{float:none;width:auto;padding:0 8px;font-size:1rem;font-weight:700}
+    label.form-label{font-size:.88rem;font-weight:500;margin-bottom:5px}
+    .form-control,.form-select{border-color:#d8cec3;padding:.7rem .8rem}
+    .form-control:focus,.form-select:focus{border-color:var(--gold);box-shadow:0 0 0 .2rem rgba(181,139,87,.12)}
+    .quote-total{background:var(--gold-pale);border-radius:12px;padding:13px;margin-top:14px;text-align:center}
+    .quote-total strong{display:block;font-size:1.45rem;color:#725430}
+    .compare-result{margin-top:16px;padding:14px;border-radius:12px;background:#f7f4ef;display:none}
+    .check-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .check-item{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--line);border-radius:12px;cursor:pointer}
+    .check-item:has(input:checked){background:#eef7f2;border-color:#9dbca9}
+    .check-item input{margin-top:5px}
+    .check-progress{height:9px;background:#eee7df;border-radius:999px;overflow:hidden}
+    .check-progress span{display:block;height:100%;width:0;background:var(--green);transition:width .2s}
+    .generated{white-space:pre-wrap;background:#f8f6f2;border-radius:12px;padding:16px;min-height:92px;color:var(--muted);font-size:.92rem}
+    .btn-gold{background:var(--gold);border-color:var(--gold);color:#fff}
+    .btn-gold:hover{background:#987242;border-color:#987242;color:#fff}
+    .source-list{font-size:.9rem}
+    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .related-card{display:block;height:100%;padding:18px;background:#fff;border:1px solid var(--line);border-radius:15px;text-decoration:none;color:var(--ink);transition:.2s}
+    .related-card:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--ink)}
+    .cta{background:linear-gradient(135deg,#fff5f5,#f4e7e4);border-radius:22px;padding:32px;text-align:center;margin-top:38px}
+    footer{background:#4a4444;color:#e5ded4;padding:42px 0 28px;margin-top:70px}
+    .floating-contact{position:fixed;right:24px;bottom:24px;z-index:1000;display:flex;flex-direction:column;gap:12px}
+    .float-btn{width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 5px 18px rgba(0,0,0,.18);font-size:1.4rem}
+    .float-phone{background:#ed6a6a}.float-line{background:#06c755;font-size:1.65rem}
+    .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:1200}
+    @media(max-width:991px){.layout{grid-template-columns:1fr;max-width:760px}.toc{position:static}.toc-links{display:grid;grid-template-columns:1fr 1fr}.choice-grid,.related-grid{grid-template-columns:1fr}.page-header{padding-top:120px}}
+    @media(max-width:640px){.page-header{padding:112px 18px 50px}.layout{display:block}.article h2{font-size:1.35rem}.quote-grid,.check-list,.toc-links{grid-template-columns:1fr}.tool{padding:18px}.tool-head{display:block}.privacy{white-space:normal;margin-top:5px}.floating-contact{right:16px;bottom:16px}.float-btn{width:50px;height:50px}}
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#article">跳至文章內容</a>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
-    <!-- 📱 雙軌固定懸浮聯絡按鈕群 -->
-    <div class="floating-contact-group">
-        <a href="tel:0963590368" class="float-btn float-phone" title="撥打諮詢專線">
-            <i class="fas fa-phone-alt"></i>
-        </a>
-        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
-            <i class="fab fa-line"></i>
-        </a>
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="主要導覽">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">福心照護</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="開啟選單"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+          <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+          <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+          <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+          <li class="nav-item"><a class="nav-link" href="en.html" lang="en">EN</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <!-- 💻 標準頂部導覽列（與主網頁規格完美一體化） -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">福心照護</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
-                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
-                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
-                    <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                        <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</button>
-                    </li>
-                </ul>
-            </div>
+  <header class="page-header">
+    <div class="container">
+      <span class="eyebrow">高級大人的陪病手冊・費用篇</span>
+      <h1>醫院看護一天多少錢？<br>先看懂費用組成，再決定怎麼找</h1>
+      <p class="lead-copy">住院時最怕的不是報價高，而是在很趕的時候，只聽到「一天多少錢」，卻沒有問清楚時數、工作內容、加價條件與替班方式。</p>
+      <div class="meta mt-4">
+        <span><i class="far fa-calendar me-1"></i>發布日期：2026-07-31</span>
+        <span><i class="fas fa-rotate me-1"></i>最後更新：2026-07-31</span>
+        <span><i class="far fa-user me-1"></i>福心照護小編</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <div class="layout">
+      <aside class="toc" aria-label="文章目錄">
+        <div class="toc-title">這篇會說明</div>
+        <div class="toc-links">
+          <a href="#first">先分清三種照護</a>
+          <a href="#factors">費用受到什麼影響</a>
+          <a href="#calculator">雙方案費用試算</a>
+          <a href="#brief">產生詢價需求摘要</a>
+          <a href="#quote">書面報價檢查表</a>
+          <a href="#verify">資格與身分怎麼確認</a>
+          <a href="#resources">政府與院方資源</a>
+          <a href="#insurance">收據與保險理賠</a>
         </div>
-    </nav>
+      </aside>
 
-    <!-- 頁面車頭 Banner -->
-    <header class="page-header">
-        <div class="container">
-            <span class="badge rounded-pill bg-white text-dark px-3 py-2 border mb-3" style="color: var(--champagne-gold) !important;">費用指南</span>
-            <h1 class="fw-bold mb-3" style="font-size: 1.8rem; line-height: 1.4;">2026雙北醫院看護費用行情：拒絕病房現場隨意加價與隱藏陷阱</h1>
-            <p class="text-muted small mb-0"><i class="far fa-calendar-alt me-2"></i>2026-07-01 | 由 福心行政督導 撰寫</p>
+      <article class="article" id="article">
+        <nav aria-label="麵包屑" class="small mb-4"><a href="index.html">首頁</a><span class="mx-2">/</span>醫院看護費用</nav>
+
+        <div class="summary">
+          <strong>先給正在趕時間的你：</strong>
+          <ol class="mb-0 mt-2">
+            <li>先問護理站：這個病房是否有「住院整合照護服務」。</li>
+            <li>需要自費看護時，把日期、時段與病人照護需求一次說清楚。</li>
+            <li>不要只比較日價；請對方提供包含加價、替班規則一併報價。</li>
+          </ol>
         </div>
-    </header>
 
-    <!-- 文章主體 -->
-    <main class="container my-5" style="max-width: 800px;">
-        <div class="article-body">
-            <p>當收到醫院的住院通知或準備進行手術時，家屬的心情往往充滿焦慮。除了擔憂家人的病情，接著必須面對的實際問題就是：<strong>「如果家人都需要上班、無法請假，找雙北的醫院看護一天到底要多少錢？」</strong></p>
-            
-            <p>在台北市與新北市的醫療院所周邊，看護市場長年存在著資訊不透明、個體戶隨意喊價的狀況。許多案家在慌亂中透過管道在通訊群組隨便找人，或是拿了護理站旁名片牆的名片就聯繫，往往等照服員到了病房現場，才發現還有一堆隱藏費用需要支付。今天福心照護就為您說明 2026 年最新費用行情，以及如何有效搭配政府資源與防範常見的加價陷阱。</p>
+        <p>「醫院看護一天多少錢？」沒有一個適用所有人的固定答案。同樣是陪病，12 小時或 24 小時、是否需要協助翻身移位、夜間是否頻繁起身、是否遇到假日或臨時派案，都可能讓報價不同。</p>
 
-            <h2>一、 2026 大雙北地區醫院看護（台籍）收費標準</h2>
-            <p>目前雙北地區主流的合格台籍照顧服務員（具備照服員結業證書或單一級技術士證照），自費派遣的計費方式依時數主要分為兩種規格：</p>
-            <ul>
-                <li><strong>全日班（24小時照顧）：</strong> 目前市場上合理的常態行情約在 <strong>$3,200 至 $4,000 / 每日</strong>。最終價格通常取決於患者的體重（如超過80公斤）、病況複雜度（如是否有失智躁動、需頻繁抽痰或正進行隔離照護）。</li>
-                <li><strong>半日班（12小時照顧）：</strong> 行情約在 <strong>$2,200 至 $3,000 / 每日</strong>。適合日間需要進行各項檢查手術，或是家屬下班後可以自行接手、僅需要日間喘息的家庭。</li>
-            </ul>
+        <section id="first">
+          <h2>一、問價格以前，先分清楚三種照護方式</h2>
+          <div class="choice-grid">
+            <div class="choice-card"><strong>住院整合照護</strong><p>由參與計畫的醫院與病房安排照護人力，通常不是一對一服務；是否適用須問院方。</p></div>
+            <div class="choice-card"><strong>自費一對一看護</strong><p>依時段或日數安排人員，費用與工作內容由雙方確認，適合需要較密集或個別照護者。</p></div>
+            <div class="choice-card"><strong>出院後居服</strong><p>返家後可透過 1966 申請評估與居家、喘息等服務；資格、額度與負擔依評估結果而定。</p></div>
+          </div>
+          <div class="official">
+            <strong>2026 年醫院共照資源提醒</strong>
+            <p class="mb-0 mt-2">衛生福利部的住院整合照護服務可依醫院查詢，官方計畫列出的民眾每日自付參考範圍為 0～1,050 元；實際是否提供、適用病房、照護方式與金額，仍以各醫院公告及評估為準。這項服務和家屬自行聘請的一對一看護並不相同喔～ 價格會比較優惠，但不一定排得到 </p>
+          </div>
+        </section>
 
-            <div class="alert alert-gold p-4 my-4">
-                <h4 class="fw-bold mb-2"><i class="fas fa-exclamation-circle me-2"></i>注意低於市場行情的私下派遣風險</h4>
-                <p class="mb-0 small" style="color: #8A6D45;">在尋找看護時，若遇到個體戶私下報出一天 $2,500 以下包辦 24 小時的低價，家屬務必提高警覺。這類人員極有可能是非法外籍黑工（逃逸移工）。根據現行就業服務法規定，一旦在醫院病房內被查獲雇用非法外籍勞工，家屬將直接面臨 <strong>15萬至75萬元</strong> 的巨額罰鍰，切勿因小失大。</p>
+        <section id="factors">
+          <h2>二、自費醫院看護的費用，通常受到哪些條件影響？</h2>
+          <h3>服務時間與起訖方式</h3>
+          <p>先確認是白班、夜班、 12 小時、 24 小時，還是幾個小時的臨時協助。也要問清楚「一天」從幾點算到幾點，超時如何計算。</p>
+          <h3>病人的照護需求</h3>
+          <ul>
+            <li>能否自行起身、如廁與進食？</li>
+            <li>是否需要翻身、移位、拍背或陪同檢查？</li>
+            <li>是否有失智、譫妄、躁動或夜間頻繁起身？</li>
+            <li>是否有管路、傷口、隔離措施或其他院方交代事項？</li>
+          </ul>
+          <p>福心小編建議：有些家屬擔心說得越詳細，就會被仲介或看護「看人加價」。但事先提供病人的照護需求，可以讓對方判斷人力是否適任，也能在到院前把費用、工作內容與服務限制說清楚，避免照護開始後才發現做不了，或臨時產生額外費用。</p>
+          <h3>急件、假日與其他必要成本</h3>
+          <p>臨時到班、連續假期、交通、餐費、防護用品或特殊時段可能有不同約定。這些費用若會發生，這點應在服務開始前納入報價，而不是到病房後才口頭追加！</p>
+        </section>
+
+        <section id="brief">
+          <h2>三、先把需求說完整，比重複問「一天多少」更有效</h2>
+          <div class="tool" aria-labelledby="briefTitle">
+            <div class="tool-head"><h3 id="briefTitle">詢價需求整理表</h3><span class="privacy"><i class="fas fa-lock me-1"></i>資料不會上傳</span></div>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="hospital">醫院與病房</label><input class="form-control brief-input" id="hospital" placeholder="例如：○○醫院／一般病房"></div>
+              <div class="col-md-6"><label class="form-label" for="dates">預計日期與時間</label><input class="form-control brief-input" id="dates" placeholder="例如：8/3 08:00 至 8/6 08:00"></div>
+              <div class="col-md-6"><label class="form-label" for="shift">需要的時段</label><select class="form-select brief-input" id="shift"><option>尚未確定</option><option>白天</option><option>夜間</option><option>十二小時</option><option>二十四小時</option><option>其他</option></select></div>
+              <div class="col-md-6"><label class="form-label" for="mobility">行動能力</label><select class="form-select brief-input" id="mobility"><option>尚未確定</option><option>可自行行動</option><option>需攙扶</option><option>需協助移位／翻身</option><option>臥床</option></select></div>
+              <div class="col-12"><label class="form-label" for="needs">照護需求與院方交代</label><textarea class="form-control brief-input" id="needs" rows="3" placeholder="例如：協助進食、如廁、夜間起身、陪同檢查；有無管路或隔離措施"></textarea></div>
+              <div class="col-12"><label class="form-label" for="questions">希望報價說明的項目</label><input class="form-control brief-input" id="questions" value="總價、服務時數、加價條件、替班與取消規則、付款證明"></div>
             </div>
+            <div class="d-flex flex-wrap gap-2 mt-3"><button class="btn btn-gold" id="generateBrief" type="button">產生詢價摘要</button><button class="btn btn-outline-secondary" id="copyBrief" type="button">複製摘要</button></div>
+            <div class="generated mt-3" id="briefOutput" aria-live="polite">填好上方欄位後，按「產生詢價摘要」。</div>
+          </div>
+        </section>
 
-            <h2>二、 搭配 1966 長照專線與居服員的補助銜接</h2>
-            <p>許多家庭會考慮透過手機直撥 <strong>1966 長照專線</strong>，為長輩申請政府的<strong>長照 3.0 居服員服務（居家照顧服務）</strong>。這項政策對於返家休養的長輩提供了良好的公費點到點照顧，例如協助洗澡、備餐或陪同回診。</p>
-            
-            <p>然而，在「剛出院返家」的頭幾週，長輩的管路（如鼻胃管、尿管）往往還沒拆除，身體機能最脆弱，非常需要 24 小時全天候有人在旁守護，以防跌倒或發生突發狀況。由於長照 3.0 的居服員一天能提供的時數有限（通常為 1 至 2 小時），在等待外籍看護入境的 3 個月空窗期內，單靠計時的居服員在實務上看顧壓力依然沉重。此時，許多家庭會選擇採用政府的長照 3.0 居服員作為基底，在夜間或密集觀察期，搭配福心的合法台籍短期看護進行全日對接，才能確保長輩的安全與家屬的喘息品質。</p>
-
-            <h2>三、 傳統自費看護常見的四個加價陷阱</h2>
-            <p>缺乏法規約束的個人看板或地下仲介，口頭報價往往含糊，到現場常以各式理由要求案家貼補紅包，最常見的狀況包括：</p>
-            <ol>
-                <li><strong>翻身拍背與技術加價：</strong> 以患者體重過重、需要頻繁翻身拍痰，或是身上帶有管路為由，在現場要求每日加收 $200-$300 不等的技術費。</li>
-                <li><strong>要求每日補貼餐費：</strong> 許多個體戶會要求案家額外支付一日三餐的伙食費，或是要求由家屬負責準備便當。</li>
-                <li><strong>連假、三節任意翻倍：</strong> 遇到端午、中秋或農曆春節，地下不肖業者常在連假前夕臨時通知費用加倍，否則便以不派案威脅家屬。</li>
-                <li><strong>缺少永續經營的履約保證：</strong> 個體戶看護若遇到突發狀況、生病請假或雙方照顧觀念不合，往往兩手一攤直接離開，讓家屬在病房內頓失依靠。</li>
-            </ol>
-
-            <h2>四、 福心專業照護的合規承諾：價格契約化，開立正式發票</h2>
-            <p>福心管理顧問股份有限公司可靠登記，所有自費派遣服務皆遵循嚴謹的法人規範：</p>
-            <p><strong>1. 正式報價單約定，拒絕巧立名目：</strong> 在確認派案當下，福心會開立正式的服務契約與報價單，明確載明每日費用與包含的照護項目。合約簽定後，現場人員絕對不能向案家索取任何額外加價或餐費紅包。</p>
-            <p><strong>2. 完整的行政與後援團隊：</strong> 服務期間若因不可抗力因素需要請假，福心的行政團隊會負責調度合格的台籍夥伴，確保長輩的照顧不中斷。</p>
-            <p><strong>3. 可開立發票供保險與企業請款：</strong> 我們具備完整的公司法人資格（統一編號：62179070），所有費用皆開立正式發票。不論是企業特約員工需要福委會補助，或是家屬要申請商業醫療險的住院陪病理賠，皆有憑有據、流程完全合規。</p>
-            
-            <p class="mt-4 fw-bold text-center" style="color: var(--champagne-gold); font-size: 1.15rem;">把照護的重擔交給合法的福心，把珍貴的相聚與安心留給家人。</p>
-            
-            <div class="text-center my-5">
-                <a href="tel:0963590368" class="btn btn-lg px-5 py-3 text-white" style="background-color: var(--champagne-gold); border-radius: 50px; box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3); font-size: 1.1rem; text-decoration: none; display: inline-block;"><i class="fas fa-phone-alt me-2"></i>直撥福心官方專線：0963-590-368</a>
+        <section id="quote">
+          <h2>四、一份可以比較的書面報價，至少要有這些內容</h2>
+          <div class="tool">
+            <div class="tool-head"><h3>報價檢查表</h3><span id="checkCount" class="privacy">已確認 0／8 項</span></div>
+            <div class="check-progress mb-3" aria-hidden="true"><span id="checkBar"></span></div>
+            <div class="check-list" id="quoteChecklist">
+              <label class="check-item"><input type="checkbox">服務日期、每日起訖時間</label>
+              <label class="check-item"><input type="checkbox">基本費用與總服務天數</label>
+              <label class="check-item"><input type="checkbox">已包含與未包含的照護工作</label>
+              <label class="check-item"><input type="checkbox">假日、夜間、急件等加價條件</label>
+              <label class="check-item"><input type="checkbox">餐費、交通、防護用品等費用</label>
+              <label class="check-item"><input type="checkbox">臨時替班或人員無法到班的安排</label>
+              <label class="check-item"><input type="checkbox">取消、提前結束規則</label>
+              <label class="check-item"><input type="checkbox">付款方式及可提供的收據或發票</label>
             </div>
+          </div>
+          <div class="warning"><strong>到院後臨時增加需求怎麼辦？</strong><p class="mb-0 mt-2">病況可能改變，合理的服務內容與費用也可能需要調整；重點是先說明原因、金額與開始時間，由雙方確認後再執行。不要只接受一句「這個要另外加」。</p></div>
+        </section>
 
-            <hr class="my-5" style="border-top: 1px solid rgba(197, 168, 128, 0.2);">
+        <section id="verify">
+          <h2>五、除了價格，也要確認人員與服務來源</h2>
+          <ul>
+            <li>確認聯絡窗口、服務單位全名與聯絡方式。</li>
+            <li>詢問實際到班人員的身分與照護經驗，並依需求確認相關訓練或證明。</li>
+            <li>不要把證件、病歷或付款資料交給身分無法確認的人。</li>
+            <li>若涉及外國人工作資格，應確認其依法得從事該工作，不要只憑口頭保證。</li>
+          </ul>
+          <p>《就業服務法》第 57 條禁止聘僱未經許可、許可失效或由他人申請許可之外國人。消費者無法只靠價格或外貌判斷資格；有疑慮時，應向主管機關或合法服務單位查證。</p>
+        </section>
 
-            <!-- ─── 🔗 延伸閱讀與核心推薦跳轉區塊（✨ 已修復：格線具備彈性且絕對等高） ─── -->
-            <div class="mt-5">
-                <h4 class="fw-bold mb-4" style="font-size: 1.2rem; color: var(--text-dark); border-left: 4px solid var(--dusty-rose); padding-left: 10px;">延伸閱讀與推薦服務</h4>
-                <div class="row g-4 d-flex align-items-stretch"> <!-- ✨ 確保 row 底下子元件能同等拉長 -->
-                    <!-- 左邊卡片：引導閱讀政策過渡指南 -->
-                    <div class="col-md-6">
-                        <a href="blog-window-period.html" class="recommend-card-link">
-                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 卡片內部元件上下對稱 -->
-                                <div>
-                                    <span class="badge mb-2" style="background-color: var(--dusty-rose); color: var(--text-dark);">過渡指南</span>
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">等外籍看護空窗期要3個月？長照3.0銜接攻略</h4>
-                                    <p class="small text-muted mb-3">2026 新制下，1966 專線及短天數喘息自費如何活用？</p>
-                                </div>
-                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 右邊卡片：引導閱讀法規識別指南 -->
-                    <div class="col-md-6">
-                        <a href="blog-license-check.html" class="recommend-card-link">
-                            <div class="recommend-card d-flex flex-column justify-content-between"> <!-- ✨ 即使字少也強迫與左方同高 -->
-                                <div>
-                                    <span class="badge mb-2" style="background-color: var(--champagne-gold); color: white;">法規安全</span>
-                                    <h4 class="fw-bold mb-2" style="font-size: 1.1rem; line-height: 1.4; color: var(--text-dark);">如何識別合法看護仲介？3步驟避開非法黑工</h4>
-                                    <p class="small text-muted mb-3">仲介不只需要公司登記，更需要有合法就服證照！</p>
-                                </div>
-                                <div class="small fw-bold mt-auto" style="color: var(--champagne-gold);">閱讀全文 <i class="fas fa-arrow-right ms-1"></i></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <section id="resources">
+          <h2>六、住院中與出院後，可以問哪些資源？</h2>
+          <h3>住院整合照護服務</h3>
+          <p>先問護理站或院方窗口：目前病房是否參與、病人是否適用、每天自付多少、照護人力如何配置，以及家屬仍需負責哪些事情。</p>
+          <h3>出院準備與 1966 長照專線</h3>
+          <p>若出院後仍需要協助洗澡、備餐、移位、喘息或其他生活照護，可以在住院期間先詢問出院準備服務，或撥打 1966 申請長照評估。實際能使用的服務與部分負擔，依資格與評估結果而定。</p>
+        </section>
 
-        </div>
-    </main>
+        <section class="cta" aria-labelledby="ctaTitle">
+          <h2 id="ctaTitle" class="border-0 p-0 mt-0">你也有住院看護的需求嗎？</h2>
+          <p>把醫院、日期、時段和病人的照護需求告訴福心，我們會協助你釐清服務內容與費用項目！</p>
+          <div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener">LINE 諮詢</a><a class="btn btn-outline-secondary px-4" href="services.html">查看收費標準｜項目</a></div>
+        </section>
 
-    <footer class="text-center py-4">
-        <div class="container">
-            <h2 class="fw-bold mb-3" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.25rem;">福心管理顧問股份有限公司</h2>
-            <p class="small text-muted mb-0">© 2026 福心管理顧問股份有限公司 版權所有。新北私就字第 068 號</p>
-        </div>
-    </footer>
+        <section>
+          <h2>資料來源與一般性資訊聲明</h2>
+          <ul class="source-list">
+            <li><a href="https://nurse.mohw.gov.tw/sp-hospitalized-list-2.html" target="_blank" rel="noopener">衛生福利部｜住院整合照護服務醫院查詢</a></li>
+            <li><a href="https://nhplatform.mohw.gov.tw/dl-3555-83b02a06d5c54f23a6f808785e33b2b1.html" target="_blank" rel="noopener">衛生福利部｜2026 年住院整合照護服務實施計畫</a></li>
+            <li><a href="https://1966.gov.tw/" target="_blank" rel="noopener">衛生福利部長照專區｜1966 長照服務</a></li>
+            <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=57&pcode=N0090001" target="_blank" rel="noopener">全國法規資料庫｜就業服務法第 57 條</a></li>
+          </ul>
+          <p class="small">本文提供一般性照護資訊，不構成醫療、法律、保險或個案報價建議。醫院制度、政府計畫、服務資格與費用可能調整，請以醫院、主管機關、保險公司及實際服務契約的最新說明為準。若病人出現緊急或明顯惡化情形，請立即通知醫療人員。</p>
+        </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <section>
+          <h2>相關文章</h2>
+          <div class="related-grid">
+            <a class="related-card" href="blog-hospital-packing-list.html"><strong>第一次住院要帶什麼？</strong><p class="small mb-0 mt-2">把行李分成五袋，先帶最重要的。</p></a>
+            <a class="related-card" href="blog-family-caregiving-shifts.html"><strong>一家人怎麼輪流陪病？</strong><p class="small mb-0 mt-2">分班、交班與家人協調的實用做法。</p></a>
+            <a class="related-card" href="services.html"><strong>福心收費標準｜項目</strong><p class="small mb-0 mt-2">查看目前服務項目與費用說明。</p></a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <div class="floating-contact" aria-label="快速聯絡">
+    <a class="float-btn float-phone" href="tel:0963590368" aria-label="撥打諮詢專線"><i class="fas fa-phone"></i></a>
+    <a class="float-btn float-line" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener" aria-label="加入 LINE 諮詢"><i class="fab fa-line"></i></a>
+  </div>
+
+  <footer>
+    <div class="container text-center"><div class="fw-bold mb-2">福心照護</div><small>住院，不必一個人面對。</small><div class="mt-3"><small>© 2026 福心照護</small></div></div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      const money = n => new Intl.NumberFormat("zh-TW",{style:"currency",currency:"TWD",maximumFractionDigits:0}).format(n || 0);
+      const number = id => Math.max(0, Number(document.getElementById(id).value) || 0);
+      const calculate = () => {
+        const a = number("aDays") * number("aRate") + number("aExtra");
+        const b = number("bDays") * number("bRate") + number("bExtra");
+        document.getElementById("aTotal").textContent = money(a);
+        document.getElementById("bTotal").textContent = money(b);
+        return {a,b};
+      };
+      document.querySelectorAll(".calc").forEach(el => el.addEventListener("input",calculate));
+      document.getElementById("compareBtn").addEventListener("click",() => {
+        const {a,b}=calculate(), box=document.getElementById("compareResult");
+        box.style.display="block";
+        if(!a && !b){box.textContent="請先輸入兩個方案的基本費與加價。";return}
+        const aName=document.getElementById("aName").value.trim()||"方案 A";
+        const bName=document.getElementById("bName").value.trim()||"方案 B";
+        const diff=Math.abs(a-b);
+        box.textContent=a===b?`兩個方案目前都是 ${money(a)}。請繼續比較服務內容與條件。`:`${a<b?aName:bName} 的試算總額少 ${money(diff)}。價格只是其中一項，請再核對時數、照護內容、替班與取消規則。`;
+      });
+      calculate();
+
+      const buildBrief=()=>{
+        const val=id=>document.getElementById(id).value.trim()||"尚未填寫";
+        const text=`【醫院看護詢價需求】\n醫院／病房：${val("hospital")}\n日期／時間：${val("dates")}\n需要時段：${val("shift")}\n行動能力：${val("mobility")}\n照護需求：${val("needs")}\n希望報價包含：${val("questions")}\n\n請協助說明可否承接、實際到班時間、服務內容、總費用與可能加價條件，謝謝。`;
+        document.getElementById("briefOutput").textContent=text;
+        return text;
+      };
+      document.getElementById("generateBrief").addEventListener("click",buildBrief);
+      document.getElementById("copyBrief").addEventListener("click",async e=>{
+        try{await navigator.clipboard.writeText(buildBrief());e.currentTarget.textContent="已複製";setTimeout(()=>e.currentTarget.textContent="複製摘要",1600)}
+        catch{e.currentTarget.textContent="請長按摘要複製"}
+      });
+
+      const checks=[...document.querySelectorAll("#quoteChecklist input")];
+      const updateChecks=()=>{
+        const done=checks.filter(x=>x.checked).length;
+        document.getElementById("checkCount").textContent=`已確認 ${done}／${checks.length} 項`;
+        document.getElementById("checkBar").style.width=`${done/checks.length*100}%`;
+      };
+      checks.forEach(x=>x.addEventListener("change",updateChecks));
+
+      const progress=document.getElementById("readingProgress");
+      const sections=[...document.querySelectorAll("article section[id]")];
+      const links=[...document.querySelectorAll(".toc a")];
+      const onScroll=()=>{
+        const height=document.documentElement.scrollHeight-innerHeight;
+        progress.style.width=`${height>0?scrollY/height*100:0}%`;
+        let current="";
+        sections.forEach(s=>{if(s.getBoundingClientRect().top<150)current=s.id});
+        links.forEach(a=>a.classList.toggle("active",a.getAttribute("href")===`#${current}`));
+      };
+      addEventListener("scroll",onScroll,{passive:true});onScroll();
+    })();
+  </script>
 </body>
 </html>
