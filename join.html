@@ -13,12 +13,12 @@
     
     <style>
         :root {
-            --primary-pink: #D4A373;
-            --dusty-rose: #E8C5C8; 
-            --champagne-gold: #C5A880; 
-            --bg-ivory: #FDFBF7; 
-            --text-dark: #3A3535; 
-            --text-muted: #5A5252;
+            --primary-pink: #F4C4C6;
+            --dusty-rose: #F4C4C6; 
+            --champagne-gold: #B78380; 
+            --bg-ivory: #FFFDFC; 
+            --text-dark: #302B29; 
+            --text-muted: #625A56;
         }
 
         body {
@@ -30,9 +30,9 @@
 
         /* 導航列：霧面精品粉紅底色 + 奢華毛玻璃效果 */
         .navbar {
-            background-color: rgba(243, 232, 233, 0.96); 
+            background-color: rgba(255, 253, 252, 0.96); 
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            border-bottom: 1px solid rgba(107, 87, 80, 0.12);
         }
         .navbar-brand {
             font-weight: 700;
@@ -50,7 +50,7 @@
         /* 頁面車頭 Banner */
         .page-header {
             padding: 140px 0 60px 0;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            background: linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 100%);
             text-align: center;
         }
 
@@ -65,16 +65,16 @@
         /* 福利核心圖卡 */
         .benefit-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 16px;
             padding: 35px 25px;
             height: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.03);
+            box-shadow: 0 4px 20px rgba(74,58,54,.03);
         }
         .benefit-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(197, 168, 128, 0.08);
+            box-shadow: 0 10px 25px rgba(74,58,54,.06);
         }
         .icon-box {
             width: 50px;
@@ -89,15 +89,15 @@
             background: white;
             border-radius: 12px;
             padding: 30px 25px;
-            border: 1px solid rgba(197, 168, 128, 0.12);
+            border: 1px solid rgba(107,87,80,.10);
             position: relative;
             height: 100%;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
+            box-shadow: 0 4px 20px rgba(74,58,54,.03);
             transition: all 0.3s ease;
         }
         .join-step-box:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(197, 168, 128, 0.05);
+            box-shadow: 0 8px 20px rgba(74,58,54,.05);
         }
         .join-step-badge {
             background-color: #FDF6F6;
@@ -114,13 +114,13 @@
         /* 法律免責文字 */
         .legal-disclaimer {
             font-size: 0.8rem;
-            color: #8C8282;
+            color: #756C68;
             line-height: 1.6;
-            background-color: rgba(245, 241, 235, 0.6);
+            background-color: #F8F6F3;
             padding: 20px;
             border-radius: 8px;
-            border-left: 3px solid #D1C7BD;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.01);
+            border-left: 3px solid #D9B6B8;
+            box-shadow: 0 4px 15px rgba(74,58,54,.02);
         }
 
         /* 底部按鈕系列 */
@@ -133,12 +133,12 @@
             font-weight: 500;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            box-shadow: 0 4px 15px rgba(99,72,67,.18);
             text-decoration: none;
             display: inline-block;
         }
         .btn-gold-recruitment:hover {
-            background-color: #B39670;
+            background-color: #A96F74;
             color: white;
             transform: translateY(-2px);
         }
@@ -173,11 +173,11 @@
 
         /* ─── 🧱 完全同步首頁：Footer 輕量化降噪樣式 ─── */
         footer {
-            background-color: #433D3D; 
-            color: #ECE6DD;
+            background-color: #302B29; 
+            color: #F7F4F2;
             padding: 45px 0 25px 0; 
             margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.12);
+            border-top: 1px solid rgba(107,87,80,.10);
         }
         .footer-divider {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -186,7 +186,7 @@
         .footer-seo-text {
             font-size: 0.82rem !important;
             line-height: 1.6;
-            color: #6E6666 !important; /* 人眼視覺弱化淡化 */
+            color: #AFA8A4 !important; /* 人眼視覺弱化淡化 */
             text-align: justify;
         }
 
@@ -249,7 +249,80 @@
                 padding: 35px 0 25px 0;
             }
         }
-    </style>
+    
+        /* Unified site visual system */
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: #6B5750 !important;
+        }
+
+        @media (min-width: 992px) and (max-width: 1279px) {
+            .nav-link { margin: 0 3px; font-size: .92rem; }
+            .navbar-brand { letter-spacing: .08em; }
+        }
+
+        .page-header h1,
+        .page-header h2 {
+            color: #302B29 !important;
+        }
+
+        .benefit-card,
+        .join-step-box {
+            border-color: rgba(107,87,80,.10) !important;
+            box-shadow: 0 4px 20px rgba(74,58,54,.03) !important;
+        }
+
+        .icon-box {
+            color: #B78380 !important;
+        }
+
+        .join-step-badge {
+            background: #FFF4F4 !important;
+            color: #8B5F5C !important;
+            border-color: #D9B6B8 !important;
+        }
+
+        .legal-disclaimer {
+            background: #F8F6F3 !important;
+            border-left-color: #D9B6B8 !important;
+            color: #756C68 !important;
+        }
+
+        .btn-gold-recruitment {
+            background: #06C755 !important;
+            box-shadow: 0 10px 24px rgba(6,199,85,.18) !important;
+            font-weight: 700;
+        }
+        .btn-gold-recruitment:hover {
+            background: #05B84E !important;
+        }
+
+        .btn-outline-rose-recruitment {
+            border-color: #D9B6B8 !important;
+            color: #6B5750 !important;
+            font-weight: 700;
+            background: #FFFDFC;
+        }
+        .btn-outline-rose-recruitment:hover {
+            background: #FBEDEE !important;
+            color: #6B5750 !important;
+        }
+
+        footer {
+            background: #302B29 !important;
+            color: #F7F4F2 !important;
+            border-top: 0 !important;
+        }
+        footer .text-muted { color: #AFA8A4 !important; }
+        .footer-seo-text { color: #AFA8A4 !important; }
+
+</style>
 </head>
 <body>
 
@@ -274,12 +347,12 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fuxin_overseas_family.html">海外家庭安心方案</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">加入福心夥伴</a></li>
-                    <!-- 🌐 同步首頁：EN 按鈕正確連結至 en.html -->
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">加入合作夥伴</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                         <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
                     </li>
                 </ul>
@@ -393,13 +466,13 @@
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
-                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #D5CEE4; font-size: 0.9rem;">
-                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 政府特許立案
+                    <h2 class="fw-bold mb-2" style="color:#E8D7D4; letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #DDD6D2; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 統一編號：62179070 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 新北私就字第 068 號
                     </p>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
-                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">陪伴家庭做好每一個照護安排</p>
                     <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
