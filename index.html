@@ -36,9 +36,9 @@
             --primary: #F4C4C6;
             --primary-dark: #6B5750;
             --rose: #F4C4C6;
-            --gold: #D9BB97;
+            --gold: #B78380;
             --ivory: #FFFDFC;
-            --sand: #FFF7D8;
+            --sand: #F8F6F3;
             --white: #FFFFFF;
             --text: #302B29;
             --muted: #6D6662;
@@ -114,7 +114,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center right;
-            background: linear-gradient(135deg, #FFFDFC 0%, #F4C4C6 56%, #FAE094 100%);
+            background: linear-gradient(135deg, #FFFDFC 0%, #F4C4C6 56%, #FBEDEE 100%);
         }
         .hero::after {
             content: "";
@@ -240,7 +240,7 @@
             line-height: 1.7;
         }
         .comparison-table thead th {
-            background: #FFF7D8;
+            background: #F8F6F3;
             text-align: center;
             font-size: 1.02rem;
             color: var(--text);
@@ -278,7 +278,7 @@
             padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.11);
         }
         .management-point:last-child { border-bottom: 0; }
-        .management-point i { color: #F3F1D9; margin-top: 5px; }
+        .management-point i { color: #F8F6F3; margin-top: 5px; }
         .management-point strong { display: block; margin-bottom: 4px; }
         .management-point span { color: rgba(255,255,255,.7); line-height: 1.7; font-size: .94rem; }
 
@@ -341,7 +341,7 @@
 
         .cta-section { padding: 76px 0; }
         .cta-box {
-            background: linear-gradient(135deg, #FAE5E3 0%, #F3F1D9 100%);
+            background: linear-gradient(135deg, #FAE5E3 0%, #F8F6F3 100%);
             border: 1px solid var(--line);
             border-radius: 28px;
             padding: clamp(34px, 6vw, 62px);
@@ -389,14 +389,14 @@
         /* Accordion comparison interaction */
         .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
         .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #FFF3C4 !important; }
-        .comparison-summary-row:hover td.fuxin-cell { background-color: #E8F6FA !important; }
-        .comparison-summary-row.is-open td { background-color: #F4F9EA !important; }
+        .comparison-summary-row:hover td { background-color: #F5F3F1 !important; }
+        .comparison-summary-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
+        .comparison-summary-row.is-open td { background-color: #F8F6F3 !important; }
         .comparison-summary-row.is-open td.fuxin-cell { background-color: #F7E1E2 !important; }
         .comparison-table.has-active-row .comparison-summary-row:not(.is-open) { opacity: .38; }
         .comparison-table.has-active-row .comparison-detail-row:not(.is-open) { opacity: .38; }
         .comparison-detail-row td { padding: 0 18px !important; background: #FCFAF8; border-bottom: 1px solid rgba(122,94,89,.10); }
-        .comparison-detail-row td.fuxin-cell { background: #F4FBFD; }
+        .comparison-detail-row td.fuxin-cell { background: #FFF4F4; }
         .comparison-detail-row .detail-spacer { background: #FFFDFC; }
         .comparison-detail-content p { margin: 0; padding: 18px 0; color: var(--muted); line-height: 1.75; }
         .comparison-chevron { display: block; margin: 8px auto 0; font-size: .8rem; color: var(--primary-dark); transition: transform .25s ease; }
@@ -405,9 +405,9 @@
         /* Comparison accordion: multiple rows may stay open */
         .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
         .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #FFF3C4 !important; }
-        .comparison-summary-row:hover td.fuxin-cell { background-color: #E8F6FA !important; }
-        .comparison-summary-row.is-open td { background-color: #F4F9EA !important; }
+        .comparison-summary-row:hover td { background-color: #F5F3F1 !important; }
+        .comparison-summary-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
+        .comparison-summary-row.is-open td { background-color: #F8F6F3 !important; }
         .comparison-summary-row.is-open td.fuxin-cell { background-color: #F7E1E2 !important; }
         .comparison-table.has-active-row .comparison-summary-row:not(.is-open),
         .comparison-table.has-active-row .comparison-detail-row:not(.is-open) { opacity: .38; }
@@ -417,7 +417,7 @@
         .comparison-detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
         .comparison-detail-panel { padding: 18px 20px; text-align: center; border-right: 1px solid rgba(122,94,89,.10); }
         .comparison-detail-panel:last-child { border-right: 0; }
-        .comparison-detail-panel.fuxin-detail-panel { background: #F4FBFD; }
+        .comparison-detail-panel.fuxin-detail-panel { background: #FFF4F4; }
         .comparison-detail-panel p { margin: 0; color: var(--muted); line-height: 1.7; font-size: .94rem; }
         .comparison-detail-panel.fuxin-detail-panel p { color: var(--primary-dark); font-weight: 500; }
         .comparison-chevron { display: block; margin: 8px auto 0; font-size: .8rem; color: var(--primary-dark); transition: transform .25s ease; }
@@ -433,8 +433,8 @@
         .comparison-static-row td { transition: background-color .24s ease, opacity .24s ease; }
         .comparison-static-row td p { margin: 8px 0 0; color: var(--muted); line-height: 1.7; font-size: .94rem; }
         .comparison-static-row td.fuxin-cell p { color: var(--primary-dark); }
-        .comparison-static-row:hover td { background-color: #FFF3C4 !important; }
-        .comparison-static-row:hover td.fuxin-cell { background-color: #E8F6FA !important; }
+        .comparison-static-row:hover td { background-color: #F5F3F1 !important; }
+        .comparison-static-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
         .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) { opacity: .34; }
         .comparison-chevron, .comparison-detail-row { display: none !important; }
 
@@ -562,20 +562,20 @@
         }
 
         .icon-circle {
-            background: #FFF7D8;
+            background: #F8F6F3;
         }
 
         .cta-box {
-            background: linear-gradient(135deg, #F4C4C6 0%, #FAE094 46%, #A0DAEA 100%);
+            background: linear-gradient(135deg, #F4C4C6 0%, #FBEDEE 46%, #FBEDEE 100%);
         }
 
 
         /* Lucky Charms palette */
         :root {
-            --lucky-yellow: #FAE094;
+            --lucky-yellow: #FBEDEE;
             --lucky-pink: #F4C4C6;
-            --lucky-blue: #A0DAEA;
-            --lucky-green: #A2D188;
+            --lucky-blue: #FBEDEE;
+            --lucky-green: #F1ECE8;
             --lucky-tan: #D9BB97;
         }
 
@@ -590,13 +590,13 @@
         }
 
         .license-line {
-            background: rgba(250,224,148,.34);
-            border-color: rgba(217,187,151,.42);
+            background: rgba(248,246,243,.34);
+            border-color: rgba(183,131,128,.42);
             color: #5E4C45;
         }
 
         /* More playful, but still polished */
-        .process-card:nth-child(4n+1) .icon-circle { background: rgba(250,224,148,.58); color:#6B5750; }
+        .process-card:nth-child(4n+1) .icon-circle { background: rgba(248,246,243,.58); color:#6B5750; }
         .process-card:nth-child(4n+2) .icon-circle { background: rgba(244,196,198,.62); color:#6B5750; }
         .process-card:nth-child(4n+3) .icon-circle { background: rgba(244,196,198,.42); color:#7A5C58; }
         .process-card:nth-child(4n+4) .icon-circle { background: rgba(162,209,136,.55); color:#4F6743; }
@@ -625,7 +625,7 @@
         }
 
         .article-card .tag {
-            background: rgba(250,224,148,.34);
+            background: rgba(248,246,243,.34);
             color: #665348;
         }
 
@@ -644,7 +644,7 @@
             background:
                 linear-gradient(135deg,
                     rgba(244,196,198,.84) 0%,
-                    rgba(250,224,148,.62) 58%,
+                    rgba(248,246,243,.62) 58%,
                     rgba(162,209,136,.34) 100%);
         }
 
@@ -670,8 +670,8 @@
         :root {
             --brand-pink: #F4C4C6;
             --brand-pink-strong: #EFA4A2;
-            --brand-yellow: #FAE094;
-            --brand-green: #A2D188;
+            --brand-yellow: #FBEDEE;
+            --brand-green: #F1ECE8;
             --brand-tan: #D9BB97;
         }
 
@@ -691,7 +691,7 @@
             color: #7A5C58;
         }
         .process-card:nth-child(4n+2) .icon-circle {
-            background: rgba(250,224,148,.50);
+            background: rgba(248,246,243,.50);
             color: #6B5750;
         }
         .process-card:nth-child(4n+3) .icon-circle {
@@ -730,8 +730,8 @@
             background: linear-gradient(
                 135deg,
                 rgba(244,196,198,.88) 0%,
-                rgba(250,224,148,.48) 62%,
-                rgba(217,187,151,.30) 100%
+                rgba(248,246,243,.48) 62%,
+                rgba(183,131,128,.30) 100%
             );
         }
 
@@ -982,6 +982,132 @@
             box-shadow: 0 4px 12px rgba(73,60,56,.14) !important;
         }
 
+
+        /* 2026-08 Homepage background unification
+           Match EN page: warm white + soft neutral only */
+        :root {
+            --ivory: #FFFDFC;
+            --sand: #F8F6F3;
+            --soft-neutral: #F8F6F3;
+            --soft-neutral-2: #FBFAF8;
+            --soft-pink-wash: #FBEDEE;
+            --soft-pink-border: #EED8DA;
+        }
+
+        body,
+        .hero {
+            background: #FFFDFC !important;
+        }
+
+        /* Alternate content backgrounds */
+        .help-section,
+        .legal-section,
+        .guides-section {
+            background: #F8F6F3 !important;
+        }
+
+        .journey-section {
+            background: #FFFDFC !important;
+        }
+
+        /* Cards stay white */
+        .process-card,
+        .principle-card,
+        .article-card,
+        .journey-step,
+        .legal-card,
+        .comparison-wrap,
+        .service-ribbon {
+            background: #FFFFFF !important;
+        }
+
+        /* Neutral, non-yellow icon and tag backgrounds */
+        .icon-circle {
+            background: #F1ECE8 !important;
+            color: #745E58 !important;
+        }
+        .help-section .process-card:nth-child(2n) .icon-circle {
+            background: #F8E9EA !important;
+        }
+
+        .journey-step .number {
+            background: #F8F6F3 !important;
+            color: #6B5750 !important;
+        }
+
+        .article-card .tag,
+        .guides-section .article-card .tag,
+        .guides-section .article-card:nth-child(2) .tag,
+        .guides-section .article-card:nth-child(3) .tag {
+            background: #F1ECE8 !important;
+            color: #6B5750 !important;
+        }
+        .guides-section .article-card:nth-child(2) .tag {
+            background: #F8E9EA !important;
+        }
+
+        /* Hero image fallback: no yellow */
+        .hero-media img {
+            background: linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 58%, #F8F6F3 100%) !important;
+        }
+
+        /* License chip: soft pink/white, no yellow */
+        .license-line {
+            background: rgba(251,237,238,.78) !important;
+            border-color: #EED8DA !important;
+            color: #6B5750 !important;
+        }
+
+        /* Comparison table: neutral competitors + pink Fuxin */
+        .comparison-table thead th,
+        .mobile-comparison-table th,
+        .mobile-section-header {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+
+        .comparison-table thead th.fuxin-head,
+        .mobile-comparison-table th.fuxin-head {
+            background: #F8E6E7 !important;
+            color: #6B5750 !important;
+        }
+
+        .comparison-static-row td:not(.criterion):not(.fuxin-cell),
+        .mobile-comparison-table td:not(.fuxin-cell) {
+            background: #FFFFFF !important;
+        }
+
+        .comparison-table .criterion {
+            background: #FAF9F7 !important;
+        }
+
+        .comparison-table .fuxin-cell,
+        .mobile-comparison-table td.fuxin-cell {
+            background: #FFF4F4 !important;
+        }
+
+        .comparison-static-row:hover td:not(.criterion):not(.fuxin-cell) {
+            background: #F7F6F4 !important;
+        }
+
+        .comparison-static-row:hover td.criterion {
+            background: #F2F0ED !important;
+        }
+
+        .comparison-static-row:hover td.fuxin-cell {
+            background: #F8E3E4 !important;
+        }
+
+        .mobile-tab-switch {
+            background: #F5F3F1 !important;
+        }
+
+        /* Final CTA remains brand pink, not yellow */
+        .cta-box {
+            background: #FBEDEE !important;
+            border: 1px solid #EED8DA !important;
+        }
+
 </style>
 </head>
 <body>
@@ -1116,7 +1242,7 @@
                 <thead>
                     <tr>
                         <th class="fuxin-head text-center" style="background: #F4C4C6;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #FFF7D8;">傳統仲介</th>
+                        <th class="text-center" style="background: #F2F0ED;">傳統仲介</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -1161,7 +1287,7 @@
                 <thead>
                     <tr>
                         <th class="fuxin-head text-center" style="background: #F4C4C6;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #FFF7D8;">網路平台</th>
+                        <th class="text-center" style="background: #F2F0ED;">網路平台</th>
                     </tr>
                 </thead>
                 <tbody>
