@@ -236,8 +236,8 @@
         .float-btn:hover {
             transform: scale(1.08);
         }
-        .float-phone { background-color: #ED6A6A; color: white; font-size: 26px; }
-        .float-phone:hover { color: white; background-color: #DF5959; }
+        .float-phone { background-color: #C9898E; color: white; font-size: 26px; }
+        .float-phone:hover { color: white; background-color: #B9787E; }
         .float-line { background-color: #06C755; color: white; font-size: 30px; }
         .float-line:hover { color: white; background-color: #05A647; }
 
@@ -346,6 +346,43 @@
         footer .text-muted { color: #AFA8A4 !important; }
         .footer-seo-text { color: #AFA8A4 !important; }
 
+
+        /* Overseas Family Care dropdown */
+        .nav-family-dropdown .dropdown-menu {
+            min-width: 230px;
+            padding: 8px;
+            margin-top: 0;
+            background: #FFFDFC;
+            border: 1px solid rgba(107,87,80,.10);
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(74,58,54,.10);
+        }
+
+        .nav-family-dropdown .dropdown-item {
+            padding: 10px 13px;
+            border-radius: 10px;
+            color: #302B29;
+            font-size: .94rem;
+            font-weight: 500;
+        }
+
+        .nav-family-dropdown .dropdown-item:hover,
+        .nav-family-dropdown .dropdown-item:focus {
+            background: #FBEDEE;
+            color: #6B5750;
+        }
+
+        @media (min-width: 992px) {
+            .nav-family-dropdown:hover > .dropdown-menu {
+                display: block;
+            }
+        }
+
+        /* Corporate page: non-LINE green check icons follow site palette */
+        .text-success {
+            color: #B78380 !important;
+        }
+
 </style>
 </head>
 <body>
@@ -374,7 +411,13 @@
                     <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
-                    <li class="nav-item"><a class="nav-link" href="fuxin_overseas_family.html">海外家庭安心方案</a></li>
+                    <li class="nav-item dropdown nav-family-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">海外家庭安心方案</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fuxin_overseas_family.html">福心健康生活管家</a></li>
+                            <li><a class="dropdown-item" href="fuxin_returing_taiwan_surgery.html">福心海外返台手術</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a class="nav-link active" href="corporate.html">企業特約</a></li>
                     <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
