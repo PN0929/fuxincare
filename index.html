@@ -887,6 +887,101 @@
             color: #302B29 !important;
         }
 
+
+        /* 2026-08 Homepage refinement:
+           keep navbar unified and make Fuxin the visual focus in comparison table */
+
+        /* Navbar: 海外家庭安心方案與其他導覽項目使用相同文字色 */
+        .overseas-nav-link {
+            color: var(--text) !important;
+            font-weight: 500 !important;
+        }
+        .overseas-nav-link:hover {
+            color: var(--primary-dark) !important;
+        }
+
+        /* Desktop comparison: neutral competitors, soft-pink Fuxin */
+        .comparison-table thead th {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+        .comparison-table thead th.fuxin-head {
+            background: #F8E6E7 !important;
+            color: #6B5750 !important;
+        }
+
+        .comparison-table .criterion {
+            background: #FAF9F7 !important;
+        }
+
+        /* Default cells: competitors stay visually quiet */
+        .comparison-static-row td:not(.criterion):not(.fuxin-cell) {
+            background: #FFFFFF !important;
+        }
+
+        /* Fuxin column always has a subtle identity */
+        .comparison-table .fuxin-cell {
+            background: #FFF4F4 !important;
+        }
+        .comparison-table .fuxin-cell strong {
+            color: #7B5956 !important;
+        }
+
+        /* Hovered row:
+           competitors only receive a very light neutral wash,
+           Fuxin gets the clearer pink emphasis */
+        .comparison-static-row:hover td:not(.criterion):not(.fuxin-cell) {
+            background-color: #F7F6F4 !important;
+        }
+        .comparison-static-row:hover td.criterion {
+            background-color: #F2F0ED !important;
+        }
+        .comparison-static-row:hover td.fuxin-cell {
+            background-color: #F8E3E4 !important;
+            box-shadow: inset 3px 0 0 rgba(196, 130, 136, .48),
+                        inset -3px 0 0 rgba(196, 130, 136, .18);
+        }
+
+        /* When one row is highlighted, reduce distraction from the others
+           without making them look disabled */
+        .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) {
+            opacity: .48 !important;
+        }
+
+        /* Mobile comparison:
+           福心維持淡粉，另一方改為安靜暖灰，不使用黃色 */
+        .mobile-comparison-table th {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+        .mobile-comparison-table th.fuxin-head {
+            background: #F8E6E7 !important;
+            color: #6B5750 !important;
+        }
+        .mobile-comparison-table td:not(.fuxin-cell) {
+            background: #FFFFFF !important;
+        }
+        .mobile-comparison-table td.fuxin-cell {
+            background: #FFF4F4 !important;
+        }
+        .mobile-comparison-table td.fuxin-cell strong {
+            color: #7B5956 !important;
+        }
+        .mobile-section-header {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+
+        /* Mobile tabs: selected comparison remains elegant and neutral */
+        .mobile-tab-switch {
+            background: #F5F3F1 !important;
+        }
+        .mobile-tab-btn.active {
+            background: #6B5750 !important;
+            color: #fff !important;
+            box-shadow: 0 4px 12px rgba(73,60,56,.14) !important;
+        }
+
 </style>
 </head>
 <body>
