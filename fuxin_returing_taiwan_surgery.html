@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>海外返台手術照護｜返台就醫、住院看護、術後住宿與接送協助｜福心照護</title>
+  <meta name="description" content="海外返台開刀或就醫，不只需要安排醫院。福心提供返台手術期間的非醫療照護與生活協調，包括機場接送、無障礙術後住宿、住院看護、出院後生活協助、輔具與回診交通安排、英文收據與海外家庭溝通。">
+  <meta name="keywords" content="海外返台手術,返台開刀,返台就醫,台灣手術照護,髖關節手術台灣,膝關節手術台灣,人工髖關節置換台灣,人工膝關節置換台灣,術後看護,住院看護,術後住宿,無障礙住宿,輔具租借協助,醫療接送,海外台灣人返台就醫,返台醫療照護">
+
+  <meta property="og:title" content="福心海外返台手術｜從抵台、住院、術後休養到返國">
+  <meta property="og:description" content="醫療交給醫院；福心協助把返台手術期間的照護、交通、住宿、陪同與生活安排接起來。">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#F4C4C6;
+      --primary-dark:#6B5750;
+      --accent:#B78380;
+      --accent-strong:#8B5F5C;
+      --bg:#FFFDFC;
+      --bg-alt:#F8F6F3;
+      --pink-wash:#FBEDEE;
+      --pink-border:#EED8DA;
+      --text:#302B29;
+      --muted:#625A56;
+      --line:rgba(107,87,80,.10);
+      --white:#fff;
+    }
+
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:'Noto Sans TC',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    a{text-decoration:none;}
+    section{padding:88px 0;}
+    .section-kicker{
+      color:var(--accent-strong);
+      font-size:.82rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+    .section-title{
+      font-size:clamp(1.9rem,3vw,2.65rem);
+      line-height:1.35;
+      font-weight:700;
+    }
+    .section-lead{
+      color:var(--muted);
+      line-height:1.9;
+      max-width:800px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    /* Navbar */
+    .navbar{
+      background:rgba(255,253,252,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(107,87,80,.12);
+    }
+    .navbar-brand{
+      color:var(--text)!important;
+      font-weight:700;
+      letter-spacing:.12em;
+    }
+    .nav-link{
+      color:var(--text)!important;
+      font-weight:500;
+      margin:0 6px;
+      white-space:nowrap;
+    }
+    .nav-link:hover,.nav-link.active{color:var(--primary-dark)!important;}
+
+    .nav-family-dropdown .dropdown-menu{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:8px;
+      box-shadow:0 16px 40px rgba(74,58,54,.10);
+      background:#FFFDFC;
+      min-width:230px;
+    }
+    .nav-family-dropdown .dropdown-item{
+      border-radius:10px;
+      padding:10px 13px;
+      color:var(--text);
+      font-weight:500;
+      font-size:.94rem;
+    }
+    .nav-family-dropdown .dropdown-item:hover,
+    .nav-family-dropdown .dropdown-item.active{
+      background:var(--pink-wash);
+      color:var(--primary-dark);
+    }
+    @media (min-width:992px){
+      .nav-family-dropdown:hover>.dropdown-menu{display:block;margin-top:0;}
+    }
+    @media (min-width:992px) and (max-width:1279px){
+      .nav-link{margin:0 3px;font-size:.92rem;}
+    }
+
+    /* Floating */
+    .floating-contact-group{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      z-index:9999;
+    }
+    .float-btn{
+      width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:#fff!important;
+      box-shadow:0 8px 22px rgba(0,0,0,.16);
+      transition:.2s ease;
+    }
+    .float-btn:hover{transform:scale(1.06);}
+    .float-phone{background:linear-gradient(135deg,#C9898E,#9D7068);}
+    .float-line{background:#06C755;font-size:1.45rem;}
+
+    /* Hero */
+    .hero{
+      padding:150px 0 86px;
+      background:
+        radial-gradient(circle at 87% 18%,rgba(244,196,198,.32),transparent 28%),
+        linear-gradient(135deg,#FFFDFC 0%,#FBEDEE 54%,#FFFDFC 100%);
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      color:var(--primary-dark);
+      font-size:.86rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      font-size:clamp(2.35rem,5vw,4.5rem);
+      line-height:1.14;
+      letter-spacing:-.02em;
+      font-weight:700;
+      max-width:850px;
+    }
+    .hero .lead{
+      color:var(--muted);
+      line-height:1.9;
+      max-width:760px;
+      font-size:1.12rem;
+    }
+    .hero-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:32px;
+      box-shadow:0 22px 58px rgba(74,58,54,.08);
+    }
+    .hero-card-inner{
+      min-height:360px;
+      border-radius:22px;
+      background:linear-gradient(145deg,#F8E7E8,#FFFDFC);
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;padding:36px;
+    }
+    .hero-card-inner i{font-size:4rem;color:var(--accent);margin-bottom:20px;}
+    .btn-line{
+      background:#06C755;color:#fff!important;
+      border:1px solid #06C755;border-radius:999px;
+      padding:14px 28px;font-weight:700;
+      box-shadow:0 10px 24px rgba(6,199,85,.18);
+    }
+    .btn-soft{
+      background:#fff;color:var(--primary-dark)!important;
+      border:1px solid #D9B6B8;border-radius:999px;
+      padding:14px 26px;font-weight:700;
+    }
+
+    /* cards */
+    .medical-context{background:var(--bg);}
+    .info-panel,.service-card,.plan-card,.journey-persona{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:0 8px 28px rgba(74,58,54,.04);
+    }
+    .info-panel{padding:34px;height:100%;}
+    .info-panel p,.service-card p,.service-card li{color:var(--muted);line-height:1.78;}
+
+    .official-note{
+      margin-top:24px;
+      background:var(--pink-wash);
+      border:1px solid var(--pink-border);
+      border-radius:16px;
+      padding:18px 20px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.92rem;
+    }
+    .official-note a{color:var(--primary-dark);font-weight:700;}
+
+    .service-section{background:var(--bg-alt);}
+    .service-card{padding:30px;height:100%;}
+    .service-icon{
+      width:56px;height:56px;border-radius:16px;
+      background:#FFF4F4;color:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.35rem;margin-bottom:18px;
+    }
+    .service-card h3{font-size:1.18rem;font-weight:700;}
+    .service-card p{margin:0;}
+
+    .scope-note{
+      background:#FFF7F7;
+      border-left:4px solid #D9B6B8;
+      border-radius:0 14px 14px 0;
+      padding:18px 20px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    /* Journey */
+    .journey-section{background:var(--bg);}
+    .journey-persona{padding:28px;margin-bottom:36px;}
+    .persona-icon{
+      width:84px;height:84px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--pink-wash);color:var(--accent);
+      font-size:2rem;margin:auto;
+    }
+    .journey-timeline{max-width:1000px;margin:auto;}
+    .journey-step{
+      display:grid;
+      grid-template-columns:72px 1fr;
+      gap:22px;
+      padding:28px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .journey-step:last-child{border-bottom:0;}
+    .journey-num{
+      width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid #D9B6B8;
+      color:var(--accent-strong);font-weight:700;
+    }
+    .journey-step h3{font-size:1.22rem;font-weight:700;}
+    .journey-step p,.journey-list{color:var(--muted);line-height:1.78;}
+    .journey-list{padding-left:1.2rem;margin-bottom:0;}
+    .accessible-note{
+      margin-top:14px;
+      background:#FFF7F7;
+      border-left:4px solid #D9B6B8;
+      padding:14px 16px;
+      border-radius:0 12px 12px 0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.93rem;
+    }
+    .accessible-note i{color:var(--accent);}
+    .week-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;margin-top:14px;
+    }
+    .week-grid div{
+      background:#F8F6F3;
+      border:1px solid var(--line);
+      border-radius:14px;padding:15px;
+    }
+    .week-grid strong{display:block;color:var(--accent-strong);margin-bottom:6px;}
+    .week-grid span{color:var(--muted);font-size:.9rem;line-height:1.55;}
+    .journey-summary{
+      margin-top:46px;
+      background:var(--pink-wash);
+      border:1px solid var(--pink-border);
+      border-radius:24px;
+      padding:34px;
+      text-align:center;
+    }
+
+    /* plan */
+    .plan-section{background:var(--bg-alt);}
+    .plan-card{padding:34px;}
+    .plan-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+    }
+    .plan-item{
+      display:flex;gap:12px;align-items:center;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+    .plan-item i{color:var(--accent);width:22px;text-align:center;}
+    .quote-note{
+      background:#FFF7F7;border:1px solid var(--pink-border);
+      border-radius:14px;padding:15px 17px;
+      color:var(--muted);line-height:1.7;font-size:.92rem;
+    }
+
+    .final-cta{
+      background:var(--pink-wash);
+      border:1px solid var(--pink-border);
+      border-radius:28px;
+      padding:58px 30px;
+      text-align:center;
+      box-shadow:0 16px 38px rgba(74,58,54,.06);
+    }
+    .final-cta p{color:var(--muted);max-width:780px;margin:16px auto 26px;line-height:1.8;}
+
+    footer{
+      background:#302B29;color:#F7F4F2;
+      padding:48px 0 26px;
+    }
+    .footer-divider{border-top:1px solid rgba(255,255,255,.09);margin:22px 0;}
+    .footer-seo-text{color:#AFA8A4;font-size:.82rem;line-height:1.7;text-align:justify;}
+
+    .fade-in-scroll{
+      opacity:0;transform:translateY(24px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .fade-in-scroll.visible{opacity:1;transform:translateY(0);}
+
+    @media(max-width:991px){
+      .week-grid{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:767px){
+      section{padding:68px 0;}
+      .hero{padding:124px 0 64px;}
+      .journey-step{grid-template-columns:50px 1fr;gap:14px;}
+      .journey-num{width:44px;height:44px;}
+      .week-grid,.plan-grid{grid-template-columns:1fr;}
+      .floating-contact-group{right:18px;bottom:18px;}
+      .float-btn{width:52px;height:52px;}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"福心海外返台手術照護與非醫療生活協調",
+    "provider":{
+      "@type":"Organization",
+      "name":"福心管理顧問股份有限公司",
+      "telephone":"+886-2-2967-0360"
+    },
+    "areaServed":["台北市","新北市"],
+    "serviceType":"海外返台手術期間之非醫療照護、住院看護、術後生活協助、接送與住宿協調",
+    "description":"協助海外返台就醫或手術的家庭安排機場接送、住院照護人力、無障礙術後住宿、生活協助、輔具協調、回診與復健交通及返程安排。醫療診斷與治療由合法醫療機構與醫師負責。"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="floating-contact-group">
+    <a href="tel:0229670360" class="float-btn float-phone" aria-label="撥打福心市話"><i class="fas fa-phone-alt"></i></a>
+    <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" rel="noopener" aria-label="LINE 諮詢"><i class="fab fa-line"></i></a>
+  </div>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">福心照護</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="開啟選單">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+          <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+
+          <li class="nav-item dropdown nav-family-dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              海外家庭安心方案
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fuxin_overseas_family.html">福心健康生活管家</a></li>
+              <li><a class="dropdown-item active" href="#">福心海外返台手術</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+          <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-sm btn-outline-secondary rounded-pill px-3" href="en.html">EN</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 fade-in-scroll">
+          <span class="eyebrow">福心海外返台手術｜海外家庭安心方案</span>
+          <h1 class="mb-4">返台手術，<br>不只需要安排醫院。</h1>
+          <p class="lead mb-4">
+            從抵台接機、住院照護、出院休養，到回診、復健交通與返國，醫療之外的照護與生活安排，讓福心協助處理。
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="https://lin.ee/Tm80P16" class="btn-line" target="_blank" rel="noopener"><i class="fab fa-line me-2"></i>諮詢返台手術照護安排</a>
+            <a href="#journey" class="btn-soft">看看完整照護旅程 <i class="fas fa-arrow-down ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-5 fade-in-scroll">
+          <div class="hero-card">
+            <div class="hero-card-inner">
+              <i class="fas fa-plane-circle-check"></i>
+              <h3 class="fw-bold mb-3">醫療由醫院負責，<br>生活與照護交給福心</h3>
+              <p class="mb-0 text-muted">家人術後休養的大小事，<br> 不必都由海外家屬遠端張羅。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<section class="medical-context">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-scroll">
+        <div class="section-kicker">Considering Surgery or Medical Care in Taiwan?</div>
+        <h2 class="section-title">為什麼海外家庭會考慮返台就醫？</h2>
+        <p class="section-lead mt-3">
+          台灣擁有多間醫學中心、成熟的醫療團隊與國際醫療服務。對需要自費評估不同國家醫療選項的海外家庭來說，<br>
+          台灣可作為兼顧醫療品質、效率與相對合理自費成本的選項之一。
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 fade-in-scroll">
+          <div class="info-panel">
+            <h3 class="fw-bold mb-3">看診檢查到治療，安排有效率</h3>
+            <p class="mb-0">
+              從專科門診、影像檢查到後續治療，許多大型醫院有完整、有效率的國際醫療服務，看診、檢查與治療不久等。
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 fade-in-scroll">
+          <div class="info-panel">
+            <h3 class="fw-bold mb-3">醫療溝通中英皆通，語言不卡關</h3>
+            <p class="mb-0">
+              對習慣中文的病人來說，返台看診少了一層語言轉換；若主要使用英文，醫生大多能用英文服務，醫院也設有海外病患窗口。
+            </p>
+          </div>
+        </div>
+      </div>
+</div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-scroll">
+        <div class="section-kicker">Fuxin Can Help With the Non-Medical Side of Your Stay</div>
+        <h2 class="section-title">福心可以協助的，是醫療之外的整段生活與照護。</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-plane-arrival"></i></div>
+          <h3>協助機場接送安排</h3>
+          <p>依抵台時間、行李與行動需求協助安排接機與返程交通。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-universal-access"></i></div>
+          <h3>術後無障礙休養住宿安排</h3>
+          <p>福心可協助尋找有電梯、較少階梯、浴室較安全，且有空間使用助行器或輪椅的短期住宿。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-circle-info"></i></div>
+          <h3>醫院與就醫資訊整理</h3>
+          <p>協助整理醫院、國際醫療中心、預約窗口與公開就醫資訊，方便家屬與醫療院所確認。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>就醫行程與在台交通安排</h3>
+          <p>協助安排門診檢查、住院手術或其他既定醫療行程所需要的交通與非醫療流程銜接。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-bed-pulse"></i></div>
+          <h3>住院期間的照護人力</h3>
+          <p>依醫院規範與實際照護需求，福心安排合適的住院看護或陪病照護支援。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-house-medical"></i></div>
+          <h3>出院休養的生活照護</h3>
+          <p>福心安排照護人力，在您出院後的日常生活中銜接，讓恢復期有人陪伴。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-wheelchair"></i></div>
+          <h3>術後的輔具租借</h3>
+          <p>福心可依醫療團隊建議協助租借輔具或非醫療行動設備，例如助行器或輪椅等。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-person-walking"></i></div>
+          <h3>回診與復健的陪同服務</h3>
+          <p>福心可協助依醫療團隊安排，協助回診或復健相關交通與陪同服務。</p>
+        </div></div>
+
+        <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="service-card">
+          <div class="service-icon"><i class="fas fa-plane-departure"></i></div>
+          <h3>返程與機場協助</h3>
+          <p>待主治醫師確認適合搭機後，協助安排送機、行李運送，及向航空公司申請輪椅服務。</p>
+        </div></div>
+      </div>
+
+      <div class="scope-note mt-5 fade-in-scroll">
+        <i class="fas fa-shield-heart me-2"></i>
+        <strong>服務範圍說明：</strong>
+        福心提供看護照護、陪同回診，與非醫療方面的生活協助。我們不進行診斷、不推薦特定手術。醫療決策、復健計畫與是否適合搭機，均應由合法醫療機構與專業醫療人員評估。
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="journey-section">
+    <div class="container">
+      <div class="text-center mb-5 fade-in-scroll">
+        <div class="section-kicker">Example Care Journey</div>
+        <h2 class="section-title">案例：住在美國的林阿姨，返台做髖關節置換手術</h2>
+        <p class="section-lead mt-3">
+          實際安排仍會依醫院、主治醫療團隊與病人的復原狀況調整。
+        </p>
+      </div>
+
+      <div class="journey-persona fade-in-scroll">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-3 text-center"><div class="persona-icon"><i class="fas fa-user"></i></div></div>
+          <div class="col-lg-9">
+            <h3 class="fw-bold mb-2">林阿姨，68 歲，長住美國加州</h3>
+            <p class="mb-0 text-muted">
+              林阿姨已和台灣醫院安排好髖關節置換手術，但成年子女無法請幾週長假陪她返台，因此出發前先聯繫福心。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-timeline">
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">01</div>
+          <div>
+            <h3>出發前：先把抵台後的生活安排好</h3>
+            <p>福心透過 LINE 或視訊和林阿姨及家人了解醫院、手術日期、預計停留時間、行動能力與術後生活需求。</p>
+            <ul class="journey-list">
+              <li>機場接機規劃</li>
+              <li>住院前與出院後住宿安排</li>
+              <li>醫院與既定就醫行程交通</li>
+              <li>住院照護人力</li>
+              <li>出院後生活協助與回診交通</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">02</div>
+          <div>
+            <h3>抵達台灣</h3>
+            <p>事先安排好的車輛到桃園機場接林阿姨，送往住宿地點。如果醫療行程與飲食指示允許，也可以協助她張羅一頓熟悉的台灣料理。</p>
+          </div>
+        </div>
+
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">03</div>
+          <div>
+            <h3>入院與住院期間照護</h3>
+            <p>台灣住院模式可能和部分海外醫療環境不同。醫師與護理人員負責醫療照護，但許多病人在住院期間，日常生活協助仍會由家人、親友或自費照護人員提供。</p>
+            <ul class="journey-list">
+              <li>入院日非醫療流程與生活安排協調</li>
+              <li>住院期間照護人力排班</li>
+              <li>依看護服務範圍協助用餐、移動、如廁與個人生活照護</li>
+              <li>向海外家屬提供生活與照護近況</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">04</div>
+          <div>
+            <h3>出院：手術結束，但術後照護還在進行中</h3>
+            <p>
+              林阿姨未必能在出院後立刻搭飛機回美國，可能需要在台灣停留幾週恢復、回診與依醫療團隊指示安排復健。
+            </p>
+            <ul class="journey-list">
+              <li>協助尋找較有無障礙條件的短期術後住宿</li>
+              <li>日常生活與照護協助</li>
+              <li>依醫療建議協助銜接合適的輔具或行動設備</li>
+              <li>餐食、採買與生活庶務</li>
+              <li>回診與復健交通及陪同</li>
+              <li>海外家屬近況回報</li>
+            </ul>
+            <div class="accessible-note">
+              <i class="fas fa-universal-access me-2"></i>
+              <strong>為什麼這很重要：</strong>福心注意到，台灣不少住宅有樓梯、門檻或狹窄浴室，平常不一定會注意，但術後行動受限時，這些都可能變成日常生活的負擔。
+            </div>
+          </div>
+        </div>
+
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">05</div>
+          <div>
+            <h3>在台灣的恢復與追蹤週期</h3>
+            <div class="week-grid">
+              <div><strong>Week 1</strong><span>住院、照護與出院準備。</span></div>
+              <div><strong>Week 2</strong><span>生活協助、餐食、交通與適應恢復期。</span></div>
+              <div><strong>Week 3</strong><span>回診與復健相關交通協調。</span></div>
+              <div><strong>Week 4</strong><span>最後生活安排與返國準備。</span></div>
+            </div>
+            <p class="small text-muted mt-3 mb-0">以上僅為示意時間軸。實際恢復時間與是否適合搭機，必須依主治醫師評估。</p>
+          </div>
+        </div>
+
+        <div class="journey-step fade-in-scroll">
+          <div class="journey-num">06</div>
+          <div>
+            <h3>準備返美</h3>
+            <p>當主治醫師確認已適合搭機後，福心協助安排最後一段返程。</p>
+            <ul class="journey-list">
+              <li>送機交通</li>
+              <li>行李與出發日生活協助</li>
+              <li>需要時協助事先向航空公司申請輪椅服務</li>
+              <li>協助至機場公共區與航空公司 check-in 流程</li>
+              <li>向海外家人回報已平安抵達機場</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="journey-summary fade-in-scroll">
+        <h3 class="fw-bold">從抵台、住院、恢復到最後搭機回家</h3>
+        <p class="text-muted mb-2">福心希望成為海外返台病人在台灣期間，一個熟悉且能持續跟進的生活與照護窗口。</p>
+        <p class="mb-0 fw-bold">醫療由你與醫院安排；其他在台灣需要接起來的照護與生活細節，福心陪你一起處理。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="plan-section">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5 fade-in-scroll">
+          <div class="section-kicker">Fuxin Taiwan Care Journey</div>
+          <h2 class="section-title">海外返台照護 <br> 採個別規劃與報價</h2>
+          <p class="text-muted mt-3" style="line-height:1.85;">
+            國際案件不適用單一日價，因為每個旅程可能包含不同程度的照護時數、英文溝通、交通住宿協調、文件與付款需求。
+          </p>
+          <p class="text-muted mb-0">我們會依你真正需要的服務內容，整理成一份個別照護安排。</p>
+        </div>
+
+        <div class="col-lg-7 fade-in-scroll">
+          <div class="plan-card">
+            <h3 class="fw-bold mb-4">國際家庭服務內容，包含</h3>
+            <div class="plan-grid">
+              <div class="plan-item"><i class="fas fa-language"></i><span>英文溝通與海外家屬協調</span></div>
+              <div class="plan-item"><i class="fas fa-file-invoice"></i><span>英文服務紀錄與明細收據</span></div>
+              <div class="plan-item"><i class="fas fa-credit-card"></i><span>可使用海外信用卡付款</span></div>
+              <div class="plan-item"><i class="fas fa-video"></i><span>抵台前 LINE／視訊規劃</span></div>
+              <div class="plan-item"><i class="fas fa-plane"></i><span>協助機場接送安排</span></div>
+              <div class="plan-item"><i class="fas fa-hotel"></i><span>術後的無障礙住宿安排</span></div>
+              <div class="plan-item"><i class="fas fa-bed-pulse"></i><span>住院及術後照護人力安排</span></div>
+              
+              <div class="plan-item"><i class="fas fa-wheelchair"></i><span>術後輔具租借</span></div>
+              <div class="plan-item"><i class="fas fa-calendar-check"></i><span>回診與復健交通／陪同</span></div>
+              <div class="plan-item"><i class="fas fa-users"></i><span>海外家屬近況回報</span></div>
+              
+            </div>
+
+            <div class="quote-note mt-4">
+              確認需求後，福心會整理服務內容與預估費用，讓家屬在安排前先了解整體支出。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="final-cta fade-in-scroll">
+        <div class="section-kicker">Start Here</div>
+        <h2 class="fw-bold">已經安排返台手術了嗎？先把抵台後的照護一起規劃好。</h2>
+        <p>
+          告訴我們預計返台時間、醫院、手術日期、家屬是否同行，以及目前最擔心的生活與照護問題。
+          我們會協助整理抵台、住院、出院恢復與返程需要銜接的項目。
+        </p>
+        <a href="https://lin.ee/Tm80P16" class="btn-line" target="_blank" rel="noopener"><i class="fab fa-line me-2"></i>諮詢福心海外返台手術照護</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container text-center text-lg-start">
+      <div class="row g-4 align-items-top">
+        <div class="col-lg-7">
+          <h2 class="fw-bold mb-2" style="color:#E8D7D4;letter-spacing:1px;font-size:1.2rem;">福心管理顧問股份有限公司</h2>
+          <p class="small mb-0" style="letter-spacing:.5px;color:#DDD6D2;font-size:.9rem;">
+            聯絡專線：02-2967-0360 <span class="mx-2" style="color:#D9C9C6;opacity:.45;">•</span>
+            統一編號：62179070 <span class="mx-2" style="color:#D9C9C6;opacity:.45;">•</span>
+            新北私就字第 068 號
+          </p>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <p class="fw-bold mb-1" style="color:#F4C4C6;font-size:.95rem;">陪伴家庭做好每一個照護安排</p>
+          <p class="small text-muted mb-0" style="font-size:.8rem;color:#AFA8A4!important;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <p class="footer-seo-text mb-0">
+        服務說明：福心提供海外返台手術與返台就醫期間之非醫療照護與生活協調，包括雙北住院看護媒合、出院後生活照護、
+        協助機場接送安排、術後的無障礙住宿安排、輔具與行動設備第三方銜接、回診及復健交通陪同、英文服務紀錄與海外家屬溝通。
+        福心不提供醫療診斷、手術建議或醫療處置；所有醫療決策均應由合法醫療機構與專業醫療人員負責。
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const observer = new IntersectionObserver((entries, obs)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:.12});
+      document.querySelectorAll('.fade-in-scroll').forEach(el=>observer.observe(el));
+    });
+  </script>
+</body>
+</html>
