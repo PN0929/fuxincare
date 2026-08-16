@@ -97,10 +97,50 @@
     footer{background:#4a4444;color:#e5ded4;padding:42px 0 28px;margin-top:70px}
     .floating-contact{position:fixed;right:24px;bottom:24px;z-index:1000;display:flex;flex-direction:column;gap:12px}
     .float-btn{width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 5px 18px rgba(0,0,0,.18);font-size:1.4rem}
-    .float-phone{background:#ed6a6a}.float-line{background:#06c755;font-size:1.65rem}
+    .float-phone{background:#C9898E}.float-line{background:#06c755;font-size:1.65rem}
     .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:1200}
     @media(max-width:991px){.layout{grid-template-columns:1fr;max-width:760px}.toc{position:static}.toc-links{display:grid;grid-template-columns:1fr 1fr}.choice-grid,.related-grid{grid-template-columns:1fr}.page-header{padding-top:120px}}
     @media(max-width:640px){.page-header{padding:112px 18px 50px}.layout{display:block}.article h2{font-size:1.35rem}.quote-grid,.check-list,.toc-links{grid-template-columns:1fr}.tool{padding:18px}.tool-head{display:block}.privacy{white-space:normal;margin-top:5px}.floating-contact{right:16px;bottom:16px}.float-btn{width:50px;height:50px}}
+  
+    /* Overseas Family Care dropdown */
+    .nav-link{
+      white-space:nowrap;
+      font-weight:500;
+    }
+    @media (min-width:992px) and (max-width:1279px){
+      .nav-link{margin:0 3px;font-size:.92rem}
+    }
+
+    .nav-family-dropdown .dropdown-menu{
+      min-width:230px;
+      padding:8px;
+      margin-top:0;
+      background:#FFFDFC;
+      border:1px solid rgba(107,87,80,.10);
+      border-radius:16px;
+      box-shadow:0 16px 40px rgba(74,58,54,.10);
+    }
+
+    .nav-family-dropdown .dropdown-item{
+      padding:10px 13px;
+      border-radius:10px;
+      color:#302B29;
+      font-size:.94rem;
+      font-weight:500;
+    }
+
+    .nav-family-dropdown .dropdown-item:hover,
+    .nav-family-dropdown .dropdown-item:focus{
+      background:#FBEDEE;
+      color:#6B5750;
+    }
+
+    @media (min-width:992px){
+      .nav-family-dropdown:hover > .dropdown-menu{
+        display:block;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -118,6 +158,13 @@
           <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
           <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+          <li class="nav-item dropdown nav-family-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">海外家庭安心方案</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fuxin_overseas_family.html">福心健康生活管家</a></li>
+              <li><a class="dropdown-item" href="fuxin_returing_taiwan_surgery.html">福心海外返台手術</a></li>
+            </ul>
+          </li>
           <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
           <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
           <li class="nav-item"><a class="nav-link" href="en.html" lang="en">EN</a></li>
@@ -283,7 +330,7 @@
   </main>
 
   <div class="floating-contact" aria-label="快速聯絡">
-    <a class="float-btn float-phone" href="tel:0963590368" aria-label="撥打諮詢專線"><i class="fas fa-phone"></i></a>
+    <a class="float-btn float-phone" href="tel:0229670360" aria-label="撥打福心市話"><i class="fas fa-phone"></i></a>
     <a class="float-btn float-line" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener" aria-label="加入 LINE 諮詢"><i class="fab fa-line"></i></a>
   </div>
 
