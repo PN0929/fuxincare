@@ -12,15 +12,15 @@
 
     <style>
         :root {
-            --primary-pink: #D4A373;
-            --dusty-rose: #E8C5C8;
-            --champagne-gold: #C5A880;
-            --bg-ivory: #FDFBF7;
-            --text-dark: #3A3535;
-            --text-muted: #5A5252;
-            --soft-pink: #F6ECEC;
-            --soft-gold: #F7F0E6;
-            --deep-brown: #433D3D;
+            --primary-pink: #F4C4C6;
+            --dusty-rose: #F4C4C6;
+            --champagne-gold: #B78380;
+            --bg-ivory: #FFFDFC;
+            --text-dark: #302B29;
+            --text-muted: #625A56;
+            --soft-pink: #FBEDEE;
+            --soft-gold: #F8F6F3;
+            --deep-brown: #302B29;
         }
 
         html { scroll-behavior: smooth; }
@@ -32,9 +32,9 @@
         }
 
         .navbar {
-            background-color: rgba(243, 232, 233, 0.96);
+            background-color: rgba(255, 253, 252, 0.96);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            border-bottom: 1px solid rgba(107, 87, 80, 0.12);
         }
         .navbar-brand {
             font-weight: 700;
@@ -75,8 +75,8 @@
         .hero {
             padding: 150px 0 80px;
             background:
-                radial-gradient(circle at 85% 15%, rgba(232,197,200,.55), transparent 28%),
-                linear-gradient(135deg, #FFF8F4 0%, #F8EEEE 50%, #FDFBF7 100%);
+                radial-gradient(circle at 85% 15%, rgba(244,196,198,.36), transparent 30%),
+                linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 52%, #FFFDFC 100%);
             overflow: hidden;
         }
         .eyebrow {
@@ -84,8 +84,8 @@
             padding: 8px 14px;
             border-radius: 999px;
             background: rgba(255,255,255,.75);
-            border: 1px solid rgba(197,168,128,.2);
-            color: #8A7258;
+            border: 1px solid rgba(107,87,80,.10);
+            color: #6B5750;
             font-size: .86rem;
             letter-spacing: 1px;
             margin-bottom: 18px;
@@ -111,7 +111,7 @@
             border-radius: 50px;
             font-weight: 500;
             transition: .3s ease;
-            box-shadow: 0 4px 15px rgba(197,168,128,.28);
+            box-shadow: 0 4px 15px rgba(99,72,67,.18);
             text-decoration: none;
             display: inline-block;
         }
@@ -153,12 +153,12 @@
             border-radius: 28px;
             padding: 28px;
             box-shadow: 0 24px 60px rgba(120,90,90,.12);
-            border: 1px solid rgba(197,168,128,.14);
+            border: 1px solid rgba(107,87,80,.10);
         }
         .hero-visual .house-card {
             min-height: 390px;
             border-radius: 22px;
-            background: linear-gradient(145deg, #F4E1DF, #FFF8F1);
+            background: linear-gradient(145deg, #F8E7E8, #FFFDFC);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -175,7 +175,7 @@
         }
         .pain-card {
             background: rgba(255,255,255,.82);
-            border: 1px solid rgba(197,168,128,.12);
+            border: 1px solid rgba(107,87,80,.08);
             border-radius: 16px;
             padding: 18px;
             color: var(--text-muted);
@@ -207,11 +207,11 @@
             color: white;
         }
         .statement-band h2 { font-weight: 700; line-height: 1.45; }
-        .statement-band span { color: #E4C9A5; }
+        .statement-band span { color: #F4C4C6; }
 
         .benefit-panel {
             background: #fff;
-            border: 1px solid rgba(197,168,128,.14);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 22px;
             padding: 34px;
             height: 100%;
@@ -264,8 +264,8 @@
         .service-card ul { padding-left: 1.2rem; margin-bottom: 0; }
         .service-feature {
             margin-top: 24px;
-            background: linear-gradient(135deg, #F9F0EF, #FBF6EE);
-            border: 1px solid rgba(197,168,128,.18);
+            background: linear-gradient(135deg, #FFF7F7, #F8F6F3);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 22px;
             padding: 38px;
         }
@@ -278,7 +278,7 @@
             left: 5%;
             right: 5%;
             height: 1px;
-            background: rgba(197,168,128,.35);
+            background: rgba(183,131,128,.22);
         }
         .flow-step { position: relative; text-align: center; padding: 0 8px; }
         .flow-num {
@@ -286,7 +286,7 @@
             height: 58px;
             border-radius: 50%;
             background: #fff;
-            border: 1px solid rgba(197,168,128,.25);
+            border: 1px solid rgba(183,131,128,.18);
             color: var(--champagne-gold);
             display: flex;
             align-items: center;
@@ -301,7 +301,7 @@
 
         .audience-card {
             background: #fff;
-            border: 1px solid rgba(197,168,128,.14);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 18px;
             padding: 26px;
             height: 100%;
@@ -324,7 +324,7 @@
             margin-bottom: 30px;
         }
         .case-tab {
-            border: 1px solid rgba(197,168,128,.24);
+            border: 1px solid rgba(183,131,128,.16);
             border-radius: 999px;
             background: white;
             color: var(--text-dark);
@@ -340,7 +340,7 @@
         .case-panel {
             display: none;
             background: white;
-            border: 1px solid rgba(197,168,128,.14);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 24px;
             padding: 28px;
             box-shadow: 0 12px 36px rgba(90,65,65,.05);
@@ -359,7 +359,7 @@
             grid-template-columns: 80px 1fr;
             gap: 18px;
             padding: 16px 0;
-            border-bottom: 1px solid rgba(197,168,128,.12);
+            border-bottom: 1px solid rgba(107,87,80,.08);
         }
         .week-item:last-child { border-bottom: 0; }
         .week-day { font-weight: 700; color: var(--champagne-gold); }
@@ -369,7 +369,7 @@
             margin-top: 20px;
             border-left: 4px solid var(--champagne-gold);
             padding: 14px 18px;
-            background: #FBF7F2;
+            background: #F8F6F3;
             border-radius: 0 12px 12px 0;
             font-weight: 500;
         }
@@ -378,14 +378,14 @@
         .early-notice-card {
             margin-top: 28px;
             background: #fff;
-            border: 1px solid rgba(197,168,128,.16);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 22px;
             padding: 32px;
             box-shadow: 0 10px 30px rgba(90,65,65,.04);
         }
         .early-notice-card p { color: var(--text-muted); line-height: 1.85; }
         .notice-example {
-            background: #FBF7F2;
+            background: #F8F6F3;
             border-left: 4px solid var(--champagne-gold);
             border-radius: 0 12px 12px 0;
             padding: 16px 18px;
@@ -404,7 +404,7 @@
         }
         .care-options-note {
             background: #fff;
-            border: 1px solid rgba(197,168,128,.18);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 14px;
             padding: 14px 16px;
             color: var(--text-muted);
@@ -416,7 +416,7 @@
 
         .pricing-card {
             background: linear-gradient(145deg, #FFFFFF, #FBF4F2);
-            border: 1px solid rgba(197,168,128,.2);
+            border: 1px solid rgba(107,87,80,.10);
             border-radius: 26px;
             box-shadow: 0 18px 50px rgba(90,65,65,.08);
             overflow: hidden;
@@ -440,7 +440,7 @@
             padding: 14px 16px;
             border-radius: 14px;
             background: #FFF;
-            border: 1px solid rgba(197, 168, 128, 0.22);
+            border: 1px solid rgba(107,87,80,.12);
         }
         .caregiver-price-box span {
             color: var(--champagne-gold);
@@ -459,11 +459,11 @@
         .final-cta p { color: var(--text-muted); max-width: 720px; margin: 18px auto 28px; line-height: 1.8; }
 
         footer {
-            background-color: #433D3D;
-            color: #ECE6DD;
+            background-color: #302B29;
+            color: #F7F4F2;
             padding: 45px 0 25px;
             margin-top: 80px;
-            border-top: 1px solid rgba(197,168,128,.12);
+            border-top: 1px solid rgba(107,87,80,.08);
         }
         .footer-divider { border-top: 1px solid rgba(255,255,255,.08); margin: 20px 0; }
         .footer-seo-text { font-size: .82rem; line-height: 1.6; color: #8A8080; text-align: justify; }
@@ -493,7 +493,122 @@
             .case-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 6px; }
             .case-tab { white-space: nowrap; }
         }
-    </style>
+    
+        /* Unified site visual system */
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: #6B5750 !important;
+        }
+
+        @media (min-width: 992px) and (max-width: 1279px) {
+            .nav-link { margin: 0 3px; font-size: .92rem; }
+            .navbar-brand { letter-spacing: .08em; }
+        }
+
+        .eyebrow {
+            color: #6B5750 !important;
+            background: rgba(255,255,255,.82) !important;
+            border-color: rgba(107,87,80,.10) !important;
+        }
+
+        .section-kicker,
+        .week-day,
+        .audience-card .tag,
+        .daily-equivalent strong,
+        .care-options-note i,
+        .pricing-list i,
+        .caregiver-price-box span {
+            color: #8B5F5C !important;
+        }
+
+        .hero-visual .house-card i,
+        .benefit-item .icon,
+        .service-icon,
+        .flow-num {
+            color: #B78380 !important;
+        }
+
+        .benefit-item .icon,
+        .service-icon {
+            background: #FFF4F4 !important;
+        }
+
+        .benefit-panel,
+        .service-card,
+        .audience-card,
+        .case-panel,
+        .early-notice-card,
+        .pricing-card,
+        .care-options-note,
+        .caregiver-price-box,
+        .hero-visual,
+        .pain-card {
+            border-color: rgba(107,87,80,.10) !important;
+        }
+
+        .timeline-wrap:before {
+            background: rgba(183,131,128,.22) !important;
+        }
+
+        .flow-num {
+            border-color: #D9B6B8 !important;
+            background: #FFFDFC !important;
+        }
+
+        .case-tab {
+            border-color: #D9C9C6 !important;
+        }
+
+        .case-tab.active,
+        .case-tab:hover {
+            background: #C9898E !important;
+            color: #fff !important;
+        }
+
+        .case-profile {
+            background: #FBEDEE !important;
+        }
+
+        .case-result,
+        .notice-example {
+            background: #F8F6F3 !important;
+            border-left-color: #D9B6B8 !important;
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #FFFFFF, #FFF7F7) !important;
+        }
+
+        .price-amount {
+            color: #8B5F5C !important;
+        }
+
+        .final-cta {
+            background: #FBEDEE !important;
+            border: 1px solid #EED8DA;
+            box-shadow: 0 16px 38px rgba(74,58,54,.06);
+        }
+
+        .btn-line {
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(6,199,85,.18) !important;
+        }
+
+        footer {
+            background: #302B29 !important;
+            color: #F7F4F2 !important;
+            border-top: 0 !important;
+        }
+        footer .text-muted { color: #AFA8A4 !important; }
+        .footer-seo-text { color: #AFA8A4 !important; }
+
+</style>
 </head>
 <body>
 
@@ -511,14 +626,14 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
-                    <li class="nav-item"><a class="nav-link" href="pricing.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">海外家庭安心計畫</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">海外家庭安心方案</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a></li>
                 </ul>
             </div>
         </div>
@@ -528,7 +643,7 @@
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-7 fade-in-scroll">
-                    <span class="eyebrow">福心健康生活管家｜海外家庭安心計畫</span>
+                    <span class="eyebrow">福心健康生活管家｜海外家庭安心方案</span>
                     <h1 class="mb-4">人在海外，也能照顧住在台灣的爸媽。</h1>
                     <p class="lead mb-4">給旅居海外的子女，一位長期在台灣陪伴父母生活的健康生活管家。固定到府、生活協助、就醫支援與近況回報。儘管距離很遠，照顧不用斷線。</p>
                     <div class="d-flex flex-wrap gap-3">
@@ -593,7 +708,7 @@
         </div>
     </section>
 
-    <section style="background:#FAF5F1;">
+    <section style="background:#F8F6F3;">
         <div class="container">
             <div class="text-center mb-5 fade-in-scroll">
                 <div class="section-kicker">02 / Service</div>
@@ -678,7 +793,7 @@
         </div>
     </section>
 
-    <section style="background:#FAF5F1;">
+    <section style="background:#F8F6F3;">
         <div class="container">
             <div class="text-center mb-5 fade-in-scroll">
                 <div class="section-kicker">04 / Who It’s For</div>
@@ -762,7 +877,7 @@
         </div>
     </section>
 
-    <section style="background:#FAF5F1;">
+    <section style="background:#F8F6F3;">
         <div class="container">
             <div class="text-center mb-5 fade-in-scroll">
                 <div class="section-kicker">06 / Pricing</div>
@@ -819,8 +934,8 @@
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
-                    <p class="small mb-0" style="letter-spacing: .5px; color: #D5CEE4; font-size: .9rem;">聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity:.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity:.4;">•</span> 新北私就字第 068 號</p>
+                    <h2 class="fw-bold mb-2" style="color:#E8D7D4; letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: .5px; color: #DDD6D2; font-size: .9rem;">聯絡專線：02-2967-0360 <span class="mx-2" style="color:#D9C9C6; opacity:.45;">•</span> 統一編號：62179070 <span class="mx-2" style="color:#D9C9C6; opacity:.45;">•</span> 新北私就字第 068 號</p>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
                     <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing:.5px; font-size:.95rem;">陪伴家庭做好每一個照護安排</p>
