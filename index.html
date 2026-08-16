@@ -735,6 +735,158 @@
             );
         }
 
+
+        /* Refined warm beige + pink hierarchy */
+        :root {
+            --soft-beige: #F5EFE7;
+            --soft-beige-2: #F8F3EC;
+            --soft-pink: #F4C4C6;
+            --soft-pink-deep: #E6A8AC;
+        }
+
+        /* Beige appears only in these two content sections */
+        .help-section,
+        .guides-section {
+            background: var(--soft-beige-2);
+        }
+
+        /* Tone down bright yellow inside the help section */
+        .help-section .process-card:nth-child(4n+1) .icon-circle,
+        .help-section .process-card:nth-child(4n+2) .icon-circle,
+        .help-section .process-card:nth-child(4n+3) .icon-circle,
+        .help-section .process-card:nth-child(4n+4) .icon-circle {
+            background: #F2E8DF;
+            color: #7A5C58;
+        }
+
+        .help-section .process-card:nth-child(2n) .icon-circle {
+            background: #F7DEDF;
+        }
+
+        /* Care guide tags: beige/pink only, no bright yellow */
+        .guides-section .article-card .tag,
+        .guides-section .article-card:nth-child(2) .tag,
+        .guides-section .article-card:nth-child(3) .tag {
+            background: #EFE3D8;
+            color: #6B5750;
+        }
+
+        .guides-section .article-card:nth-child(2) .tag {
+            background: #F4DCDD;
+        }
+
+        /* Final CTA: pink only */
+        .cta-box {
+            background: #F4C4C6 !important;
+        }
+
+        .cta-box .section-title {
+            color: #302B29;
+        }
+
+        .cta-box .section-lead {
+            color: #5F5551;
+        }
+
+        /* Phone CTA: soft pink-brown gradient */
+        .btn-phone-gradient {
+            border-radius: 999px;
+            padding: 13px 25px;
+            font-weight: 700;
+            color: #fff;
+            border: 0;
+            background: linear-gradient(135deg, #C9898E 0%, #9D7068 100%);
+            box-shadow: 0 10px 24px rgba(99,72,67,.18);
+            transition: .25s ease;
+        }
+
+        .btn-phone-gradient:hover {
+            color: #fff;
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #BC7C81 0%, #8E625B 100%);
+            box-shadow: 0 13px 28px rgba(99,72,67,.22);
+        }
+
+
+        /* Softer neutral refinement */
+        :root {
+            --soft-neutral: #F8F6F3;
+            --soft-neutral-2: #FBFAF8;
+            --soft-pink-wash: #FBEDEE;
+            --soft-pink-border: #EED8DA;
+        }
+
+        /* Remove yellow presence from the two content sections */
+        .help-section,
+        .guides-section {
+            background: #F8F6F3 !important;
+        }
+
+        .help-section .process-card:nth-child(4n+1) .icon-circle,
+        .help-section .process-card:nth-child(4n+2) .icon-circle,
+        .help-section .process-card:nth-child(4n+3) .icon-circle,
+        .help-section .process-card:nth-child(4n+4) .icon-circle {
+            background: #F2ECE8 !important;
+            color: #745E58 !important;
+        }
+
+        .help-section .process-card:nth-child(2n) .icon-circle {
+            background: #F8E9EA !important;
+        }
+
+        .guides-section .article-card .tag,
+        .guides-section .article-card:nth-child(2) .tag,
+        .guides-section .article-card:nth-child(3) .tag {
+            background: #F1ECE8 !important;
+            color: #6B5750 !important;
+        }
+
+        .guides-section .article-card:nth-child(2) .tag {
+            background: #F8E9EA !important;
+        }
+
+        /* Final CTA: very light blush instead of solid pink */
+        .cta-box {
+            background: #FBEDEE !important;
+            border: 1px solid #EED8DA !important;
+            box-shadow: 0 16px 38px rgba(74, 58, 54, .06);
+        }
+
+        .cta-box .section-title {
+            color: #302B29 !important;
+        }
+
+        .cta-box .section-lead {
+            color: #625A56 !important;
+        }
+
+
+        /* Comparison table header refinement */
+        .comparison-table thead th {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+
+        .comparison-table thead th.fuxin-head {
+            background: #F8E6E7 !important;
+            color: #6B5750 !important;
+        }
+
+        .mobile-comparison-table th {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+
+        .mobile-comparison-table th.fuxin-head {
+            background: #F8E6E7 !important;
+            color: #6B5750 !important;
+        }
+
+        .mobile-section-header {
+            background: #F2F0ED !important;
+            color: #302B29 !important;
+        }
+
 </style>
 </head>
 <body>
@@ -816,7 +968,7 @@
 </div>
 </div>
 </header>
-<section class="section-space">
+<section class="section-space help-section">
 <div class="container">
 <div class="text-center mb-5 fade-in-scroll">
 <div class="section-kicker">How We Help</div>
@@ -956,7 +1108,7 @@
 
 </div>
 </section>
-<section class="section-space">
+<section class="section-space guides-section">
 <div class="container">
 <div class="text-center mb-5 fade-in-scroll">
 <div class="section-kicker">Care Guides</div>
@@ -1032,7 +1184,7 @@
 <h2 class="section-title mb-3">福心與您一起安排下一步的照護。</h2>
 <p class="section-lead mx-auto mb-4">可透過電話或 LINE@ 說明目前病況、所在醫院、服務時間與照護內容。</p>
 <div class="d-grid d-sm-flex justify-content-center gap-3">
-<a class="btn btn-primary-soft" href="tel:0229670360"><i class="fas fa-phone-alt me-2"></i>02-2967-0360</a>
+<a class="btn btn-phone-gradient" href="tel:0229670360"><i class="fas fa-phone-alt me-2"></i>02-2967-0360</a>
 <a class="btn btn-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line me-2"></i>LINE@ 線上諮詢</a>
 </div>
 </div>
