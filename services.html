@@ -13,12 +13,12 @@
     
     <style>
         :root {
-            --primary-pink: #D4A373;
-            --dusty-rose: #E8C5C8; 
-            --champagne-gold: #C5A880; 
-            --bg-ivory: #FDFBF7; 
-            --text-dark: #3A3535; 
-            --text-muted: #5A5252;
+            --primary-pink: #F4C4C6;
+            --dusty-rose: #F4C4C6; 
+            --champagne-gold: #B78380; 
+            --bg-ivory: #FFFDFC; 
+            --text-dark: #302B29; 
+            --text-muted: #625A56;
         }
 
         body {
@@ -30,9 +30,9 @@
 
         /* 導航列：霧面精品粉紅底色 + 奢華毛玻璃效果 */
         .navbar {
-            background-color: rgba(243, 232, 233, 0.96); 
+            background-color: rgba(255, 253, 252, 0.96); 
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+            border-bottom: 1px solid rgba(107, 87, 80, 0.12);
         }
         .navbar-brand {
             font-weight: 700;
@@ -50,7 +50,7 @@
         /* 頁面車頭 Banner */
         .page-header {
             padding: 140px 0 60px 0;
-            background: linear-gradient(135deg, #FFF5F5 0%, #F3E8E9 100%);
+            background: linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 100%);
             text-align: center;
         }
 
@@ -65,27 +65,27 @@
         /* 價目表卡片樣式 */
         .price-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(107, 87, 80, 0.10);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
             transition: all 0.3s ease;
             height: 100%;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
+            box-shadow: 0 4px 20px rgba(74, 58, 54, 0.03);
         }
         .price-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(197, 168, 128, 0.08);
+            box-shadow: 0 10px 30px rgba(74, 58, 54, 0.06);
         }
         .price-card.featured {
             background: linear-gradient(180deg, #FFFFFF 0%, #FDF6F6 100%);
             border: 2px solid var(--dusty-rose);
-            box-shadow: 0 10px 30px rgba(232, 197, 200, 0.25);
+            box-shadow: 0 10px 30px rgba(244, 196, 198, 0.20);
             position: relative;
         }
         .price-card.featured:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(232, 197, 200, 0.35);
+            box-shadow: 0 15px 35px rgba(244, 196, 198, 0.28);
         }
         .price-card.featured::before {
             content: "熱門推薦";
@@ -110,7 +110,7 @@
         .price-unit {
             font-size: 1rem;
             font-weight: 400;
-            color: #8C8282;
+            color: #756C68;
         }
 
         /* 特殊加成清單 */
@@ -119,20 +119,20 @@
             border-left: 4px solid var(--champagne-gold);
             padding: 15px 20px;
             border-radius: 0 12px 12px 0;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.03);
-            border-top: 1px solid rgba(197, 168, 128, 0.08);
-            border-right: 1px solid rgba(197, 168, 128, 0.08);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.08);
+            box-shadow: 0 4px 15px rgba(74, 58, 54, 0.03);
+            border-top: 1px solid rgba(74, 58, 54, 0.06);
+            border-right: 1px solid rgba(74, 58, 54, 0.06);
+            border-bottom: 1px solid rgba(74, 58, 54, 0.06);
         }
 
         /* 服務項目精緻卡片 */
         .service-detail-card {
             background: white;
-            border: 1px solid rgba(197, 168, 128, 0.15);
+            border: 1px solid rgba(107, 87, 80, 0.10);
             border-radius: 16px;
             padding: 35px;
             height: 100%;
-            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.02);
+            box-shadow: 0 4px 20px rgba(74, 58, 54, 0.03);
             transition: all 0.3s ease;
         }
         .service-detail-card:hover {
@@ -169,23 +169,23 @@
             font-weight: 500;
             font-size: 1.15rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+            box-shadow: 0 4px 15px rgba(138, 95, 92, 0.18);
             text-decoration: none;
             display: inline-block;
         }
         .btn-gold:hover {
-            background-color: #B39670;
+            background-color: #A96F74;
             color: white;
             transform: translateY(-2px);
         }
 
         /* ─── 🧱 完全同步首頁：Footer 輕量化降噪樣式 ─── */
         footer {
-            background-color: #433D3D; 
-            color: #ECE6DD;
+            background-color: #302B29; 
+            color: #F7F4F2;
             padding: 45px 0 25px 0; 
             margin-top: 80px;
-            border-top: 1px solid rgba(197, 168, 128, 0.12);
+            border-top: 1px solid rgba(107, 87, 80, 0.10);
         }
         .footer-divider {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -194,7 +194,7 @@
         .footer-seo-text {
             font-size: 0.82rem !important;
             line-height: 1.6;
-            color: #6E6666 !important; /* 人眼視覺弱化淡化 */
+            color: #AFA8A4 !important; /* 人眼視覺弱化淡化 */
             text-align: justify;
         }
 
@@ -269,7 +269,90 @@
                 padding: 35px 0 25px 0;
             }
         }
-    </style>
+    
+        /* Unified visual system */
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: #6B5750 !important; }
+
+        @media (min-width: 992px) and (max-width: 1279px) {
+            .nav-link { margin: 0 3px; font-size: .92rem; }
+            .navbar-brand { letter-spacing: .08em; }
+        }
+
+        .page-header h1 {
+            color: #302B29;
+            letter-spacing: -0.01em;
+        }
+
+        .badge {
+            color: #6B5750 !important;
+            background: #F8F6F3 !important;
+            border-color: #E7E0DC !important;
+        }
+
+        .price-card,
+        .service-detail-card,
+        .plus-item {
+            border-color: rgba(107,87,80,.10) !important;
+        }
+
+        .price-card.featured {
+            border-color: #F4C4C6 !important;
+            background: linear-gradient(180deg,#FFFFFF 0%,#FFF6F6 100%) !important;
+        }
+
+        .price-card.featured::before {
+            background: #C9898E !important;
+        }
+
+        .price-amount[style] {
+            color: #8B5F5C !important;
+        }
+
+        .plus-item {
+            border-left-color: #D8B8B5 !important;
+        }
+
+        .service-list li i,
+        .service-detail-card [style*="var(--champagne-gold)"],
+        .plus-item [style*="var(--champagne-gold)"] {
+            color: #B78380 !important;
+        }
+
+        .btn-line {
+            background: #06C755;
+            color: #fff;
+            border: 1px solid #06C755;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.08rem;
+            transition: .25s ease;
+            box-shadow: 0 10px 24px rgba(6,199,85,.18);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-line:hover {
+            background: #05B84E;
+            border-color: #05B84E;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #302B29 !important;
+            color: #F7F4F2 !important;
+            border-top: 0 !important;
+        }
+        footer .text-muted { color: #AFA8A4 !important; }
+        .footer-seo-text { color: #AFA8A4 !important; }
+
+</style>
 </head>
 <body>
 
@@ -294,12 +377,12 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
                     <li class="nav-item"><a class="nav-link active" href="#">收費標準｜項目</a></li>
                     <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
                     <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="fuxin_overseas_family.html">海外家庭安心方案</a></li>
                     <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
-                    <!-- 🌐 同步首頁：EN 按鈕正確連結至 en.html -->
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                         <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
                     </li>
                 </ul>
@@ -425,7 +508,7 @@
 
             <div class="text-center mt-5 pt-4 fade-in-scroll">
                 <p class="fw-bold mb-3">讓福心成為您在病房與居家照護中最堅強的後盾</p>
-                <a href="https://lin.ee/Tm80P16" class="btn btn-gold" target="_blank"><i class="fab fa-line me-2"></i>即刻透過 LINE 規劃專屬照護</a>
+                <a href="https://lin.ee/Tm80P16" class="btn btn-line" target="_blank" rel="noopener"><i class="fab fa-line me-2"></i>即刻透過 LINE 規劃專屬照護</a>
             </div>
 
         </div>
@@ -436,13 +519,13 @@
         <div class="container text-center text-lg-start">
             <div class="row g-4 align-items-top">
                 <div class="col-lg-7">
-                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
-                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #D5CEE4; font-size: 0.9rem;">
-                        聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity: 0.4;">•</span> 政府特許立案
+                    <h2 class="fw-bold mb-2" style="color:#E8D7D4; letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #DDD6D2; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 統一編號：62179070 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 新北私就字第 068 號
                     </p>
                 </div>
                 <div class="col-lg-5 text-center text-lg-end">
-                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">把照護的辛勞交給福心，把珍貴的相聚留給家人</p>
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">陪伴家庭做好每一個照護安排</p>
                     <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
                 </div>
             </div>
