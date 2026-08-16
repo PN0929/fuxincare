@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="子女長居海外、父母仍生活在台灣？福心提供固定到府訪視、生活管家、陪同就醫、居家事項協助與家屬近況回報，成為海外家庭在台灣長期可信任的照護窗口。">
+    <title>海外父母照護｜福心健康生活管家－旅居海外子女的台灣家庭照護服務</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #D4A373;
+            --dusty-rose: #E8C5C8;
+            --champagne-gold: #C5A880;
+            --bg-ivory: #FDFBF7;
+            --text-dark: #3A3535;
+            --text-muted: #5A5252;
+            --soft-pink: #F6ECEC;
+            --soft-gold: #F7F0E6;
+            --deep-brown: #433D3D;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .navbar {
+            background-color: rgba(243, 232, 233, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 8px;
+        }
+        .nav-link:hover,
+        .nav-link.active { color: var(--champagne-gold) !important; }
+
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover { transform: scale(1.08); }
+        .float-phone { background-color: #ED6A6A; color: #fff; font-size: 26px; }
+        .float-line { background-color: #06C755; color: #fff; font-size: 30px; }
+
+        .hero {
+            padding: 150px 0 80px;
+            background:
+                radial-gradient(circle at 85% 15%, rgba(232,197,200,.55), transparent 28%),
+                linear-gradient(135deg, #FFF8F4 0%, #F8EEEE 50%, #FDFBF7 100%);
+            overflow: hidden;
+        }
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,.75);
+            border: 1px solid rgba(197,168,128,.2);
+            color: #8A7258;
+            font-size: .86rem;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 4.7rem);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            font-weight: 700;
+            max-width: 760px;
+        }
+        .hero .lead {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            line-height: 1.9;
+            max-width: 680px;
+        }
+        .btn-gold {
+            background-color: var(--champagne-gold);
+            color: white;
+            border: none;
+            padding: 15px 34px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: .3s ease;
+            box-shadow: 0 4px 15px rgba(197,168,128,.28);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gold:hover {
+            background-color: #B39670;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .btn-line {
+            background-color: #06C755;
+            color: #fff;
+            border: none;
+            padding: 15px 34px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: .3s ease;
+            box-shadow: 0 4px 15px rgba(6,199,85,.24);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-line:hover {
+            background-color: #05AE4C;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .btn-line i { font-size: 1.25rem; }
+        .btn-soft {
+            padding: 14px 28px;
+            border: 1px solid rgba(90,82,82,.18);
+            border-radius: 50px;
+            color: var(--text-dark);
+            text-decoration: none;
+            background: rgba(255,255,255,.68);
+        }
+        .hero-visual {
+            background: white;
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 24px 60px rgba(120,90,90,.12);
+            border: 1px solid rgba(197,168,128,.14);
+        }
+        .hero-visual .house-card {
+            min-height: 390px;
+            border-radius: 22px;
+            background: linear-gradient(145deg, #F4E1DF, #FFF8F1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 34px;
+        }
+        .hero-visual .house-card i { font-size: 4rem; color: var(--champagne-gold); margin-bottom: 20px; }
+        .hero-pains {
+            margin-top: 42px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .pain-card {
+            background: rgba(255,255,255,.82);
+            border: 1px solid rgba(197,168,128,.12);
+            border-radius: 16px;
+            padding: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        section { padding: 88px 0; }
+        .section-kicker {
+            color: var(--champagne-gold);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .section-title {
+            font-weight: 700;
+            line-height: 1.35;
+            margin-top: 10px;
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 760px;
+        }
+
+        .statement-band {
+            padding: 54px 0;
+            background: var(--deep-brown);
+            color: white;
+        }
+        .statement-band h2 { font-weight: 700; line-height: 1.45; }
+        .statement-band span { color: #E4C9A5; }
+
+        .benefit-panel {
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.14);
+            border-radius: 22px;
+            padding: 34px;
+            height: 100%;
+            box-shadow: 0 8px 30px rgba(90,65,65,.04);
+        }
+        .benefit-panel h3 { font-size: 1.35rem; font-weight: 700; }
+        .benefit-item {
+            display: flex;
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .benefit-item .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--soft-gold);
+            color: var(--champagne-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+        .benefit-item p { margin: 0; color: var(--text-muted); line-height: 1.7; }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.15);
+            border-radius: 20px;
+            padding: 34px;
+            height: 100%;
+            box-shadow: 0 6px 24px rgba(90,65,65,.035);
+            transition: .3s ease;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(90,65,65,.07); }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--soft-pink);
+            color: var(--champagne-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .service-card h3 { font-size: 1.3rem; font-weight: 700; }
+        .service-card p,
+        .service-card li { color: var(--text-muted); line-height: 1.75; }
+        .service-card ul { padding-left: 1.2rem; margin-bottom: 0; }
+        .service-feature {
+            margin-top: 24px;
+            background: linear-gradient(135deg, #F9F0EF, #FBF6EE);
+            border: 1px solid rgba(197,168,128,.18);
+            border-radius: 22px;
+            padding: 38px;
+        }
+
+        .timeline-wrap { position: relative; }
+        .timeline-wrap:before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            right: 5%;
+            height: 1px;
+            background: rgba(197,168,128,.35);
+        }
+        .flow-step { position: relative; text-align: center; padding: 0 8px; }
+        .flow-num {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.25);
+            color: var(--champagne-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+        .flow-step h4 { font-size: 1rem; font-weight: 700; }
+        .flow-step p { font-size: .9rem; color: var(--text-muted); line-height: 1.6; }
+
+        .audience-card {
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.14);
+            border-radius: 18px;
+            padding: 26px;
+            height: 100%;
+        }
+        .audience-card .tag {
+            color: var(--champagne-gold);
+            font-size: .78rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .audience-card h4 { font-size: 1.1rem; font-weight: 700; }
+        .audience-card p { margin-bottom: 0; color: var(--text-muted); line-height: 1.7; }
+
+        .case-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .case-tab {
+            border: 1px solid rgba(197,168,128,.24);
+            border-radius: 999px;
+            background: white;
+            color: var(--text-dark);
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+        .case-tab.active,
+        .case-tab:hover {
+            background: var(--champagne-gold);
+            color: white;
+        }
+        .case-panel {
+            display: none;
+            background: white;
+            border: 1px solid rgba(197,168,128,.14);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 12px 36px rgba(90,65,65,.05);
+        }
+        .case-panel.active { display: block; }
+        .case-profile {
+            background: var(--soft-pink);
+            border-radius: 18px;
+            padding: 20px;
+            height: auto;
+        }
+        .case-profile h3 { font-weight: 700; }
+        .case-profile p { color: var(--text-muted); }
+        .week-item {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(197,168,128,.12);
+        }
+        .week-item:last-child { border-bottom: 0; }
+        .week-day { font-weight: 700; color: var(--champagne-gold); }
+        .week-content strong { display: block; margin-bottom: 4px; }
+        .week-content p { margin: 0; color: var(--text-muted); line-height: 1.7; }
+        .case-result {
+            margin-top: 20px;
+            border-left: 4px solid var(--champagne-gold);
+            padding: 14px 18px;
+            background: #FBF7F2;
+            border-radius: 0 12px 12px 0;
+            font-weight: 500;
+        }
+
+
+        .early-notice-card {
+            margin-top: 28px;
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.16);
+            border-radius: 22px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(90,65,65,.04);
+        }
+        .early-notice-card p { color: var(--text-muted); line-height: 1.85; }
+        .notice-example {
+            background: #FBF7F2;
+            border-left: 4px solid var(--champagne-gold);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 18px;
+            margin: 18px 0;
+            line-height: 1.8;
+        }
+        .daily-equivalent {
+            color: var(--text-muted);
+            line-height: 1.65;
+            margin-top: -10px;
+            font-size: 1rem;
+        }
+        .daily-equivalent strong {
+            color: var(--champagne-gold);
+            font-size: 1.2rem;
+        }
+        .care-options-note {
+            background: #fff;
+            border: 1px solid rgba(197,168,128,.18);
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+        .care-options-note i {
+            color: var(--champagne-gold);
+        }
+
+        .pricing-card {
+            background: linear-gradient(145deg, #FFFFFF, #FBF4F2);
+            border: 1px solid rgba(197,168,128,.2);
+            border-radius: 26px;
+            box-shadow: 0 18px 50px rgba(90,65,65,.08);
+            overflow: hidden;
+        }
+        .pricing-main { padding: 42px; }
+        .price-amount { font-size: 2.6rem; font-weight: 700; color: var(--champagne-gold); }
+        .price-amount small { font-size: 1rem; color: var(--text-muted); font-weight: 400; }
+        .pricing-side {
+            background: rgba(255,255,255,.72);
+            padding: 42px;
+            height: 100%;
+        }
+        .pricing-list { list-style: none; padding: 0; margin: 0; }
+        .pricing-list li { margin-bottom: 12px; color: var(--text-muted); }
+        .pricing-list i { color: var(--champagne-gold); margin-right: 8px; }
+        .caregiver-price-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: #FFF;
+            border: 1px solid rgba(197, 168, 128, 0.22);
+        }
+        .caregiver-price-box span {
+            color: var(--champagne-gold);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .final-cta {
+            background: var(--soft-pink);
+            color: var(--text-dark);
+            border-radius: 28px;
+            padding: 60px 30px;
+            text-align: center;
+        }
+        .final-cta h2 { font-weight: 700; line-height: 1.45; }
+        .final-cta p { color: var(--text-muted); max-width: 720px; margin: 18px auto 28px; line-height: 1.8; }
+
+        footer {
+            background-color: #433D3D;
+            color: #ECE6DD;
+            padding: 45px 0 25px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(197,168,128,.12);
+        }
+        .footer-divider { border-top: 1px solid rgba(255,255,255,.08); margin: 20px 0; }
+        .footer-seo-text { font-size: .82rem; line-height: 1.6; color: #8A8080; text-align: justify; }
+
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .8s cubic-bezier(.215,.610,.355,1), transform .8s cubic-bezier(.215,.610,.355,1);
+        }
+        .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 991px) {
+            .hero-pains { grid-template-columns: 1fr; }
+            .timeline-wrap:before { display: none; }
+            .flow-step { text-align: left; display: grid; grid-template-columns: 58px 1fr; gap: 16px; margin-bottom: 24px; }
+            .flow-num { margin: 0; }
+            .pricing-main, .pricing-side { padding: 30px; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 68px 0; }
+            .hero { padding: 125px 0 60px; }
+            .hero h1 { font-size: 2.45rem; }
+            .floating-contact-group { right: 22px; bottom: 22px; gap: 12px; }
+            .float-btn { width: 54px; height: 54px; }
+            .case-panel { padding: 22px; }
+            .week-item { grid-template-columns: 60px 1fr; gap: 12px; }
+            .case-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; padding-bottom: 6px; }
+            .case-tab { white-space: nowrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="floating-contact-group">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線"><i class="fas fa-phone-alt"></i></a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢"><i class="fab fa-line"></i></a>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">海外家庭安心計畫</a></li>
+                    <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入福心夥伴</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0"><a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 fade-in-scroll">
+                    <span class="eyebrow">福心健康生活管家｜海外家庭安心計畫</span>
+                    <h1 class="mb-4">人在海外，也能照顧住在台灣的爸媽。</h1>
+                    <p class="lead mb-4">給旅居海外的子女，一位長期在台灣陪伴父母生活的健康生活管家。固定到府、生活協助、就醫支援與近況回報。儘管距離很遠，照顧不用斷線。</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="https://lin.ee/Tm80P16" target="_blank" class="btn-line"><i class="fab fa-line me-2" aria-hidden="true"></i>立即諮詢家人的照護規劃</a>
+                        <a href="#cases" class="btn-soft">看看一週怎麼進行 <i class="fas fa-arrow-down ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 fade-in-scroll">
+                    <div class="hero-visual">
+                        <div class="house-card">
+                            <i class="fas fa-house-user"></i>
+                            <h3 class="fw-bold mb-3">一個固定聯絡，也隨時跟得上狀況的窗口</h3>
+                            <p class="mb-0 text-muted">重要的事不用反覆交代，照護上的變化和需要，也總有人接手處理。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-pains fade-in-scroll">
+                <div class="pain-card">「爸媽電話中都說過得很好，但我不知道是不是真的。」</div>
+                <div class="pain-card">「臨時要去醫院，我人在國外根本趕不回去。」</div>
+                <div class="pain-card">「水電壞了、帳單有問題，外籍看護無法處理，只好拜託親戚。」</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="statement-band">
+        <div class="container text-center">
+            <h2 class="mb-0">你無法親自在台灣處理的照護與生活大小事，<br><span>福心可以接手，陪你一起顧著爸媽。</span></h2>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">01 / Vision</div>
+                <h2 class="section-title">讓爸媽在台灣有人照顧，<br>也讓你能繼續在海外安心打拼。</h2>
+                <p class="section-subtitle mx-auto mt-3">父母年紀漸長，不一定代表立刻需要全天候看護。更多時候，需要的是有人固定出現、有人知道最近發生了什麼，也有人在生活出現問題時，可以幫忙處理。</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6 fade-in-scroll">
+                    <div class="benefit-panel">
+                        <h3>爸媽得到的生活</h3>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-user-friends"></i></div><div><strong>熟悉的人固定來看看</strong><p>不是每次重新認識陌生人，而是逐漸建立長期熟悉的關係。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-toolbox"></i></div><div><strong>生活裡的小事情有人處理</strong><p>從採買、維修，到回診與生活待辦，不必所有問題都自己想辦法。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-phone-volume"></i></div><div><strong>有事情時知道可以找誰</strong><p>臨時狀況發生時，有一個熟悉家庭的人可以協助。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-home"></i></div><div><strong>盡可能維持原本的生活方式</strong><p>能自己做的繼續自己做，需要幫忙的地方才由我們補上。</p></div></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in-scroll">
+                    <div class="benefit-panel">
+                        <h3>海外子女得到的安心</h3>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-eye"></i></div><div><strong>不用每天猜爸媽過得好不好</strong><p>固定有人實際到訪，而不是只有電話裡的一句「都很好」。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-message"></i></div><div><strong>固定收到真正有內容的近況</strong><p>生活、就醫與待辦資訊可以被整理後再回報。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-link"></i></div><div><strong>臨時事件在台灣有人可以協調</strong><p>需要時有人幫忙接起醫院、維修、看護與家庭之間的資訊。</p></div></div>
+                        <div class="benefit-item"><div class="icon"><i class="fas fa-check-circle"></i></div><div><strong>真正需要家屬決定時，再由你參與</strong><p>把日常的小事交給熟悉的人，把重要決定留給家人。</p></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section style="background:#FAF5F1;">
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">02 / Service</div>
+                <h2 class="section-title">一位健康生活管家，可以幫什麼？</h2>
+                <p class="section-subtitle mx-auto mt-3">照顧不只發生在生病的時候。真正影響長輩生活品質的，往往是每天一點一點的小事情。</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-door-open"></i></div>
+                        <h3>01｜固定到府訪視</h3>
+                        <p>每週有人真正走進家裡，看看爸媽最近好不好。</p>
+                        <ul>
+                            <li>近期生活與精神狀況了解</li>
+                            <li>飲食、睡眠、活動等日常近況</li>
+                            <li>居家環境與基本安全狀況觀察</li>
+                            <li>確認回診、生活待辦或其他需求</li>
+                            <li>訪視後向指定家屬提供摘要回報</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bag-shopping"></i></div>
+                        <h3>02｜生活管家</h3>
+                        <p>那些不大，卻總要有人處理的事情。</p>
+                        <ul>
+                            <li>居家用品與日用品採購</li>
+                            <li>聯絡水電、冷氣、家電等維修</li>
+                            <li>陪同等待維修人員到府</li>
+                            <li>協助帳單、繳費與一般生活庶務</li>
+                            <li>協助預約交通、門診或其他服務</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-hospital-user"></i></div>
+                        <h3>03｜健康與就醫協助</h3>
+                        <p>看診不是只有「把人送到醫院」。</p>
+                        <ul>
+                            <li>定期回診提醒與行程安排</li>
+                            <li>陪同門診及檢查</li>
+                            <li>協助記錄重要醫囑與後續事項</li>
+                            <li>向指定家屬整理並回報重要資訊</li>
+                            <li>需要時銜接福心看護與照護資源</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in-scroll">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-bell"></i></div>
+                        <h3>04｜臨時事件支援</h3>
+                        <p>真正讓人安心的，是出事的那一天有人在。</p>
+                        <ul>
+                            <li>突然身體不舒服、跌倒等臨時狀況</li>
+                            <li>主要照顧者或外籍看護暫時無法工作</li>
+                            <li>突然住院或需要照護銜接</li>
+                            <li>家中重要設備突然故障</li>
+                            <li>協助聯繫家屬、陪同與後續安排</li>
+                        </ul>
+                        <p class="small mt-3 mb-0"><strong>提醒：</strong>危及生命或需緊急醫療時仍應優先撥打 119；福心提供的是後續陪同、協調與照護銜接。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">03 / Process</div>
+                <h2 class="section-title">我們會先了解你們需要什麼，再安排適合的人。</h2>
+            </div>
+            <div class="row timeline-wrap g-3">
+                <div class="col-lg-3 flow-step fade-in-scroll"><div class="flow-num">01</div><div><h4>線上諮詢與需求了解</h4><p>透過 LINE 或視訊了解長輩生活、健康狀況與家屬希望協助的事情。</p></div></div>
+                <div class="col-lg-3 flow-step fade-in-scroll"><div class="flow-num">02</div><div><h4>媒合管家與到府見面</h4><p>安排適合的人選，先與家屬面談，再到府和長輩見面熟悉彼此。</p></div></div>
+                <div class="col-lg-3 flow-step fade-in-scroll"><div class="flow-num">03</div><div><h4>確認合作與服務內容</h4><p>確認訪視頻率、回報方式、服務範圍、費用與臨時事件處理原則。</p></div></div>
+                <div class="col-lg-3 flow-step fade-in-scroll"><div class="flow-num">04</div><div><h4>固定服務與持續調整</h4><p>依約定開始固定訪視，並隨長輩狀況調整陪診、看護或生活協助。</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background:#FAF5F1;">
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">04 / Who It’s For</div>
+                <h2 class="section-title">如果你也常有這些擔心，這項服務可能很適合你們家。</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="audience-card"><span class="tag">長輩獨居</span><h4>「媽媽一個人在台灣」</h4><p>生活大致可自理，但希望固定有人到家裡看看，生活有事也有人協助。</p></div></div>
+                <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="audience-card"><span class="tag">老老照顧</span><h4>「爸媽兩個人互相照顧」</h4><p>平常彼此能互相照應，但回診、修繕，或突然不舒服時，開始有些吃力。</p></div></div>
+                <div class="col-md-6 col-lg-4 fade-in-scroll"><div class="audience-card"><span class="tag">出院返家</span><h4>「出院的黃金復原期，有更密集的照護」</h4><p>返家初期需要訪視、回診與生活協助，也可能需要進一步銜接看護。</p></div></div>
+            </div>
+            <div class="text-center mt-5 fade-in-scroll"><strong>不一定要等到父母需要全天候照護，才開始準備。</strong></div>
+        </div>
+    </section>
+
+    <section id="cases">
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">05 / Cases</div>
+                <h2 class="section-title">如果真的開始合作，一週會是什麼樣子？</h2>
+                <p class="section-subtitle mx-auto mt-3">每個家庭需要的都不同。點選人物，看健康生活管家實際會怎麼出現在父母的生活裡。</p>
+            </div>
+
+            <div class="case-tabs fade-in-scroll" role="tablist">
+                <button class="case-tab active" data-case="case1">王伯伯＆王媽媽｜老老照顧</button>
+                <button class="case-tab" data-case="case2">林媽媽｜長輩獨居</button>
+                <button class="case-tab" data-case="case3">陳爺爺｜獨居＋外籍看護</button>
+            </div>
+
+            <div id="case1" class="case-panel active fade-in-scroll">
+                <div class="row g-4">
+                    <div class="col-lg-4"><div class="case-profile"><h3>王伯伯 88 歲、王媽媽 84 歲｜台北</h3><p class="mb-0">兩人同住｜子女住美國｜彼此照顧日常</p></div></div>
+                    <div class="col-lg-8">
+                        <div class="week-item"><div class="week-day">MON</div><div class="week-content"><strong>固定到府訪視</strong><p>了解兩人的飲食、活動與近期需求，也確認本週是否有回診或生活待辦。</p></div></div>
+                        <div class="week-item"><div class="week-day">TUE</div><div class="week-content"><strong>協助安排回診</strong><p>王伯伯膝蓋不適，需要回診；管家協助確認門診時間與交通安排。</p></div></div>
+                        <div class="week-item"><div class="week-day">THU</div><div class="week-content"><strong>陪同就醫與記錄</strong><p>陪同王伯伯就醫，讓王媽媽不用一個人負責所有流程，並把重要醫囑回報家屬。</p></div></div>
+                        <div class="week-item"><div class="week-day">FRI</div><div class="week-content"><strong>海外家屬收到摘要</strong><p>整理兩位長輩本週近況、回診結果與後續需要處理的事情。</p></div></div>
+                        <div class="case-result">爸媽仍然可以互相陪伴，但需要的時候，多一個人把事情接過來。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="case2" class="case-panel">
+                <div class="row g-4">
+                    <div class="col-lg-4"><div class="case-profile"><h3>林媽媽，76 歲｜新北</h3><p class="mb-0">獨居｜生活可自理｜女兒住澳洲</p></div></div>
+                    <div class="col-lg-8">
+                        <div class="week-item"><div class="week-day">WED</div><div class="week-content"><strong>固定到府訪視</strong><p>陪林媽媽聊聊天、確認近期生活，也一起整理需要補充的日用品與待辦事項。</p></div></div>
+                        <div class="week-item"><div class="week-day">WED</div><div class="week-content"><strong>浴室無障礙改善</strong><p>發現浴室進出與扶握不夠安全，協助聯絡廠商、安排現勘，並與家屬確認後完成無障礙改善。</p></div></div>
+                        <div class="week-item"><div class="week-day">AFTER</div><div class="week-content"><strong>家屬回報</strong><p>向澳洲女兒回報本週狀況，以及已完成與接下來需要留意的事項。</p></div></div>
+                        <div class="week-item"><div class="week-day">偶爾</div><div class="week-content"><strong>家裡臨時有事</strong><p>例如冷氣故障，可協助聯絡師傅、安排時間並到場協助處理。</p></div></div>
+                        <div class="case-result">長輩可以保有自己的生活，海外子女也知道台灣一直有人跟得上狀況。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="case3" class="case-panel">
+                <div class="row g-4">
+                    <div class="col-lg-4"><div class="case-profile"><h3>陳爺爺，82 歲｜台北</h3><p class="mb-0">獨居｜有外籍看護｜兒子住加拿大｜固定慢性病回診</p></div></div>
+                    <div class="col-lg-8">
+                        <div class="week-item"><div class="week-day">MON</div><div class="week-content"><strong>固定到府訪視</strong><p>了解近期生活與外籍看護照顧情形，也確認本週是否有回診、藥物或居家事項需要協助。</p></div></div>
+                        <div class="week-item"><div class="week-day">WED</div><div class="week-content"><strong>陪同回診</strong><p>陪陳爺爺到醫院，把醫師說明、用藥調整與下次追蹤重點完整記錄下來。</p></div></div>
+                        <div class="week-item"><div class="week-day">WED</div><div class="week-content"><strong>協助傳達醫囑</strong><p>把中文醫囑整理成家屬與照顧者都能理解的重點，降低資訊在轉述過程中遺漏或誤解的可能。</p></div></div>
+                        <div class="week-item"><div class="week-day">FRI</div><div class="week-content"><strong>海外家屬收到摘要</strong><p>向加拿大兒子回報本週近況、醫師提醒與接下來需要留意的照護事項。</p></div></div>
+                        <div class="case-result">即使家中已有外籍看護，也可以單獨使用健康生活管家，讓家裡多一個熟悉狀況、能協助醫療溝通與生活協調的固定窗口。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="early-notice-card fade-in-scroll">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-4">
+                        <div class="service-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="fw-bold">長期熟悉，才更容易發現和平常不一樣的地方</h3>
+                    </div>
+                    <div class="col-lg-8">
+                        <p>像阿茲海默症、帕金森氏症，或其他慢性疾病相關的生活變化，往往不是一天突然出現，而是在長期相處中慢慢變得明顯。固定由熟悉的面孔持續接觸，更容易留意到和平常不同的細節，並及早提醒家屬尋求專業評估。</p>
+                        <div class="notice-example"><strong>例如：</strong>「今天陪李爺爺出門買菜時，發現他對熟悉路線的方向辨識比以前弱，建議家屬提早安排專業評估，也可以開始準備防走失相關配備。」</div>
+                        <p class="mb-0">健康生活管家不做疾病診斷，但長期穩定的固定接觸，能讓照護者更了解長輩原本的生活狀態；對需要熟悉感與固定節奏的長輩來說，也能減少每次重新適應不同照護者的負擔。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background:#FAF5F1;">
+        <div class="container">
+            <div class="text-center mb-5 fade-in-scroll">
+                <div class="section-kicker">06 / Pricing</div>
+                <h2 class="section-title">不需要選複雜方案，先從家庭真正需要的生活開始。</h2>
+                <p class="section-subtitle mx-auto mt-3">福心採每月固定合作方式，再依居住地、訪視頻率、每次服務時間與家庭需求評估。</p>
+            </div>
+
+            <div class="pricing-card fade-in-scroll">
+                <div class="row g-0">
+                    <div class="col-lg-6 pricing-main">
+                        <span class="eyebrow mb-3">長期健康生活管家</span>
+                        <h3 class="fw-bold">每月固定合作＋依家庭需求安排服務內容</h3>
+                        <div class="price-amount mt-4 mb-2">NT$ 9,800 <small>/ 月起</small></div>
+                        <div class="daily-equivalent mb-4">換算平均每天約 <strong>NT$ 327</strong>，讓台灣有一位固定了解家庭狀況的照護窗口。</div>
+                        <p class="text-muted">以每週固定訪視為基礎，實際內容仍依居住地、服務時間與家庭需求確認。</p>
+                        <p class="mb-0 fw-bold">一起建立一套真正適合爸媽現在生活的長期照護安排。</p>
+                    </div>
+                    <div class="col-lg-6 pricing-side">
+                        <h5 class="fw-bold mb-3">基本合作內容可依需求包含</h5>
+                        <ul class="pricing-list mb-4">
+                            <li><i class="fas fa-check-circle"></i>每週固定到府訪視</li>
+                            <li><i class="fas fa-check-circle"></i>訪視後家屬近況摘要</li>
+                            <li><i class="fas fa-check-circle"></i>生活事項協助與安排</li>
+                            <li><i class="fas fa-check-circle"></i>回診與就醫相關協助</li>
+                            <li><i class="fas fa-check-circle"></i>固定家庭聯絡窗口</li>
+                            <li><i class="fas fa-check-circle"></i>照護資源銜接與約定範圍內臨時協調</li>
+                        </ul>
+                        <div class="care-options-note mb-4"><i class="fas fa-circle-info me-2"></i><strong>不論家中已有外籍看護，或後續需要台籍看護，福心都能提供合適搭配。</strong><br>已有外籍看護的家庭，可以單獨使用健康生活管家；若需要更長時間、更完整的照護，也可以直接銜接福心台籍看護。</div>
+                                                <div class="caregiver-price-box mb-3"><strong>12H 台籍看護</strong><span>＋ NT$ 81,000 / 月起</span></div>
+                        <div class="caregiver-price-box mb-3"><strong>24H 台籍看護</strong><span>＋ NT$ 96,000 / 月起</span></div>
+                        <p class="text-muted small">以上為起始價格，實際費用仍會依長輩的照護狀況、照護強度、特殊需求與服務安排評估後確認。</p>
+                        <h6 class="fw-bold">第三方費用實報實銷</h6>
+                        <p class="text-muted small mb-0">交通、居家用品、水電與家電維修、採購、耗材及其他代墊費用，依雙方約定與實際單據辦理。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="final-cta fade-in-scroll">
+                <div class="section-kicker">Start Here</div>
+                <h2 class="mt-2">即使人在海外，也可以讓福心陪你一起顧著台灣的家人。</h2>
+                <p>告訴我們爸媽現在怎麼生活、你最擔心的是什麼。我們會和你一起判斷，目前需要的是固定訪視、生活協助、就醫支援，還是更完整的照護安排。</p>
+                <a href="https://lin.ee/Tm80P16" target="_blank" class="btn-line"><i class="fab fa-line me-2" aria-hidden="true"></i>立即諮詢家人的照護規劃</a>
+                <div class="small mt-3 text-muted">海外也可以視訊諮詢｜LINE 聯繫｜依家庭需求客製</div>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center text-lg-start">
+            <div class="row g-4 align-items-top">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-2" style="color: var(--champagne-gold); letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: .5px; color: #D5CEE4; font-size: .9rem;">聯絡專線：02-2967-0360 <span class="mx-2" style="color: var(--champagne-gold); opacity:.4;">•</span> 統一編號：62179070 <span class="mx-2" style="color: var(--champagne-gold); opacity:.4;">•</span> 新北私就字第 068 號</p>
+                </div>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing:.5px; font-size:.95rem;">陪伴家庭做好每一個照護安排</p>
+                    <p class="small text-muted mb-0" style="font-size:.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="row"><div class="col-12"><p class="footer-seo-text mb-0">服務說明：福心提供雙北醫院看護、居家照護與海外家庭長期健康生活管家服務。對旅外台人與海外家庭，可依需求安排固定到府訪視、生活事項協助、陪同就醫、近況回報與照護資源銜接，讓家屬即使不在台灣，也能有一個長期可信任的家庭照護窗口。</p></div></div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver(function(entries, observer){
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
+
+            const tabs = document.querySelectorAll('.case-tab');
+            const panels = document.querySelectorAll('.case-panel');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panels.forEach(p => p.classList.remove('active'));
+                    tab.classList.add('active');
+                    const panel = document.getElementById(tab.dataset.case);
+                    if(panel) panel.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
