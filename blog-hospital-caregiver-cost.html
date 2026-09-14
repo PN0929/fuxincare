@@ -43,16 +43,16 @@
     .nav-link{color:var(--ink)!important;margin:0 7px}
     .nav-link:hover{color:var(--gold)!important}
     .reading-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--gold);z-index:1100}
-    .page-header{padding:145px 0 66px;background:linear-gradient(135deg,var(--rose-2),var(--rose));text-align:center}
+    .page-header{padding:142px 0 54px;background:linear-gradient(135deg,#FFF9F7 0%,#F3E8E9 58%,#F1E5D4 100%);text-align:center}
     .eyebrow{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;color:#80623c;font-size:.85rem;font-weight:700}
     .page-header h1{max-width:850px;margin:18px auto 14px;font-size:clamp(2rem,4vw,3.2rem);line-height:1.35}
     .lead-copy{max-width:720px;margin:auto;color:var(--muted);font-size:1.06rem}
-    .layout{display:grid;grid-template-columns:235px minmax(0,760px);gap:48px;justify-content:center;align-items:start}
-    .toc{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 8px 30px rgba(70,50,40,.04)}
+    .layout{max-width:1120px;margin:0 auto;padding:72px 22px 30px;display:grid;grid-template-columns:minmax(0,760px) 250px;gap:54px;align-items:start}
+    .toc{position:sticky;top:96px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 30px rgba(70,50,40,.04)}
     .toc-title{font-weight:700;margin-bottom:10px}
     .toc a{display:block;text-decoration:none;color:var(--muted);font-size:.9rem;padding:7px 9px;border-left:2px solid transparent}
     .toc a.active,.toc a:hover{color:#7c5d35;border-left-color:var(--gold);background:var(--gold-pale)}
-    .article{min-width:0}
+    .article{min-width:0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(26px,5vw,54px);box-shadow:0 14px 40px rgba(86,63,43,.05)}
     .article p{color:var(--muted);margin-bottom:1.25rem}
     .article h2{font-size:1.55rem;margin:3.5rem 0 1.2rem;padding-left:15px;border-left:5px solid var(--gold);line-height:1.45}
     .article h3{font-size:1.15rem;margin:2rem 0 .8rem}
@@ -90,17 +90,17 @@
     .btn-gold{background:var(--gold);border-color:var(--gold);color:#fff}
     .btn-gold:hover{background:#987242;border-color:#987242;color:#fff}
     .source-list{font-size:.9rem}
-    .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .related-card{display:block;height:100%;padding:18px;background:#fff;border:1px solid var(--line);border-radius:15px;text-decoration:none;color:var(--ink);transition:.2s}
-    .related-card:hover{transform:translateY(-3px);border-color:var(--gold);color:var(--ink)}
+    .related{max-width:1120px;margin:30px auto 0;padding:30px 22px 74px}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .related-card{display:flex;flex-direction:column;min-height:230px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);transition:.2s}
+    .related-card:hover{transform:translateY(-4px);border-color:var(--gold);color:var(--ink);box-shadow:0 14px 30px rgba(86,63,43,.08)}.related-card .small{color:var(--muted);line-height:1.7}.related-card .more{margin-top:auto;color:#7c5d35;font-weight:700}.notice-box{margin:28px 0;padding:24px;border-radius:18px;background:#F8F8F6;border:1px solid #E5E1DB}.sources{margin-top:42px;padding-top:30px;border-top:1px solid var(--line)}.sources h2{margin-top:0}
     .cta{background:linear-gradient(135deg,#fff5f5,#f4e7e4);border-radius:22px;padding:32px;text-align:center;margin-top:38px}
-    footer{background:#4a4444;color:#e5ded4;padding:42px 0 28px;margin-top:70px}
+    footer{background:#433D3D;color:#ECE6DD;padding:44px 0 28px;margin-top:0}
     .floating-contact{position:fixed;right:24px;bottom:24px;z-index:1000;display:flex;flex-direction:column;gap:12px}
     .float-btn{width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 5px 18px rgba(0,0,0,.18);font-size:1.4rem}
     .float-phone{background:#C9898E}.float-line{background:#06c755;font-size:1.65rem}
     .skip-link{position:absolute;left:-9999px}.skip-link:focus{left:12px;top:12px;background:#fff;padding:10px;z-index:1200}
-    @media(max-width:991px){.layout{grid-template-columns:1fr;max-width:760px}.toc{position:static}.toc-links{display:grid;grid-template-columns:1fr 1fr}.choice-grid,.related-grid{grid-template-columns:1fr}.page-header{padding-top:120px}}
-    @media(max-width:640px){.page-header{padding:112px 18px 50px}.layout{display:block}.article h2{font-size:1.35rem}.quote-grid,.check-list,.toc-links{grid-template-columns:1fr}.tool{padding:18px}.tool-head{display:block}.privacy{white-space:normal;margin-top:5px}.floating-contact{right:16px;bottom:16px}.float-btn{width:50px;height:50px}}
+    @media(max-width:991px){.layout{grid-template-columns:1fr;max-width:804px}.toc{display:none}.choice-grid,.related-grid{grid-template-columns:1fr}.page-header{padding-top:120px}}
+    @media(max-width:640px){.page-header{padding:112px 18px 50px}.layout{display:block;padding-top:42px}.article{border-radius:18px}.article h2{font-size:1.35rem}.quote-grid,.check-list{grid-template-columns:1fr}.tool{padding:18px}.tool-head{display:block}.privacy{white-space:normal;margin-top:5px}.floating-contact{right:16px;bottom:16px}.float-btn{width:50px;height:50px}}
   
     /* Overseas Family Care dropdown */
     .nav-link{
@@ -188,19 +188,7 @@
 
   <main class="container py-5">
     <div class="layout">
-      <aside class="toc" aria-label="文章目錄">
-        <div class="toc-title">這篇會說明</div>
-        <div class="toc-links">
-          <a href="#first">先分清三種照護</a>
-          <a href="#factors">費用受到什麼影響</a>
-          <a href="#calculator">雙方案費用試算</a>
-          <a href="#brief">產生詢價需求摘要</a>
-          <a href="#quote">書面報價檢查表</a>
-          <a href="#verify">資格與身分怎麼確認</a>
-          <a href="#resources">政府與院方資源</a>
-          <a href="#insurance">收據與保險理賠</a>
-        </div>
-      </aside>
+
 
       <article class="article" id="article">
         <nav aria-label="麵包屑" class="small mb-4"><a href="index.html">首頁</a><span class="mx-2">/</span>醫院看護費用</nav>
@@ -306,28 +294,61 @@
           <div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener">LINE 諮詢</a><a class="btn btn-outline-secondary px-4" href="services.html">查看收費標準｜項目</a></div>
         </section>
 
-        <section>
-          <h2>資料來源與一般性資訊聲明</h2>
-          <ul class="source-list">
+        <section class="sources" aria-labelledby="sourcesTitle">
+          <h2 id="sourcesTitle">資料來源</h2>
+          <ol class="source-list">
             <li><a href="https://nurse.mohw.gov.tw/sp-hospitalized-list-2.html" target="_blank" rel="noopener">衛生福利部｜住院整合照護服務醫院查詢</a></li>
             <li><a href="https://nhplatform.mohw.gov.tw/dl-3555-83b02a06d5c54f23a6f808785e33b2b1.html" target="_blank" rel="noopener">衛生福利部｜2026 年住院整合照護服務實施計畫</a></li>
             <li><a href="https://1966.gov.tw/" target="_blank" rel="noopener">衛生福利部長照專區｜1966 長照服務</a></li>
             <li><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?flno=57&pcode=N0090001" target="_blank" rel="noopener">全國法規資料庫｜就業服務法第 57 條</a></li>
-          </ul>
-          <p class="small">本文提供一般性照護資訊，不構成醫療、法律、保險或個案報價建議。醫院制度、政府計畫、服務資格與費用可能調整，請以醫院、主管機關、保險公司及實際服務契約的最新說明為準。若病人出現緊急或明顯惡化情形，請立即通知醫療人員。</p>
+          </ol>
         </section>
 
-        <section>
-          <h2>相關文章</h2>
-          <div class="related-grid">
-            <a class="related-card" href="blog-hospital-packing-list.html"><strong>第一次住院要帶什麼？</strong><p class="small mb-0 mt-2">把行李分成五袋，先帶最重要的。</p></a>
-            <a class="related-card" href="blog-family-caregiving-shifts.html"><strong>一家人怎麼輪流陪病？</strong><p class="small mb-0 mt-2">分班、交班與家人協調的實用做法。</p></a>
-            <a class="related-card" href="services.html"><strong>福心收費標準｜項目</strong><p class="small mb-0 mt-2">查看目前服務項目與費用說明。</p></a>
-          </div>
+        <section class="notice-box" aria-labelledby="noticeTitle">
+          <h3 id="noticeTitle">一般性資訊聲明</h3>
+          <p class="mb-0">本文提供一般性照護資訊，不構成醫療、法律、保險或個案報價建議。醫院制度、政府計畫、服務資格與費用可能調整，請以醫院、主管機關、保險公司及實際服務契約的最新說明為準。若病人出現緊急或明顯惡化情形，請立即通知醫療人員。</p>
         </section>
       </article>
+
+      <aside class="toc" aria-label="文章目錄">
+        <div class="toc-title">這篇會說明</div>
+        <div class="toc-links">
+          <a href="#first">先分清三種照護</a>
+          <a href="#factors">費用受到什麼影響</a>
+          <a href="#calculator">雙方案費用試算</a>
+          <a href="#brief">產生詢價需求摘要</a>
+          <a href="#quote">書面報價檢查表</a>
+          <a href="#verify">資格與身分怎麼確認</a>
+          <a href="#resources">政府與院方資源</a>
+          <a href="#insurance">收據與保險理賠</a>
+        </div>
+      </aside>
     </div>
   </main>
+
+  <section class="related" aria-labelledby="relatedTitle">
+    <h2 id="relatedTitle" class="fw-bold mb-4">相關文章</h2>
+    <div class="related-grid">
+      <a class="related-card" href="blog-hospital-packing-list.html">
+        <span class="eyebrow align-self-start">住院準備</span>
+        <h3 class="h5 fw-bold mt-3">第一次住院要帶什麼？病人與陪病者完整清單</h3>
+        <p class="small">把證件、固定用藥、生活用品與陪病者用品分袋整理，臨時住院也不慌亂。</p>
+        <span class="more">閱讀文章 <i class="fas fa-arrow-right ms-1"></i></span>
+      </a>
+      <a class="related-card" href="blog-family-caregiving-shifts.html">
+        <span class="eyebrow align-self-start">家人分工</span>
+        <h3 class="h5 fw-bold mt-3">家人怎麼輪流陪病？排班與交班實用做法</h3>
+        <p class="small">把白天、夜間、工作與交通一起安排，減少照護壓力集中在單一家庭成員身上。</p>
+        <span class="more">閱讀文章 <i class="fas fa-arrow-right ms-1"></i></span>
+      </a>
+      <a class="related-card" href="services.html">
+        <span class="eyebrow align-self-start">照護安排</span>
+        <h3 class="h5 fw-bold mt-3">需要住院照護協助？查看福心服務與收費項目</h3>
+        <p class="small">了解醫院照護媒合、需求整理，以及目前服務項目與費用說明。</p>
+        <span class="more">了解服務 <i class="fas fa-arrow-right ms-1"></i></span>
+      </a>
+    </div>
+  </section>
 
   <div class="floating-contact" aria-label="快速聯絡">
     <a class="float-btn float-phone" href="tel:0229670360" aria-label="撥打福心市話"><i class="fas fa-phone"></i></a>
@@ -335,7 +356,11 @@
   </div>
 
   <footer>
-    <div class="container text-center"><div class="fw-bold mb-2">福心照護</div><small>住院，不必一個人面對。</small><div class="mt-3"><small>© 2026 福心照護</small></div></div>
+    <div class="container text-center">
+      <h2 class="fw-bold mb-2" style="color:#C5A880;font-size:1.2rem;">福心管理顧問股份有限公司</h2>
+      <p class="small mb-1">02-2967-0360　•　新北私就字第 068 號</p>
+      <p class="small mb-0" style="color:#BDB4B4;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
