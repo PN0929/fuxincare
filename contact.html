@@ -360,6 +360,80 @@
             }
         }
 
+
+        /* Google Maps location card */
+        .map-section {
+            padding: 0 0 70px;
+            background: var(--bg-ivory);
+        }
+
+        .map-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(107,87,80,.10);
+            border-radius: 22px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(74,58,54,.05);
+        }
+
+        .map-card-header {
+            text-align: center;
+            padding: 10px 12px 22px;
+        }
+
+        .map-card-header h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .map-card-header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+
+        .map-frame-wrap {
+            overflow: hidden;
+            border-radius: 16px;
+            background: #F8F6F3;
+            aspect-ratio: 16 / 9;
+            min-height: 340px;
+        }
+
+        .map-frame-wrap iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            display: block;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-section {
+                padding-bottom: 54px;
+            }
+
+            .map-card {
+                padding: 12px;
+                border-radius: 18px;
+            }
+
+            .map-card-header {
+                padding: 10px 8px 18px;
+            }
+
+            .map-frame-wrap {
+                aspect-ratio: 4 / 5;
+                min-height: 420px;
+            }
+
+            .map-frame-wrap iframe {
+                min-height: 420px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -509,6 +583,31 @@
 
             <div class="text-center mt-5 pt-3 fade-in-scroll">
                 <p class="small text-muted mb-0">讓福心成為您在病房與居家照護中最堅強的後盾。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="map-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 fade-in-scroll">
+                    <div class="map-card">
+                        <div class="map-card-header">
+                            <h2><i class="fas fa-map-marker-alt me-2" style="color:#B78380;"></i>福心照護位置</h2>
+                            <p>可透過下方 Google Maps 查看位置與周邊交通資訊。</p>
+                        </div>
+                        <div class="map-frame-wrap">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15087.55467527049!2d121.52379918715819!3d24.9833755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x83844f73f200c959%3A0xc81a90f175d98309!2z56aP5b-D54Wn6K23IC0g6Yar6Zmi55yL6K235pyN5YuZ5Lit5b-D!5e1!3m2!1szh-TW!2stw!4v1789387827065!5m2!1szh-TW!2stw"
+                                title="福心照護 Google Maps"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
