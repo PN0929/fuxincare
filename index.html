@@ -1327,6 +1327,20 @@
             cursor: default;
         }
 
+
+        .guide-slide .article-card[data-href] {
+            position: relative;
+        }
+
+        .guides-carousel:not(.is-dragging) .guide-slide .article-card[data-href] {
+            cursor: pointer;
+        }
+
+        .guide-slide .article-card[data-href]:focus-visible {
+            outline: 3px solid rgba(183, 131, 128, .35);
+            outline-offset: 3px;
+        }
+
 </style>
 </head>
 <body>
@@ -1570,7 +1584,7 @@
 
 <div class="guides-carousel" id="guidesCarousel" aria-label="照護知識文章，可左右滑動">
 <div class="guide-slide">
-<article class="article-card">
+<article class="article-card" data-href="blog-hospital-packing-list.html" role="link" tabindex="0">
 <span class="tag">住院準備</span>
 <h3>第一次住院要帶什麼？病人與陪病者完整清單</h3>
 <p>用五個袋子整理證件、固定用藥、生活用品與陪病用品，另附臨時住院及急診過夜清單。</p>
@@ -1579,7 +1593,7 @@
 </div>
 
 <div class="guide-slide">
-<article class="article-card">
+<article class="article-card" data-href="blog-family-caregiving-shifts.html" role="link" tabindex="0">
 <span class="tag">陪病分工</span>
 <h3>一家人怎麼輪流陪病？排班與交班實用指南</h3>
 <p>一起考量工作、孩子與交通，安排白天和夜間人選，並用陪病交班表留下重要資訊。</p>
@@ -1588,7 +1602,7 @@
 </div>
 
 <div class="guide-slide">
-<article class="article-card">
+<article class="article-card" data-href="blog-hospital-caregiver-cost.html" role="link" tabindex="0">
 <span class="tag">費用指南</span>
 <h3>醫院看護一天多少錢？先看懂費用組成</h3>
 <p>分清住院整合照護、自費看護與出院後長照，並用互動工具整理需求、比較兩份報價。</p>
@@ -1597,7 +1611,7 @@
 </div>
 
 <div class="guide-slide">
-<article class="article-card">
+<article class="article-card" data-href="blog-returning-taiwan-hospital-packing-list.html" role="link" tabindex="0">
 <span class="tag">海外返台</span>
 <h3>海外返台住院要帶什麼？中英文住院用品清單＋台灣哪裡買</h3>
 <p>分清哪些證件、醫療資料與固定用藥建議從海外帶回來，以及哪些生活與照護用品到台灣再買就可以。</p>
@@ -1606,7 +1620,7 @@
 </div>
 
 <div class="guide-slide">
-<article class="article-card">
+<article class="article-card" data-href="blog-joint-replacement-home-preparation.html" role="link" tabindex="0">
 <span class="tag">術後居家</span>
 <h3>人工髖關節、膝關節置換出院後，居家環境怎麼準備？</h3>
 <p>從走道、浴室、床椅到樓梯與短期住所，整理術後返家前可以先檢查與調整的環境重點。</p>
@@ -1900,11 +1914,37 @@
                 guidesCarousel.addEventListener('pointerup', finishDrag);
                 guidesCarousel.addEventListener('pointercancel', finishDrag);
 
+
+                // Whole article card is clickable.
+                // Dragging still takes priority and will not open the article.
+                guidesSlides.forEach(function (slide) {
+                    const card = slide.querySelector('.article-card[data-href]');
+                    if (!card) return;
+
+                    card.addEventListener('click', function (event) {
+                        if (suppressNextClick || isDragging) return;
+
+                        // Existing link clicks keep their native behavior.
+                        if (event.target.closest('a')) return;
+
+                        window.location.href = card.dataset.href;
+                    });
+
+                    card.addEventListener('keydown', function (event) {
+                        if (event.key !== 'Enter' && event.key !== ' ') return;
+                        if (isDragging) return;
+
+                        event.preventDefault();
+                        window.location.href = card.dataset.href;
+                    });
+                });
+
                 // Prevent opening an article when the user was dragging.
                 guidesCarousel.addEventListener('click', function (event) {
                     if (!suppressNextClick) return;
                     event.preventDefault();
                     event.stopPropagation();
+                    event.stopImmediatePropagation();
                     suppressNextClick = false;
                 }, true);
 
