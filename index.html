@@ -1296,13 +1296,35 @@
             transform: translateY(-50%);
         }
 
-        .guides-nav.prev { left: -50px; }
-        .guides-nav.next { right: -50px; }
+        .guides-nav.prev { left: -22px; }
+        .guides-nav.next { right: -22px; }
 
         @media (max-width: 767px) {
             .guides-nav {
                 display: none;
             }
+        }
+
+
+        .guides-carousel,
+        .guides-carousel * {
+            -webkit-user-drag: none;
+        }
+
+        .guides-carousel .article-card {
+            cursor: grab;
+        }
+
+        .guides-carousel.is-dragging .article-card {
+            cursor: grabbing;
+        }
+
+        .guides-nav {
+            cursor: pointer;
+        }
+
+        .guides-nav:disabled {
+            cursor: default;
         }
 
 </style>
@@ -1545,6 +1567,7 @@
 <button class="guides-nav prev" id="guidesPrev" type="button" aria-label="上一篇文章">
 <i class="fas fa-chevron-left"></i>
 </button>
+
 <div class="guides-carousel" id="guidesCarousel" aria-label="照護知識文章，可左右滑動">
 <div class="guide-slide">
 <article class="article-card">
@@ -1582,7 +1605,7 @@
 </article>
 </div>
 </div>
-</div>
+
 <button class="guides-nav next" id="guidesNext" type="button" aria-label="下一篇文章">
 <i class="fas fa-chevron-right"></i>
 </button>
@@ -1711,16 +1734,22 @@
                 });
             });
 
-            // Care Guides carousel
+            // Care Guides carousel — repaired
             const guidesCarousel = document.getElementById('guidesCarousel');
             const guidesSlides = Array.from(document.querySelectorAll('.guide-slide'));
             const guidesPrev = document.getElementById('guidesPrev');
             const guidesNext = document.getElementById('guidesNext');
             const guidesPagination = document.getElementById('guidesPagination');
 
-            if (guidesCarousel && guidesSlides.length) {
+            if (guidesCarousel && guidesSlides.length && guidesPagination) {
                 let currentGuideIndex = 0;
                 let guideDots = [];
+                let isDragging = false;
+                let dragStartX = 0;
+                let dragStartScrollLeft = 0;
+                let draggedPx = 0;
+                let suppressNextClick = false;
+                let scrollTimer = null;
 
                 function visibleGuideCount() {
                     if (window.innerWidth <= 767) return 1;
@@ -1732,9 +1761,58 @@
                     return Math.max(0, guidesSlides.length - visibleGuideCount());
                 }
 
+                function slideLeft(index) {
+                    const slide = guidesSlides[index];
+                    if (!slide) return 0;
+                    return slide.offsetLeft - guidesCarousel.offsetLeft;
+                }
+
+                function nearestGuideIndex() {
+                    const currentLeft = guidesCarousel.scrollLeft;
+                    let nearestIndex = 0;
+                    let nearestDistance = Infinity;
+                    const maxIndex = maxGuideIndex();
+
+                    for (let i = 0; i <= maxIndex; i++) {
+                        const distance = Math.abs(slideLeft(i) - currentLeft);
+                        if (distance < nearestDistance) {
+                            nearestDistance = distance;
+                            nearestIndex = i;
+                        }
+                    }
+                    return nearestIndex;
+                }
+
+                function updateGuideUI() {
+                    const maxIndex = maxGuideIndex();
+                    currentGuideIndex = Math.max(0, Math.min(currentGuideIndex, maxIndex));
+
+                    if (guidesPrev) guidesPrev.disabled = currentGuideIndex <= 0;
+                    if (guidesNext) guidesNext.disabled = currentGuideIndex >= maxIndex;
+
+                    guideDots.forEach(function (dot, index) {
+                        const active = index === currentGuideIndex;
+                        dot.classList.toggle('active', active);
+                        dot.setAttribute('aria-current', active ? 'true' : 'false');
+                    });
+                }
+
+                function goToGuide(index, behavior) {
+                    const maxIndex = maxGuideIndex();
+                    currentGuideIndex = Math.max(0, Math.min(index, maxIndex));
+
+                    guidesCarousel.scrollTo({
+                        left: slideLeft(currentGuideIndex),
+                        behavior: behavior || (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')
+                    });
+
+                    updateGuideUI();
+                }
+
                 function buildGuideDots() {
                     guidesPagination.innerHTML = '';
                     guideDots = [];
+
                     for (let i = 0; i <= maxGuideIndex(); i++) {
                         const dot = document.createElement('button');
                         dot.type = 'button';
@@ -1746,94 +1824,62 @@
                         guidesPagination.appendChild(dot);
                         guideDots.push(dot);
                     }
+
                     updateGuideUI();
                 }
 
-                function goToGuide(index) {
-                    currentGuideIndex = Math.max(0, Math.min(index, maxGuideIndex()));
-                    const target = guidesSlides[currentGuideIndex];
-                    guidesCarousel.scrollTo({
-                        left: target.offsetLeft - guidesCarousel.offsetLeft,
-                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-                    });
-                    updateGuideUI();
-                }
-
-                function nearestGuideIndex() {
-                    const left = guidesCarousel.scrollLeft;
-                    let bestIndex = 0;
-                    let bestDistance = Infinity;
-                    guidesSlides.forEach(function (slide, index) {
-                        if (index > maxGuideIndex()) return;
-                        const distance = Math.abs((slide.offsetLeft - guidesCarousel.offsetLeft) - left);
-                        if (distance < bestDistance) {
-                            bestDistance = distance;
-                            bestIndex = index;
-                        }
-                    });
-                    return bestIndex;
-                }
-
-                function updateGuideUI() {
-                    currentGuideIndex = Math.min(currentGuideIndex, maxGuideIndex());
-                    if (guidesPrev) guidesPrev.disabled = currentGuideIndex === 0;
-                    if (guidesNext) guidesNext.disabled = currentGuideIndex >= maxGuideIndex();
-                    guideDots.forEach(function (dot, index) {
-                        dot.classList.toggle('active', index === currentGuideIndex);
-                        dot.setAttribute('aria-current', index === currentGuideIndex ? 'true' : 'false');
+                // Arrow buttons: move exactly one card position at a time.
+                if (guidesPrev) {
+                    guidesPrev.addEventListener('click', function () {
+                        goToGuide(currentGuideIndex - 1);
                     });
                 }
 
-                let guideScrollTimer;
-                guidesCarousel.addEventListener('scroll', function () {
-                    clearTimeout(guideScrollTimer);
-                    guideScrollTimer = setTimeout(function () {
-                        currentGuideIndex = nearestGuideIndex();
-                        updateGuideUI();
-                    }, 90);
-                }, { passive: true });
+                if (guidesNext) {
+                    guidesNext.addEventListener('click', function () {
+                        goToGuide(currentGuideIndex + 1);
+                    });
+                }
 
-                window.addEventListener('resize', function () {
-                    currentGuideIndex = Math.min(currentGuideIndex, maxGuideIndex());
-    
-
-                if (guidesPrev) guidesPrev.addEventListener('click', function () {
-                    goToGuide(currentGuideIndex - 1);
-                });
-
-                if (guidesNext) guidesNext.addEventListener('click', function () {
-                    goToGuide(currentGuideIndex + 1);
-                });
-
-                // Desktop mouse drag / pointer drag
-                let isGuideDragging = false;
-                let guideDragStartX = 0;
-                let guideDragStartScrollLeft = 0;
-                let guideDraggedDistance = 0;
-
+                // Mouse / pen drag on desktop.
                 guidesCarousel.addEventListener('pointerdown', function (event) {
                     if (event.pointerType === 'touch') return;
-                    isGuideDragging = true;
-                    guideDraggedDistance = 0;
-                    guideDragStartX = event.clientX;
-                    guideDragStartScrollLeft = guidesCarousel.scrollLeft;
+                    if (event.button !== 0) return;
+
+                    isDragging = true;
+                    draggedPx = 0;
+                    suppressNextClick = false;
+                    dragStartX = event.clientX;
+                    dragStartScrollLeft = guidesCarousel.scrollLeft;
+
                     guidesCarousel.classList.add('is-dragging');
                     guidesCarousel.setPointerCapture(event.pointerId);
+                    event.preventDefault();
                 });
 
                 guidesCarousel.addEventListener('pointermove', function (event) {
-                    if (!isGuideDragging) return;
-                    const delta = event.clientX - guideDragStartX;
-                    guideDraggedDistance = Math.max(guideDraggedDistance, Math.abs(delta));
-                    guidesCarousel.scrollLeft = guideDragStartScrollLeft - delta;
+                    if (!isDragging) return;
+
+                    const deltaX = event.clientX - dragStartX;
+                    draggedPx = Math.max(draggedPx, Math.abs(deltaX));
+                    guidesCarousel.scrollLeft = dragStartScrollLeft - deltaX;
+
+                    if (draggedPx > 6) {
+                        suppressNextClick = true;
+                    }
                 });
 
-                function endGuideDrag(event) {
-                    if (!isGuideDragging) return;
-                    isGuideDragging = false;
+                function finishDrag(event) {
+                    if (!isDragging) return;
+
+                    isDragging = false;
                     guidesCarousel.classList.remove('is-dragging');
 
-                    if (event && guidesCarousel.hasPointerCapture && guidesCarousel.hasPointerCapture(event.pointerId)) {
+                    if (
+                        event &&
+                        guidesCarousel.hasPointerCapture &&
+                        guidesCarousel.hasPointerCapture(event.pointerId)
+                    ) {
                         guidesCarousel.releasePointerCapture(event.pointerId);
                     }
 
@@ -1841,29 +1887,35 @@
                     goToGuide(currentGuideIndex);
                 }
 
-                guidesCarousel.addEventListener('pointerup', endGuideDrag);
-                guidesCarousel.addEventListener('pointercancel', endGuideDrag);
-                guidesCarousel.addEventListener('mouseleave', function () {
-                    if (!isGuideDragging) return;
-                    currentGuideIndex = nearestGuideIndex();
-                    isGuideDragging = false;
-                    guidesCarousel.classList.remove('is-dragging');
-                    goToGuide(currentGuideIndex);
-                });
+                guidesCarousel.addEventListener('pointerup', finishDrag);
+                guidesCarousel.addEventListener('pointercancel', finishDrag);
 
+                // Prevent opening an article when the user was dragging.
                 guidesCarousel.addEventListener('click', function (event) {
-                    if (guideDraggedDistance > 8) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        guideDraggedDistance = 0;
-                    }
+                    if (!suppressNextClick) return;
+                    event.preventDefault();
+                    event.stopPropagation();
+                    suppressNextClick = false;
                 }, true);
 
-                buildGuideDots();
-                    goToGuide(currentGuideIndex);
+                // Keep dots/arrows in sync after touch swipe or trackpad scrolling.
+                guidesCarousel.addEventListener('scroll', function () {
+                    clearTimeout(scrollTimer);
+                    scrollTimer = setTimeout(function () {
+                        if (isDragging) return;
+                        currentGuideIndex = nearestGuideIndex();
+                        updateGuideUI();
+                    }, 100);
+                }, { passive: true });
+
+                window.addEventListener('resize', function () {
+                    currentGuideIndex = Math.min(currentGuideIndex, maxGuideIndex());
+                    buildGuideDots();
+                    goToGuide(currentGuideIndex, 'auto');
                 });
 
                 buildGuideDots();
+                goToGuide(0, 'auto');
             }
 
         });
