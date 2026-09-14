@@ -1865,40 +1865,51 @@
                     });
                 }
 
-                // Mouse / pen drag on desktop.
+                // Mouse / pen interaction:
+                // a short click opens the card; movement beyond the threshold becomes a drag.
+                let pointerActive = false;
+                let pointerId = null;
+                let pointerDownCard = null;
+                let pointerDownLink = null;
+                const dragThreshold = 7;
+
                 guidesCarousel.addEventListener('pointerdown', function (event) {
                     if (event.pointerType === 'touch') return;
                     if (event.button !== 0) return;
 
-                    isDragging = true;
+                    pointerActive = true;
+                    pointerId = event.pointerId;
+                    isDragging = false;
                     draggedPx = 0;
-                    suppressNextClick = false;
                     dragStartX = event.clientX;
                     dragStartScrollLeft = guidesCarousel.scrollLeft;
+                    pointerDownCard = event.target.closest('.article-card[data-href]');
+                    pointerDownLink = event.target.closest('a');
 
-                    guidesCarousel.classList.add('is-dragging');
+                    // Capture guarantees dragging continues even if the pointer leaves the card.
                     guidesCarousel.setPointerCapture(event.pointerId);
-                    event.preventDefault();
+                    // IMPORTANT: do not preventDefault here; doing so cancels normal click behavior.
                 });
 
                 guidesCarousel.addEventListener('pointermove', function (event) {
-                    if (!isDragging) return;
+                    if (!pointerActive || event.pointerId !== pointerId) return;
 
                     const deltaX = event.clientX - dragStartX;
                     draggedPx = Math.max(draggedPx, Math.abs(deltaX));
-                    guidesCarousel.scrollLeft = dragStartScrollLeft - deltaX;
 
-                    if (draggedPx > 6) {
-                        suppressNextClick = true;
+                    if (!isDragging && draggedPx > dragThreshold) {
+                        isDragging = true;
+                        guidesCarousel.classList.add('is-dragging');
+                    }
+
+                    if (isDragging) {
+                        guidesCarousel.scrollLeft = dragStartScrollLeft - deltaX;
+                        // Only suppress browser selection/drag after this is a real carousel drag.
+                        event.preventDefault();
                     }
                 });
 
-                function finishDrag(event) {
-                    if (!isDragging) return;
-
-                    isDragging = false;
-                    guidesCarousel.classList.remove('is-dragging');
-
+                function releasePointerCaptureSafely(event) {
                     if (
                         event &&
                         guidesCarousel.hasPointerCapture &&
@@ -1906,40 +1917,86 @@
                     ) {
                         guidesCarousel.releasePointerCapture(event.pointerId);
                     }
-
-                    currentGuideIndex = nearestGuideIndex();
-                    goToGuide(currentGuideIndex);
                 }
 
-                guidesCarousel.addEventListener('pointerup', finishDrag);
-                guidesCarousel.addEventListener('pointercancel', finishDrag);
+                guidesCarousel.addEventListener('pointerup', function (event) {
+                    if (!pointerActive || event.pointerId !== pointerId) return;
+
+                    const wasDragging = isDragging;
+                    const cardToOpen = pointerDownCard;
+                    const startedOnLink = pointerDownLink;
+
+                    pointerActive = false;
+                    pointerId = null;
+                    pointerDownCard = null;
+                    pointerDownLink = null;
+                    isDragging = false;
+                    guidesCarousel.classList.remove('is-dragging');
+                    releasePointerCaptureSafely(event);
+
+                    if (wasDragging) {
+                        // Drag only: snap to the nearest card and never navigate.
+                        currentGuideIndex = nearestGuideIndex();
+                        goToGuide(currentGuideIndex);
+                        suppressNextClick = true;
+                        return;
+                    }
+
+                    // No drag: clicking anywhere on the card opens its article.
+                    // If the user started on the existing <a>, let that native link handle itself.
+                    if (cardToOpen && !startedOnLink) {
+                        window.location.href = cardToOpen.dataset.href;
+                    }
+                });
+
+                guidesCarousel.addEventListener('pointercancel', function (event) {
+                    if (!pointerActive || event.pointerId !== pointerId) return;
+
+                    const wasDragging = isDragging;
+                    pointerActive = false;
+                    pointerId = null;
+                    pointerDownCard = null;
+                    pointerDownLink = null;
+                    isDragging = false;
+                    guidesCarousel.classList.remove('is-dragging');
+                    releasePointerCaptureSafely(event);
+
+                    if (wasDragging) {
+                        currentGuideIndex = nearestGuideIndex();
+                        goToGuide(currentGuideIndex);
+                    }
+                });
 
 
-                // Whole article card is clickable.
-                // Dragging still takes priority and will not open the article.
+                let lastPointerType = '';
+                guidesCarousel.addEventListener('pointerdown', function (event) {
+                    lastPointerType = event.pointerType || '';
+                }, { passive: true });
+
+                guidesCarousel.addEventListener('click', function (event) {
+                    if (suppressNextClick) return;
+                    if (lastPointerType !== 'touch') return;
+                    if (event.target.closest('a')) return;
+
+                    const card = event.target.closest('.article-card[data-href]');
+                    if (card) {
+                        window.location.href = card.dataset.href;
+                    }
+                });
+
+                // Keyboard accessibility for the whole card.
                 guidesSlides.forEach(function (slide) {
                     const card = slide.querySelector('.article-card[data-href]');
                     if (!card) return;
 
-                    card.addEventListener('click', function (event) {
-                        if (suppressNextClick || isDragging) return;
-
-                        // Existing link clicks keep their native behavior.
-                        if (event.target.closest('a')) return;
-
-                        window.location.href = card.dataset.href;
-                    });
-
                     card.addEventListener('keydown', function (event) {
                         if (event.key !== 'Enter' && event.key !== ' ') return;
-                        if (isDragging) return;
-
                         event.preventDefault();
                         window.location.href = card.dataset.href;
                     });
                 });
 
-                // Prevent opening an article when the user was dragging.
+                // After a real drag, cancel only the synthetic click that may follow pointerup.
                 guidesCarousel.addEventListener('click', function (event) {
                     if (!suppressNextClick) return;
                     event.preventDefault();
