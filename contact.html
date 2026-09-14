@@ -438,15 +438,17 @@
         /* Hospital badge text consistency */
         .hospital-badge,
         .hospital-badge:first-child,
-        .hospital-badge:first-of-type {
-            color: #302B29 !important;
+        .hospital-badge:first-of-type,
+        .hospital-badge + .hospital-badge {
+            color: #B78380 !important;
             font-weight: 400 !important;
         }
 
         .hospital-badge:hover,
         .hospital-badge:first-child:hover,
-        .hospital-badge:first-of-type:hover {
-            color: #302B29 !important;
+        .hospital-badge:first-of-type:hover,
+        .hospital-badge + .hospital-badge:hover {
+            color: #B78380 !important;
         }
 
 </style>
