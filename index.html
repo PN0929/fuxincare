@@ -1146,37 +1146,12 @@
         .guides-carousel-wrap {
             position: relative;
         }
-
-        .guides-carousel-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .guides-more-hint {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--muted);
-            font-size: .9rem;
-            white-space: nowrap;
-        }
-
-        .guides-more-hint i {
-            color: #8B5F5C;
-            animation: guideHint 1.6s ease-in-out infinite;
-        }
-
-        @keyframes guideHint {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(5px); }
+50% { transform: translateX(5px); }
         }
 
         .guides-carousel-shell {
             position: relative;
-            padding: 4px 54px 10px;
+            padding: 4px 0 10px;
         }
 
         .guides-carousel {
@@ -1190,6 +1165,20 @@
             scrollbar-width: none;
             overscroll-behavior-inline: contain;
             padding: 10px 2px 16px;
+            cursor: grab;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: pan-y;
+        }
+
+        .guides-carousel.is-dragging {
+            cursor: grabbing;
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+
+        .guides-carousel.is-dragging a {
+            pointer-events: none;
         }
 
         .guides-carousel::-webkit-scrollbar {
@@ -1214,40 +1203,7 @@
         .guide-slide .article-link {
             margin-top: auto;
         }
-
-        .guides-nav {
-            position: absolute;
-            top: 50%;
-            z-index: 4;
-            transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(107,87,80,.16);
-            border-radius: 50%;
-            background: rgba(255,255,255,.96);
-            color: #6B5750;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(73,60,56,.10);
-            transition: .2s ease;
-        }
-
-        .guides-nav:hover {
-            transform: translateY(-50%) scale(1.05);
-            background: #FBEDEE;
-        }
-
-        .guides-nav:disabled {
-            opacity: .3;
-            cursor: default;
-            transform: translateY(-50%);
-        }
-
-        .guides-nav.prev { left: 0; }
-        .guides-nav.next { right: 0; }
-
-        .guides-pagination {
+.guides-pagination {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1286,17 +1242,7 @@
         }
 
         @media (max-width: 767px) {
-            .guides-carousel-head {
-                display: block;
-                text-align: center;
-                margin-bottom: 12px;
-            }
-
-            .guides-more-hint {
-                margin-top: 10px;
-            }
-
-            .guides-carousel-shell {
+.guides-carousel-shell {
                 padding: 0;
                 overflow: hidden;
             }
@@ -1307,12 +1253,7 @@
                 padding: 10px 28px 14px 0;
                 scroll-padding-left: 0;
             }
-
-            .guides-nav {
-                display: none;
-            }
-
-            .guide-slide .article-card {
+.guide-slide .article-card {
                 min-height: 300px;
             }
 
@@ -1322,8 +1263,46 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .guides-more-hint i { animation: none; }
-            .guides-carousel { scroll-behavior: auto; }
+.guides-carousel { scroll-behavior: auto; }
+        }
+
+
+        .guides-nav {
+            position: absolute;
+            top: 50%;
+            z-index: 4;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(107,87,80,.16);
+            border-radius: 50%;
+            background: rgba(255,255,255,.96);
+            color: #6B5750;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(73,60,56,.10);
+            transition: .2s ease;
+        }
+
+        .guides-nav:hover {
+            transform: translateY(-50%) scale(1.05);
+            background: #FBEDEE;
+        }
+
+        .guides-nav:disabled {
+            opacity: .3;
+            cursor: default;
+            transform: translateY(-50%);
+        }
+
+        .guides-nav.prev { left: -50px; }
+        .guides-nav.next { right: -50px; }
+
+        @media (max-width: 767px) {
+            .guides-nav {
+                display: none;
+            }
         }
 
 </style>
@@ -1562,18 +1541,10 @@
 </div>
 
 <div class="guides-carousel-wrap fade-in-scroll">
-<div class="guides-carousel-head">
-<div></div>
-<div class="guides-more-hint" aria-hidden="true">
-<span>還有更多文章</span><i class="fas fa-arrow-right"></i>
-</div>
-</div>
-
 <div class="guides-carousel-shell">
 <button class="guides-nav prev" id="guidesPrev" type="button" aria-label="上一篇文章">
 <i class="fas fa-chevron-left"></i>
 </button>
-
 <div class="guides-carousel" id="guidesCarousel" aria-label="照護知識文章，可左右滑動">
 <div class="guide-slide">
 <article class="article-card">
@@ -1611,7 +1582,7 @@
 </article>
 </div>
 </div>
-
+</div>
 <button class="guides-nav next" id="guidesNext" type="button" aria-label="下一篇文章">
 <i class="fas fa-chevron-right"></i>
 </button>
@@ -1813,14 +1784,6 @@
                     });
                 }
 
-                if (guidesPrev) guidesPrev.addEventListener('click', function () {
-                    goToGuide(currentGuideIndex - 1);
-                });
-
-                if (guidesNext) guidesNext.addEventListener('click', function () {
-                    goToGuide(currentGuideIndex + 1);
-                });
-
                 let guideScrollTimer;
                 guidesCarousel.addEventListener('scroll', function () {
                     clearTimeout(guideScrollTimer);
@@ -1832,7 +1795,71 @@
 
                 window.addEventListener('resize', function () {
                     currentGuideIndex = Math.min(currentGuideIndex, maxGuideIndex());
-                    buildGuideDots();
+    
+
+                if (guidesPrev) guidesPrev.addEventListener('click', function () {
+                    goToGuide(currentGuideIndex - 1);
+                });
+
+                if (guidesNext) guidesNext.addEventListener('click', function () {
+                    goToGuide(currentGuideIndex + 1);
+                });
+
+                // Desktop mouse drag / pointer drag
+                let isGuideDragging = false;
+                let guideDragStartX = 0;
+                let guideDragStartScrollLeft = 0;
+                let guideDraggedDistance = 0;
+
+                guidesCarousel.addEventListener('pointerdown', function (event) {
+                    if (event.pointerType === 'touch') return;
+                    isGuideDragging = true;
+                    guideDraggedDistance = 0;
+                    guideDragStartX = event.clientX;
+                    guideDragStartScrollLeft = guidesCarousel.scrollLeft;
+                    guidesCarousel.classList.add('is-dragging');
+                    guidesCarousel.setPointerCapture(event.pointerId);
+                });
+
+                guidesCarousel.addEventListener('pointermove', function (event) {
+                    if (!isGuideDragging) return;
+                    const delta = event.clientX - guideDragStartX;
+                    guideDraggedDistance = Math.max(guideDraggedDistance, Math.abs(delta));
+                    guidesCarousel.scrollLeft = guideDragStartScrollLeft - delta;
+                });
+
+                function endGuideDrag(event) {
+                    if (!isGuideDragging) return;
+                    isGuideDragging = false;
+                    guidesCarousel.classList.remove('is-dragging');
+
+                    if (event && guidesCarousel.hasPointerCapture && guidesCarousel.hasPointerCapture(event.pointerId)) {
+                        guidesCarousel.releasePointerCapture(event.pointerId);
+                    }
+
+                    currentGuideIndex = nearestGuideIndex();
+                    goToGuide(currentGuideIndex);
+                }
+
+                guidesCarousel.addEventListener('pointerup', endGuideDrag);
+                guidesCarousel.addEventListener('pointercancel', endGuideDrag);
+                guidesCarousel.addEventListener('mouseleave', function () {
+                    if (!isGuideDragging) return;
+                    currentGuideIndex = nearestGuideIndex();
+                    isGuideDragging = false;
+                    guidesCarousel.classList.remove('is-dragging');
+                    goToGuide(currentGuideIndex);
+                });
+
+                guidesCarousel.addEventListener('click', function (event) {
+                    if (guideDraggedDistance > 8) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        guideDraggedDistance = 0;
+                    }
+                }, true);
+
+                buildGuideDots();
                     goToGuide(currentGuideIndex);
                 });
 
