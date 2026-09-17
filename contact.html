@@ -1,47 +1,713 @@
-<div class="row g-4 justify-content-center mt-4">
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>與我們聯絡｜福心專業照護：雙北醫院看護推薦與短期照護服務</title>
+    
+    <link class="icon" type="image/png" href="favicon.png">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-pink: #F4C4C6;
+            --dusty-rose: #F4C4C6; 
+            --champagne-gold: #B78380; 
+            --bg-ivory: #FFFDFC; 
+            --text-dark: #302B29; 
+            --text-muted: #625A56;
+        }
 
-    <!-- 公司 Email -->
-    <div class="col-md-5 col-lg-4 fade-in-scroll">
-        <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
-            <div>
-                <div class="fs-1 mb-3" style="color: var(--champagne-gold);">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3 class="fw-bold fs-5 mb-2">公司 Email</h3>
-                <p class="premium-text-p small mb-4">
-                    適合一般服務諮詢、文件往來與企業合作聯繫。
-                    點選下方按鈕即可直接寄信給福心照護。
-                </p>
-            </div>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-ivory); /* 全站一體化高雅象牙白底色 */
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
 
-            <a href="mailto:service@fuxincare.com.tw"
-               class="btn btn-action-phone py-3">
-                <i class="fas fa-envelope me-2"></i>
-                service@fuxincare.com.tw
-            </a>
-        </div>
+        /* 導航列：霧面精品粉紅底色 + 奢華毛玻璃效果 */
+        .navbar {
+            background-color: rgba(255, 253, 252, 0.96); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(107, 87, 80, 0.12);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-dark) !important;
+            letter-spacing: 2px;
+        }
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+        }
+        .nav-link:hover {
+            color: var(--champagne-gold) !important;
+        }
+
+        /* 頁面車頭 Banner */
+        .page-header {
+            padding: 140px 0 60px 0;
+            background: linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 100%);
+            text-align: center;
+        }
+
+        /* 核心內文樣式修正：統一全網頁內文字體大小 (16px) */
+        .premium-text-p {
+            font-size: 1rem !important; 
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        /* 核心高效聯絡按鈕 */
+        .contact-action-card {
+            background: white;
+            border: 1px solid rgba(107, 87, 80, 0.10);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(74, 58, 54, 0.03);
+            transition: all 0.3s ease;
+        }
+        .contact-action-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 58, 54, 0.06);
+        }
+        .btn-action-line {
+            background-color: #06C755;
+            color: white;
+            border: none;
+            padding: 16px 30px; /* 放大點擊尺寸 */
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-action-line:hover {
+            background-color: #05A647;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .btn-action-phone {
+            background: linear-gradient(135deg, #C9898E 0%, #9D7068 100%);
+            color: white;
+            border: none;
+            padding: 16px 30px; /* 放大點擊尺寸 */
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            width: 100%;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(99, 72, 67, 0.18);
+            transition: all 0.3s ease;
+        }
+        .btn-action-phone:hover {
+            background: linear-gradient(135deg, #BC7C81 0%, #8E625B 100%);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* 溫馨叮嚀 Memo 卡片 */
+        .memo-card {
+            background-color: white;
+            border: 1px dashed var(--dusty-rose);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(74, 58, 54, 0.03);
+        }
+        .memo-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .memo-item:last-child {
+            margin-bottom: 0;
+        }
+        .memo-icon {
+            color: var(--champagne-gold);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 25px;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        /* 醫院標籤精品化樣式 */
+        .hospital-badge {
+            background-color: white;
+            color: var(--text-dark);
+            border: 1px solid rgba(107, 87, 80, 0.10);
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 6px;
+            font-weight: 400;
+            box-shadow: 0 4px 15px rgba(74, 58, 54, 0.03);
+            transition: all 0.3s ease;
+        }
+        .hospital-badge:hover {
+            border-color: var(--champagne-gold);
+            transform: translateY(-2px);
+        }
+
+        /* 微調焦點：高端精品滾動動畫基礎控制項 */
+        .fade-in-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000), transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            will-change: opacity, transform;
+        }
+        .fade-in-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ─── 🧱 同步首頁：Footer 輕量化降噪機制 ─── */
+        footer {
+            background-color: #302B29; 
+            color: #F7F4F2;
+            padding: 45px 0 25px 0; 
+            border-top: 1px solid rgba(107, 87, 80, 0.10);
+        }
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin: 20px 0;
+        }
+        .footer-seo-text {
+            font-size: 0.82rem !important;
+            line-height: 1.6;
+            color: #AFA8A4 !important; /* 人眼視覺極小化淡化處理 */
+            text-align: justify;
+        }
+
+        /* 右下角固定雙軌浮動按鈕群：改為核心市話 */
+        .floating-contact-group {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px; 
+            z-index: 9999;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover {
+            transform: scale(1.08);
+        }
+        .float-phone {
+            background-color: #ED6A6A; 
+            color: white;
+            font-size: 26px;
+        }
+        .float-phone:hover {
+            color: white;
+            background-color: #DF5959;
+        }
+        .float-line {
+            background-color: #06C755; 
+            color: white;
+            font-size: 30px;
+        }
+        .float-line:hover {
+            color: white;
+            background-color: #05A647;
+        }
+
+        @media (max-width: 768px) {
+            .floating-contact-group {
+                bottom: 25px;
+                right: 25px;
+                gap: 12px;
+            }
+            .float-btn {
+                width: 54px;
+                height: 54px;
+            }
+            .float-phone { font-size: 22px; }
+            .float-line { font-size: 26px; }
+            footer {
+                padding: 35px 0 25px 0;
+            }
+        }
+    
+        /* Unified site visual system */
+        .nav-link {
+            color: var(--text-dark) !important;
+            margin: 0 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav-link:hover { color: #6B5750 !important; }
+
+        @media (min-width: 992px) and (max-width: 1279px) {
+            .nav-link { margin: 0 3px; font-size: .92rem; }
+            .navbar-brand { letter-spacing: .08em; }
+        }
+
+        .page-header h1 {
+            color: #302B29;
+            letter-spacing: -0.01em;
+        }
+
+        .contact-action-card,
+        .memo-card,
+        .hospital-badge {
+            border-color: rgba(107,87,80,.10) !important;
+            box-shadow: 0 4px 20px rgba(74,58,54,.03) !important;
+        }
+
+        .memo-card {
+            border-style: solid !important;
+            background: #FFFDFC !important;
+        }
+
+        .memo-icon,
+        .hospital-badge + .hospital-badge,
+        .contact-action-card [style*="var(--champagne-gold)"] {
+            color: #B78380 !important;
+        }
+
+        .hospital-badge:hover {
+            border-color: #D9B6B8 !important;
+            background: #FFF7F7;
+        }
+
+        .btn-action-phone {
+            background: linear-gradient(135deg, #C9898E 0%, #9D7068 100%) !important;
+            box-shadow: 0 10px 24px rgba(99,72,67,.18) !important;
+            font-weight: 700;
+        }
+        .btn-action-phone:hover {
+            background: linear-gradient(135deg, #BC7C81 0%, #8E625B 100%) !important;
+        }
+
+        .btn-action-line {
+            font-weight: 700;
+            box-shadow: 0 10px 24px rgba(6,199,85,.18) !important;
+        }
+
+        footer {
+            background: #302B29 !important;
+            color: #F7F4F2 !important;
+            border-top: 0 !important;
+        }
+        footer .text-muted { color: #AFA8A4 !important; }
+        .footer-seo-text { color: #AFA8A4 !important; }
+
+
+        /* Hospital badges: all entries use the exact same styling */
+        .hospital-badge {
+            color: #302B29 !important;
+            background: #FFFFFF !important;
+            border: 1px solid rgba(107,87,80,.10) !important;
+            box-shadow: 0 4px 15px rgba(74,58,54,.03) !important;
+        }
+
+        .hospital-badge:hover {
+            color: #302B29 !important;
+            background: #FFF7F7 !important;
+            border-color: #D9B6B8 !important;
+        }
+
+
+        /* Overseas Family Care dropdown */
+        .nav-family-dropdown .dropdown-menu {
+            min-width: 230px;
+            padding: 8px;
+            margin-top: 0;
+            background: #FFFDFC;
+            border: 1px solid rgba(107,87,80,.10);
+            border-radius: 16px;
+            box-shadow: 0 16px 40px rgba(74,58,54,.10);
+        }
+
+        .nav-family-dropdown .dropdown-item {
+            padding: 10px 13px;
+            border-radius: 10px;
+            color: #302B29;
+            font-size: .94rem;
+            font-weight: 500;
+        }
+
+        .nav-family-dropdown .dropdown-item:hover,
+        .nav-family-dropdown .dropdown-item:focus {
+            background: #FBEDEE;
+            color: #6B5750;
+        }
+
+        @media (min-width: 992px) {
+            .nav-family-dropdown:hover > .dropdown-menu {
+                display: block;
+            }
+        }
+
+
+        /* Google Maps location card */
+        .map-section {
+            padding: 0 0 70px;
+            background: var(--bg-ivory);
+        }
+
+        .map-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(107,87,80,.10);
+            border-radius: 22px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(74,58,54,.05);
+        }
+
+        .map-card-header {
+            text-align: center;
+            padding: 10px 12px 22px;
+        }
+
+        .map-card-header h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .map-card-header p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.7;
+        }
+
+        .map-frame-wrap {
+            overflow: hidden;
+            border-radius: 16px;
+            background: #F8F6F3;
+            aspect-ratio: 16 / 9;
+            min-height: 340px;
+        }
+
+        .map-frame-wrap iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            display: block;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .map-section {
+                padding-bottom: 54px;
+            }
+
+            .map-card {
+                padding: 12px;
+                border-radius: 18px;
+            }
+
+            .map-card-header {
+                padding: 10px 8px 18px;
+            }
+
+            .map-frame-wrap {
+                aspect-ratio: 4 / 5;
+                min-height: 420px;
+            }
+
+            .map-frame-wrap iframe {
+                min-height: 420px;
+            }
+        }
+
+
+        /* Hospital badge text consistency */
+        .hospital-badge,
+        .hospital-badge:first-child,
+        .hospital-badge:first-of-type,
+        .hospital-badge + .hospital-badge {
+            color: #B78380 !important;
+            font-weight: 400 !important;
+        }
+
+        .hospital-badge:hover,
+        .hospital-badge:first-child:hover,
+        .hospital-badge:first-of-type:hover,
+        .hospital-badge + .hospital-badge:hover {
+            color: #B78380 !important;
+        }
+
+</style>
+</head>
+<body>
+
+    <!-- 📱 右下角一鍵直撥懸浮按鈕：同步首頁改為市話優先 -->
+    <div class="floating-contact-group">
+        <a href="tel:0229670360" class="float-btn float-phone" title="撥打福心市話專線">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://lin.ee/Tm80P16" class="float-btn float-line" target="_blank" title="加 LINE 線上諮詢">
+            <i class="fab fa-line"></i>
+        </a>
     </div>
 
-    <!-- 緊急聯繫手機 -->
-    <div class="col-md-5 col-lg-4 fade-in-scroll">
-        <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
-            <div>
-                <div class="fs-1 mb-3" style="color: #ED6A6A;">
-                    <i class="fas fa-mobile-alt"></i>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">福心照護</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">首頁</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
+                    <li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">聯絡方式</a></li>
+                    <li class="nav-item dropdown nav-family-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">海外家庭安心方案</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="fuxin_overseas_family.html">福心健康生活管家</a></li>
+                            <li><a class="dropdown-item" href="fuxin_returing_taiwan_surgery.html">福心海外返台手術</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a href="en.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">EN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1 class="fw-bold mb-3">與我們聯絡</h1>
+            <div class="premium-text-p mx-auto" style="max-width: 650px;">
+                <p class="mb-2">您的需求，我們即時回應。</p>
+                <p class="mb-2">無論是緊要的醫院陪病、待產安胎照護或入院出院協助，</p>
+                <p class="mb-0">專人為您提供最安心的支援。</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
+                    <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="fs-1 mb-3" style="color: #06C755;"><i class="fab fa-line"></i></div>
+                            <h3 class="fw-bold fs-5 mb-2">LINE 官方帳號諮詢</h3>
+                            <p class="premium-text-p small mb-4">最推薦的聯繫方式。您可以隨時傳送訊息，專員將在線上即時回覆您的照護規劃需求。</p>
+                        </div>
+                        <a href="https://lin.ee/Tm80P16" class="btn btn-action-line py-3" target="_blank">
+                            <i class="fab fa-line childhood-icon me-2"></i>加 LINE 線上即時諮詢
+                        </a>
+                    </div>
                 </div>
-                <h3 class="fw-bold fs-5 mb-2">緊急聯繫手機</h3>
-                <p class="premium-text-p small mb-4">
-                    若遇到臨時或緊急照護需求，可直接撥打手機聯繫，
-                    以利快速確認狀況與後續安排。
-                </p>
+
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
+                    <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="fs-1 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-phone-alt"></i></div>
+                            <h3 class="fw-bold fs-5 mb-2">24H 諮詢專線</h3>
+                            <p class="premium-text-p small mb-4">適合情況緊急、當日就需要看護進駐的家庭。點選下方按鈕即可一鍵播打市話專線。（上班時間 08:00 - 21:30 撥打OK）</p>
+                        </div>
+                        <!-- 📞 修改為核心市話一鍵直撥 -->
+                        <a href="tel:0229670360" class="btn btn-action-phone py-3">
+                            <i class="fas fa-phone-alt me-2"></i>直撥市話 02-2967-0360
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <a href="tel:0963590368"
-               class="btn btn-action-phone py-3">
-                <i class="fas fa-mobile-alt me-2"></i>
-                緊急聯繫 0963-590-368
-            </a>
-        </div>
-    </div>
+            <div class="row g-4 justify-content-center mt-4">
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
+                    <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="fs-1 mb-3" style="color: var(--champagne-gold);"><i class="fas fa-envelope"></i></div>
+                            <h3 class="fw-bold fs-5 mb-2">公司 Email</h3>
+                            <p class="premium-text-p small mb-4">適合一般服務諮詢、文件往來與企業合作聯繫。點選下方按鈕即可直接寄信給福心照護。</p>
+                        </div>
+                        <a href="mailto:service@fuxincare.com.tw" class="btn btn-action-phone py-3">
+                            <i class="fas fa-envelope me-2"></i>service@fuxincare.com.tw
+                        </a>
+                    </div>
+                </div>
 
-</div>
+                <div class="col-md-5 col-lg-4 fade-in-scroll">
+                    <div class="contact-action-card h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="fs-1 mb-3" style="color: #ED6A6A;"><i class="fas fa-mobile-alt"></i></div>
+                            <h3 class="fw-bold fs-5 mb-2">緊急聯繫手機</h3>
+                            <p class="premium-text-p small mb-4">若遇到臨時或緊急照護需求，可直接撥打手機聯繫，以利快速確認狀況與後續安排。</p>
+                        </div>
+                        <a href="tel:0963590368" class="btn btn-action-phone py-3">
+                            <i class="fas fa-mobile-alt me-2"></i>緊急聯繫 0963-590-368
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5 fade-in-scroll">
+                <div class="col-md-10 col-lg-8">
+                    <div class="memo-card">
+                        <h4 class="fw-bold fs-5 mb-4 text-center" style="color: #8B5F5C;"><i class="far fa-edit me-2"></i>給家屬的溫馨叮嚀</h4>
+                        <p class="premium-text-p mb-4 text-center">聯繫福心專員時，若能預先提供以下基礎資訊，將能大幅加快媒合與派遣的速度：</p>
+                        
+                        <div class="d-flex flex-column gap-4 max-width-600 mx-auto mt-2">
+                            <div class="memo-item">
+                                <div class="memo-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div class="premium-text-p">
+                                    <strong class="d-block text-dark fw-bold mb-1">病患目前所在位置</strong>
+                                    <span>（例如：台大醫院東址大樓、病房編號 1205）</span>
+                                </div>
+                            </div>
+                            <div class="memo-item">
+                                <div class="memo-icon"><i class="fas fa-stethoscope"></i></div>
+                                <div class="premium-text-p">
+                                    <strong class="d-block text-dark fw-bold mb-1">病況與照護需求描述</strong>
+                                    <span>（例如：術後返病房、意識清醒、或需孕期安胎陪產照護）</span>
+                                </div>
+                            </div>
+                            <div class="memo-item">
+                                <div class="memo-icon"><i class="far fa-clock"></i></div>
+                                <div class="premium-text-p">
+                                    <strong class="d-block text-dark fw-bold mb-1">預計需要的照護天數與時段</strong>
+                                    <span>（例如：預計住院 5 天、需要 24 小時全日班班期）</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container py-3">
+            <div class="text-center mb-4 fade-in-scroll">
+                <h2 class="fw-bold fs-4 mb-2">服務區域與合作據點</h2>
+                <p class="text-muted small">我們深耕雙北，派遣範圍完整涵蓋各大醫學中心與醫療院所</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center fade-in-scroll">
+                    <p class="fw-bold small mb-3" style="color: var(--champagne-gold);"><i class="fas fa-map-marked-alt me-1"></i>服務區域：台北市、新北市各大醫療院所</p>
+                    <div class="d-flex flex-wrap justify-content-center mt-2">
+                        <span class="hospital-badge">國立臺灣大學醫學院附設醫院 (台大)</span>
+                        <span class="hospital-badge">台北榮民總醫院 (北榮)</span>
+                        <span class="hospital-badge">馬偕紀念醫院</span>
+                        <span class="hospital-badge">亞東紀念醫院</span>
+                        <span class="hospital-badge">林口長庚紀念醫院</span>
+                        <span class="hospital-badge">臺北醫學大學附設醫院</span>
+                        <span class="hospital-badge">新光吳火獅紀念醫院</span>
+                        <span class="hospital-badge">國泰綜合醫院</span>
+                        <span class="hospital-badge">臺北聯合醫院各院區</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 pt-3 fade-in-scroll">
+                <p class="small text-muted mb-0">讓福心成為您在病房與居家照護中最堅強的後盾。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="map-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 fade-in-scroll">
+                    <div class="map-card">
+                        <div class="map-card-header">
+                            <h2><i class="fas fa-map-marker-alt me-2" style="color:#B78380;"></i>福心照護位置</h2>
+                            <p>可透過下方 Google Maps 查看位置與周邊交通資訊。</p>
+                        </div>
+                        <div class="map-frame-wrap">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15087.55467527049!2d121.5237992!3d24.9833755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x83844f73f200c959%3A0xc81a90f175d98309!2z56aP5b-D54Wn6K23IC0g6Yar6Zmi55yL6K235pyN5YuZ5Lit5b-D!5e1!3m2!1szh-TW!2stw!4v1789387957412!5m2!1szh-TW!2stw"
+                                title="福心照護 Google Maps"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🧱 ✨ 完全同步首頁：輕量化降噪高質感頁尾 (Footer) -->
+    <footer>
+        <div class="container text-center text-lg-start">
+            <div class="row g-4 align-items-top">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-2" style="color:#E8D7D4; letter-spacing: 1px; font-size: 1.2rem;">福心管理顧問股份有限公司</h2>
+                    <p class="small mb-0" style="letter-spacing: 0.5px; color: #DDD6D2; font-size: 0.9rem;">
+                        聯絡專線：02-2967-0360 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 緊急聯繫：0963-590-368<br class="d-lg-none"> <span class="mx-2 d-none d-lg-inline" style="color:#D9C9C6; opacity: 0.45;">•</span> Email：<a href="mailto:service@fuxincare.com.tw" style="color:#DDD6D2; text-decoration:none;">service@fuxincare.com.tw</a><br>
+                        統一編號：62179070 <span class="mx-2" style="color:#D9C9C6; opacity: 0.45;">•</span> 新北私就字第 068 號
+                    </p>
+                </div>
+                <div class="col-lg-5 text-center text-lg-end">
+                    <p class="fw-bold mb-1" style="color: var(--dusty-rose); letter-spacing: 0.5px; font-size: 0.95rem;">陪伴家庭做好每一個照護安排</p>
+                    <p class="small text-muted mb-0" style="font-size: 0.8rem;">© 2026 福心管理顧問股份有限公司 版權所有。</p>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <p class="footer-seo-text mb-0">
+                        服務說明： 本公司深耕台灣本土照護市場，專注提供專業雙北醫院看護派遣、待產安胎專業照護、各大醫療院所之 24 小時醫院陪病服務。我們堅持價格契約化、人力透明化，所有夥伴皆經合法認證，是您尋找優質 <strong>hospital caregiver</strong>、住院看護與短期銜接時的最佳夥伴。同時，我們對海外台人與旅外華人家庭保持全面開放與友善支援，可根據需求提供線上近況溝通並預留開立正式英文收據之彈性服務。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.15 
+            };
+
+            const observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.fade-in-scroll');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
