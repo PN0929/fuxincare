@@ -321,7 +321,13 @@
     .ticket-stamp{position:absolute;right:10px;bottom:10px;width:64px;height:64px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.82);border:1px solid rgba(222,203,196,.92);color:rgba(143,99,93,.78);box-shadow:0 5px 16px rgba(72,48,44,.055);transform:rotate(-12deg);pointer-events:none}
     .ticket-stamp svg{width:34px;height:34px;stroke-width:2}
     @media(max-width:620px){.boarding-pass-photo{padding:22px 16px}.ticket-journey{gap:26px}.ticket-route-row{grid-template-columns:minmax(0,1fr) 42px minmax(0,1fr)}.ticket-route-place strong{font-size:20px}.ticket-focus strong{font-size:27px}}
-  </style>
+  
+/* 福心 LINE 官方帳號綠色按鈕：僅作用於官方 LINE 連結的 CTA */
+a.fuxin-line-cta,a.fuxin-line-cta:link,a.fuxin-line-cta:visited{background:#06C755!important;background-image:none!important;border-color:#06C755!important;color:#FFFFFF!important;text-decoration:none!important;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+a.fuxin-line-cta:hover,a.fuxin-line-cta:focus-visible{background:#05A947!important;background-image:none!important;border-color:#05A947!important;color:#FFFFFF!important}
+a.fuxin-line-cta .fuxin-line-icon{display:inline-block;width:22px;height:22px;flex:none;color:#fff!important;fill:#fff!important}
+a.fuxin-line-cta:hover .fuxin-line-icon{color:#fff!important}
+</style>
 </head>
 <body>
   <a class="skip-link" href="#top">跳至主要內容</a>
@@ -358,7 +364,7 @@
           <h1 id="service-hero-title">回到台灣退休，<br><span class="accent">福心陪你規劃新生活。</span></h1>
           <p class="hero-desc">從返台前的生活評估、居住安排，到落地後的就醫與日常銜接，福心協助長輩更安心回到台灣展開退休生活。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle" width="19"></i>免費初步諮詢</a>
+            <a class="btn btn-primary fuxin-line-cta" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer"><svg class="fuxin-line-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M32 7C16.1 7 3.2 17.1 3.2 29.5c0 11.1 10.1 20.4 23.7 22.2 1.4.3 2.2 1.1 1.9 2.6l-.8 5.2c-.1.8.7 1.3 1.4 1 4.8-2.5 17.1-10.2 24.3-19.1 4.4-5.4 7.1-11.2 7.1-16C60.8 17.1 47.9 7 32 7Z"/><text x="32" y="35.5" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" font-weight="900" fill="#06C755">LINE</text></svg>免費初步諮詢</a>
             <a class="btn btn-outline" href="#services">查看服務內容<i data-lucide="arrow-down" width="18"></i></a>
           </div>
           <p class="hero-note">客製化諮詢報價｜可以中英文溝通｜協助返台生活安排</p>
@@ -472,7 +478,7 @@
             <li>依據家庭需要提供合作方式與客製化報價</li>
             <li>若日後需要，也可延伸討論其他在台支持</li>
           </ul>
-          <a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:24px;width:100%">討論我的返台退休安排<i data-lucide="arrow-up-right" width="18"></i></a>
+          <a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer" class="btn btn-primary fuxin-line-cta" style="margin-top:24px;width:100%"><svg class="fuxin-line-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M32 7C16.1 7 3.2 17.1 3.2 29.5c0 11.1 10.1 20.4 23.7 22.2 1.4.3 2.2 1.1 1.9 2.6l-.8 5.2c-.1.8.7 1.3 1.4 1 4.8-2.5 17.1-10.2 24.3-19.1 4.4-5.4 7.1-11.2 7.1-16C60.8 17.1 47.9 7 32 7Z"/><text x="32" y="35.5" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" font-weight="900" fill="#06C755">LINE</text></svg>討論我的返台退休安排</a>
         </div>
       </div>
     </section>
@@ -516,7 +522,7 @@
         <h2 class="h2">您希望如何安排返台退休生活？</h2>
         <p class="lead">不論您仍在評估，或已經準備回台，都歡迎與福心討論。先了解需求，再一起討論合適的協助方式與報價。</p>
         <div class="contact-actions">
-          <a class="btn btn-primary" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle" width="19"></i>LINE 免費初步諮詢</a>
+          <a class="btn btn-primary fuxin-line-cta" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer"><svg class="fuxin-line-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M32 7C16.1 7 3.2 17.1 3.2 29.5c0 11.1 10.1 20.4 23.7 22.2 1.4.3 2.2 1.1 1.9 2.6l-.8 5.2c-.1.8.7 1.3 1.4 1 4.8-2.5 17.1-10.2 24.3-19.1 4.4-5.4 7.1-11.2 7.1-16C60.8 17.1 47.9 7 32 7Z"/><text x="32" y="35.5" text-anchor="middle" font-size="15" font-family="Arial,sans-serif" font-weight="900" fill="#06C755">LINE</text></svg>LINE 免費初步諮詢</a>
           <a class="btn btn-outline" href="tel:0229670360"><i data-lucide="phone" width="18"></i>02-2967-0360</a>
         </div>
         <p class="small" style="margin-top:22px">客製化報價｜大台北、桃園為主｜其他縣市歡迎洽詢</p>
