@@ -311,7 +311,10 @@
     .article-entry h3{font-size:20px;line-height:1.5;margin:0}
     .article-entry p{font-size:15px;color:var(--muted);line-height:1.8;margin:0}
     .article-entry time{font-size:13px;color:var(--muted)}
-    .article-entry a{color:var(--rose-deep);font-weight:700;margin-top:auto;display:inline-flex;align-items:center;gap:6px}
+    .article-entry .read-more{color:var(--rose-deep);font-weight:700;margin-top:auto;display:inline-flex;align-items:center;gap:6px}
+    a.article-entry{color:var(--ink);text-decoration:none;cursor:pointer}
+    a.article-entry:focus-visible{outline:3px solid var(--rose-deep);outline-offset:4px}
+    a.article-entry:hover .read-more{gap:10px}
     .article-more{text-align:center;margin-top:28px}
     .article-status{text-align:center;color:var(--muted);font-size:16px;line-height:1.85;padding:24px 0}
     @media(max-width:860px){.article-grid{grid-template-columns:1fr}}
@@ -545,9 +548,9 @@
           <p class="lead">分享海外家庭照護、台灣就醫安排與長照資源的實用知識，陪伴家庭跨越距離與資訊落差。</p>
         </div>
         <div class="article-grid" id="latest-articles">
-          <article class="article-entry"><span class="topic">術後照護 · 2026.09.14</span><h3>關節置換手術後，居家環境怎麼準備？</h3><p>從居家動線、浴室到生活安排，整理術後返家前可以先準備的事項。</p><a href="blog-joint-replacement-home-preparation.html" aria-label="閱讀關節置換術後居家準備">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
-          <article class="article-entry"><span class="topic">海外返台 · 2026.09.14</span><h3>海外返台住院，要帶哪些用品？</h3><p>中英文用品清單、哪些建議先帶回台灣，以及抵台後的採買方向。</p><a href="blog-returning-taiwan-hospital-packing-list.html" aria-label="閱讀海外返台住院用品清單">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
-          <article class="article-entry"><span class="topic">住院看護 · 2026.07.31</span><h3>醫院看護一天多少錢？費用與詢價指南</h3><p>了解費用組成、照護模式與詢價注意事項，幫家庭準備合適的安排。</p><a href="blog-hospital-caregiver-cost.html" aria-label="閱讀醫院看護費用指南">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
+          <a class="article-entry" href="blog-joint-replacement-home-preparation.html" aria-label="閱讀關節置換術後居家準備"><span class="topic">術後照護 · 2026.09.14</span><h3>關節置換手術後，居家環境怎麼準備？</h3><p>從居家動線、浴室到生活安排，整理術後返家前可以先準備的事項。</p><span class="read-more">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></span></a>
+          <a class="article-entry" href="blog-returning-taiwan-hospital-packing-list.html" aria-label="閱讀海外返台住院用品清單"><span class="topic">海外返台 · 2026.09.14</span><h3>海外返台住院，要帶哪些用品？</h3><p>中英文用品清單、哪些建議先帶回台灣，以及抵台後的採買方向。</p><span class="read-more">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></span></a>
+          <a class="article-entry" href="blog-hospital-caregiver-cost.html" aria-label="閱讀醫院看護費用指南"><span class="topic">住院看護 · 2026.07.31</span><h3>醫院看護一天多少錢？費用與詢價指南</h3><p>了解費用組成、照護模式與詢價注意事項，幫家庭準備合適的安排。</p><span class="read-more">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></span></a>
         </div>
         <div class="article-more"><a class="btn btn-outline" href="care-journal.html">查看更多文章 <i data-lucide="arrow-right" width="18" aria-hidden="true"></i></a></div>
       </div>
