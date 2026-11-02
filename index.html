@@ -1,2031 +1,682 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="zh-TW">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>雙北醫院看護媒合與照護管理｜福心照護</title>
-<meta content="福心提供台北、新北醫院看護媒合仲介、住院陪病照護、照護需求評估、服務期間追蹤與出院返家銜接。依病況、照護內容與家庭安排協助篩選合作照護人員，並於服務期間提供溝通與調整協助。" name="description"/>
-<meta content="醫院看護, 照護媒合, 雙北醫院看護, 台北醫院看護, 新北醫院看護, 24小時看護, 24小時照護, 住院陪病, 出院返家, 居家照護, 長照規劃, 照護服務管理" name="keywords"/>
-<meta content="合適的人選，才能讓照護真正安心｜福心照護" property="og:title"/>
-<meta content="從需求了解、合適媒合到服務期間追蹤與協調，福心陪伴家庭走過每一段照護歷程。" property="og:description"/>
-<meta content="福心照護logo.jpg" property="og:image"/>
-<meta content="website" property="og:type"/>
-<link href="favicon.png" rel="icon" type="image/png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>福心照護管理｜遠距家庭照護管家・高齡長輩照護管理</title>
+  <meta name="description" content="福心照護管理，提供台灣固定照護管理窗口、緊急聯絡協調、照護資源整合。可以全英文溝通，免費初步長照諮詢。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.fuxincare.com.tw/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="福心照護管理｜遠距家庭照護管家・高齡長輩照護管理">
+  <meta property="og:description" content="無論相隔多遠，父母的生活都有可靠的支持。福心提供固定照護管理窗口、陪同回診、緊急聯絡協調。">
+  <meta property="og:url" content="https://www.fuxincare.com.tw/">
+  <link rel="alternate" hreflang="zh-TW" href="https://www.fuxincare.com.tw/">
+  <link rel="alternate" hreflang="en" href="https://www.fuxincare.com.tw/en.html">
+  <meta name="theme-color" content="#fffdfb">
+  <link rel="icon" type="image/webp" href="福心照護logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"福心照護管理","legalName":"福心管理顧問股份有限公司","url":"https://www.fuxincare.com.tw/","telephone":"+886-2-2967-0360","areaServed":["臺北市","新北市","桃園市"],"description":"提供遠距家庭照護管家、在台灣替父母長輩找一個固定的照護管理窗口，可以協助陪同回診、處理日常庶務、緊急事件協調，提供海外家庭英文溝通服務。"}
 
-<link rel="preload" as="image" href="hero.webp" type="image/webp" fetchpriority="high" imagesrcset="hero-sm.webp 767w, hero.webp 1486w" imagesizes="(max-width: 767px) 100vw, 1486px"/>
-
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "福心管理顧問股份有限公司",
-      "description": "台北、新北、桃園醫院看護媒合、住院陪病照護、服務追蹤、出院返家與照護資源銜接",
-      "telephone": "02-2967-0360",
-      "areaServed": ["台北市", "新北市", "桃園市"],
-      "taxID": "62179070"
+  </script>
+  <style>
+    :root{
+      --bg:#FFFDFB;
+      --bg-soft:#F8F5F1;
+      --bg-blush:#FBF1F0;
+      --ink:#312B29;
+      --muted:#675F5B;
+      --rose:#B78380;
+      --rose-deep:#8F635D;
+      --pink:#F4C4C6;
+      --line:#EAE1DD;
+      --line-strong:#DECBC4;
+      --white:#FFFFFF;
+      --shadow:0 18px 45px rgba(72,48,44,.06);
     }
-    </script>
-<style>
-        :root {
-            --primary: #F4C4C6;
-            --primary-dark: #6B5750;
-            --rose: #F4C4C6;
-            --gold: #B78380;
-            --ivory: #FFFDFC;
-            --sand: #F8F6F3;
-            --white: #FFFFFF;
-            --text: #302B29;
-            --muted: #6D6662;
-            --line: rgba(107, 87, 80, 0.12);
-        }
-
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background: var(--ivory);
-            color: var(--text);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        a { text-decoration: none; }
-        .section-space { padding: 88px 0; }
-        .section-kicker {
-            color: #6B5750;
-            font-size: 0.86rem;
-            font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .section-title {
-            font-size: clamp(1.9rem, 3vw, 2.65rem);
-            font-weight: 700;
-            line-height: 1.35;
-            margin-bottom: 18px;
-        }
-        .section-lead {
-            color: var(--muted);
-            font-size: 1.06rem;
-            line-height: 1.9;
-            max-width: 760px;
-        }
-
-        .navbar {
-            background: rgba(255, 253, 252, 0.96);
-            backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--line);
-        }
-        .navbar-brand {
-            color: var(--text) !important;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-        }
-        .nav-link {
-            color: var(--text) !important;
-            font-weight: 500;
-            margin: 0 6px;
-        }
-        .nav-link:hover { color: var(--primary-dark) !important; }
-
-        .hero {
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-            padding: 155px 0 76px;
-            background: var(--ivory);
-        }
-        .hero-media {
-            position: absolute;
-            inset: 0;
-            z-index: -2;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        .hero-media img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center right;
-            background: linear-gradient(135deg, #FFFDFC 0%, #F4C4C6 56%, #FBEDEE 100%);
-        }
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            background: linear-gradient(90deg, rgba(255,253,252,.99) 36%, rgba(255,253,252,.91) 64%, rgba(244,196,198,.58) 100%);
-        }
-        .hero-title {
-            font-size: clamp(2.35rem, 5vw, 4.15rem);
-            line-height: 1.22;
-            font-weight: 700;
-           letter-spacing: -0.02em;
-            max-width: 760px;
-        }
-        .hero-title span { color: var(--primary-dark); }
-        .hero-copy {
-            max-width: 700px;
-            color: var(--muted);
-            font-size: 1.08rem;
-            line-height: 1.9;
-            margin-top: 22px;
-        }
-        .license-line {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 22px;
-            padding: 9px 15px;
-            border-radius: 999px;
-            background: rgba(255,255,255,.86);
-            border: 1px solid var(--line);
-            color: var(--primary-dark);
-            font-size: .92rem;
-            font-weight: 700;
-        }
-        .btn-primary-soft, .btn-outline-soft {
-            border-radius: 999px;
-            padding: 13px 25px;
-            font-weight: 700;
-            transition: .25s ease;
-        }
-        .btn-primary-soft {
-            background: var(--primary-dark);
-            color: #fff;
-            border: 1px solid var(--primary-dark);
-            box-shadow: 0 10px 25px rgba(73,60,56,.14);
-        }
-        .btn-primary-soft:hover { background: #644C48; color: #fff; transform: translateY(-2px); }
-        .btn-outline-soft {
-            color: var(--text);
-            border: 1px solid rgba(58,53,53,.2);
-            background: rgba(255,255,255,.72);
-        }
-        .btn-outline-soft:hover { border-color: var(--primary); color: var(--primary-dark); background: #fff; }
-
-        .service-ribbon {
-            margin-top: 48px;
-            background: rgba(255,255,255,.9);
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            box-shadow: 0 18px 45px rgba(73,60,56,.07);
-            overflow: hidden;
-        }
-        .service-ribbon-item { padding: 23px 16px; text-align: center; height: 100%; }
-        .service-ribbon-item i { color: #A88768; font-size: 1.4rem; margin-bottom: 9px; }
-        .service-ribbon-item strong { display: block; font-size: .98rem; }
-
-        .journey-section { background: var(--sand); }
-        .journey-step {
-            position: relative;
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 24px 18px;
-            text-align: center;
-            height: 100%;
-        }
-        .journey-step .number {
-            width: 34px; height: 34px; border-radius: 50%;
-            display: inline-flex; align-items: center; justify-content: center;
-            background: var(--sand); color: #8B7058; font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .journey-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
-        .journey-step p { color: var(--muted); font-size: .9rem; line-height: 1.6; margin: 0; }
-
-        .process-card, .principle-card, .article-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            padding: 30px 25px;
-            height: 100%;
-            box-shadow: 0 10px 30px rgba(73,60,56,.05);
-            transition: .25s ease;
-        }
-        .process-card:hover, .principle-card:hover, .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 38px rgba(73,60,56,.09);
-        }
-        .icon-circle {
-            width: 54px; height: 54px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: var(--sand); color: #8A6D5A; font-size: 1.28rem;
-            margin-bottom: 19px;
-        }
-        .process-card h3, .principle-card h3 { font-size: 1.18rem; font-weight: 700; margin-bottom: 12px; }
-        .process-card p, .principle-card p { color: var(--muted); line-height: 1.75; margin: 0; }
-
-        .comparison-wrap {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 18px 45px rgba(73,60,56,.07);
-        }
-        .comparison-table { margin: 0; min-width: 920px; }
-        .comparison-table th, .comparison-table td {
-            padding: 20px 18px;
-            vertical-align: top;
-            border-color: var(--line);
-            line-height: 1.7;
-        }
-        .comparison-table thead th {
-            background: #F8F6F3;
-            text-align: center;
-            font-size: 1.02rem;
-            color: var(--text);
-        }
-        .comparison-table thead th.fuxin-head {
-            background: #F4C4C6;
-            color: var(--primary-dark);
-        }
-        .comparison-table .criterion {
-            width: 16%;
-            font-weight: 700;
-            background: #FCFAF7;
-            color: var(--text);
-        }
-        .comparison-table .fuxin-cell { background: #FDF3F4; }
-        .comparison-table strong { display: block; margin-bottom: 5px; color: var(--text); }
-        .comparison-table .fuxin-cell strong { color: var(--primary-dark); }
-        .comparison-note {
-            color: var(--muted);
-            font-size: .9rem;
-            line-height: 1.75;
-            margin-top: 18px;
-        }
-
-        .management-panel {
-            background: linear-gradient(135deg, #4A403D 0%, #2F2A28 100%);
-            color: #fff;
-            border-radius: 28px;
-            padding: clamp(34px, 6vw, 64px);
-            box-shadow: 0 26px 70px rgba(47,42,40,.18);
-        }
-        .management-panel .section-lead { color: rgba(255,255,255,.76); }
-        .management-point {
-            display: flex; gap: 15px; align-items: flex-start;
-            padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.11);
-        }
-        .management-point:last-child { border-bottom: 0; }
-        .management-point i { color: #F8F6F3; margin-top: 5px; }
-        .management-point strong { display: block; margin-bottom: 4px; }
-        .management-point span { color: rgba(255,255,255,.7); line-height: 1.7; font-size: .94rem; }
-
-        .hero-logo-panel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero-logo-frame {
-            width: 210px;
-            height: 210px;
-            padding: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.94);
-            border: 1px solid rgba(204,178,139,.34);
-            box-shadow: 0 18px 45px rgba(65,54,49,.10);
-        }
-        .hero-logo-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        @media (max-width: 991px) {
-            .hero-logo-panel { display: none; }
-        }
-
-        .legal-section { background: var(--sand); }
-        .legal-card {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            padding: 28px;
-            height: 100%;
-        }
-        .cert-img-wrapper {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 12px;
-            padding: 8px;
-            margin-bottom: 22px;
-        }
-        .cert-img { width: 100%; max-height: 260px; object-fit: contain; }
-        .legal-card h3 { font-size: 1.18rem; font-weight: 700; border-left: 4px solid var(--primary); padding-left: 12px; }
-        .legal-card p { color: var(--muted); line-height: 1.8; }
-
-        .article-card .tag {
-            display: inline-block;
-            color: var(--primary-dark);
-            background: var(--sand);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: .78rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        .article-card h3 { font-size: 1.16rem; line-height: 1.55; font-weight: 700; }
-        .article-card p { color: var(--muted); line-height: 1.7; font-size: .94rem; }
-        .article-link { color: var(--primary-dark); font-weight: 700; }
-
-        .cta-section { padding: 76px 0; }
-        .cta-box {
-            background: linear-gradient(135deg, #FAE5E3 0%, #F8F6F3 100%);
-            border: 1px solid var(--line);
-            border-radius: 28px;
-            padding: clamp(34px, 6vw, 62px);
-        }
-
-        footer {
-            background: #302B29;
-            color: #F7F4F2;
-            padding: 48px 0 26px;
-        }
-        .footer-divider { border-top: 1px solid rgba(255,255,255,.09); margin: 22px 0; }
-        .footer-note { color: #BDB4B4; font-size: .82rem; line-height: 1.7; }
-
-        .floating-contact-group {
-            position: fixed; right: 26px; bottom: 26px; z-index: 1000;
-            display: flex; flex-direction: column; gap: 12px;
-        }
-        .float-btn {
-            width: 56px; height: 56px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; box-shadow: 0 8px 22px rgba(0,0,0,.16);
-            transition: .2s ease;
-        }
-        .float-btn:hover { transform: scale(1.06); color: #fff; }
-        .float-phone { background: #D96D6D; }
-        .float-line { background: #06C755; font-size: 1.45rem; }
-
-        .fade-in-scroll { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-        .fade-in-scroll.visible { opacity: 1; transform: translateY(0); }
-
-        @media (max-width: 991px) {
-            .hero-media img { object-position: 65% center; }
-            .service-ribbon-item { border-bottom: 1px solid var(--line); }
-        }
-        @media (max-width: 767px) {
-            .section-space { padding: 68px 0; }
-            .hero { padding: 118px 0 54px; }
-            .hero-media img { object-position: center; }
-            .hero::after { background: linear-gradient(180deg, rgba(255,253,252,.98) 58%, rgba(244,196,198,.74) 100%); }
-            .hero-copy { font-size: 1rem; }
-            .floating-contact-group { right: 18px; bottom: 18px; }
-            .float-btn { width: 52px; height: 52px; }
-        }
-    
-        /* Accordion comparison interaction */
-        .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
-        .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #F5F3F1 !important; }
-        .comparison-summary-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
-        .comparison-summary-row.is-open td { background-color: #F8F6F3 !important; }
-        .comparison-summary-row.is-open td.fuxin-cell { background-color: #F7E1E2 !important; }
-        .comparison-table.has-active-row .comparison-summary-row:not(.is-open) { opacity: .38; }
-        .comparison-table.has-active-row .comparison-detail-row:not(.is-open) { opacity: .38; }
-        .comparison-detail-row td { padding: 0 18px !important; background: #FCFAF8; border-bottom: 1px solid rgba(122,94,89,.10); }
-        .comparison-detail-row td.fuxin-cell { background: #FFF4F4; }
-        .comparison-detail-row .detail-spacer { background: #FFFDFC; }
-        .comparison-detail-content p { margin: 0; padding: 18px 0; color: var(--muted); line-height: 1.75; }
-        .comparison-chevron { display: block; margin: 8px auto 0; font-size: .8rem; color: var(--primary-dark); transition: transform .25s ease; }
-        .comparison-summary-row.is-open .comparison-chevron { transform: rotate(180deg); }
-
-        /* Comparison accordion: multiple rows may stay open */
-        .comparison-summary-row { cursor: pointer; transition: opacity .25s ease, background-color .25s ease; }
-        .comparison-summary-row td { transition: background-color .25s ease, opacity .25s ease; }
-        .comparison-summary-row:hover td { background-color: #F5F3F1 !important; }
-        .comparison-summary-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
-        .comparison-summary-row.is-open td { background-color: #F8F6F3 !important; }
-        .comparison-summary-row.is-open td.fuxin-cell { background-color: #F7E1E2 !important; }
-        .comparison-table.has-active-row .comparison-summary-row:not(.is-open),
-        .comparison-table.has-active-row .comparison-detail-row:not(.is-open) { opacity: .38; }
-        .comparison-detail-row { transition: opacity .25s ease; }
-        .comparison-detail-row td { padding: 0 !important; background: #FCFAF8; border-bottom: 1px solid rgba(122,94,89,.10); }
-        .comparison-detail-row .detail-spacer { background: #FFFDFC; border-right: 1px solid rgba(122,94,89,.10); }
-        .comparison-detail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        .comparison-detail-panel { padding: 18px 20px; text-align: center; border-right: 1px solid rgba(122,94,89,.10); }
-        .comparison-detail-panel:last-child { border-right: 0; }
-        .comparison-detail-panel.fuxin-detail-panel { background: #FFF4F4; }
-        .comparison-detail-panel p { margin: 0; color: var(--muted); line-height: 1.7; font-size: .94rem; }
-        .comparison-detail-panel.fuxin-detail-panel p { color: var(--primary-dark); font-weight: 500; }
-        .comparison-chevron { display: block; margin: 8px auto 0; font-size: .8rem; color: var(--primary-dark); transition: transform .25s ease; }
-        .comparison-summary-row.is-open .comparison-chevron { transform: rotate(180deg); }
-        @media (max-width: 767px) {
-            .comparison-detail-grid { grid-template-columns: 1fr; }
-            .comparison-detail-panel { border-right: 0; border-bottom: 1px solid rgba(122,94,89,.10); }
-            .comparison-detail-panel:last-child { border-bottom: 0; }
-        }
-
-        /* Static comparison table interaction */
-        .comparison-static-row { transition: opacity .24s ease; }
-        .comparison-static-row td { transition: background-color .24s ease, opacity .24s ease; }
-        .comparison-static-row td p { margin: 8px 0 0; color: var(--muted); line-height: 1.7; font-size: .94rem; }
-        .comparison-static-row td.fuxin-cell p { color: var(--primary-dark); }
-        .comparison-static-row:hover td { background-color: #F5F3F1 !important; }
-        .comparison-static-row:hover td.fuxin-cell { background-color: #FFF4F4 !important; }
-        .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) { opacity: .34; }
-        .comparison-chevron, .comparison-detail-row { display: none !important; }
-
-        /* 手機版雙表格呈現機制與福心置左排版 */
-        .mobile-comparison-container {
-            display: none;
-        }
-        @media (max-width: 767px) {
-            /* 在手機上隱藏原本笨重的 4 欄桌機表格 */
-            .desktop-comparison-container {
-                display: none !important;
-            }
-            /* 顯示專門為手機優化的雙表格對照區 */
-            .mobile-comparison-container {
-                display: block;
-            }
-            /* 調整手機表格，讓它完全貼合螢幕不需要捲動 */
-            .mobile-comparison-table {
-                width: 100% !important;
-                min-width: unset !important;
-                margin-bottom: 0px;
-                background: #fff;
-                border-radius: 16px;
-                overflow: hidden;
-            }
-            .mobile-comparison-table th, .mobile-comparison-table td {
-                padding: 14px 12px !important;
-                font-size: 0.88rem !important;
-            }
-            /* 撐開寬度各佔約 50% 達到精美並排 */
-            .mobile-comparison-table td, .mobile-comparison-table th {
-                width: 50%;
-            }
-            /* 區塊標題（如：需求了解、服務期間）橫跨整列 */
-            .mobile-section-header {
-                background: #F4F0EA !important;
-                color: var(--text);
-                font-weight: 700;
-                text-align: center;
-            }
-
-            /* 【優化】手機版切換按鈕（Tab）樣式 */
-            .mobile-tab-switch {
-                display: flex;
-                background: rgba(122,94,89,.08);
-                border-radius: 99px;
-                padding: 4px;
-                margin-bottom: 24px;
-                border: 1px solid var(--line);
-            }
-            .mobile-tab-btn {
-                flex: 1;
-                border: 0;
-                background: transparent;
-                padding: 10px 16px;
-                font-size: 0.9rem;
-                font-weight: 700;
-                color: var(--muted);
-                border-radius: 99px;
-                transition: all 0.25s ease;
-            }
-            .mobile-tab-btn.active {
-                background: var(--primary-dark);
-                color: #fff;
-                box-shadow: 0 4px 12px rgba(73,60,56,.18);
-            }
-            /* 控制對照內容的顯示/隱藏 */
-            .mobile-comparison-panel {
-                display: none;
-            }
-            .mobile-comparison-panel.active {
-                display: block;
-            }
-        }
-
-        .nav-link { white-space: nowrap; }
-        .overseas-nav-link {
-            color: #6F5550 !important;
-            font-weight: 700;
-        }
-        .overseas-nav-link:hover {
-            color: #4D3C38 !important;
-        }
-        @media (min-width: 992px) and (max-width: 1279px) {
-            .nav-link { margin: 0 3px; font-size: .92rem; }
-            .navbar-brand { letter-spacing: .08em; }
-        }
-
-
-        /* Whipped Candy palette refinements */
-        .btn-line {
-            border-radius: 999px;
-            padding: 13px 25px;
-            font-weight: 700;
-            color: #fff;
-            background: #06C755;
-            border: 1px solid #06C755;
-            box-shadow: 0 10px 24px rgba(6,199,85,.20);
-            transition: .25s ease;
-        }
-        .btn-line:hover {
-            color: #fff;
-            background: #05B84E;
-            border-color: #05B84E;
-            transform: translateY(-2px);
-            box-shadow: 0 13px 28px rgba(6,199,85,.24);
-        }
-        .btn-line .fa-line { font-size: 1.18em; }
-
-        .overseas-nav-link {
-            color: #8E5E5A !important;
-            font-weight: 700;
-        }
-        .overseas-nav-link:hover { color: #6F4542 !important; }
-
-        /* Keep text crisp; palette lives mostly in backgrounds and accents */
-        .section-title, .process-card h3, .principle-card h3,
-        .article-card h3, .comparison-table strong {
-            color: #302B29;
-        }
-
-        .license-line {
-            background: rgba(250,229,227,.72);
-            border-color: rgba(239,164,162,.34);
-        }
-
-        .icon-circle {
-            background: #F8F6F3;
-        }
-
-        .cta-box {
-            background: linear-gradient(135deg, #F4C4C6 0%, #FBEDEE 46%, #FBEDEE 100%);
-        }
-
-
-        /* Lucky Charms palette */
-        :root {
-            --lucky-yellow: #FBEDEE;
-            --lucky-pink: #F4C4C6;
-            --lucky-blue: #FBEDEE;
-            --lucky-green: #F1ECE8;
-            --lucky-tan: #D9BB97;
-        }
-
-        body { background: #FFFDFC; }
-
-        .section-kicker {
-            color: #6B5750;
-        }
-
-        .hero-title span {
-            color: #6B5750;
-        }
-
-        .license-line {
-            background: rgba(248,246,243,.34);
-            border-color: rgba(183,131,128,.42);
-            color: #5E4C45;
-        }
-
-        /* More playful, but still polished */
-        .process-card:nth-child(4n+1) .icon-circle { background: rgba(248,246,243,.58); color:#6B5750; }
-        .process-card:nth-child(4n+2) .icon-circle { background: rgba(244,196,198,.62); color:#6B5750; }
-        .process-card:nth-child(4n+3) .icon-circle { background: rgba(244,196,198,.42); color:#7A5C58; }
-        .process-card:nth-child(4n+4) .icon-circle { background: rgba(162,209,136,.55); color:#4F6743; }
-
-        .service-ribbon-item:nth-child(1) i { color:#D0A84D; }
-        .service-ribbon-item:nth-child(2) i { color:#D48F96; }
-        .service-ribbon-item:nth-child(3) i { color:#C99C78; }
-        .service-ribbon-item:nth-child(4) i { color:#75A960; }
-
-        .comparison-table thead th.fuxin-head,
-        .mobile-comparison-table th.fuxin-head {
-            background: #F8DDDF !important;
-            color: #6B5750;
-        }
-
-        .comparison-table .fuxin-cell {
-            background: #FFF5F5;
-        }
-
-        .comparison-table .fuxin-cell strong {
-            color: #7A5C58;
-        }
-
-        .comparison-static-row:hover td.fuxin-cell {
-            background-color: #FBE9EA !important;
-        }
-
-        .article-card .tag {
-            background: rgba(248,246,243,.34);
-            color: #665348;
-        }
-
-        .article-card:nth-child(2) .tag { background: rgba(244,196,198,.42); }
-        .article-card:nth-child(3) .tag { background: rgba(162,209,136,.30); }
-
-        .overseas-nav-link {
-            color: #5E7E52 !important;
-            font-weight: 700;
-        }
-        .overseas-nav-link:hover {
-            color: #45613B !important;
-        }
-
-        .cta-box {
-            background:
-                linear-gradient(135deg,
-                    rgba(244,196,198,.84) 0%,
-                    rgba(248,246,243,.62) 58%,
-                    rgba(162,209,136,.34) 100%);
-        }
-
-        footer {
-            background: #302B29;
-        }
-
-        .footer-note strong {
-            color: #D9BB97 !important;
-        }
-
-        /* Maintain crisp text across the colorful palette */
-        .section-title,
-        .process-card h3,
-        .principle-card h3,
-        .article-card h3,
-        .comparison-table strong {
-            color: #302B29;
-        }
-
-
-        /* Pink-primary refinement */
-        :root {
-            --brand-pink: #F4C4C6;
-            --brand-pink-strong: #EFA4A2;
-            --brand-yellow: #FBEDEE;
-            --brand-green: #F1ECE8;
-            --brand-tan: #D9BB97;
-        }
-
-        .hero-title span,
-        .overseas-nav-link,
-        .article-link {
-            color: #8B5F5C !important;
-        }
-
-        .overseas-nav-link:hover,
-        .article-link:hover {
-            color: #6F4946 !important;
-        }
-
-        .process-card:nth-child(4n+1) .icon-circle {
-            background: rgba(244,196,198,.58);
-            color: #7A5C58;
-        }
-        .process-card:nth-child(4n+2) .icon-circle {
-            background: rgba(248,246,243,.50);
-            color: #6B5750;
-        }
-        .process-card:nth-child(4n+3) .icon-circle {
-            background: rgba(244,196,198,.38);
-            color: #7A5C58;
-        }
-        .process-card:nth-child(4n+4) .icon-circle {
-            background: rgba(162,209,136,.34);
-            color: #536948;
-        }
-
-        .service-ribbon-item:nth-child(1) i { color:#D18F93; }
-        .service-ribbon-item:nth-child(2) i { color:#C98086; }
-        .service-ribbon-item:nth-child(3) i { color:#B58F71; }
-        .service-ribbon-item:nth-child(4) i { color:#7DA367; }
-
-        .comparison-table thead th.fuxin-head,
-        .mobile-comparison-table th.fuxin-head {
-            background: #F7DCDD !important;
-            color: #6B5750;
-        }
-
-        .comparison-table .fuxin-cell {
-            background: #FFF4F4;
-        }
-
-        .comparison-table .fuxin-cell strong {
-            color: #7B5956;
-        }
-
-        .comparison-static-row:hover td.fuxin-cell {
-            background-color: #FBE7E8 !important;
-        }
-
-        .cta-box {
-            background: linear-gradient(
-                135deg,
-                rgba(244,196,198,.88) 0%,
-                rgba(248,246,243,.48) 62%,
-                rgba(183,131,128,.30) 100%
-            );
-        }
-
-
-        /* Refined warm beige + pink hierarchy */
-        :root {
-            --soft-beige: #F5EFE7;
-            --soft-beige-2: #F8F3EC;
-            --soft-pink: #F4C4C6;
-            --soft-pink-deep: #E6A8AC;
-        }
-
-        /* Beige appears only in these two content sections */
-        .help-section,
-        .guides-section {
-            background: var(--soft-beige-2);
-        }
-
-        /* Tone down bright yellow inside the help section */
-        .help-section .process-card:nth-child(4n+1) .icon-circle,
-        .help-section .process-card:nth-child(4n+2) .icon-circle,
-        .help-section .process-card:nth-child(4n+3) .icon-circle,
-        .help-section .process-card:nth-child(4n+4) .icon-circle {
-            background: #F2E8DF;
-            color: #7A5C58;
-        }
-
-        .help-section .process-card:nth-child(2n) .icon-circle {
-            background: #F7DEDF;
-        }
-
-        /* Care guide tags: beige/pink only, no bright yellow */
-        .guides-section .article-card .tag,
-        .guides-section .article-card:nth-child(2) .tag,
-        .guides-section .article-card:nth-child(3) .tag {
-            background: #EFE3D8;
-            color: #6B5750;
-        }
-
-        .guides-section .article-card:nth-child(2) .tag {
-            background: #F4DCDD;
-        }
-
-        /* Final CTA: pink only */
-        .cta-box {
-            background: #F4C4C6 !important;
-        }
-
-        .cta-box .section-title {
-            color: #302B29;
-        }
-
-        .cta-box .section-lead {
-            color: #5F5551;
-        }
-
-        /* Phone CTA: soft pink-brown gradient */
-        .btn-phone-gradient {
-            border-radius: 999px;
-            padding: 13px 25px;
-            font-weight: 700;
-            color: #fff;
-            border: 0;
-            background: linear-gradient(135deg, #C9898E 0%, #9D7068 100%);
-            box-shadow: 0 10px 24px rgba(99,72,67,.18);
-            transition: .25s ease;
-        }
-
-        .btn-phone-gradient:hover {
-            color: #fff;
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #BC7C81 0%, #8E625B 100%);
-            box-shadow: 0 13px 28px rgba(99,72,67,.22);
-        }
-
-
-        /* Softer neutral refinement */
-        :root {
-            --soft-neutral: #F8F6F3;
-            --soft-neutral-2: #FBFAF8;
-            --soft-pink-wash: #FBEDEE;
-            --soft-pink-border: #EED8DA;
-        }
-
-        /* Remove yellow presence from the two content sections */
-        .help-section,
-        .guides-section {
-            background: #F8F6F3 !important;
-        }
-
-        .help-section .process-card:nth-child(4n+1) .icon-circle,
-        .help-section .process-card:nth-child(4n+2) .icon-circle,
-        .help-section .process-card:nth-child(4n+3) .icon-circle,
-        .help-section .process-card:nth-child(4n+4) .icon-circle {
-            background: #F2ECE8 !important;
-            color: #745E58 !important;
-        }
-
-        .help-section .process-card:nth-child(2n) .icon-circle {
-            background: #F8E9EA !important;
-        }
-
-        .guides-section .article-card .tag,
-        .guides-section .article-card:nth-child(2) .tag,
-        .guides-section .article-card:nth-child(3) .tag {
-            background: #F1ECE8 !important;
-            color: #6B5750 !important;
-        }
-
-        .guides-section .article-card:nth-child(2) .tag {
-            background: #F8E9EA !important;
-        }
-
-        /* Final CTA: very light blush instead of solid pink */
-        .cta-box {
-            background: #FBEDEE !important;
-            border: 1px solid #EED8DA !important;
-            box-shadow: 0 16px 38px rgba(74, 58, 54, .06);
-        }
-
-        .cta-box .section-title {
-            color: #302B29 !important;
-        }
-
-        .cta-box .section-lead {
-            color: #625A56 !important;
-        }
-
-
-        /* Comparison table header refinement */
-        .comparison-table thead th {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-
-        .comparison-table thead th.fuxin-head {
-            background: #F8E6E7 !important;
-            color: #6B5750 !important;
-        }
-
-        .mobile-comparison-table th {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-
-        .mobile-comparison-table th.fuxin-head {
-            background: #F8E6E7 !important;
-            color: #6B5750 !important;
-        }
-
-        .mobile-section-header {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-
-
-        /* 2026-08 Homepage refinement:
-           keep navbar unified and make Fuxin the visual focus in comparison table */
-
-        /* Navbar: 海外家庭安心方案與其他導覽項目使用相同文字色 */
-        .overseas-nav-link {
-            color: var(--text) !important;
-            font-weight: 500 !important;
-        }
-        .overseas-nav-link:hover {
-            color: var(--primary-dark) !important;
-        }
-
-        /* Desktop comparison: neutral competitors, soft-pink Fuxin */
-        .comparison-table thead th {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-        .comparison-table thead th.fuxin-head {
-            background: #F8E6E7 !important;
-            color: #6B5750 !important;
-        }
-
-        .comparison-table .criterion {
-            background: #FAF9F7 !important;
-        }
-
-        /* Default cells: competitors stay visually quiet */
-        .comparison-static-row td:not(.criterion):not(.fuxin-cell) {
-            background: #FFFFFF !important;
-        }
-
-        /* Fuxin column always has a subtle identity */
-        .comparison-table .fuxin-cell {
-            background: #FFF4F4 !important;
-        }
-        .comparison-table .fuxin-cell strong {
-            color: #7B5956 !important;
-        }
-
-        /* Hovered row:
-           competitors only receive a very light neutral wash,
-           Fuxin gets the clearer pink emphasis */
-        .comparison-static-row:hover td:not(.criterion):not(.fuxin-cell) {
-            background-color: #F7F6F4 !important;
-        }
-        .comparison-static-row:hover td.criterion {
-            background-color: #F2F0ED !important;
-        }
-        .comparison-static-row:hover td.fuxin-cell {
-            background-color: #F8E3E4 !important;
-            box-shadow: inset 3px 0 0 rgba(196, 130, 136, .48),
-                        inset -3px 0 0 rgba(196, 130, 136, .18);
-        }
-
-        /* When one row is highlighted, reduce distraction from the others
-           without making them look disabled */
-        .comparison-table.is-hovering .comparison-static-row:not(.is-hovered) {
-            opacity: .48 !important;
-        }
-
-        /* Mobile comparison:
-           福心維持淡粉，另一方改為安靜暖灰，不使用黃色 */
-        .mobile-comparison-table th {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-        .mobile-comparison-table th.fuxin-head {
-            background: #F8E6E7 !important;
-            color: #6B5750 !important;
-        }
-        .mobile-comparison-table td:not(.fuxin-cell) {
-            background: #FFFFFF !important;
-        }
-        .mobile-comparison-table td.fuxin-cell {
-            background: #FFF4F4 !important;
-        }
-        .mobile-comparison-table td.fuxin-cell strong {
-            color: #7B5956 !important;
-        }
-        .mobile-section-header {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-
-        /* Mobile tabs: selected comparison remains elegant and neutral */
-        .mobile-tab-switch {
-            background: #F5F3F1 !important;
-        }
-        .mobile-tab-btn.active {
-            background: #6B5750 !important;
-            color: #fff !important;
-            box-shadow: 0 4px 12px rgba(73,60,56,.14) !important;
-        }
-
-
-        /* 2026-08 Homepage background unification
-           Match EN page: warm white + soft neutral only */
-        :root {
-            --ivory: #FFFDFC;
-            --sand: #F8F6F3;
-            --soft-neutral: #F8F6F3;
-            --soft-neutral-2: #FBFAF8;
-            --soft-pink-wash: #FBEDEE;
-            --soft-pink-border: #EED8DA;
-        }
-
-        body,
-        .hero {
-            background: #FFFDFC !important;
-        }
-
-        /* Alternate content backgrounds */
-        .help-section,
-        .legal-section,
-        .guides-section {
-            background: #F8F6F3 !important;
-        }
-
-        .journey-section {
-            background: #FFFDFC !important;
-        }
-
-        /* Cards stay white */
-        .process-card,
-        .principle-card,
-        .article-card,
-        .journey-step,
-        .legal-card,
-        .comparison-wrap,
-        .service-ribbon {
-            background: #FFFFFF !important;
-        }
-
-        /* Neutral, non-yellow icon and tag backgrounds */
-        .icon-circle {
-            background: #F1ECE8 !important;
-            color: #745E58 !important;
-        }
-        .help-section .process-card:nth-child(2n) .icon-circle {
-            background: #F8E9EA !important;
-        }
-
-        .journey-step .number {
-            background: #F8F6F3 !important;
-            color: #6B5750 !important;
-        }
-
-        .article-card .tag,
-        .guides-section .article-card .tag,
-        .guides-section .article-card:nth-child(2) .tag,
-        .guides-section .article-card:nth-child(3) .tag {
-            background: #F1ECE8 !important;
-            color: #6B5750 !important;
-        }
-        .guides-section .article-card:nth-child(2) .tag {
-            background: #F8E9EA !important;
-        }
-
-        /* Hero image fallback: no yellow */
-        .hero-media img {
-            background: linear-gradient(135deg, #FFFDFC 0%, #FBEDEE 58%, #F8F6F3 100%) !important;
-        }
-
-        /* License chip: soft pink/white, no yellow */
-        .license-line {
-            background: rgba(251,237,238,.78) !important;
-            border-color: #EED8DA !important;
-            color: #6B5750 !important;
-        }
-
-        /* Comparison table: neutral competitors + pink Fuxin */
-        .comparison-table thead th,
-        .mobile-comparison-table th,
-        .mobile-section-header {
-            background: #F2F0ED !important;
-            color: #302B29 !important;
-        }
-
-        .comparison-table thead th.fuxin-head,
-        .mobile-comparison-table th.fuxin-head {
-            background: #F8E6E7 !important;
-            color: #6B5750 !important;
-        }
-
-        .comparison-static-row td:not(.criterion):not(.fuxin-cell),
-        .mobile-comparison-table td:not(.fuxin-cell) {
-            background: #FFFFFF !important;
-        }
-
-        .comparison-table .criterion {
-            background: #FAF9F7 !important;
-        }
-
-        .comparison-table .fuxin-cell,
-        .mobile-comparison-table td.fuxin-cell {
-            background: #FFF4F4 !important;
-        }
-
-        .comparison-static-row:hover td:not(.criterion):not(.fuxin-cell) {
-            background: #F7F6F4 !important;
-        }
-
-        .comparison-static-row:hover td.criterion {
-            background: #F2F0ED !important;
-        }
-
-        .comparison-static-row:hover td.fuxin-cell {
-            background: #F8E3E4 !important;
-        }
-
-        .mobile-tab-switch {
-            background: #F5F3F1 !important;
-        }
-
-        /* Final CTA remains brand pink, not yellow */
-        .cta-box {
-            background: #FBEDEE !important;
-            border: 1px solid #EED8DA !important;
-        }
-
-
-        /* Overseas Family Care dropdown */
-        .nav-family-dropdown .dropdown-menu {
-            min-width: 230px;
-            padding: 8px;
-            margin-top: 0;
-            background: #FFFDFC;
-            border: 1px solid rgba(107,87,80,.10);
-            border-radius: 16px;
-            box-shadow: 0 16px 40px rgba(74,58,54,.10);
-        }
-
-        .nav-family-dropdown .dropdown-item {
-            padding: 10px 13px;
-            border-radius: 10px;
-            color: #302B29;
-            font-size: .94rem;
-            font-weight: 500;
-        }
-
-        .nav-family-dropdown .dropdown-item:hover,
-        .nav-family-dropdown .dropdown-item:focus {
-            background: #FBEDEE;
-            color: #6B5750;
-        }
-
-        /* Desktop: hover opens submenu; mobile: Bootstrap click behavior */
-        @media (min-width: 992px) {
-            .nav-family-dropdown:hover > .dropdown-menu {
-                display: block;
-            }
-        }
-
-
-        /* Care Guides carousel */
-        .guides-carousel-wrap {
-            position: relative;
-        }
-50% { transform: translateX(5px); }
-        }
-
-        .guides-carousel-shell {
-            position: relative;
-            padding: 4px 0 10px;
-        }
-
-        .guides-carousel {
-            display: grid;
-            grid-auto-flow: column;
-            grid-auto-columns: calc((100% - 48px) / 3);
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-            overscroll-behavior-inline: contain;
-            padding: 10px 2px 16px;
-            cursor: grab;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: pan-y;
-        }
-
-        .guides-carousel.is-dragging {
-            cursor: grabbing;
-            scroll-snap-type: none;
-            scroll-behavior: auto;
-        }
-
-        .guides-carousel.is-dragging a {
-            pointer-events: none;
-        }
-
-        .guides-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .guide-slide {
-            scroll-snap-align: start;
-            min-width: 0;
-        }
-
-        .guide-slide .article-card {
-            display: flex;
-            flex-direction: column;
-            min-height: 290px;
-        }
-
-        .guide-slide .article-card p {
-            flex: 1 1 auto;
-        }
-
-        .guide-slide .article-link {
-            margin-top: auto;
-        }
-.guides-pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .guides-dot {
-            width: 8px;
-            height: 8px;
-            border: 0;
-            border-radius: 999px;
-            padding: 0;
-            background: #D8CFCA;
-            transition: width .22s ease, background .22s ease;
-        }
-
-        .guides-dot.active {
-            width: 24px;
-            background: #B78380;
-        }
-
-        .guides-swipe-note {
-            display: none;
-            text-align: center;
-            color: var(--muted);
-            font-size: .84rem;
-            margin-top: 6px;
-        }
-
-        @media (max-width: 991px) {
-            .guides-carousel {
-                grid-auto-columns: calc((100% - 20px) / 2);
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 767px) {
-.guides-carousel-shell {
-                padding: 0;
-                overflow: hidden;
-            }
-
-            .guides-carousel {
-                grid-auto-columns: 86%;
-                gap: 14px;
-                padding: 10px 28px 14px 0;
-                scroll-padding-left: 0;
-            }
-.guide-slide .article-card {
-                min-height: 300px;
-            }
-
-            .guides-swipe-note {
-                display: block;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-.guides-carousel { scroll-behavior: auto; }
-        }
-
-
-        .guides-nav {
-            position: absolute;
-            top: 50%;
-            z-index: 4;
-            transform: translateY(-50%);
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(107,87,80,.16);
-            border-radius: 50%;
-            background: rgba(255,255,255,.96);
-            color: #6B5750;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(73,60,56,.10);
-            transition: .2s ease;
-        }
-
-        .guides-nav:hover {
-            transform: translateY(-50%) scale(1.05);
-            background: #FBEDEE;
-        }
-
-        .guides-nav:disabled {
-            opacity: .3;
-            cursor: default;
-            transform: translateY(-50%);
-        }
-
-        .guides-nav.prev { left: -22px; }
-        .guides-nav.next { right: -22px; }
-
-        @media (max-width: 767px) {
-            .guides-nav {
-                display: none;
-            }
-        }
-
-
-        .guides-carousel,
-        .guides-carousel * {
-            -webkit-user-drag: none;
-        }
-
-        .guides-carousel .article-card {
-            cursor: grab;
-        }
-
-        .guides-carousel.is-dragging .article-card {
-            cursor: grabbing;
-        }
-
-        .guides-nav {
-            cursor: pointer;
-        }
-
-        .guides-nav:disabled {
-            cursor: default;
-        }
-
-
-        .guide-slide .article-card[data-href] {
-            position: relative;
-        }
-
-        .guides-carousel:not(.is-dragging) .guide-slide .article-card[data-href] {
-            cursor: pointer;
-        }
-
-        .guide-slide .article-card[data-href]:focus-visible {
-            outline: 3px solid rgba(183, 131, 128, .35);
-            outline-offset: 3px;
-        }
-
-</style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:'Noto Sans TC',system-ui,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{text-decoration:none;color:inherit}
+    :focus-visible{outline:3px solid var(--rose-deep);outline-offset:4px}
+    .skip-link{position:absolute;left:12px;top:-100px;z-index:100;background:#fff;padding:12px 16px;border-radius:8px}
+    .skip-link:focus{top:12px}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    button{font:inherit}
+    img{max-width:100%;display:block}
+    svg{flex-shrink:0}
+
+    .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+    .section{padding:86px 0}
+    .section.alt{background:var(--bg-soft)}
+    .section.blush{background:var(--bg-blush)}
+    .eyebrow{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-deep)}
+    .h2{font-size:clamp(34px,3.2vw,46px);line-height:1.35;letter-spacing:-.04em;margin:15px 0 22px}
+    .lead{font-size:18px;line-height:1.95;color:var(--muted);max-width:780px}
+    .body-text{font-size:17px;line-height:1.95;color:var(--muted)}
+    .small{font-size:15px;line-height:1.85;color:var(--muted)}
+    .section-header{text-align:center;max-width:820px;margin:0 auto 40px}
+    .section-header .lead{margin:0 auto}
+    .accent{color:var(--rose-deep)}
+
+    .nav{
+      position:sticky;top:0;z-index:30;
+      background:rgba(255,253,251,.95);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-in{height:88px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
+    .brand-logo{
+      width:48px;height:48px;border-radius:14px;object-fit:cover;
+      background:#F7E3E4;border:1px solid #ead9d3;padding:4px;
+    }
+    .brand-copy strong{display:block;font-size:20px;letter-spacing:.06em}
+    .brand-copy small{display:block;font-size:11px;letter-spacing:.15em;color:var(--muted);margin-top:2px}
+    .links{display:flex;align-items:center;gap:18px;font-size:16px;font-weight:600}
+    .links a:hover,.footer a:hover{color:var(--rose-deep)}
+    .lang{border:1px solid var(--line-strong);padding:10px 15px;border-radius:999px}
+    .menu-toggle{display:none;background:transparent;border:0;cursor:pointer;color:var(--ink)}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:56px;padding:16px 28px;border-radius:999px;
+      font-size:16px;font-weight:700;border:1px solid transparent;transition:.2s;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--rose-deep);color:var(--white);box-shadow:0 10px 24px rgba(143,99,93,.17)}
+    .btn-outline{background:rgba(255,255,255,.7);border-color:#bda7a1;color:var(--ink)}
+    .btn-sm{min-height:44px;padding:11px 18px;font-size:14px}
+
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        linear-gradient(90deg, rgba(251,241,240,.95) 0%, rgba(251,241,240,.90) 38%, rgba(251,241,240,.76) 63%, rgba(251,241,240,.62) 100%),
+        url('福心形象封面.jpg') center right/cover no-repeat;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(circle at 78% 24%, rgba(255,255,255,.20), transparent 28%);
+      pointer-events:none;
+    }
+    .hero-in{
+      min-height:700px;display:flex;align-items:center;justify-content:center;
+      padding-top:92px;padding-bottom:102px;position:relative;z-index:1;
+    }
+    .hero-copy{max-width:920px;text-align:center;margin:0 auto}
+    .hero-kicker{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:999px;background:rgba(255,255,255,.78);
+      border:1px solid rgba(222,203,196,.95);color:var(--rose-deep);
+      font-size:14px;font-weight:700;letter-spacing:.08em;box-shadow:0 8px 20px rgba(72,48,44,.05)
+    }
+    .hero-copy h1{
+      font-size:clamp(42px,4.7vw,68px);
+      line-height:1.32;letter-spacing:-.055em;margin:24px auto 26px;max-width:840px;
+    }
+    .hero-desc{font-size:20px;line-height:2;color:#5f5753;max-width:760px;margin:0 auto}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+    .hero-note{margin-top:20px;color:#7d726d;font-size:15px;line-height:1.8;text-align:center}
+
+    .pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .tile{
+      background:var(--white);border:1px solid var(--line);border-radius:22px;
+      padding:30px 25px;box-shadow:var(--shadow)
+    }
+    .icon-box{
+      width:58px;height:58px;display:grid;place-items:center;margin-bottom:22px;
+      border-radius:18px;background:#FBEFEE;color:var(--rose-deep)
+    }
+    .tile h3,.service h3{font-size:21px;line-height:1.45;margin:0 0 12px}
+    .tile p,.service p{font-size:16px;line-height:1.9;color:var(--muted);margin:0}
+    .bridge{text-align:center;max-width:860px;margin:38px auto 0;font-size:18px;font-weight:600;line-height:1.85;color:#7f5b56}
+
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .service{
+      background:var(--white);border:1px solid var(--line);border-radius:26px;
+      padding:38px 32px;transition:.2s;box-shadow:0 10px 26px rgba(72,48,44,.03)
+    }
+    .service:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .service .icon-box{width:70px;height:70px;border-radius:22px;margin-bottom:28px}
+    .service .number{display:block;font-size:12px;letter-spacing:.20em;color:#a9847f;margin-bottom:14px}
+
+    .plan-summary .lead{margin:0 auto}
+    .mini-note{border-left:3px solid var(--rose);padding:12px 0 12px 22px;font-size:16px;line-height:1.9;color:var(--muted)}
+    .text-link{display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:var(--rose-deep);font-size:16px;font-weight:700}
+
+    .trust{display:grid;grid-template-columns:1fr 1fr;gap:74px;align-items:center}
+    .trust-list{display:grid;gap:15px}
+    .trust-item{
+      display:flex;gap:16px;padding:24px;border-radius:18px;
+      border:1px solid var(--line);background:var(--white);box-shadow:0 8px 20px rgba(72,48,44,.03)
+    }
+    .trust-item svg{color:var(--rose-deep);margin-top:3px}
+    .trust-item strong{display:block;font-size:18px;margin-bottom:8px}
+    .trust-item span{display:block;font-size:16px;line-height:1.9;color:var(--muted)}
+
+    .step-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .step{padding:26px 22px;background:var(--white);border-radius:20px;border:1px solid var(--line);box-shadow:0 8px 18px rgba(72,48,44,.03)}
+    .step b{display:block;color:#bc8985;font-size:31px;letter-spacing:-.04em;margin-bottom:18px}
+    .step strong{display:block;font-size:17px;margin-bottom:8px}
+    .step p{font-size:15px;line-height:1.85;color:var(--muted);margin:0}
+
+    .articles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .article{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 8px 20px rgba(72,48,44,.03)}
+    .article .topic{color:#a37873;font-size:13px;font-weight:700}
+    .article h3{font-size:21px;line-height:1.55;margin:14px 0}
+    .article p{font-size:15px;line-height:1.85;color:var(--muted);margin:0}
+    .article .draft{display:inline-block;margin-top:14px;background:var(--bg-soft);padding:7px 12px;border-radius:999px;font-size:12px;color:#99857e}
+
+    .contact{text-align:center}
+    .contact .h2{max-width:780px;margin:15px auto}
+    .contact .lead{margin:0 auto 32px}
+    .contact-actions{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+
+    .footer{background:#312b29;color:#f5eeeb;padding:56px 0 30px}
+    .footer-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+    .footer p,.footer a{color:#d7cbc6;font-size:15px;line-height:2}
+    .footer h4{font-size:18px;margin:0 0 10px}
+    .copyright{font-size:12px;color:#ad9f9a;margin-top:34px;border-top:1px solid #514541;padding-top:20px}
+
+    @media (max-width:1180px){
+      .links{gap:14px;font-size:14px}
+      .pain-grid{grid-template-columns:repeat(2,1fr)}
+      .step-grid{grid-template-columns:repeat(3,1fr)}
+      .hero-in{min-height:620px}
+      .hero-copy{padding-top:10px}
+    }
+    @media (max-width:1180px){
+      .menu-toggle{display:block}
+      .nav-in{height:78px}
+      .links{
+        display:none;position:absolute;top:78px;left:0;right:0;background:#fffdfa;
+        padding:16px 28px 25px;border-bottom:1px solid var(--line);
+        flex-direction:column;align-items:stretch;gap:0
+      }
+      .links.open{display:flex}
+      .links>a{padding:14px 0;border-bottom:1px solid #f3ebe8}
+      .service-grid,.trust,.articles{grid-template-columns:1fr}
+      .trust{gap:38px}
+      .section{padding:66px 0}
+    }
+    @media (max-width:620px){
+      .wrap{padding:0 20px}
+      .hero-copy h1{font-size:clamp(35px,9vw,46px)}
+      .hero-desc{font-size:17px;line-height:1.9}
+      .h2{font-size:32px}
+      .pain-grid,.step-grid{grid-template-columns:1fr}
+      .hero-actions,.contact-actions{flex-direction:column;align-items:stretch}
+      .hero{background:linear-gradient(rgba(251,241,240,.92),rgba(251,241,240,.87)),url('福心形象封面.jpg') center / cover no-repeat}
+      .hero-in{padding-top:82px;padding-bottom:84px;min-height:580px}
+      .hero-kicker{font-size:13px;letter-spacing:.02em;padding:10px 14px}
+      .btn{width:100%}
+      .brand-logo{width:42px;height:42px}
+      .brand-copy strong{font-size:18px}
+    }
+
+    /* V5 — restrained interactive motion */
+    .nav,.nav-in,.brand-logo,.brand-copy strong,.brand-copy small{transition:height .32s ease,padding .32s ease,background-color .32s ease,box-shadow .32s ease,font-size .32s ease,transform .32s ease}
+    .nav.is-scrolled{background:rgba(255,253,251,.98);box-shadow:0 8px 26px rgba(55,40,36,.07)}
+    .nav.is-scrolled .nav-in{height:70px}
+    .nav.is-scrolled .brand-logo{width:40px;height:40px}
+    .nav.is-scrolled .brand-copy strong{font-size:18px}
+    .nav.is-scrolled .brand-copy small{font-size:10px}
+    /* Motion is progressive: elements are hidden only after the observer is set up. */
+    .motion-ready .reveal:not(.is-visible){opacity:0;transform:translate3d(0,18px,0)}
+    .reveal{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1);transition-delay:var(--reveal-delay,0ms)}
+    .reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+    .hero .hero-kicker,.hero h1,.hero .hero-desc,.hero-actions,.hero-note{transition-duration:.75s}
+    .btn{transition:background-color .22s ease,border-color .22s ease,box-shadow .22s ease,transform .22s ease}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(98,70,65,.14)}
+    .btn:active{transform:translateY(0)}
+    .btn svg:last-child{transition:transform .22s ease}
+    .btn:hover svg:last-child{transform:translateX(3px)}
+    .tile,.service,.trust-item,.step,.article{transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,background-color .24s ease}
+    @media(hover:hover) and (pointer:fine){
+      .tile:hover,.service:hover,.trust-item:hover,.step:hover,.article:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(72,48,44,.10);border-color:#d9c4be}
+      .tile:hover .icon-box,.service:hover .icon-box{background:#f4dfdd}
+    }
+    .back-to-top{position:fixed;right:26px;bottom:26px;z-index:25;width:54px;height:54px;border-radius:50%;border:1px solid #dec6c1;background:var(--white);color:var(--rose-deep);box-shadow:0 10px 24px rgba(72,48,44,.13);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .25s ease,visibility .25s ease,transform .25s ease,background-color .2s ease;cursor:pointer}
+    .back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+    .back-to-top:hover{background:var(--bg-blush)}
+    @media(max-width:1180px){.nav.is-scrolled .nav-in{height:70px}.nav.is-scrolled .links{top:70px}}
+    @media(max-width:620px){.back-to-top{right:16px;bottom:17px;width:48px;height:48px}}
+    @media(prefers-reduced-motion:reduce){
+      .reveal,.motion-ready .reveal:not(.is-visible){opacity:1!important;transform:none!important;transition:none!important}
+      .tile:hover,.service:hover,.trust-item:hover,.step:hover,.article:hover,.price-card:hover,.btn:hover{transform:none!important}
+      .nav,.nav-in,.brand-logo,.brand-copy strong,.brand-copy small,.back-to-top{transition:none!important}
+    }
+
+    /* V7: compact and readable phone layout — desktop styles remain unchanged. */
+    @media (max-width:620px){
+      .section{padding:45px 0}
+      .section-header{margin-bottom:19px}
+      .section-header .eyebrow{font-size:11px;letter-spacing:.10em}
+      .h2{font-size:clamp(27px,7vw,32px);line-height:1.38;margin:9px 0 13px}
+      .lead{font-size:16px;line-height:1.82}
+      .pain-grid,.service-grid,.step-grid{gap:12px}
+      /* Icon, title and copy form one concise information row. */
+      .tile{
+        display:grid;grid-template-columns:48px minmax(0,1fr);
+        grid-template-rows:auto auto;column-gap:15px;row-gap:5px;
+        padding:20px 18px;border-radius:18px;box-shadow:0 7px 20px rgba(72,48,44,.035);
+      }
+      .tile .icon-box{grid-column:1;grid-row:1 / 3;width:46px;height:46px;border-radius:13px;margin:0}
+      .tile .icon-box svg{width:24px;height:24px}
+      .tile h3{grid-column:2;grid-row:1;margin:0;font-size:18px;line-height:1.45}
+      .tile p{grid-column:2;grid-row:2;font-size:16px;line-height:1.72}
+      .service{
+        display:grid;grid-template-columns:48px minmax(0,1fr);
+        grid-template-rows:auto auto auto;column-gap:15px;row-gap:3px;
+        padding:21px 18px;border-radius:18px;box-shadow:0 7px 20px rgba(72,48,44,.025);
+      }
+      .service .icon-box{grid-column:1;grid-row:1 / 4;width:46px;height:46px;border-radius:13px;margin:0}
+      .service .icon-box svg{width:25px;height:25px}
+      .service .number{grid-column:2;grid-row:1;font-size:10px;letter-spacing:.11em;margin:0;line-height:1.4}
+      .service h3{grid-column:2;grid-row:2;font-size:18px;line-height:1.45;margin:1px 0 2px}
+      .service p{grid-column:2;grid-row:3;font-size:16px;line-height:1.75}
+      .bridge{font-size:16px;line-height:1.8;margin-top:22px}
+      .trust{gap:24px}
+      .trust-list{gap:10px}
+      .trust-item{padding:17px 16px;border-radius:16px;gap:12px}
+      .trust-item svg{width:23px;height:23px}
+      .trust-item strong{font-size:17px;margin-bottom:4px}
+      .trust-item span{font-size:15px;line-height:1.7}
+      .step{display:grid;grid-template-columns:39px 1fr;column-gap:13px;padding:16px 18px;border-radius:15px}
+      .step b{grid-row:1 / 3;grid-column:1;font-size:25px;margin:0}
+      .step strong{grid-column:2;font-size:17px;margin:0 0 4px}
+      .step p{grid-column:2;font-size:15px;line-height:1.7}
+      .mini-note{font-size:15px;padding:8px 0 8px 15px}
+      .back-to-top{right:12px;bottom:14px;width:40px;height:40px;box-shadow:0 5px 15px rgba(72,48,44,.10)}
+      .back-to-top svg{width:20px;height:20px}
+      .footer{padding:38px 0 24px}
+      .footer-grid{gap:14px}
+    }
+
+    /* Latest articles: same data source as the archive page. */
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .article-entry{display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;min-width:0;transition:box-shadow .2s ease,transform .2s ease}
+    .article-entry:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .article-entry .topic{font-size:13px;font-weight:700;color:var(--rose-deep)}
+    .article-entry h3{font-size:20px;line-height:1.5;margin:0}
+    .article-entry p{font-size:15px;color:var(--muted);line-height:1.8;margin:0}
+    .article-entry time{font-size:13px;color:var(--muted)}
+    .article-entry a{color:var(--rose-deep);font-weight:700;margin-top:auto;display:inline-flex;align-items:center;gap:6px}
+    .article-more{text-align:center;margin-top:28px}
+    .article-status{text-align:center;color:var(--muted);font-size:16px;line-height:1.85;padding:24px 0}
+    @media(max-width:860px){.article-grid{grid-template-columns:1fr}}
+    @media(max-width:620px){.article-entry{padding:19px;border-radius:16px;gap:7px}.article-entry h3{font-size:18px}.article-entry p{font-size:15px}}
+
+    /* Credential gallery: two equal documentation cards and one full-width privacy statement. */
+    .credibility .section-header{max-width:880px}
+    .cred-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .cred-panel{min-width:0;background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;flex-direction:column}
+    .cred-document{display:flex;align-items:center;justify-content:center;height:320px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;margin-bottom:24px;transition:border-color .2s,box-shadow .2s}
+    .cred-document:hover{border-color:#d9c4be;box-shadow:0 12px 30px rgba(72,48,44,.07)}
+    .cred-document img{display:block;width:100%;height:100%;object-fit:contain}
+    .cred-panel h3{font-size:22px;line-height:1.5;margin:0 0 12px;padding-left:15px;border-left:4px solid var(--pink)}
+    .cred-panel p,.privacy-band p{font-size:16px;line-height:1.9;color:var(--muted);margin:0}
+    .privacy-band{display:flex;align-items:flex-start;gap:18px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px 30px;margin-top:22px}
+    .cred-icon{display:grid;place-items:center;flex:0 0 auto;width:52px;height:52px;border-radius:15px;background:#FBEFEE;color:var(--rose-deep)}
+    .privacy-band h3{font-size:21px;line-height:1.45;margin:0 0 10px}
+    @media(max-width:780px){.cred-grid{grid-template-columns:1fr;gap:14px}}
+    @media(max-width:620px){
+      .cred-panel{padding:19px 17px;border-radius:18px}
+      .cred-document{height:240px;margin-bottom:18px;padding:12px}
+      .cred-panel h3{font-size:19px;margin-bottom:9px}
+      .cred-panel p,.privacy-band p{font-size:16px;line-height:1.75}
+      .privacy-band{padding:19px 17px;border-radius:18px;margin-top:14px;gap:12px}
+      .privacy-band .cred-icon{width:42px;height:42px;border-radius:12px}
+      .privacy-band h3{font-size:19px;margin-bottom:7px}
+    }
+  </style>
 </head>
 <body>
-<div class="floating-contact-group">
-<a aria-label="撥打福心市話" class="float-btn float-phone" href="tel:0229670360"><i class="fas fa-phone-alt"></i></a>
-<a aria-label="加入福心 LINE" class="float-btn float-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line"></i></a>
-</div>
-<nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand" href="#">福心照護</a>
-<button aria-label="開啟選單" class="navbar-toggler border-0" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-<ul class="navbar-nav align-items-lg-center">
-<li class="nav-item"><a class="nav-link active" href="#">首頁</a></li>
-<li class="nav-item"><a class="nav-link" href="services.html">收費標準｜項目</a></li>
-<li class="nav-item"><a class="nav-link" href="process.html">服務流程</a></li>
-<li class="nav-item"><a class="nav-link" href="faq.html">常見問題</a></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">聯絡方式</a></li>
-<li class="nav-item dropdown nav-family-dropdown">
-<a class="nav-link dropdown-toggle overseas-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">海外家庭安心方案</a>
-<ul class="dropdown-menu">
-<li><a class="dropdown-item" href="fuxin_overseas_family.html">福心健康生活管家</a></li>
-<li><a class="dropdown-item" href="fuxin_returing_taiwan_surgery.html">福心海外返台手術</a></li>
-</ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="corporate.html">企業特約</a></li>
-<li class="nav-item"><a class="nav-link" href="join.html">加入合作夥伴</a></li>
-<li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-sm btn-outline-secondary rounded-pill px-3" href="en.html">EN</a></li>
-</ul>
-</div>
-</div>
-</nav>
-<header class="hero">
-<div class="hero-media" aria-hidden="true">
-<picture>
-  <source srcset="hero-sm.webp" media="(max-width: 767px)" type="image/webp" />
-  <source srcset="hero.webp" media="(min-width: 768px)" type="image/webp" />
-  <img
-    src="hero.jpg"
-    alt=""
-    width="1486"
-    height="890"
-    loading="eager"
-    fetchpriority="high"
-    decoding="sync"/>
-</picture>
-</div>
-<div class="container">
-<div class="row align-items-center">
-<div class="col-lg-7">
-<div class="section-kicker">看護媒合 × 服務管理</div>
-<h1 class="hero-title">合適的人選，<br/><span>才能讓照護真正安心。</span></h1>
-<p class="hero-copy">每個家庭面對的照護需求都不同。福心會先了解病人的狀況、照護內容與家庭安排，再協助媒合合適的照護人員。服務開始後，我們持續關心合作情況，協助任何變化與調整。</p>
-<div class="license-line"><i class="fas fa-shield-heart"></i> 政府核准立案｜新北私就字第 068 號</div>
-<div class="d-grid d-sm-flex gap-3 mt-4">
-<a class="btn btn-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line me-2"></i>LINE@ 照護需求諮詢</a>
-<a class="btn btn-outline-soft" href="tel:0229670360"><i class="fas fa-phone-alt me-2"></i>撥打電話諮詢</a>
-</div>
-<p class="mt-3 mb-0 text-muted small"><i class="far fa-clock me-1"></i> 上班時間 08:00 - 21:30 撥打電話 OK！其餘時間歡迎 LINE@ 留言，我們將盡快處理。</p>
-</div>
-<div class="col-lg-5 hero-logo-panel">
-<div class="hero-logo-frame">
-<picture>
-  <source srcset="福心照護logo.webp" type="image/webp" />
-  <img
-    src="福心照護logo.jpg"
-    alt="福心照護官方 Logo"
-    width="210"
-    height="210"
-    fetchpriority="high"
-    decoding="async"/>
-</picture>
-</div>
-</div>
-</div>
-<div class="service-ribbon fade-in-scroll">
-<div class="row g-0">
-<div class="col-md-3 col-6"><div class="service-ribbon-item"><i class="fas fa-hospital-user"></i><strong>住院照護媒合</strong></div></div>
-<div class="col-md-3 col-6"><div class="service-ribbon-item"><i class="fas fa-clipboard-list"></i><strong>照護需求評估</strong></div></div>
-<div class="col-md-3 col-6"><div class="service-ribbon-item"><i class="fas fa-house-user"></i><strong>出院返家銜接</strong></div></div>
-<div class="col-md-3 col-6"><div class="service-ribbon-item"><i class="fas fa-comments"></i><strong>服務追蹤協調</strong></div></div>
-</div>
-</div>
-</div>
-</header>
-<section class="section-space help-section">
-<div class="container">
-<div class="text-center mb-5 fade-in-scroll">
-<div class="section-kicker">How We Help</div>
-<h2 class="section-title">福心如何協助您</h2>
-<p class="section-lead mx-auto">從第一次聯繫到服務期間的追蹤，每個步驟都有清楚的SOP與處理方式。</p>
-</div>
-<div class="row g-4">
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-stethoscope"></i></div><h3>01｜了解照護需求</h3><p>了解病況、行動能力、移位需求、夜間照護、失智狀況與家屬安排，紀錄完整的使用者需求。</p></div></div>
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-compass"></i></div><h3>02｜提供照護建議</h3><p>依實際需求說明可行的照護方式、合理市場行情與適合的人選條件，協助家屬評估安排。</p></div></div>
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-user-check"></i></div><h3>03｜媒合合適人選</h3><p>從合作照護人員中篩選符合條件者，綜合考量經驗、服務內容、時間與合作紀錄。</p></div></div>
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-calendar-check"></i></div><h3>04｜安排現場服務</h3><p>確認服務時間、照護重點，協助雙方在資訊清楚的情況下開始服務。</p></div></div>
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-chart-line"></i></div><h3>05｜持續專案追蹤</h3><p>服務開始後持續關心合作情況，隨時掌握、了解照護服務是否妥善進行。</p></div></div>
-<div class="col-lg-4 col-md-6"><div class="process-card fade-in-scroll"><div class="icon-circle"><i class="fas fa-rotate"></i></div><h3>06｜協助彈性調整</h3><p>若出現溝通或安排問題，會協助釐清、協調；情況需要時再協助重新媒合。</p></div></div>
-</div>
-</div>
-</section>
-<section class="section-space journey-section">
-<div class="container">
-<div class="text-center mb-5 fade-in-scroll">
-<div class="section-kicker">Service Comparison</div>
-<h2 class="section-title">不同媒合方式，服務責任也不同</h2>
-</div>
+  <a class="skip-link" href="#top">跳至主要內容</a>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="#top" aria-label="福心照護管理首頁">
+        <img class="brand-logo" src="福心照護logo.webp" alt="福心照護管理 Logo">
+        <span class="brand-copy">
+          <strong>福心照護管理</strong>
+          <small>FUXIN CARE MANAGEMENT</small>
+        </span>
+      </a>
 
-<div class="comparison-wrap fade-in-scroll desktop-comparison-container">
-<div class="table-responsive">
-<table class="table comparison-table">
-<thead>
-<tr>
-<th>比較項目</th>
-<th>傳統仲介</th>
-<th class="fuxin-head">福心照護</th>
-<th>網路平台</th>
-</tr>
-</thead>
-<tbody><tr class="comparison-static-row"><td class="criterion"><strong>需求了解</strong></td><td><strong>需求評估簡化容易有溝通斷層</strong><p>多由家屬提供需求，再轉交合作看護人員評估是否承接。若需求內容未充分釐清，而增加日後溝通與調整的需求。</p></td><td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td><td><strong>家屬自行填寫與搜尋</strong><p>平台提供篩選工具或公開資料，需求判斷與條件設定通常由家屬自行完成。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>人選來源</strong></td><td><strong>資訊多仰賴仲介說明</strong><p>家屬較難在媒合前掌握完整合作紀錄、篩選依據與不同人選之間的差異。</p></td><td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td><td><strong>可查看資料與評價</strong><p>公開評價有助於初步了解，但每個家庭的病況、照護強度與相處需求不同，仍需自行判斷。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>媒合與溝通</strong></td><td><strong>通常由仲介聯繫安排</strong><p>溝通速度可能較快，但服務條件與照護細節是否完整傳達，仍取決於個別作業方式。</p></td><td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td><td><strong>家屬自行逐一聯繫</strong><p>需自行詢問檔期、經驗、費用與工作內容，並投入時間比較、溝通與確認。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>服務期間</strong></td><td><strong>後續協助依業者而異</strong><p>部分傳統仲介與既有照護人員合作緊密，發生爭議時可能先維持原安排，更換意願與方式依個別業者而定。</p></td><td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td><td><strong>多由雙方自行管理</strong><p>平台功能通常集中在搜尋與媒合，開始服務後的日常溝通，多由家屬與照護人員自行處理。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>合作不適合</strong></td><td><strong>換人彈性視人力而定</strong><p>若現有人力有限，或仲介傾向維持原合作，重新安排可能需要較多協調。</p></td><td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td><td><strong>家屬自行溝通離開</strong><p>中途相處不合時，通常需由家屬自行溝通停止服務，再重新搜尋、聯繫與安排下一位人選。</p></td></tr><tr class="comparison-static-row"><td class="criterion"><strong>適合情況</strong></td><td><strong>已有信任窗口</strong><p>適合熟悉特定仲介、需求較單純，或希望由既有窗口快速聯繫安排的家庭。</p></td><td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td><td><strong>願意自行比較管理</strong><p>適合能投入時間搜尋、訪談與溝通，並自行管理合作關係的家庭。</p></td></tr></tbody>
-</table>
-</div>
-</div>
+      <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">
+        <i data-lucide="menu"></i>
+      </button>
 
-<div class="mobile-comparison-container fade-in-scroll">
-    
-    <div class="mobile-tab-switch">
-        <button class="mobile-tab-btn active" onclick="switchMobileTab('agency')">福心 VS 傳統仲介</button>
-        <button class="mobile-tab-btn" onclick="switchMobileTab('platform')">福心 VS 網路平台</button>
+      <nav class="links" id="nav-links" aria-label="網站導覽">
+        <a href="#top">首頁</a>
+        <a href="senior-care.html">遠距家庭照護管家</a>
+        <a href="fuxin_returing_taiwan_surgery.html">海外返台退休計畫</a>
+        <a href="articles/index.html">照護管理專欄</a>
+        <a href="services.html">醫院看護服務</a>
+        <a href="#about">關於福心</a>
+        <a href="contact.html">聯絡我們</a>
+        <a href="en.html" class="lang" lang="en">EN</a>
+      </nav>
     </div>
+  </header>
 
-    <div id="panel-agency" class="mobile-comparison-panel active">
-        <div class="comparison-wrap">
-            <table class="table mobile-comparison-table mb-0">
-                <thead>
-                    <tr>
-                        <th class="fuxin-head text-center" style="background: #F4C4C6;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #F2F0ED;">傳統仲介</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>1. 需求了解</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td>
-                        <td><strong>需求評估簡化</strong><p>多由家屬提供需求，再轉交合作看護評估。若需求未充分釐清，容易有溝通斷層並增加日後調整需求。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>2. 人選來源</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td>
-                        <td><strong>資訊仰賴仲介說明</strong><p>家屬較難在媒合前掌握完整合作紀錄、篩選依據與不同人選之間的差異。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>3. 媒合與溝通</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td>
-                        <td><strong>通常由仲介聯繫安排</strong><p>溝通速度可能較快，但服務條件與照護細節是否完整傳達，仍取決於個別作業方式。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>4. 服務期間</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td>
-                        <td><strong>後續協助依業者而異</strong><p>部分傳統仲介與既有照護人員合作緊密，發生爭議時可能先維持原安排，更換意願依個別業者而定。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>5. 合作不適合</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td>
-                        <td><strong>換人彈性視人力而定</strong><p>若現有人力有限，或仲介傾向維持原合作，重新安排可能需要較多協調。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>6. 適合情況</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td>
-                        <td><strong>已有信任窗口</strong><p>適合熟悉特定仲介、需求較單純，或希望由既有窗口快速聯繫安排的家庭。</p></td>
-                    </tr>
-                </tbody>
-            </table>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <div class="hero-kicker">台灣第一家全英文遠距家庭照護管家</div>
+          <h1>無論相隔多遠，<br>父母的生活都有<span class="accent">可靠的支持。</span></h1>
+          <p class="hero-desc">福心為家庭提供台灣在地的固定照護管理窗口，協助安排父母的日常生活、醫院回診與長照資源。即使您遠在海外，也能透過英文溝通與定期回報，掌握父母的生活近況。</p>
+          <div class="hero-actions">
+            <a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <i data-lucide="message-circle" width="19"></i>免費初步諮詢
+            </a>
+            <a href="senior-care.html" class="btn btn-outline">
+              了解遠距家庭照護管家<i data-lucide="arrow-right" width="17"></i>
+            </a>
+          </div>
+          <p class="hero-note">主要服務大台北及桃園地區｜可全程英文溝通｜其他地區歡迎洽詢</p>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <div id="panel-platform" class="mobile-comparison-panel">
-        <div class="comparison-wrap">
-            <table class="table mobile-comparison-table mb-0">
-                <thead>
-                    <tr>
-                        <th class="fuxin-head text-center" style="background: #F4C4C6;">福心照護（優勢）</th>
-                        <th class="text-center" style="background: #F2F0ED;">網路平台</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>1. 需求了解</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>先整理個案條件</strong><p>福心先了解病況、行動能力、夜間需求、照護內容與家庭安排，再建立適合的人選條件。</p></td>
-                        <td><strong>家屬自行填寫與搜尋</strong><p>平台提供篩選工具或公開資料，需求判斷與條件設定通常由家屬自行完成。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>2. 人選來源</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>從合作人才庫中篩選</strong><p>福心依需求、經驗、時間與過往合作狀況整理適合人選；條件允許時，也會提供家屬評估選擇。</p></td>
-                        <td><strong>可查看資料與評價</strong><p>公開評價有助於初步了解，但每個家庭的病況、照護強度與相處需求不同，仍需自行判斷。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>3. 媒合與溝通</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>協助雙方確認重點</strong><p>福心在媒合前整理服務內容、時間與合作方式，降低資訊落差，也讓合作照護人員充分了解案件需求。</p></td>
-                        <td><strong>家屬自行逐一聯繫</strong><p>需自行詢問檔期、經驗、費用與工作內容，並投入時間比較、溝通與確認。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>4. 服務期間</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>持續追蹤與協調</strong><p>服務期間可向福心反映任何需求變化或合作問題，我們會了解雙方情況，協助釐清、溝通與調整。</p></td>
-                        <td><strong>多由雙方自行管理</strong><p>平台功能通常集中在搜尋與媒合，開始服務後的日常溝通，多由家屬與照護人員自行處理。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>5. 合作不適合</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>協助處理後續安排</strong><p>確認合作確實不適合後，福心協助雙方溝通結束方式；若仍有照護需求，我們從人才庫尋找其他人選。</p></td>
-                        <td><strong>家屬自行溝通離開</strong><p>中途相處不合時，通常需由家屬自行溝通停止服務，再重新搜尋、聯繫與安排下一位人選。</p></td>
-                    </tr>
-                    <tr><td colspan="2" class="mobile-section-header"><strong>6. 適合情況</strong></td></tr>
-                    <tr>
-                        <td class="fuxin-cell"><strong>需要篩選與後續支持</strong><p>適合希望有人協助整理需求、挑選人選，並在照護期間保留追蹤與協調窗口的家庭。</p></td>
-                        <td><strong>願意自行比較管理</strong><p>適合能投入時間搜尋、訪談與溝通，並自行管理合作關係的家庭。</p></td>
-                    </tr>
-                </tbody>
-            </table>
+    <section class="section alt">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="eyebrow">WHEN DISTANCE MAKES CARE HARDER</div>
+          <h2 class="h2">父母在台灣，<br>生活中的大小事，誰能就近協助？</h2>
+          <p class="lead">父母可能仍能獨立生活，也有親戚在台灣；但有時親戚同樣年長，或沒有足夠時間處理陪診、聯絡與照護安排。我們了解，當子女遠在海外真正需要的是一位可以持續承接事情的固定窗口。</p>
         </div>
+
+        <div class="pain-grid">
+          <div class="tile">
+            <span class="icon-box"><i data-lucide="plane" width="28"></i></span>
+            <h3>距離與時差</h3>
+            <p>無法經常返台；家中有臨時狀況時，也不一定能立刻安排與處理。</p>
+          </div>
+          <div class="tile">
+            <span class="icon-box"><i data-lucide="languages" width="28"></i></span>
+            <h3>語言與文件</h3>
+            <p>不熟悉中文，聯繫醫院、服務單位、理解文件與制度都耗費時間。</p>
+          </div>
+          <div class="tile">
+            <span class="icon-box"><i data-lucide="calendar-clock" width="28"></i></span>
+            <h3>就醫與生活安排</h3>
+            <p>安排掛號回診、家中庶務與臨時需求，需要有人協助追蹤和安排。</p>
+          </div>
+          <div class="tile">
+            <span class="icon-box"><i data-lucide="heart-handshake" width="28"></i></span>
+            <h3>缺少固定的窗口</h3>
+            <p>即使仍有親友在台灣，也未必有人可以長期協助協調與後續追蹤。</p>
+          </div>
+        </div>
+
+        <p class="bridge">不必每次遇到事情，都從頭尋找協助者。福心成為遠距家庭在台灣固定的照護管理窗口。</p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="eyebrow">WHAT WE DO</div>
+          <h2 class="h2">不只照顧需求，<br>更關心長輩每一天的生活。</h2>
+          <p class="lead">從日常生活到就醫安排，福心陪家庭一起管理長輩的生活與照顧支持。</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service">
+            <span class="icon-box"><i data-lucide="house" width="32" height="32" stroke-width="1.5"></i></span>
+            <span class="number">01 / DAILY LIVING</span>
+            <h3>長輩生活管理</h3>
+            <p>定期到府訪視、生活庶務協助、居家安全留意，以及興趣和社交活動安排。</p>
+          </article>
+
+          <article class="service">
+            <span class="icon-box"><i data-lucide="stethoscope" width="32" height="32" stroke-width="1.5"></i></span>
+            <span class="number">02 / MEDICAL COORDINATION</span>
+            <h3>醫療就診協調</h3>
+            <p>協助安排門診、陪同就醫、整理醫囑與追蹤後續，幫助家屬掌握重要資訊。</p>
+          </article>
+
+          <article class="service">
+            <span class="icon-box"><i data-lucide="network" width="32" height="32" stroke-width="1.5"></i></span>
+            <span class="number">03 / CARE RESOURCES</span>
+            <h3>照顧資源整合</h3>
+            <p>主動掌握公費疫苗、政府補助及長照福利政策，減少海外子女的資訊落差。</p>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:32px">
+          <a class="text-link" href="senior-care.html">深入了解遠距家庭照護管家 <i data-lucide="arrow-up-right" width="17"></i></a>
+        </div>
+      </div>
+    </section>
+
+
+<section class="section alt" id="about">
+      <div class="wrap trust">
+        <div>
+          <div class="eyebrow">YOUR DEDICATED CARE COORDINATOR</div>
+          <h2 class="h2">在台灣的照護大小事，<br>有固定窗口協助統籌。</h2>
+          <p class="lead">即使家裡還有親戚在台灣，也不代表有人能長期負責。福心可提供全英文諮詢、簽約、服務協調與回報，讓語言不是跨國照護的障礙。</p>
+        </div>
+        <div class="trust-list">
+          <div class="trust-item">
+            <i data-lucide="user-round-check" width="28" aria-hidden="true"></i>
+            <div><strong>固定的照護管理窗口</strong><span>由福心統整需求與待辦事項，協助安排、追蹤並聯繫相關服務單位，不必每次從頭說明。</span></div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="phone-call" width="28" aria-hidden="true"></i>
+            <div><strong>緊急聯絡與後續協調</strong><span>依合作約定建立聯絡流程，協助通知家屬、銜接就醫及後續安排；不取代緊急救護服務。</span></div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="calendar-check" width="28" aria-hidden="true"></i>
+            <div><strong>陪同回診與就醫安排</strong><span>協助預約、陪診、整理後續待辦事項，讓海外子女更容易掌握父母的就醫進度。</span></div>
+          </div>
+          <div class="trust-item">
+            <i data-lucide="languages" width="28" aria-hidden="true"></i>
+            <div><strong>英文溝通與定期回報</strong><span>海外家屬可使用英文諮詢、簽約、協調與接收服務回報。</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section credibility" id="credentials" aria-labelledby="credentials-heading">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="eyebrow">TRUST & RESPONSIBILITY</div>
+          <h2 class="h2" id="credentials-heading">走進家庭的照護，<br>信任從細節開始。</h2>
+          <p class="lead">我們理解，照護管理可能接觸長輩的健康資訊、生活習慣與家庭決定。<br>福心重視每個家庭託付的信任，以合法經營、清楚溝通，建立長期且穩定的照護支持。</p>
+        </div>
+        <div class="cred-grid">
+          <article class="cred-panel">
+            <div class="cred-document">
+              <img src="license.webp" alt="福心新北市私立就業服務機構許可證" loading="lazy" decoding="async">
+            </div>
+            <h3>公司設立與開業許可</h3>
+            <p>福心重視合法、透明的營運基礎，讓家庭在了解服務內容與合作方式後安心做決定。</p>
+          </article>
+          <article class="cred-panel">
+            <div class="cred-document">
+              <img src="award.webp" alt="福心相關服務經驗與獎狀" loading="lazy" decoding="async">
+            </div>
+            <h3>專業團隊合作與把關</h3>
+            <p>福心籌組具備專業證照與實務經驗的合作團隊，重視各成員的專業能力與服務態度。</p>
+          </article>
+        </div>
+        <div class="privacy-band">
+          <div class="cred-icon"><i data-lucide="shield-check" width="27" height="27" aria-hidden="true"></i></div>
+          <div>
+            <h3>尊重家庭隱私，也尊重長輩的意願</h3>
+            <p>從第一次家訪，到日常訪視、就醫回診，我們都會留意資訊分享的必要性與範圍，尊重長輩的選擇及家庭的溝通方式。涉及個人或健康資訊時，以服務所需為原則，依雙方約定及適用規範妥善處理，不將家庭的私事當作宣傳素材。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="section blush contact" id="contact">
+      <div class="wrap">
+        <div class="eyebrow">LET'S TALK</div>
+        <h2 class="h2">從一通線上諮詢，安排更安心的生活。</h2>
+        <p class="lead">歡迎聊聊您的需求，我們提供免費初步長照諮詢。</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer"><i data-lucide="message-circle" width="18"></i>LINE 免費初步諮詢</a>
+          <a class="btn btn-outline" href="tel:0229670360"><i data-lucide="phone" width="17"></i>02-2967-0360</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="insights">
+      <div class="wrap">
+        <div class="section-header">
+          <div class="eyebrow">FUXIN INSIGHTS</div>
+          <h2 class="h2">最新文章</h2>
+          <p class="lead">分享海外家庭照護、台灣就醫安排與長照資源的實用知識，陪伴家庭跨越距離與資訊落差。</p>
+        </div>
+        <div class="article-grid" id="latest-articles" aria-live="polite"><p class="article-status">正在載入最新文章…</p></div>
+        <div class="article-more"><a class="btn btn-outline" href="articles/index.html">查看更多文章 <i data-lucide="arrow-right" width="18" aria-hidden="true"></i></a></div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>福心照護管理</h4>
+          <p>Fuxin Care Management<br>讓每個家庭都有合適的照護支持。</p>
+        </div>
+        <div>
+          <h4>服務探索</h4>
+          <p>
+            <a href="senior-care.html">遠距家庭照護管家</a><br>
+            <a href="fuxin_returing_taiwan_surgery.html">海外返台退休計畫</a><br>
+            <a href="services.html">醫院看護服務</a>
+          </p>
+        </div>
+        <div>
+          <h4>更多資訊</h4>
+          <p>
+            <a href="faq.html">常見問題</a><br>
+            <a href="corporate.html">企業合作</a><br>
+            <a href="join.html">加入福心夥伴</a>
+          </p>
+        </div>
+        <div>
+          <h4>聯絡福心</h4>
+          <p>
+            <a href="tel:0229670360">02-2967-0360</a><br>
+            <a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer">LINE 官方帳號</a><br>
+            <a href="contact.html">聯絡方式</a>
+          </p>
+        </div>
+      </div>
+      <div class="copyright">© Fuxin Care Management. All rights reserved.</div>
     </div>
-</div>
+  </footer>
 
-</div>
-</section>
-<section class="section-space guides-section">
-<div class="container">
-<div class="text-center mb-4 fade-in-scroll">
-<div class="section-kicker">Care Guides</div>
-<h2 class="section-title">照護知識與實用指南</h2>
-<p class="section-lead mx-auto">從住院行李、家人輪班、看護費用、海外返台到術後居家準備，整理陪病與照護最常遇到的問題，協助家庭更快找到下一步。</p>
-</div>
+  <button class="back-to-top" type="button" aria-label="返回頁首" title="返回頁首"><i data-lucide="arrow-up" width="24" height="24" aria-hidden="true"></i></button>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    const mobileMenuButton=document.querySelector('.menu-toggle');
+    const mobileMenu=document.getElementById('nav-links');
+    mobileMenuButton?.addEventListener('click',()=>{
+      const opened=mobileMenu.classList.toggle('open');
+      mobileMenuButton.setAttribute('aria-expanded',String(opened));
+      mobileMenuButton.setAttribute('aria-label',opened?'關閉選單':'開啟選單');
+    });
+    document.addEventListener('keydown',event=>{
+      if(event.key==='Escape' && mobileMenu?.classList.contains('open')){
+        mobileMenu.classList.remove('open');mobileMenuButton?.setAttribute('aria-expanded','false');mobileMenuButton?.focus();
+      }
+    });
+    document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{
+      const nav=document.getElementById('nav-links');
+      nav.classList.remove('open');
+      const btn=document.querySelector('.menu-toggle');
+      if(btn) btn.setAttribute('aria-expanded','false');
+    }));
 
-<div class="guides-carousel-wrap fade-in-scroll">
-<div class="guides-carousel-shell">
-<button class="guides-nav prev" id="guidesPrev" type="button" aria-label="上一篇文章">
-<i class="fas fa-chevron-left"></i>
-</button>
-
-<div class="guides-carousel" id="guidesCarousel" aria-label="照護知識文章，可左右滑動">
-<div class="guide-slide">
-<article class="article-card" data-href="blog-hospital-packing-list.html" role="link" tabindex="0">
-<span class="tag">住院準備</span>
-<h3>第一次住院要帶什麼？病人與陪病者完整清單</h3>
-<p>用五個袋子整理證件、固定用藥、生活用品與陪病用品，另附臨時住院及急診過夜清單。</p>
-<a aria-label="閱讀第一次住院要帶什麼完整指南" class="article-link" href="blog-hospital-packing-list.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
-</article>
-</div>
-
-<div class="guide-slide">
-<article class="article-card" data-href="blog-family-caregiving-shifts.html" role="link" tabindex="0">
-<span class="tag">陪病分工</span>
-<h3>一家人怎麼輪流陪病？排班與交班實用指南</h3>
-<p>一起考量工作、孩子與交通，安排白天和夜間人選，並用陪病交班表留下重要資訊。</p>
-<a aria-label="閱讀一家人怎麼輪流陪病完整指南" class="article-link" href="blog-family-caregiving-shifts.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
-</article>
-</div>
-
-<div class="guide-slide">
-<article class="article-card" data-href="blog-hospital-caregiver-cost.html" role="link" tabindex="0">
-<span class="tag">費用指南</span>
-<h3>醫院看護一天多少錢？先看懂費用組成</h3>
-<p>分清住院整合照護、自費看護與出院後長照，並用互動工具整理需求、比較兩份報價。</p>
-<a aria-label="閱讀醫院看護費用完整指南" class="article-link" href="blog-hospital-caregiver-cost.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
-</article>
-</div>
-
-<div class="guide-slide">
-<article class="article-card" data-href="blog-returning-taiwan-hospital-packing-list.html" role="link" tabindex="0">
-<span class="tag">海外返台</span>
-<h3>海外返台住院要帶什麼？中英文住院用品清單＋台灣哪裡買</h3>
-<p>分清哪些證件、醫療資料與固定用藥建議從海外帶回來，以及哪些生活與照護用品到台灣再買就可以。</p>
-<a aria-label="閱讀海外返台住院用品完整指南" class="article-link" href="blog-returning-taiwan-hospital-packing-list.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
-</article>
-</div>
-
-<div class="guide-slide">
-<article class="article-card" data-href="blog-joint-replacement-home-preparation.html" role="link" tabindex="0">
-<span class="tag">術後居家</span>
-<h3>人工髖關節、膝關節置換出院後，居家環境怎麼準備？</h3>
-<p>從走道、浴室、床椅到樓梯與短期住所，整理術後返家前可以先檢查與調整的環境重點。</p>
-<a aria-label="閱讀人工髖關節膝關節置換術後居家準備指南" class="article-link" href="blog-joint-replacement-home-preparation.html">閱讀完整指南 <i class="fas fa-arrow-right ms-1"></i></a>
-</article>
-</div>
-
-</div>
-
-<button class="guides-nav next" id="guidesNext" type="button" aria-label="下一篇文章">
-<i class="fas fa-chevron-right"></i>
-</button>
-</div>
-
-<div class="guides-pagination" id="guidesPagination" aria-label="文章輪播頁次"></div>
-<p class="guides-swipe-note"><i class="fas fa-hand-pointer me-1"></i>左右滑動查看更多文章</p>
-</div>
-</div>
-</section>
-<section class="section-space legal-section">
-<div class="container">
-<div class="text-center mb-5 fade-in-scroll">
-<div class="section-kicker">Legal &amp; Service Standards</div>
-<h2 class="section-title">合法經營，清楚說明服務責任</h2>
-<p class="section-lead mx-auto">福心依相關規範提供照護媒合與服務管理，並以正式流程記錄需求、安排服務及處理後續協調。</p>
-</div>
-<div class="row g-4 justify-content-center">
-<div class="col-lg-5 col-md-6">
-<div class="legal-card fade-in-scroll">
-<div class="cert-img-wrapper text-center">
-<picture>
-  <source srcset="license.webp" type="image/webp" />
-  <img class="cert-img" src="license.jpg" alt="新北市政府私立就業服務機構許可證" loading="lazy" decoding="async" fetchpriority="low"/>
-</picture>
-</div>
-<h3>公司設立與就業服務許可</h3>
-<p class="mb-0">福心依法完成公司設立，並取得新北市政府核發之私立就業服務機構許可證（新北私就字第 068 號）。相關資格代表福心依規範提供就業服務與媒合業務，也是我們建立正式服務流程的基礎。</p>
-</div>
-</div>
-<div class="col-lg-5 col-md-6">
-<div class="legal-card fade-in-scroll">
-<div class="cert-img-wrapper text-center">
-<picture>
-  <source srcset="award.webp" type="image/webp" />
-  <img class="cert-img" src="award.jpg" alt="照護訓練與合作經驗證明" loading="lazy" decoding="async" fetchpriority="low"/>
-</picture>
-</div>
-<h3>合作經驗與服務回饋</h3>
-<p class="mb-0">合作照護人員除需提供基本資格與相關文件，福心也會持續累積合作紀錄、服務表現與回饋，作為後續媒合的重要參考。每次媒合仍會依個別需求重新評估，不以單一證明取代實際評估。</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="cta-section">
-<div class="container">
-<div class="cta-box text-center fade-in-scroll">
-<h2 class="section-title mb-3">福心與您一起安排下一步的照護。</h2>
-<p class="section-lead mx-auto mb-4">可透過電話或 LINE@ 說明目前病況、所在醫院、服務時間與照護內容。</p>
-<div class="d-grid d-sm-flex justify-content-center gap-3">
-<a class="btn btn-phone-gradient" href="tel:0229670360"><i class="fas fa-phone-alt me-2"></i>02-2967-0360</a>
-<a class="btn btn-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line me-2"></i>LINE@ 線上諮詢</a>
-</div>
-</div>
-</div>
-</section>
-<footer>
-<div class="container">
-<div class="row g-4 align-items-start">
-<div class="col-lg-7">
-<h2 class="fw-bold mb-2" style="color:var(--gold);font-size:1.2rem;">福心管理顧問股份有限公司</h2>
-<p class="small mb-0" style="color:#E9E2DE;">聯絡專線：02-2967-0360 <span class="mx-2">•</span> 統一編號：62179070 <span class="mx-2">•</span> 新北私就字第 068 號</p>
-</div>
-<div class="col-lg-5 text-lg-end">
-<p class="fw-bold mb-1" style="color:#F4C4C6;">陪伴家庭做好每一個照護安排</p>
-<p class="small text-muted mb-0">© 2026 福心管理顧問股份有限公司 版權所有。</p>
-</div>
-</div>
-<div class="footer-divider"></div>
-<div class="footer-note">
-<p class="mb-2"><strong style="color:#D8C8B8;">雙北醫院/桃園醫院看護媒合與照護服務說明</strong></p>
-<p class="mb-2">福心服務範圍以台北市、新北市、桃園市為主，提供醫院看護媒合、住院陪病照護需求了解、24 小時或短期照護人員安排、服務期間追蹤與溝通協調，並可依家庭需求說明出院返家、居家照護及後續長照資源的銜接方向。</p>
-<p class="mb-0">實際可安排的合作照護人員、服務時間、費用與照護內容，須依病人狀況、所在醫院、照護強度、人員檔期及雙方確認結果為準。網站內容提供一般照護服務與醫院看護媒合資訊。</p>
-</div>
-</div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-        // 【新增】控制手機版比較表切換的 JavaScript 函數
-        function switchMobileTab(target) {
-            // 1. 切換按鈕 active 樣式
-            const buttons = document.querySelectorAll('.mobile-tab-btn');
-            buttons.forEach(btn => {
-                btn.classList.remove('active');
-            });
-            // 根據點擊目標將對應的按鈕加上 active
-            if (target === 'agency') {
-                buttons[0].classList.add('active');
-            } else {
-                buttons[1].classList.add('active');
-            }
-
-            // 2. 切換面板顯示狀態
-            const panels = document.querySelectorAll('.mobile-comparison-panel');
-            panels.forEach(panel => {
-                panel.classList.remove('active');
-            });
-            document.getElementById('panel-' + target).classList.add('active');
+    // Reveal only when IntersectionObserver is available and reduced motion is off.
+    (() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const nav = document.querySelector('.nav');
+      const toTop = document.querySelector('.back-to-top');
+      const onScroll = () => {
+        const y = window.scrollY || 0;
+        nav?.classList.toggle('is-scrolled',y>48);
+        toTop?.classList.toggle('is-visible',y>500);
+      };
+      window.addEventListener('scroll',onScroll,{passive:true});
+      onScroll();
+      toTop?.addEventListener('click',() => window.scrollTo({top:0,behavior:reduced?'instant':'smooth'}));
+      if(reduced || !('IntersectionObserver' in window)) return;
+      const heroItems = document.querySelectorAll('.hero-kicker,.hero h1,.hero-desc,.hero-actions,.hero-note');
+      const sections = document.querySelectorAll('main .section');
+      const targets = [...heroItems];
+      heroItems.forEach((el,i)=>el.style.setProperty('--reveal-delay', `${i*105}ms`));
+      sections.forEach(section=>{
+        const header = section.querySelector('.section-header');
+        if(header) targets.push(header);
+        else {
+          const headings=section.querySelectorAll('.eyebrow,.h2,.lead,.mini-note');
+          headings.forEach((el,i)=>{el.style.setProperty('--reveal-delay', `${Math.min(i,3)*75}ms`);targets.push(el)});
         }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const observer = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.fade-in-scroll').forEach(function (element) {
-                observer.observe(element);
-            });
-            const comparisonTable = document.querySelector('.comparison-table');
-            const comparisonRows = Array.from(document.querySelectorAll('.comparison-static-row'));
-
-            comparisonRows.forEach((row) => {
-                row.addEventListener('mouseenter', () => {
-                    comparisonTable.classList.add('is-hovering');
-                    row.classList.add('is-hovered');
-                });
-                row.addEventListener('mouseleave', () => {
-                    comparisonTable.classList.remove('is-hovering');
-                    row.classList.remove('is-hovered');
-                });
-            });
-
-            // Care Guides carousel — repaired
-            const guidesCarousel = document.getElementById('guidesCarousel');
-            const guidesSlides = Array.from(document.querySelectorAll('.guide-slide'));
-            const guidesPrev = document.getElementById('guidesPrev');
-            const guidesNext = document.getElementById('guidesNext');
-            const guidesPagination = document.getElementById('guidesPagination');
-
-            if (guidesCarousel && guidesSlides.length && guidesPagination) {
-                let currentGuideIndex = 0;
-                let guideDots = [];
-                let isDragging = false;
-                let dragStartX = 0;
-                let dragStartScrollLeft = 0;
-                let draggedPx = 0;
-                let suppressNextClick = false;
-                let scrollTimer = null;
-
-                function visibleGuideCount() {
-                    if (window.innerWidth <= 767) return 1;
-                    if (window.innerWidth <= 991) return 2;
-                    return 3;
-                }
-
-                function maxGuideIndex() {
-                    return Math.max(0, guidesSlides.length - visibleGuideCount());
-                }
-
-                function slideLeft(index) {
-                    const slide = guidesSlides[index];
-                    if (!slide) return 0;
-                    return slide.offsetLeft - guidesCarousel.offsetLeft;
-                }
-
-                function nearestGuideIndex() {
-                    const currentLeft = guidesCarousel.scrollLeft;
-                    let nearestIndex = 0;
-                    let nearestDistance = Infinity;
-                    const maxIndex = maxGuideIndex();
-
-                    for (let i = 0; i <= maxIndex; i++) {
-                        const distance = Math.abs(slideLeft(i) - currentLeft);
-                        if (distance < nearestDistance) {
-                            nearestDistance = distance;
-                            nearestIndex = i;
-                        }
-                    }
-                    return nearestIndex;
-                }
-
-                function updateGuideUI() {
-                    const maxIndex = maxGuideIndex();
-                    currentGuideIndex = Math.max(0, Math.min(currentGuideIndex, maxIndex));
-
-                    if (guidesPrev) guidesPrev.disabled = currentGuideIndex <= 0;
-                    if (guidesNext) guidesNext.disabled = currentGuideIndex >= maxIndex;
-
-                    guideDots.forEach(function (dot, index) {
-                        const active = index === currentGuideIndex;
-                        dot.classList.toggle('active', active);
-                        dot.setAttribute('aria-current', active ? 'true' : 'false');
-                    });
-                }
-
-                function goToGuide(index, behavior) {
-                    const maxIndex = maxGuideIndex();
-                    currentGuideIndex = Math.max(0, Math.min(index, maxIndex));
-
-                    guidesCarousel.scrollTo({
-                        left: slideLeft(currentGuideIndex),
-                        behavior: behavior || (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth')
-                    });
-
-                    updateGuideUI();
-                }
-
-                function buildGuideDots() {
-                    guidesPagination.innerHTML = '';
-                    guideDots = [];
-
-                    for (let i = 0; i <= maxGuideIndex(); i++) {
-                        const dot = document.createElement('button');
-                        dot.type = 'button';
-                        dot.className = 'guides-dot';
-                        dot.setAttribute('aria-label', '前往文章組合 ' + (i + 1));
-                        dot.addEventListener('click', function () {
-                            goToGuide(i);
-                        });
-                        guidesPagination.appendChild(dot);
-                        guideDots.push(dot);
-                    }
-
-                    updateGuideUI();
-                }
-
-                // Arrow buttons: move exactly one card position at a time.
-                if (guidesPrev) {
-                    guidesPrev.addEventListener('click', function () {
-                        goToGuide(currentGuideIndex - 1);
-                    });
-                }
-
-                if (guidesNext) {
-                    guidesNext.addEventListener('click', function () {
-                        goToGuide(currentGuideIndex + 1);
-                    });
-                }
-
-                // Mouse / pen interaction:
-                // a short click opens the card; movement beyond the threshold becomes a drag.
-                let pointerActive = false;
-                let pointerId = null;
-                let pointerDownCard = null;
-                let pointerDownLink = null;
-                const dragThreshold = 7;
-
-                guidesCarousel.addEventListener('pointerdown', function (event) {
-                    if (event.pointerType === 'touch') return;
-                    if (event.button !== 0) return;
-
-                    pointerActive = true;
-                    pointerId = event.pointerId;
-                    isDragging = false;
-                    draggedPx = 0;
-                    dragStartX = event.clientX;
-                    dragStartScrollLeft = guidesCarousel.scrollLeft;
-                    pointerDownCard = event.target.closest('.article-card[data-href]');
-                    pointerDownLink = event.target.closest('a');
-
-                    // Capture guarantees dragging continues even if the pointer leaves the card.
-                    guidesCarousel.setPointerCapture(event.pointerId);
-                    // IMPORTANT: do not preventDefault here; doing so cancels normal click behavior.
-                });
-
-                guidesCarousel.addEventListener('pointermove', function (event) {
-                    if (!pointerActive || event.pointerId !== pointerId) return;
-
-                    const deltaX = event.clientX - dragStartX;
-                    draggedPx = Math.max(draggedPx, Math.abs(deltaX));
-
-                    if (!isDragging && draggedPx > dragThreshold) {
-                        isDragging = true;
-                        guidesCarousel.classList.add('is-dragging');
-                    }
-
-                    if (isDragging) {
-                        guidesCarousel.scrollLeft = dragStartScrollLeft - deltaX;
-                        // Only suppress browser selection/drag after this is a real carousel drag.
-                        event.preventDefault();
-                    }
-                });
-
-                function releasePointerCaptureSafely(event) {
-                    if (
-                        event &&
-                        guidesCarousel.hasPointerCapture &&
-                        guidesCarousel.hasPointerCapture(event.pointerId)
-                    ) {
-                        guidesCarousel.releasePointerCapture(event.pointerId);
-                    }
-                }
-
-                guidesCarousel.addEventListener('pointerup', function (event) {
-                    if (!pointerActive || event.pointerId !== pointerId) return;
-
-                    const wasDragging = isDragging;
-                    const cardToOpen = pointerDownCard;
-                    const startedOnLink = pointerDownLink;
-
-                    pointerActive = false;
-                    pointerId = null;
-                    pointerDownCard = null;
-                    pointerDownLink = null;
-                    isDragging = false;
-                    guidesCarousel.classList.remove('is-dragging');
-                    releasePointerCaptureSafely(event);
-
-                    if (wasDragging) {
-                        // Drag only: snap to the nearest card and never navigate.
-                        currentGuideIndex = nearestGuideIndex();
-                        goToGuide(currentGuideIndex);
-                        suppressNextClick = true;
-                        return;
-                    }
-
-                    // No drag: clicking anywhere on the card opens its article.
-                    // If the user started on the existing <a>, let that native link handle itself.
-                    if (cardToOpen && !startedOnLink) {
-                        window.location.href = cardToOpen.dataset.href;
-                    }
-                });
-
-                guidesCarousel.addEventListener('pointercancel', function (event) {
-                    if (!pointerActive || event.pointerId !== pointerId) return;
-
-                    const wasDragging = isDragging;
-                    pointerActive = false;
-                    pointerId = null;
-                    pointerDownCard = null;
-                    pointerDownLink = null;
-                    isDragging = false;
-                    guidesCarousel.classList.remove('is-dragging');
-                    releasePointerCaptureSafely(event);
-
-                    if (wasDragging) {
-                        currentGuideIndex = nearestGuideIndex();
-                        goToGuide(currentGuideIndex);
-                    }
-                });
-
-
-                let lastPointerType = '';
-                guidesCarousel.addEventListener('pointerdown', function (event) {
-                    lastPointerType = event.pointerType || '';
-                }, { passive: true });
-
-                guidesCarousel.addEventListener('click', function (event) {
-                    if (suppressNextClick) return;
-                    if (lastPointerType !== 'touch') return;
-                    if (event.target.closest('a')) return;
-
-                    const card = event.target.closest('.article-card[data-href]');
-                    if (card) {
-                        window.location.href = card.dataset.href;
-                    }
-                });
-
-                // Keyboard accessibility for the whole card.
-                guidesSlides.forEach(function (slide) {
-                    const card = slide.querySelector('.article-card[data-href]');
-                    if (!card) return;
-
-                    card.addEventListener('keydown', function (event) {
-                        if (event.key !== 'Enter' && event.key !== ' ') return;
-                        event.preventDefault();
-                        window.location.href = card.dataset.href;
-                    });
-                });
-
-                // After a real drag, cancel only the synthetic click that may follow pointerup.
-                guidesCarousel.addEventListener('click', function (event) {
-                    if (!suppressNextClick) return;
-                    event.preventDefault();
-                    event.stopPropagation();
-                    event.stopImmediatePropagation();
-                    suppressNextClick = false;
-                }, true);
-
-                // Keep dots/arrows in sync after touch swipe or trackpad scrolling.
-                guidesCarousel.addEventListener('scroll', function () {
-                    clearTimeout(scrollTimer);
-                    scrollTimer = setTimeout(function () {
-                        if (isDragging) return;
-                        currentGuideIndex = nearestGuideIndex();
-                        updateGuideUI();
-                    }, 100);
-                }, { passive: true });
-
-                window.addEventListener('resize', function () {
-                    currentGuideIndex = Math.min(currentGuideIndex, maxGuideIndex());
-                    buildGuideDots();
-                    goToGuide(currentGuideIndex, 'auto');
-                });
-
-                buildGuideDots();
-                goToGuide(0, 'auto');
-            }
-
+        const items=section.querySelectorAll('.tile,.service,.trust-item,.step,.article,.bridge,.contact-actions');
+        items.forEach((el,i)=>{el.style.setProperty('--reveal-delay', `${Math.min(i,4)*100}ms`);targets.push(el)});
+      });
+      const observer=new IntersectionObserver((entries,obs)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}
         });
-    </script>
+      },{threshold:.09,rootMargin:'0px 0px -30px 0px'});
+      targets.forEach(el=>{el.classList.add('reveal');observer.observe(el)});
+      document.documentElement.classList.add('motion-ready');
+      // Keep content readable if animation support encounters unexpected issues.
+      window.addEventListener('pagehide',()=>document.documentElement.classList.remove('motion-ready'),{once:true});
+    })();
+  </script>
+
+  <script>
+    // 文章資料與 articles/index.html 共用。實際上線需使用 HTTP(S)（GitHub Pages）。
+    (async()=>{
+      const target=document.getElementById('latest-articles');
+      if(!target)return;
+      const message=(text)=>{target.replaceChildren();const p=document.createElement('p');p.className='article-status';p.textContent=text;target.append(p)};
+      try{
+        const response=await fetch('articles/articles.json',{cache:'no-cache'});
+        if(!response.ok)throw new Error('article data unavailable');
+        const records=await response.json();
+        if(!Array.isArray(records))throw new Error('invalid article data');
+        const valid=records.filter(item=>item && item.published===true && typeof item.title==='string' && /^\d{4}-\d{2}-\d{2}$/.test(item.date||'') && /^\.\/[a-zA-Z0-9_\/-]+\.html$/.test(item.url||''))
+          .sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
+        if(!valid.length){message('文章正在整理中，歡迎前往專欄瀏覽最新更新。');return}
+        target.replaceChildren();
+        valid.forEach(item=>{
+          const card=document.createElement('article');card.className='article-entry';
+          const category=document.createElement('span');category.className='topic';category.textContent=item.category||'照護管理';
+          const h=document.createElement('h3');h.textContent=item.title;
+          const t=document.createElement('time');t.dateTime=item.date;t.textContent=item.date;
+          const p=document.createElement('p');p.textContent=item.summary||'';
+          const a=document.createElement('a');a.href='articles/'+item.url.slice(2);a.textContent='閱讀文章 →';a.setAttribute('aria-label','閱讀：'+item.title);
+          card.append(category,h,t,p,a);target.append(card);
+        });
+      }catch(error){message('文章暫時無法載入，請前往照護管理專欄查看。')}
+    })();
+  </script>
 </body>
 </html>
