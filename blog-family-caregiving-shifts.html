@@ -407,28 +407,6 @@
         .related-card .small { color: var(--muted); line-height: 1.7; }
         .related-card .more { margin-top: auto; color: var(--primary-dark); font-weight: 700; }
         footer { padding: 44px 0 28px; background: #433D3D; color: #ECE6DD; }
-        .floating-contact-group {
-            position: fixed;
-            right: 24px;
-            bottom: 24px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 11px;
-        }
-        .float-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            color: #fff;
-            text-decoration: none;
-            box-shadow: 0 8px 22px rgba(0,0,0,.16);
-        }
-        .float-phone { background: #C9898E; }
-        .float-line { background: #06C755; font-size: 1.4rem; }
         .toast-message {
             position: fixed;
             left: 50%;
@@ -458,8 +436,7 @@
             .form-card-header { display: block; }
             .form-badge { margin-top: 8px; }
             .form-actions > * { width: 100%; }
-            .floating-contact-group { right: 16px; bottom: 16px; }
-        }
+            }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             *, *::before, *::after { transition-duration: .01ms !important; }
@@ -527,12 +504,12 @@
   margin:0!important;
 }
 a.btn-line[href*="lin.ee"],a.btn-gold[href*="lin.ee"],
-a.btn[href*="lin.ee"]:not(.float-btn),a.float-line[href*="lin.ee"]{
+a.btn[href*="lin.ee"]{
   background:#06C755!important;border-color:#06C755!important;color:#fff!important;
   text-decoration:none!important;
 }
 a.btn-line[href*="lin.ee"]:hover,a.btn-gold[href*="lin.ee"]:hover,
-a.btn[href*="lin.ee"]:not(.float-btn):hover{
+a.btn[href*="lin.ee"]:hover{
   background:#05A946!important;border-color:#05A946!important;color:#fff!important;
 }
 a[href*="lin.ee"].btn-line i,a[href*="lin.ee"].btn-gold i,
@@ -573,17 +550,12 @@ main.article-layout,main.layout{padding-top:56px!important}
 .fx-related{background:var(--fx-soft);padding:74px 0 82px;margin:40px 0 0}.fx-related-inner{max-width:1200px;margin:auto;padding:0 28px}.fx-related-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:27px}.fx-related-kicker{font-size:12px;color:var(--fx-rose);font-weight:700;letter-spacing:.16em}.fx-related h2{color:var(--fx-ink);margin:8px 0 0;font-size:clamp(27px,3.3vw,36px);font-weight:700;letter-spacing:-.04em}.fx-all{display:inline-flex;align-items:center;gap:9px;border:1px solid #CCB3AB;background:#fff;padding:11px 21px;border-radius:99px;color:var(--fx-rose)!important;font-weight:700;text-decoration:none!important}.fx-all:hover{background:var(--fx-blush)}
 .fx-related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.fx-reco{display:flex;flex-direction:column;background:white;border:1px solid var(--fx-line);border-radius:23px;padding:27px;text-decoration:none!important;color:var(--fx-ink)!important;min-height:230px;box-shadow:0 8px 24px rgba(72,48,44,.035);transition:transform .2s,box-shadow .2s}.fx-reco:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(72,48,44,.08)}.fx-reco-tag{font-size:12px;letter-spacing:.08em;color:var(--fx-rose);font-weight:700}.fx-reco h3{font-weight:700;font-size:19px;line-height:1.55;margin:15px 0 11px;color:var(--fx-ink)}.fx-reco .fx-excerpt{font-size:14px;line-height:1.75;color:var(--fx-muted)}.fx-reco-more{margin-top:auto;padding-top:22px;color:var(--fx-rose);font-size:14px;font-weight:700}
 .fx-footer{background:#312B29;color:#F5EEEB;padding:55px 28px 27px;font-family:'Noto Sans TC',sans-serif}.fx-footer-inner{max-width:1144px;margin:auto;display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.fx-footer h3,.fx-footer h4{font-size:18px;line-height:1.5;font-weight:700;margin:0 0 12px;color:#F5EEEB}.fx-footer p,.fx-footer a{display:block;color:#D7CBC6!important;font-size:14px;line-height:1.95;text-decoration:none!important;margin:0}.fx-footer a:hover{color:white!important}.fx-copyright{max-width:1144px;border-top:1px solid #514541;padding-top:20px;margin:33px auto 0;color:#AD9F9A;font-size:12px}
-.floating-contact{display:none!important}
 @media(max-width:1180px){.fx-nav-inner{height:78px}.fx-menu{display:block}.fx-links{display:none;position:absolute;left:0;right:0;top:78px;background:#FFFDFB;padding:14px 28px 23px;border-bottom:1px solid var(--fx-line);flex-direction:column;align-items:stretch;gap:0}.fx-links.is-open{display:flex}.fx-links a{display:block;padding:13px 0;border-bottom:1px solid var(--fx-line)}.fx-links .fx-lang{align-self:flex-start;margin-top:9px}.fx-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){.fx-nav-inner{padding:0 20px}.fx-brand{gap:11px}.fx-brand img{width:42px;height:42px}.fx-brand-copy strong{font-size:18px!important}.fx-brand-copy small{font-size:10px!important}.fx-related{padding:54px 0 64px}.fx-related-inner{padding:0 20px}.fx-related-grid{grid-template-columns:1fr}.fx-reco{min-height:0;padding:23px}.page-header{padding:51px 18px 48px!important}main.article-layout,main.layout{padding-top:38px!important}}
 @media(prefers-reduced-motion:reduce){.fx-reading-bar,.fx-reco{transition:none!important}}
 </style></head>
 <body><a class="fx-skip" href="#fx-article-body">跳至文章內容</a><div aria-label="閱讀進度" aria-valuemax="100" aria-valuemin="0" class="fx-reading" role="progressbar"><div class="fx-reading-bar" id="fx-reading-bar"></div></div>
 <div aria-hidden="true" class="reading-progress"><span id="reading-progress-bar"></span></div>
-<div aria-label="快速聯絡" class="floating-contact-group">
-<a aria-label="撥打福心市話" class="float-btn float-phone" href="tel:0229670360"><i class="fas fa-phone-alt"></i></a>
-<a aria-label="加入福心 LINE" class="float-btn float-line" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line"></i></a>
-</div>
 <header class="fx-nav" id="site-navigation"><div class="fx-nav-inner"><a aria-label="福心照護管理｜首頁" class="fx-brand" href="index.html"><img alt="福心照護管理 Logo" height="48" src="福心照護logo.webp" width="48"/><span class="fx-brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button aria-controls="fx-nav-links" aria-expanded="false" aria-label="開啟選單" class="fx-menu" type="button"><span>☰</span></button><nav aria-label="網站導覽" class="fx-links" id="fx-nav-links"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a aria-current="page" href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a class="fx-lang" href="en.html" lang="en">EN</a></nav></div></header>
 <header class="page-header">
 <div class="container">
