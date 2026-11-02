@@ -142,7 +142,42 @@
       }
     }
 
-  </style>
+  
+/* 2026-11 Fuxin article finishing: consistent care-tip cards and accessible LINE CTAs */
+.article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{
+  background:#F9F4EC!important;border:0!important;border-left:5px solid #B58B57!important;
+  border-radius:24px!important;padding:26px 30px!important;margin:28px 0!important;
+  box-shadow:none!important;color:#312B29!important;
+}
+.article-body .wisdom-box h3,.article .wisdom-box h3,
+.article-body .note strong,.article .note strong{
+  display:block!important;color:#312B29!important;font-size:clamp(18px,1.6vw,21px)!important;
+  font-weight:700!important;line-height:1.6!important;margin:0 0 13px!important;
+  padding:0!important;border:0!important;
+}
+.article-body .wisdom-box p,.article .wisdom-box p,
+.article-body .note p,.article .note p{
+  color:#675F5B!important;font-size:16px!important;line-height:1.95!important;
+  margin:0!important;
+}
+a.btn-line[href*="lin.ee"],a.btn-gold[href*="lin.ee"],
+a.btn[href*="lin.ee"]:not(.float-btn),a.float-line[href*="lin.ee"]{
+  background:#06C755!important;border-color:#06C755!important;color:#fff!important;
+  text-decoration:none!important;
+}
+a.btn-line[href*="lin.ee"]:hover,a.btn-gold[href*="lin.ee"]:hover,
+a.btn[href*="lin.ee"]:not(.float-btn):hover{
+  background:#05A946!important;border-color:#05A946!important;color:#fff!important;
+}
+a[href*="lin.ee"].btn-line i,a[href*="lin.ee"].btn-gold i,
+a[href*="lin.ee"].btn-line svg,a[href*="lin.ee"].btn-gold svg{
+  color:#fff!important;fill:currentColor!important;
+}
+@media(max-width:620px){
+ .article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{padding:21px 22px!important;border-radius:18px!important}
+}
+
+</style>
 <style id="fuxin-unified-article-theme">
 :root{--fx-bg:#FFFDFB;--fx-soft:#F8F5F1;--fx-blush:#FBF1F0;--fx-ink:#312B29;--fx-muted:#675F5B;--fx-rose:#8F635D;--fx-line:#EAE1DD}
 html{scroll-padding-top:106px}body{margin:0!important;background:var(--fx-bg)!important;color:var(--fx-ink)!important;font-family:'Noto Sans TC',system-ui,sans-serif!important;overflow-x:hidden}body .fx-nav,body .fx-nav *,body .fx-footer,body .fx-footer *{box-sizing:border-box}
@@ -287,7 +322,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <section aria-labelledby="ctaTitle" class="cta">
 <h2 class="border-0 p-0 mt-0" id="ctaTitle">你也有住院看護的需求嗎？</h2>
 <p>把醫院、日期、時段和病人的照護需求告訴福心，我們會協助你釐清服務內容與費用項目！</p>
-<div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank">LINE 諮詢</a><a class="btn btn-outline-secondary px-4" href="hospital-care.html">查看收費標準｜項目</a></div>
+<div class="d-flex flex-wrap justify-content-center gap-2"><a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line" aria-hidden="true" style="margin-right:8px;color:#fff"></i>LINE 諮詢</a><a class="btn btn-outline-secondary px-4" href="hospital-care.html">查看收費標準｜項目</a></div>
 </section>
 <section aria-labelledby="sourcesTitle" class="sources">
 <h2 id="sourcesTitle">資料來源</h2>

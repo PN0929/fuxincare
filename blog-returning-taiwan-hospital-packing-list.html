@@ -84,7 +84,42 @@
     @media(min-width:992px) and (max-width:1279px){.nav-link{margin:0 3px;font-size:.92rem}}
     @media(max-width:991px){.layout{grid-template-columns:1fr;max-width:800px}.toc{display:none}.related-grid,.quick-grid{grid-template-columns:1fr}}
     @media(max-width:640px){.page-header{padding:116px 18px 48px}.layout{padding:38px 14px 20px}.article{border-radius:18px;padding:25px 20px}.article h2{font-size:1.35rem}.floating-contact{right:16px;bottom:16px}.float-btn{width:50px;height:50px}.cta{padding:25px 18px}.table-wrap{margin-left:0;margin-right:0}.article-table th,.article-table td{padding:12px 13px}}
-  </style>
+  
+/* 2026-11 Fuxin article finishing: consistent care-tip cards and accessible LINE CTAs */
+.article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{
+  background:#F9F4EC!important;border:0!important;border-left:5px solid #B58B57!important;
+  border-radius:24px!important;padding:26px 30px!important;margin:28px 0!important;
+  box-shadow:none!important;color:#312B29!important;
+}
+.article-body .wisdom-box h3,.article .wisdom-box h3,
+.article-body .note strong,.article .note strong{
+  display:block!important;color:#312B29!important;font-size:clamp(18px,1.6vw,21px)!important;
+  font-weight:700!important;line-height:1.6!important;margin:0 0 13px!important;
+  padding:0!important;border:0!important;
+}
+.article-body .wisdom-box p,.article .wisdom-box p,
+.article-body .note p,.article .note p{
+  color:#675F5B!important;font-size:16px!important;line-height:1.95!important;
+  margin:0!important;
+}
+a.btn-line[href*="lin.ee"],a.btn-gold[href*="lin.ee"],
+a.btn[href*="lin.ee"]:not(.float-btn),a.float-line[href*="lin.ee"]{
+  background:#06C755!important;border-color:#06C755!important;color:#fff!important;
+  text-decoration:none!important;
+}
+a.btn-line[href*="lin.ee"]:hover,a.btn-gold[href*="lin.ee"]:hover,
+a.btn[href*="lin.ee"]:not(.float-btn):hover{
+  background:#05A946!important;border-color:#05A946!important;color:#fff!important;
+}
+a[href*="lin.ee"].btn-line i,a[href*="lin.ee"].btn-gold i,
+a[href*="lin.ee"].btn-line svg,a[href*="lin.ee"].btn-gold svg{
+  color:#fff!important;fill:currentColor!important;
+}
+@media(max-width:620px){
+ .article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{padding:21px 22px!important;border-radius:18px!important}
+}
+
+</style>
 <style id="fuxin-unified-article-theme">
 :root{--fx-bg:#FFFDFB;--fx-soft:#F8F5F1;--fx-blush:#FBF1F0;--fx-ink:#312B29;--fx-muted:#675F5B;--fx-rose:#8F635D;--fx-line:#EAE1DD}
 html{scroll-padding-top:106px}body{margin:0!important;background:var(--fx-bg)!important;color:var(--fx-ink)!important;font-family:'Noto Sans TC',system-ui,sans-serif!important;overflow-x:hidden}body .fx-nav,body .fx-nav *,body .fx-footer,body .fx-footer *{box-sizing:border-box}
@@ -262,7 +297,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <h2 id="ctaTitle">準備返台住院，不確定從哪裡開始嗎？</h2>
 <p>把返台時間、住院日期、醫院與照護需求告訴福心。若家屬較習慣英文，也可以直接用英文和我們確認返台後的住院與看護安排。</p>
 <div class="d-flex flex-wrap justify-content-center gap-2">
-<a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank">LINE 諮詢</a>
+<a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line" aria-hidden="true" style="margin-right:8px;color:#fff"></i>LINE 諮詢</a>
 <a class="btn btn-outline-secondary px-4" href="fuxin_returing_taiwan_surgery.html">查看海外返台手術服務</a>
 </div>
 </section>

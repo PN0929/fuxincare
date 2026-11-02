@@ -515,6 +515,41 @@
             }
         }
 
+
+/* 2026-11 Fuxin article finishing: consistent care-tip cards and accessible LINE CTAs */
+.article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{
+  background:#F9F4EC!important;border:0!important;border-left:5px solid #B58B57!important;
+  border-radius:24px!important;padding:26px 30px!important;margin:28px 0!important;
+  box-shadow:none!important;color:#312B29!important;
+}
+.article-body .wisdom-box h3,.article .wisdom-box h3,
+.article-body .note strong,.article .note strong{
+  display:block!important;color:#312B29!important;font-size:clamp(18px,1.6vw,21px)!important;
+  font-weight:700!important;line-height:1.6!important;margin:0 0 13px!important;
+  padding:0!important;border:0!important;
+}
+.article-body .wisdom-box p,.article .wisdom-box p,
+.article-body .note p,.article .note p{
+  color:#675F5B!important;font-size:16px!important;line-height:1.95!important;
+  margin:0!important;
+}
+a.btn-line[href*="lin.ee"],a.btn-gold[href*="lin.ee"],
+a.btn[href*="lin.ee"]:not(.float-btn),a.float-line[href*="lin.ee"]{
+  background:#06C755!important;border-color:#06C755!important;color:#fff!important;
+  text-decoration:none!important;
+}
+a.btn-line[href*="lin.ee"]:hover,a.btn-gold[href*="lin.ee"]:hover,
+a.btn[href*="lin.ee"]:not(.float-btn):hover{
+  background:#05A946!important;border-color:#05A946!important;color:#fff!important;
+}
+a[href*="lin.ee"].btn-line i,a[href*="lin.ee"].btn-gold i,
+a[href*="lin.ee"].btn-line svg,a[href*="lin.ee"].btn-gold svg{
+  color:#fff!important;fill:currentColor!important;
+}
+@media(max-width:620px){
+ .article-body .wisdom-box,.article-body .note,.article .wisdom-box,.article .note{padding:21px 22px!important;border-radius:18px!important}
+}
+
 </style>
 <link href="https://www.fuxincare.com.tw/blog-hospital-packing-list.html" rel="canonical"/><style id="fuxin-unified-article-theme">
 :root{--fx-bg:#FFFDFB;--fx-soft:#F8F5F1;--fx-blush:#FBF1F0;--fx-ink:#312B29;--fx-muted:#675F5B;--fx-rose:#8F635D;--fx-line:#EAE1DD}
@@ -621,7 +656,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 </ul>
 <p>不同醫院、住院原因和身分類別需要的資料可能不同，請以院方通知為準。若不確定，入院前可直接詢問報到單位。</p>
 <div class="wisdom-box">
-<h3> \高級大人才知道/ </h3>
+<h3>重要證件與文件，建議集中收納。</h3>
 <p class="mb-0">請找一個有拉鍊、容易辨認的文件袋，把證件與文件集中放在一起。重要文件可以先用手機拍照，方便家人確認，但不要把含有個人資料的照片隨意傳到大型群組喔～ </p>
 </div>
 <h2 id="medication">第二袋｜醫療資訊與固定用藥</h2>
@@ -649,7 +684,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <li>口罩（還是很重要！）</li>
 </ul>
 <div class="wisdom-box">
-<h3> \高級大人才知道/ </h3>
+<h3>盥洗用品以小包裝、方便使用為原則。</h3>
 <p class="mb-0"> 可以購買單包裝、小包裝的身體清潔用品等等，尤其是雙人房以上房型的浴室會共用 </p>
 </div>
 <h3>衣物與行走用品</h3>
@@ -663,7 +698,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <li>眼鏡、助聽器、手杖或平常使用的輔具</li>
 </ul>
 <div class="wisdom-box">
-<h3> \高級大人才知道/ </h3>
+<h3>出院當天，記得準備一套寬鬆衣物。</h3>
 <p class="mb-0"> 醫院有病人服可以換穿，但建議備著一套較寬鬆的衣物出院那天會用到 </p>
 </div>
 <h2 id="devices">第四袋｜手機、充電與等待用品</h2>
@@ -687,7 +722,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <li>可以安靜使用的書或益智遊戲本</li>
 </ul>
 <div class="wisdom-box">
-<h3> \高級大人才知道/ </h3>
+<h3>陪病休息用品，先確認醫院設備與規定。</h3>
 <p class="mb-0"> 陪病椅每家醫院的規格樣式不一樣，不好睡的話也可以自己帶好折疊收納的薄床墊晚上拿出來墊喔！ </p>
 </div>
 <h2 id="emergency-room">如果可能在急診陪病過夜</h2>
@@ -703,7 +738,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 </div>
 <p>若病人有傷口、循環問題、感覺不敏銳或其他特殊狀況，保暖方式應先詢問醫護人員喔！</p>
 <div class="wisdom-box">
-<h3> \高級大人才知道/ </h3>
+<h3>急診過夜時，也要留意陪病家屬的休息。</h3>
 <p class="mb-0">急診過夜如果能租張躺椅稍作休息的話會更適合，照顧家人的同時也需要照顧好自己的體力！ </p>
 </div>
 <h2 id="ten-items">今晚突然住院：十樣先帶</h2>
@@ -758,7 +793,6 @@ main.article-layout,main.layout{padding-top:56px!important}
 <a href="#before-leaving">出門前確認</a>
 </aside>
 </main>
-
 <section aria-label="相關文章推薦" class="fx-related"><div class="fx-related-inner"><div class="fx-related-head"><div><span class="fx-related-kicker">KEEP READING · FUXIN CARE JOURNAL</span><h2>你可能也喜歡</h2></div><a class="fx-all" href="care-journal.html">更多文章 ↗</a></div><div class="fx-related-grid"><a class="fx-reco" href="blog-joint-replacement-home-preparation.html"><span class="fx-reco-tag">居家照護</span><h3>人工髖關節、膝關節置換術後的居家環境準備</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a><a class="fx-reco" href="blog-returning-taiwan-hospital-packing-list.html"><span class="fx-reco-tag">海外返台</span><h3>海外返台住院要帶什麼？中英文用品清單</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a><a class="fx-reco" href="blog-family-caregiving-shifts.html"><span class="fx-reco-tag">遠距家庭</span><h3>家人怎麼輪流陪病？陪病交班表、問醫師與醫療資訊整理</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a></div></div></section><footer class="fx-footer"><div class="fx-footer-inner"><div><h3>福心照護管理</h3><p>FUXIN CARE MANAGEMENT<br/>讓每個家庭都有合適的照護支持。</p></div><div><h4>服務探索</h4><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="hospital-care.html">醫院看護服務</a></div><div><h4>更多資訊</h4><a href="care-journal.html">照護管理專欄</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a></div><div><h4>聯絡福心</h4><a href="tel:0229670360">02-2967-0360</a><a href="https://lin.ee/Tm80P16" rel="noopener noreferrer" target="_blank">LINE 官方帳號</a><p>電話聯絡時間 09:00–20:00</p></div></div><div class="fx-copyright">© Fuxin Care Management. All rights reserved.</div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
