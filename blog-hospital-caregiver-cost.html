@@ -207,11 +207,54 @@ main.article-layout,main.layout{padding-top:56px!important}
 @media(max-width:1180px){.fx-nav-inner{height:78px}.fx-menu{display:block}.fx-links{display:none;position:absolute;left:0;right:0;top:78px;background:#FFFDFB;padding:14px 28px 23px;border-bottom:1px solid var(--fx-line);flex-direction:column;align-items:stretch;gap:0}.fx-links.is-open{display:flex}.fx-links a{display:block;padding:13px 0;border-bottom:1px solid var(--fx-line)}.fx-links .fx-lang{align-self:flex-start;margin-top:9px}.fx-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){.fx-nav-inner{padding:0 20px}.fx-brand{gap:11px}.fx-brand img{width:42px;height:42px}.fx-brand-copy strong{font-size:18px!important}.fx-brand-copy small{font-size:10px!important}.fx-related{padding:54px 0 64px}.fx-related-inner{padding:0 20px}.fx-related-grid{grid-template-columns:1fr}.fx-reco{min-height:0;padding:23px}.page-header{padding:51px 18px 48px!important}main.article-layout,main.layout{padding-top:38px!important}}
 @media(prefers-reduced-motion:reduce){.fx-reading-bar,.fx-reco{transition:none!important}}
+
+/* FUXIN ARTICLE MOBILE NAV 2026-11 · aligns with main-site mobile navigation */
+.fx-mobile-lang{display:none!important}
+.fx-menu .fx-menu-lines{width:24px;height:20px;position:relative;display:block}
+.fx-menu .fx-menu-lines::before,.fx-menu .fx-menu-lines::after,.fx-menu .fx-menu-lines span{content:"";position:absolute;left:1px;width:22px;height:2.2px;border-radius:10px;background:currentColor;transition:transform .28s cubic-bezier(.22,1,.36,1),top .28s cubic-bezier(.22,1,.36,1),opacity .16s ease}
+.fx-menu .fx-menu-lines::before{top:2px}.fx-menu .fx-menu-lines span{top:9px}.fx-menu .fx-menu-lines::after{top:16px}
+.fx-menu[aria-expanded="true"] .fx-menu-lines::before{top:9px;transform:rotate(45deg)}
+.fx-menu[aria-expanded="true"] .fx-menu-lines span{opacity:0;transform:scaleX(.3)}
+.fx-menu[aria-expanded="true"] .fx-menu-lines::after{top:9px;transform:rotate(-45deg)}
+@media(max-width:1180px){
+ .fx-nav{z-index:1100!important}
+ .fx-nav-inner{height:78px!important;gap:10px!important;position:relative}
+ .fx-brand{min-width:0!important;flex:1 1 auto!important;gap:12px!important;overflow:hidden}
+ .fx-brand img{flex-shrink:0}
+ .fx-brand-copy{display:block;min-width:0;overflow:hidden}
+ .fx-brand-copy strong,.fx-brand-copy small{white-space:nowrap;overflow:hidden;text-overflow:clip}
+ .fx-mobile-lang{display:inline-flex!important;flex:0 0 42px!important;width:42px;height:42px;align-items:center;justify-content:center;margin:0 2px 0 auto;border:1px solid #DECBC4;border-radius:50%;background:#FFFDFB;color:#8F635D!important;text-decoration:none!important;transition:background .2s ease,border-color .2s ease}
+ .fx-mobile-lang:hover,.fx-mobile-lang:focus-visible{background:#FBF1F0;border-color:#CBAFAA}
+ .fx-mobile-lang svg{width:21px;height:21px;display:block;stroke:currentColor;fill:none;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}
+ .fx-menu{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 42px;width:42px;height:42px;padding:0!important;position:relative;z-index:3;cursor:pointer}
+ .fx-links{display:flex!important;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:100%!important;left:0;right:0;z-index:2;background:rgba(255,253,251,.985);backdrop-filter:blur(18px);padding:15px max(24px,calc((100vw - 1144px)/2)) 24px;border-bottom:1px solid #EAE1DD;box-shadow:0 18px 34px rgba(60,42,38,.08);max-height:calc(100dvh - 78px);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;pointer-events:none;clip-path:inset(0 0 100% 0);transform:translateY(-7px);transition:clip-path .32s cubic-bezier(.22,1,.36,1),transform .32s cubic-bezier(.22,1,.36,1),opacity .24s ease,visibility 0s linear .32s}
+ .fx-links.is-open{opacity:1;visibility:visible;pointer-events:auto;clip-path:inset(0 0 0 0);transform:translateY(0);transition:clip-path .32s cubic-bezier(.22,1,.36,1),transform .32s cubic-bezier(.22,1,.36,1),opacity .24s ease,visibility 0s}
+ .fx-links a:not(.fx-lang){display:block;padding:14px 0!important;border-bottom:1px solid #EAE1DD;font-size:16px!important;line-height:1.6;opacity:0;transform:translateY(-6px);transition:opacity .2s ease,transform .27s ease}
+ .fx-links.is-open a:not(.fx-lang){opacity:1;transform:translateY(0);transition-delay:calc(var(--fx-item-order,0) * 32ms)}
+ .fx-links .fx-lang{display:none!important}
+}
+@media(max-width:767px){
+ .fx-nav-inner{height:72px!important;padding-left:20px!important;padding-right:20px!important}
+ .fx-brand img{width:42px!important;height:42px!important}
+ .fx-brand-copy strong{font-size:clamp(15px,4vw,18px)!important}
+ .fx-brand-copy small{font-size:clamp(7px,2vw,10px)!important;letter-spacing:.07em!important}
+ .fx-links{max-height:calc(100dvh - 72px)}
+}
+@media(max-width:385px){
+ .fx-nav-inner{gap:7px!important;padding-left:14px!important;padding-right:14px!important}
+ .fx-brand{gap:8px!important}
+ .fx-brand-copy strong{font-size:15px!important}
+ .fx-brand-copy small{font-size:7px!important;letter-spacing:.04em!important}
+ .fx-mobile-lang{width:38px;height:38px;flex-basis:38px!important}
+ .fx-menu{width:38px;height:38px;flex-basis:38px}
+}
+@media(prefers-reduced-motion:reduce){.fx-links,.fx-links a,.fx-menu .fx-menu-lines::before,.fx-menu .fx-menu-lines::after,.fx-menu .fx-menu-lines span{transition:none!important;transition-delay:0s!important}}
+
 </style></head>
 <body><a class="fx-skip" href="#fx-article-body">跳至文章內容</a><div aria-label="閱讀進度" aria-valuemax="100" aria-valuemin="0" class="fx-reading" role="progressbar"><div class="fx-reading-bar" id="fx-reading-bar"></div></div>
 <a class="skip-link" href="#article">跳至文章內容</a>
 <div aria-hidden="true" class="reading-progress" id="readingProgress"></div>
-<header class="fx-nav" id="site-navigation"><div class="fx-nav-inner"><a aria-label="福心照護管理｜首頁" class="fx-brand" href="index.html"><img alt="福心照護管理 Logo" height="48" src="福心照護logo.webp" width="48"/><span class="fx-brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button aria-controls="fx-nav-links" aria-expanded="false" aria-label="開啟選單" class="fx-menu" type="button"><span>☰</span></button><nav aria-label="網站導覽" class="fx-links" id="fx-nav-links"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a aria-current="page" href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a class="fx-lang" href="en.html" lang="en">EN</a></nav></div></header>
+<header class="fx-nav" id="site-navigation"><div class="fx-nav-inner"><a aria-label="福心照護管理｜首頁" class="fx-brand" href="index.html"><img alt="福心照護管理 Logo" height="48" src="福心照護logo.webp" width="48"/><span class="fx-brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><a class="fx-mobile-lang" href="en.html" lang="en" aria-label="Switch to English" title="English"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3.2 3-3.2 15 0 18M12 3c3.2 3 3.2 15 0 18"/></svg></a><button aria-controls="fx-nav-links" aria-expanded="false" aria-label="開啟選單" class="fx-menu" type="button"><span class="fx-menu-lines" aria-hidden="true"><span></span></span></button><nav aria-label="網站導覽" class="fx-links" id="fx-nav-links"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a aria-current="page" href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a class="fx-lang" href="en.html" lang="en">EN</a></nav></div></header>
 <header class="page-header">
 <div class="container">
 <span class="eyebrow">高級大人的陪病手冊・費用篇</span>
@@ -409,5 +452,18 @@ main.article-layout,main.layout{padding-top:56px!important}
       addEventListener("scroll",onScroll,{passive:true});onScroll();
     })();
   </script>
-<script id="fx-ui-script">(function(){const btn=document.querySelector('.fx-menu'), links=document.querySelector('.fx-links');if(btn&&links){btn.addEventListener('click',()=>{const isOpen=links.classList.toggle('is-open');btn.setAttribute('aria-expanded',String(isOpen));btn.setAttribute('aria-label',isOpen?'關閉選單':'開啟選單')});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('is-open');btn.setAttribute('aria-expanded','false')}));}const bar=document.getElementById('fx-reading-bar');function update(){const article=document.querySelector('main article')||document.querySelector('main');if(!article||!bar)return;const rect=article.getBoundingClientRect();const total=Math.max(1,article.offsetHeight-window.innerHeight*.25);const passed=Math.max(0,-rect.top+window.innerHeight*.2);const pct=Math.min(100,Math.round(passed/total*100));bar.style.width=pct+'%';bar.parentElement.setAttribute('aria-valuenow',String(pct));}window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();})();</script></body>
+<script>(function(){
+const nav=document.querySelector('.fx-nav'),btn=nav?.querySelector('.fx-menu'),links=nav?.querySelector('.fx-links');
+if(btn&&links){
+  const setOpen=(open)=>{links.classList.toggle('is-open',open);btn.setAttribute('aria-expanded',String(open));btn.setAttribute('aria-label',open?'關閉選單':'開啟選單')};
+  btn.addEventListener('click',()=>setOpen(btn.getAttribute('aria-expanded')!=='true'));
+  links.querySelectorAll('a').forEach((a,i)=>{a.style.setProperty('--fx-item-order',i);a.addEventListener('click',()=>setOpen(false))});
+  document.addEventListener('click',(e)=>{if(links.classList.contains('is-open')&&!nav.contains(e.target))setOpen(false)});
+  document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&links.classList.contains('is-open')){setOpen(false);btn.focus()}});
+  window.addEventListener('resize',()=>{if(window.innerWidth>1180)setOpen(false)},{passive:true});
+}
+const bar=document.getElementById('fx-reading-bar');
+function update(){const article=document.querySelector('main article')||document.querySelector('main');if(!article||!bar)return;const rect=article.getBoundingClientRect();const total=Math.max(1,article.offsetHeight-window.innerHeight*.25);const passed=Math.max(0,-rect.top+window.innerHeight*.2);const pct=Math.min(100,Math.round(passed/total*100));bar.style.width=pct+'%';bar.parentElement.setAttribute('aria-valuenow',String(pct));}
+window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
+})();</script></body>
 </html>
