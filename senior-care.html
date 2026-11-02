@@ -410,10 +410,11 @@
     .care-hero-phone{position:relative;width:clamp(220px,24vw,315px);margin:0 auto}
     .phone-shell{position:relative;background:#fff;border:1px solid rgba(222,203,196,.95);border-radius:42px;padding:11px 11px 17px;box-shadow:0 18px 45px rgba(72,48,44,.08);overflow:hidden}
     .phone-shell::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:104px;height:20px;border-radius:0 0 15px 15px;background:#fff;border:1px solid rgba(222,203,196,.95);border-top:0;z-index:4}
-    .phone-screen{position:relative;border-radius:30px;overflow:hidden;background:#dbe8fb;aspect-ratio:795/1175;border:1px solid rgba(222,203,196,.68)}
-    .phone-slide{position:absolute;inset:0;opacity:0;transform:translateX(10px);transition:opacity .5s ease,transform .65s ease}
+    .phone-screen{position:relative;border-radius:30px;overflow:hidden;background:linear-gradient(180deg,#c6d7ee 0%,#b7cbe9 100%);aspect-ratio:780/1290;border:1px solid rgba(222,203,196,.68)}
+    .phone-slide{position:absolute;inset:0;opacity:0;transform:translateX(10px);transition:opacity .5s ease,transform .65s ease;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#c6d7ee 0%,#b7cbe9 100%)}
     .phone-slide.active{opacity:1;transform:translateX(0)}
-    .phone-slide img{width:100%;height:100%;object-fit:cover}
+    .phone-slide{margin:0}
+    .phone-slide img{width:100%;height:100%;object-fit:contain;object-position:center;display:block}
     .phone-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
     .phone-dot{width:10px;height:10px;border-radius:999px;background:#dfd4cf;border:0;padding:0;cursor:pointer;transition:transform .2s ease,background .2s ease}
     .phone-dot.active{background:var(--rose-deep);transform:scale(1.08)}
@@ -455,6 +456,15 @@
       .story-columns p{font-size:16px;line-height:1.8}
     }
     @media(max-width:410px){.story-tab-name{font-size:14px}.story-tab-sub{font-size:10px}}
+
+    /* 修復：四張對象卡片各自獨立，避免窄螢幕寬度溢出 */
+    .audience-grid{align-items:stretch}
+    .audience-card{min-width:0;height:100%}
+    .audience-card > div:last-child{min-width:0;overflow-wrap:anywhere}
+    .phone-slide figure{margin:0}
+
+    /* LINE conversation screenshot disclosure */
+    .phone-feedback-caption{margin:9px 0 0;text-align:center;font-size:12px;line-height:1.7;letter-spacing:.03em;color:var(--rose-deep)}
   </style>
 </head>
 <body>
@@ -479,8 +489,8 @@
         <a href="fuxin_returing_taiwan_surgery.html">海外返台退休計畫</a>
         <a href="articles/index.html">照護管理專欄</a>
         <a href="services.html">醫院看護服務</a>
-        <a href="index.html#about">關於福心</a>
-        <a href="contact.html">聯絡我們</a>
+        <a href="about.html">關於福心</a>
+        <a href="about.html#contact">聯絡我們</a>
         <a href="en.html" class="lang" lang="en">EN</a>
       </nav>
     </div>
@@ -513,6 +523,7 @@
           <button type="button" class="phone-dot active" aria-label="顯示第一張對話截圖" aria-pressed="true" data-chat-dot="0"></button>
           <button type="button" class="phone-dot" aria-label="顯示第二張對話截圖" aria-pressed="false" data-chat-dot="1"></button>
         </div>
+        <p class="phone-feedback-caption">真實家庭回饋｜個人資訊經隱私處理</p>
       </div>
     </aside>
   </div>
@@ -520,7 +531,7 @@
 <section class="section alt" id="who"><div class="wrap"><div class="section-header"><div class="eyebrow">WHO WE HELP</div><h2 class="h2">家裡的照護安排，<br>是否也遇到這些難題？</h2><p class="lead">照顧有人分擔，不代表所有事情都有妥善安排。從生活庶務、就醫協調到跨單位溝通，福心協助家庭承接那些容易被忽略、卻需要持續追蹤的事。</p></div>
 <div class="audience-grid">
 <article class="audience-card"><span class="icon-box"><i data-lucide="globe-2" width="27"></i></span><div><h3>子女長期居住海外</h3><p>希望有人可以協助定期關心父母，成為可信任的在地聯絡窗口。</p></div></article>
-<article class="audience-card"><span class="icon-box"><i data-lucide="languages" width="27"></i></span><div><h3>不熟悉中文與台灣制度</h3><p>提供中英文溝通服務，協助家庭銜接台灣的醫療、長照與生活資源。
+<article class="audience-card"><span class="icon-box"><i data-lucide="languages" width="27"></i></span><div><h3>不熟悉中文與台灣制度</h3><p>提供中英文溝通服務，協助家庭銜接台灣的醫療、長照與生活資源。</p></div></article>
 <article class="audience-card"><span class="icon-box"><i data-lucide="house" width="27"></i></span><div><h3>父母希望維持自主生活</h3><p>目前仍能獨立生活，但需要適時的訪視、提醒與生活協調。</p></div></article>
 <article class="audience-card"><span class="icon-box"><i data-lucide="users" width="27"></i></span><div><h3>親友需要減輕管理負擔</h3><p>即使偶爾有親戚可以幫忙，也需要有專業單位來統整資訊、安排服務及追蹤進度。</p></div></article>
 </div></div></section>
@@ -625,7 +636,7 @@
           <p>
             <a href="tel:0229670360">02-2967-0360</a><br>
             <a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer">LINE 官方帳號</a><br>
-            <a href="contact.html">聯絡方式</a>
+            <a href="about.html#contact">聯絡方式</a>
           </p>
         </div>
       </div>
