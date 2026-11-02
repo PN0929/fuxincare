@@ -88,6 +88,15 @@ a.fuxin-line-cta,a.fuxin-line-cta:link,a.fuxin-line-cta:visited{background:#06C7
 a.fuxin-line-cta:hover,a.fuxin-line-cta:focus-visible{background:#05A947!important;background-image:none!important;border-color:#05A947!important;color:#FFFFFF!important}
 a.fuxin-line-cta .fuxin-line-icon{display:inline-block;width:22px;height:22px;flex:none;color:#fff!important;fill:#fff!important}
 a.fuxin-line-cta:hover .fuxin-line-icon{color:#fff!important}
+
+/* Uniform content gutters: hero and following sections share the same edges. */
+.hero .wrap.hero-grid{padding-left:clamp(22px,4.1vw,48px);padding-right:clamp(22px,4.1vw,48px)}
+@media(max-width:630px){
+  .hero .wrap.hero-grid{padding-left:24px;padding-right:24px}
+}
+@media(max-width:365px){
+  .hero .wrap.hero-grid{padding-left:18px;padding-right:18px}
+}
 </style>
 </head>
 <body>
