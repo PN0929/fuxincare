@@ -26,11 +26,92 @@
 @media(max-width:620px){.wrap{padding:0 20px}.section{padding:48px 0}.hero-layout{padding-top:48px;padding-bottom:45px;gap:25px}.hero h1{font-size:clamp(34px,8.6vw,44px)}.hero-quote{padding:24px;border-radius:21px}.hero-quote p{font-size:22px}.h2{font-size:clamp(29px,7.6vw,35px);margin:10px 0 16px}.lead,.story-text{font-size:16px;line-height:1.9}.map-embed{height:300px}.map-panel{border-radius:20px}.contact-card{padding:20px}.contact-actions{flex-direction:column}.contact-actions .btn{width:100%}.social-card{padding:22px}.social-card .logo{width:49px;height:49px}.social-card h3{font-size:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 .skip-link{position:absolute;top:-100px;left:12px;z-index:100;padding:10px 16px;background:#fff;border:1px solid var(--line);border-radius:8px;color:var(--ink)}.skip-link:focus,.skip-link:focus-visible{top:12px}
+
+/* Fuxin shared navigation geometry — matches the main service pages */
+.nav .wrap.nav-in{max-width:1200px;width:100%;margin:0 auto;padding-left:28px;padding-right:28px;box-sizing:border-box}
+.nav .nav-in,.nav .nav-in.is-scrolled,.nav.is-scrolled .nav-in{
+  height:88px!important;min-height:88px!important;
+  display:flex;align-items:center;justify-content:space-between;gap:28px
+}
+.nav .brand{display:flex;align-items:center;gap:14px;flex-shrink:0;white-space:nowrap}
+.nav .brand-logo,.nav.is-scrolled .brand-logo{
+  width:48px!important;height:48px!important;flex-shrink:0;
+  padding:4px;border-radius:14px;object-fit:cover
+}
+.nav .brand strong,.nav.is-scrolled .brand strong{
+  display:block;font-size:20px!important;line-height:1.35;
+  font-weight:700;letter-spacing:.06em
+}
+.nav .brand small,.nav.is-scrolled .brand small{
+  display:block;font-size:11px!important;line-height:1.5;
+  font-weight:400;letter-spacing:.15em;color:#675F5B
+}
+.nav .links,.nav .nav-links{
+  display:flex;align-items:center;gap:18px;
+  font-size:16px;font-weight:600;white-space:nowrap
+}
+.nav .links a,.nav .nav-links a{flex-shrink:0}
+.nav .lang{
+  border:1px solid #DECBC4;border-radius:999px;padding:10px 15px;
+  font-size:16px;line-height:1.4
+}
+.nav .menu,.nav .menu-toggle{display:none}
+@media(max-width:1180px){
+  .nav .nav-in,.nav.is-scrolled .nav-in{height:78px!important;min-height:78px!important}
+  .nav .menu,.nav .menu-toggle{
+    display:block;flex-shrink:0;border:0;background:transparent;
+    padding:7px;color:#312B29;cursor:pointer
+  }
+  .nav .links,.nav .nav-links{
+    display:none;position:absolute;top:78px;left:0;right:0;
+    z-index:50;flex-direction:column;align-items:stretch;
+    gap:0;padding:16px 28px 25px;
+    background:#FFFDFB;border-bottom:1px solid #EAE1DD;
+    white-space:normal;font-size:16px
+  }
+  .nav .links.open,.nav .nav-links.open{display:flex}
+  .nav .links a,.nav .nav-links a{
+    display:block;padding:14px 0;border-bottom:1px solid #F3EBE8
+  }
+  .nav .links .lang,.nav .nav-links .lang{
+    padding:10px 15px;margin-top:10px;align-self:flex-start
+  }
+}
+@media(max-width:620px){
+  .nav .wrap.nav-in{padding-left:20px;padding-right:20px}
+  .nav .brand{gap:12px}
+  .nav .brand-logo,.nav.is-scrolled .brand-logo{
+    width:42px!important;height:42px!important
+  }
+  .nav .brand strong,.nav.is-scrolled .brand strong{font-size:18px!important}
+  .nav .brand small,.nav.is-scrolled .brand small{font-size:10px!important}
+}
+
+
+/* Nav brand and typography: identical to index.html */
+.nav .nav-in{height:88px!important;min-height:88px!important;gap:28px!important}
+.nav .brand{gap:14px!important;white-space:nowrap;flex-shrink:0}
+.nav .brand-logo{width:48px!important;height:48px!important;border-radius:14px!important;padding:4px!important;object-fit:cover}
+.nav .brand-copy strong{display:block;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:.06em!important;line-height:1.35!important}
+.nav .brand-copy small{display:block;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:.15em!important;line-height:1.5!important;margin-top:2px!important}
+.nav .links,.nav .nav-links{gap:18px!important;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:16px!important;font-weight:600!important;line-height:1.5!important}
+.nav .links .lang,.nav .nav-links .lang{font-size:16px!important;border:1px solid #DECBC4!important;border-radius:999px!important;padding:10px 15px!important}
+@media(max-width:1180px){
+ .nav .nav-in{height:78px!important;min-height:78px!important}
+ .nav .links,.nav .nav-links{font-size:16px!important;gap:0!important}
+}
+@media(max-width:620px){
+ .nav .brand{gap:12px!important}
+ .nav .brand-logo{width:42px!important;height:42px!important}
+ .nav .brand-copy strong{font-size:18px!important}
+ .nav .brand-copy small{font-size:10px!important}
+}
+
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">跳至主要內容</a>
-<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html" aria-label="福心照護管理首頁"><img src="福心照護logo.webp" class="brand-logo" alt="福心照護管理 Logo"><span><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button class="menu" aria-controls="nav-links" aria-expanded="false" aria-label="開啟選單"><i data-lucide="menu"></i></button><nav class="links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html" aria-current="page">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html" aria-label="福心照護管理首頁"><img src="福心照護logo.webp" class="brand-logo" alt="福心照護管理 Logo"><span class="brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button class="menu" aria-controls="nav-links" aria-expanded="false" aria-label="開啟選單"><i data-lucide="menu"></i></button><nav class="links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html" aria-current="page">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
 <main id="main">
 <section class="hero" aria-labelledby="hero-title"><div class="wrap hero-layout"><div><div class="eyebrow">ABOUT FUXIN · OUR STORY</div><h1 id="hero-title">因為看見遠方的牽掛，<br><span class="accent">我們想讓照護更有依靠。</span></h1><p class="lead">福心從家庭日常的照護需求出發，協助長輩安排在台灣的生活、就醫與照護事務，也讓遠方的家人能持續參與重要的生活安排。</p><a class="btn primary" href="#our-story"><i data-lucide="book-heart"></i>認識福心的創立初衷</a></div><aside class="hero-quote" aria-label="福心的照護理念"><div class="quote-mark" aria-hidden="true">“</div><p>不只是有人照顧，<br>更希望每位長輩都能<br><span class="accent">繼續過自己喜歡的生活。</span></p><small>FUXIN CARE MANAGEMENT</small></aside></div></section>
 <section class="section" id="our-story"><div class="wrap story-layout"><div class="story-aside"><div class="eyebrow">WHY WE STARTED</div><h2 class="h2">福心的創立初衷</h2><p>從遠距家庭的實際處境出發，讓關心不只停留在電話裡，也能成為生活中具體的支持。</p></div><div class="story-text"><p>福心創辦人從自己的自身經驗出發，注意到許多遠距家庭的子女長年居住海外，父母則選擇留在熟悉的台灣生活、退休。雖然相隔兩地，關心從未減少，但當長輩需要就醫、生活協助或照顧安排時，遠方的家人往往難以親自處理每一件事。</p><p>而即使已經有看護或入住照護機構，仍有許多日常聯繫、醫療協調與生活細節，需要有人持續關心與追蹤。</p><p>福心希望成為家庭在台灣可靠的照護管理窗口。從了解長輩的生活、協調醫療與照顧資源，到協助處理生活中的大小事，讓每一份來自遠方的關心，都有機會化為實際的行動。</p><div class="story-emphasis">我們相信，好的照護不只是有人照顧，更是讓長輩保有自己的生活，也讓家人能持續參與其中。</div></div></div></section>
