@@ -112,20 +112,102 @@
 .contact-actions .line-official:hover{background:#05AC4A!important;border-color:#05AC4A!important;color:#fff!important}
 .contact-actions .line-official .line-mark{display:block;width:24px;height:24px;flex:none;color:#fff}
 .contact-actions .line-official span{color:#fff!important}
+
+/* FUXIN MOBILE NAV V2 · 固定 Logo + 常駐語言切換 + 柔和下展 */
+.fuxin-mobile-language{display:none}
+@media(max-width:1180px){
+  .nav .nav-in,.nav .nav-inner{position:relative}
+  .nav .fuxin-mobile-language{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    margin-left:auto;flex:none;min-width:68px;height:40px;padding:0 10px;
+    border:1px solid #DECBC4;border-radius:999px;background:rgba(255,253,251,.94);
+    color:#8F635D;text-decoration:none;font-size:13px;font-weight:700;
+    white-space:nowrap;line-height:1;transition:background .2s,border-color .2s;
+  }
+  .nav .fuxin-mobile-language:hover{background:#FBF1F0;border-color:#C9AAA1}
+  .nav .fuxin-mobile-language svg{display:block;width:20px;height:20px;flex:none}
+  .nav .menu{
+    position:relative;width:44px;height:44px;min-width:44px;flex:none;
+    margin-left:4px;padding:0;display:grid;place-items:center;
+    border:0;border-radius:12px;background:transparent;cursor:pointer;
+    transition:background .2s ease;
+  }
+  .nav .menu:hover{background:#FBF1F0}
+  .nav .menu>i,.nav .menu>svg{display:none!important}
+  .nav .menu::before,.nav .menu::after{
+    content:"";position:absolute;left:10px;width:24px;height:2px;border-radius:3px;
+    background:#312B29;transition:top .32s cubic-bezier(.22,1,.36,1),transform .32s cubic-bezier(.22,1,.36,1),box-shadow .18s;
+  }
+  .nav .menu::before{top:15px;box-shadow:0 7px 0 #312B29}
+  .nav .menu::after{top:29px}
+  .nav .menu[aria-expanded="true"]::before{top:22px;transform:rotate(45deg);box-shadow:0 0 0 transparent}
+  .nav .menu[aria-expanded="true"]::after{top:22px;transform:rotate(-45deg)}
+  .nav .links,.nav .links.open{
+    display:flex!important;flex-direction:column;align-items:stretch;
+    max-height:0;overflow:hidden;visibility:hidden;opacity:0;
+    pointer-events:none;transform:translateY(-10px);
+    padding-top:0!important;padding-bottom:0!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .24s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s linear .32s,
+      padding-top .32s ease,padding-bottom .32s ease;
+    box-shadow:0 16px 30px rgba(72,48,44,.05);
+  }
+  .nav .links.open{
+    max-height:min(82dvh,760px);overflow-y:auto;
+    visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0);
+    padding-top:14px!important;padding-bottom:22px!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .22s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s,
+      padding-top .32s ease,padding-bottom .32s ease;
+  }
+  .nav .links>a{
+    opacity:0;transform:translateY(-6px);
+    transition:opacity .14s ease,transform .18s ease;
+  }
+  .nav .links.open>a{opacity:1;transform:none;
+    transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1);
+    transition-delay:calc(var(--fuxin-nav-index,0) * 35ms);
+  }
+  .nav .links>a.lang{display:none!important}
+}
+@media(max-width:380px){
+  .nav .fuxin-mobile-language{min-width:43px;padding:0 9px;gap:4px;font-size:11px}
+  .nav .fuxin-mobile-language svg{width:18px;height:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav .links,.nav .links.open,
+  .nav .links>a,.nav .links.open>a,
+  .nav .menu::before,.nav .menu::after{transition:none!important}
+}
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">跳至主要內容</a>
-<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html" aria-label="福心照護管理首頁"><img src="福心照護logo.webp" class="brand-logo" alt="福心照護管理 Logo"><span class="brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button class="menu" aria-controls="nav-links" aria-expanded="false" aria-label="開啟選單"><i data-lucide="menu"></i></button><nav class="links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html" aria-current="page">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html" aria-label="福心照護管理首頁"><img src="福心照護logo.webp" class="brand-logo" alt="福心照護管理 Logo"><span class="brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><a class="fuxin-mobile-language" href="en.html" aria-label="切換到英文版"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 5.7 4 9s-1.5 6.3-4 9c-2.5-2.7-4-5.7-4-9s1.5-6.3 4-9Z"/></svg><span>EN</span></a><button class="menu" aria-controls="nav-links" aria-expanded="false" aria-label="開啟選單"><i data-lucide="menu"></i></button><nav class="links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html" aria-current="page">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
 <main id="main">
 <section class="hero" aria-labelledby="hero-title"><div class="wrap hero-layout"><div><div class="eyebrow">ABOUT FUXIN · OUR STORY</div><h1 id="hero-title">因為看見遠方的牽掛，<br><span class="accent">我們想讓照護更有依靠。</span></h1><p class="lead">福心從家庭日常的照護需求出發，協助長輩安排在台灣的生活、就醫與照護事務，也讓遠方的家人能持續參與重要的生活安排。</p><a class="btn primary" href="#our-story"><i data-lucide="book-heart"></i>認識福心的創立初衷</a></div><aside class="hero-quote" aria-label="福心的照護理念"><div class="quote-mark" aria-hidden="true">“</div><p>不只是有人照顧，<br>更希望每位長輩都能<br><span class="accent">繼續過自己喜歡的生活。</span></p><small>FUXIN CARE MANAGEMENT</small></aside></div></section>
 <section class="section" id="our-story"><div class="wrap story-layout"><div class="story-aside"><div class="eyebrow">WHY WE STARTED</div><h2 class="h2">福心的創立初衷</h2><p>從遠距家庭的實際處境出發，讓關心不只停留在電話裡，也能成為生活中具體的支持。</p></div><div class="story-text"><p>福心創辦人從自己的自身經驗出發，注意到許多遠距家庭的子女長年居住海外，父母則選擇留在熟悉的台灣生活、退休。雖然相隔兩地，關心從未減少，但當長輩需要就醫、生活協助或照顧安排時，遠方的家人往往難以親自處理每一件事。</p><p>而即使已經有看護或入住照護機構，仍有許多日常聯繫、醫療協調與生活細節，需要有人持續關心與追蹤。</p><p>福心希望成為家庭在台灣可靠的照護管理窗口。從了解長輩的生活、協調醫療與照顧資源，到協助處理生活中的大小事，讓每一份來自遠方的關心，都有機會化為實際的行動。</p><div class="story-emphasis">我們相信，好的照護不只是有人照顧，更是讓長輩保有自己的生活，也讓家人能持續參與其中。</div></div></div></section>
 <section class="section map-section" id="reviews"><div class="wrap map-layout"><div><div class="eyebrow">FIND US ON GOOGLE MAPS</div><h2 class="h2">在 Google 地圖上，<br>認識福心與家庭的回饋。</h2><p class="lead">歡迎透過 Google 地圖查看福心的商家資訊、地點與公開評論。每一份回饋，都是我們持續精進服務的重要參考。</p></div><div class="map-panel"><iframe class="map-embed" title="福心照護管理 Google 地圖" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57856.756940955194!2d121.42614409438612!3d24.998508372051347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x83844f73f200c959%3A0xc81a90f175d98309!2z56aP5b-D54Wn6K23IC0g6Yar6Zmi55yL6K235pyN5YuZ5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1793583957266!5m2!1szh-TW!2stw" width="400" height="300" style="border:0" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div></div></section>
-<section class="section" id="contact"><div class="wrap contact-layout"><div><div class="eyebrow">GET IN TOUCH</div><h2 class="h2">有照護上的疑問，<br>歡迎與福心聊聊。</h2><p class="lead">不論是想了解服務，或已經有需要協調的照護安排，都可以先與福心聯繫，讓我們了解你的需求。</p></div><div class="contact-card"><div class="info-item"><div class="info-icon"><i data-lucide="phone" width="22"></i></div><div><strong>聯絡電話</strong><p><a href="tel:0229670360">02-2967-0360</a></p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="clock-3" width="22"></i></div><div><strong>電話聯絡時間</strong><p>09:00–20:00</p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="message-circle" width="22"></i></div><div><strong>LINE 官方帳號</strong><p>其餘時間歡迎先透過 LINE 官方帳號留言，我們會在聯絡時間內依序回覆。</p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="mail" width="22"></i></div><div><strong>電子郵件</strong><p><a href="mailto:service@fuxincare.com.tw">service@fuxincare.com.tw</a></p></div></div><div class="contact-actions"><a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer" class="btn line-official" aria-label="開啟福心 LINE 官方帳號"><svg class="line-mark" width="24" height="24" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 5C12.4 5 3 12.9 3 22.6c0 8.5 7.1 15.6 16.6 17.3 1.1.2 1.6.6 1.8 1.4l.1 2.5c.1 1 .9 1.5 1.8 1 3.2-1.8 10.9-6.3 15.1-11.3 2.3-2.7 3.6-6.3 3.6-10.9C45 12.9 35.6 5 24 5Z"/><text x="24" y="27" fill="#06C755" font-size="11" font-family="Arial,sans-serif" font-weight="900" text-anchor="middle">LINE</text></svg><span>LINE 官方帳號</span></a><a href="tel:0229670360" class="btn outline"><i data-lucide="phone"></i>立即撥打電話</a></div></div></div></section>
+<section class="section" id="contact"><div class="wrap contact-layout"><div><div class="eyebrow">GET IN TOUCH</div><h2 class="h2">有照護上的疑問，<br>歡迎與福心聊聊。</h2><p class="lead">不論是想了解服務，或已經有需要協調的照護安排，都可以先與福心聯繫，讓我們了解你的需求。</p></div><div class="contact-card"><div class="info-item"><div class="info-icon"><i data-lucide="phone" width="22"></i></div><div><strong>聯絡電話</strong><p><a href="tel:0229670360">02-2967-0360</a></p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="clock-3" width="22"></i></div><div><strong>電話聯絡時間</strong><p>09:00–20:00</p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="mail" width="22"></i></div><div><strong>電子郵件</strong><p><a href="mailto:service@fuxincare.com.tw">service@fuxincare.com.tw</a></p></div></div><div class="info-item"><div class="info-icon"><i data-lucide="message-circle" width="22"></i></div><div><strong>LINE 官方帳號</strong><p>其餘時間歡迎先透過 LINE 官方帳號留言，我們會在聯絡時間內依序回覆。</p></div></div><div class="contact-actions"><a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer" class="btn line-official" aria-label="開啟福心 LINE 官方帳號"><svg class="line-mark" width="24" height="24" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path fill="currentColor" d="M24 5C12.4 5 3 12.9 3 22.6c0 8.5 7.1 15.6 16.6 17.3 1.1.2 1.6.6 1.8 1.4l.1 2.5c.1 1 .9 1.5 1.8 1 3.2-1.8 10.9-6.3 15.1-11.3 2.3-2.7 3.6-6.3 3.6-10.9C45 12.9 35.6 5 24 5Z"/><text x="24" y="27" fill="#06C755" font-size="11" font-family="Arial,sans-serif" font-weight="900" text-anchor="middle">LINE</text></svg><span>LINE 官方帳號</span></a><a href="tel:0229670360" class="btn outline"><i data-lucide="phone"></i>立即撥打電話</a></div></div></div></section>
 <section class="section social-section" id="social"><div class="wrap"><div class="social-intro"><div class="eyebrow">FOLLOW FUXIN</div><h2 class="h2">照護之外，<br>也分享生活中的小小發現。</h2><p class="lead">從長輩生活、照護觀察到台灣生活資訊，歡迎透過社群與福心保持聯繫。</p></div><div class="social-grid"><a class="social-card" href="https://www.threads.com/@fuxin.care" target="_blank" rel="noopener noreferrer"><div class="logo"><i data-lucide="at-sign" width="30"></i></div><div><h3>Threads</h3><p>分享照護日常、生活觀察與值得留意的小提醒。</p><span class="more">@fuxin.care · 前往 Threads ↗</span></div></a><a class="social-card" href="https://www.facebook.com/profile.php?id=61594199463860&amp;locale=zh_TW" target="_blank" rel="noopener noreferrer"><div class="logo"><i data-lucide="facebook" width="30"></i></div><div><h3>Facebook</h3><p>關注福心最新消息、照護資訊與服務分享。</p><span class="more">福心照護管理 · 前往 Facebook ↗</span></div></a></div></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer-grid"><div><h4>福心照護管理</h4><p>Fuxin Care Management<br>讓每個家庭都有合適的照護支持。</p></div><div><h4>服務探索</h4><p><a href="family-care-management.html">遠距家庭照護管家</a><br><a href="retirement-in-taiwan.html">海外返台退休計畫</a><br><a href="hospital-care.html">醫院看護服務</a></p></div><div><h4>更多資訊</h4><p><a href="care-journal.html">照護管理專欄</a><br><a href="about-fuxin.html">關於福心</a><br><a href="about-fuxin.html#contact">聯絡我們</a></p></div><div><h4>聯絡福心</h4><p><a href="tel:0229670360">02-2967-0360</a><br><a href="https://lin.ee/Tm80P16" target="_blank" rel="noopener noreferrer">LINE 官方帳號</a><br><a href="mailto:service@fuxincare.com.tw">service@fuxincare.com.tw</a><br>電話聯絡時間 09:00–20:00</p></div></div><div class="copyright">© Fuxin Care Management. All rights reserved.</div></div></footer>
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script><script>
 if(window.lucide)lucide.createIcons();const menuButton=document.querySelector('.menu'),links=document.getElementById('nav-links');menuButton?.addEventListener('click',()=>{let open=links.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'關閉選單':'開啟選單')});links?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){links.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.focus()}});
+</script>
+<script>
+/* Progressive enhancement: animated mobile navigation, outside click, Escape. */
+(function(){
+  const header=document.querySelector('header.nav');
+  if(!header)return;
+  const button=header.querySelector('.menu');
+  const panel=header.querySelector('.links');
+  if(!button||!panel)return;
+  panel.querySelectorAll(':scope > a').forEach((link,index)=>link.style.setProperty('--fuxin-nav-index',index));
+  const close=()=>{panel.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label',"開啟選單");};
+  document.addEventListener('pointerdown',event=>{if(panel.classList.contains('open')&&!header.contains(event.target))close();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&panel.classList.contains('open')){close();button.focus();}});
+  window.addEventListener('resize',()=>{if(window.innerWidth>1180&&panel.classList.contains('open'))close();},{passive:true});
+})();
 </script>
 </body></html>

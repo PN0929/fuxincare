@@ -327,6 +327,73 @@ a.fuxin-line-cta,a.fuxin-line-cta:link,a.fuxin-line-cta:visited{background:#06C7
 a.fuxin-line-cta:hover,a.fuxin-line-cta:focus-visible{background:#05A947!important;background-image:none!important;border-color:#05A947!important;color:#FFFFFF!important}
 a.fuxin-line-cta .fuxin-line-icon{display:inline-block;width:22px;height:22px;flex:none;color:#fff!important;fill:#fff!important}
 a.fuxin-line-cta:hover .fuxin-line-icon{color:#fff!important}
+
+/* FUXIN MOBILE NAV V2 · 固定 Logo + 常駐語言切換 + 柔和下展 */
+.fuxin-mobile-language{display:none}
+@media(max-width:1180px){
+  .nav .nav-in,.nav .nav-inner{position:relative}
+  .nav .fuxin-mobile-language{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    margin-left:auto;flex:none;min-width:68px;height:40px;padding:0 10px;
+    border:1px solid #DECBC4;border-radius:999px;background:rgba(255,253,251,.94);
+    color:#8F635D;text-decoration:none;font-size:13px;font-weight:700;
+    white-space:nowrap;line-height:1;transition:background .2s,border-color .2s;
+  }
+  .nav .fuxin-mobile-language:hover{background:#FBF1F0;border-color:#C9AAA1}
+  .nav .fuxin-mobile-language svg{display:block;width:20px;height:20px;flex:none}
+  .nav .menu-toggle{
+    position:relative;width:44px;height:44px;min-width:44px;flex:none;
+    margin-left:4px;padding:0;display:grid;place-items:center;
+    border:0;border-radius:12px;background:transparent;cursor:pointer;
+    transition:background .2s ease;
+  }
+  .nav .menu-toggle:hover{background:#FBF1F0}
+  .nav .menu-toggle>i,.nav .menu-toggle>svg{display:none!important}
+  .nav .menu-toggle::before,.nav .menu-toggle::after{
+    content:"";position:absolute;left:10px;width:24px;height:2px;border-radius:3px;
+    background:#312B29;transition:top .32s cubic-bezier(.22,1,.36,1),transform .32s cubic-bezier(.22,1,.36,1),box-shadow .18s;
+  }
+  .nav .menu-toggle::before{top:15px;box-shadow:0 7px 0 #312B29}
+  .nav .menu-toggle::after{top:29px}
+  .nav .menu-toggle[aria-expanded="true"]::before{top:22px;transform:rotate(45deg);box-shadow:0 0 0 transparent}
+  .nav .menu-toggle[aria-expanded="true"]::after{top:22px;transform:rotate(-45deg)}
+  .nav .links,.nav .links.open{
+    display:flex!important;flex-direction:column;align-items:stretch;
+    max-height:0;overflow:hidden;visibility:hidden;opacity:0;
+    pointer-events:none;transform:translateY(-10px);
+    padding-top:0!important;padding-bottom:0!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .24s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s linear .32s,
+      padding-top .32s ease,padding-bottom .32s ease;
+    box-shadow:0 16px 30px rgba(72,48,44,.05);
+  }
+  .nav .links.open{
+    max-height:min(82dvh,760px);overflow-y:auto;
+    visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0);
+    padding-top:14px!important;padding-bottom:22px!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .22s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s,
+      padding-top .32s ease,padding-bottom .32s ease;
+  }
+  .nav .links>a{
+    opacity:0;transform:translateY(-6px);
+    transition:opacity .14s ease,transform .18s ease;
+  }
+  .nav .links.open>a{opacity:1;transform:none;
+    transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1);
+    transition-delay:calc(var(--fuxin-nav-index,0) * 35ms);
+  }
+  .nav .links>a.lang{display:none!important}
+}
+@media(max-width:380px){
+  .nav .fuxin-mobile-language{min-width:43px;padding:0 9px;gap:4px;font-size:11px}
+  .nav .fuxin-mobile-language svg{width:18px;height:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav .links,.nav .links.open,
+  .nav .links>a,.nav .links.open>a,
+  .nav .menu-toggle::before,.nav .menu-toggle::after{transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -340,7 +407,7 @@ a.fuxin-line-cta:hover .fuxin-line-icon{color:#fff!important}
           <small>FUXIN CARE MANAGEMENT</small>
         </span>
       </a>
-      <button class="menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">
+      <a class="fuxin-mobile-language" href="en.html" aria-label="切換到英文版"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 5.7 4 9s-1.5 6.3-4 9c-2.5-2.7-4-5.7-4-9s1.5-6.3 4-9Z"/></svg><span>EN</span></a><button class="menu-toggle" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links">
         <i data-lucide="menu"></i>
       </button>
       <nav class="links" id="nav-links" aria-label="網站導覽">
@@ -653,5 +720,20 @@ a.fuxin-line-cta:hover .fuxin-line-icon{color:#fff!important}
       });
     });
   </script>
+<script>
+/* Progressive enhancement: animated mobile navigation, outside click, Escape. */
+(function(){
+  const header=document.querySelector('header.nav');
+  if(!header)return;
+  const button=header.querySelector('.menu-toggle');
+  const panel=header.querySelector('.links');
+  if(!button||!panel)return;
+  panel.querySelectorAll(':scope > a').forEach((link,index)=>link.style.setProperty('--fuxin-nav-index',index));
+  const close=()=>{panel.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label',"開啟選單");};
+  document.addEventListener('pointerdown',event=>{if(panel.classList.contains('open')&&!header.contains(event.target))close();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&panel.classList.contains('open')){close();button.focus();}});
+  window.addEventListener('resize',()=>{if(window.innerWidth>1180&&panel.classList.contains('open'))close();},{passive:true});
+})();
+</script>
 </body>
 </html>
