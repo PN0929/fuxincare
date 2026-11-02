@@ -55,11 +55,92 @@
   .nav .brand strong,.nav.is-scrolled .brand strong,.nav .brand-copy strong,.nav.is-scrolled .brand-copy strong{font-size:17px}
   .nav .brand small,.nav.is-scrolled .brand small,.nav .brand-copy small,.nav.is-scrolled .brand-copy small{font-size:9px}
 }
+
+/* Fuxin shared navigation geometry — matches the main service pages */
+.nav .wrap.nav-in{max-width:1200px;width:100%;margin:0 auto;padding-left:28px;padding-right:28px;box-sizing:border-box}
+.nav .nav-in,.nav .nav-in.is-scrolled,.nav.is-scrolled .nav-in{
+  height:88px!important;min-height:88px!important;
+  display:flex;align-items:center;justify-content:space-between;gap:28px
+}
+.nav .brand{display:flex;align-items:center;gap:14px;flex-shrink:0;white-space:nowrap}
+.nav .brand-logo,.nav.is-scrolled .brand-logo{
+  width:48px!important;height:48px!important;flex-shrink:0;
+  padding:4px;border-radius:14px;object-fit:cover
+}
+.nav .brand strong,.nav.is-scrolled .brand strong{
+  display:block;font-size:20px!important;line-height:1.35;
+  font-weight:700;letter-spacing:.06em
+}
+.nav .brand small,.nav.is-scrolled .brand small{
+  display:block;font-size:11px!important;line-height:1.5;
+  font-weight:400;letter-spacing:.15em;color:#675F5B
+}
+.nav .links,.nav .nav-links{
+  display:flex;align-items:center;gap:18px;
+  font-size:16px;font-weight:600;white-space:nowrap
+}
+.nav .links a,.nav .nav-links a{flex-shrink:0}
+.nav .lang{
+  border:1px solid #DECBC4;border-radius:999px;padding:10px 15px;
+  font-size:16px;line-height:1.4
+}
+.nav .menu,.nav .menu-toggle{display:none}
+@media(max-width:1180px){
+  .nav .nav-in,.nav.is-scrolled .nav-in{height:78px!important;min-height:78px!important}
+  .nav .menu,.nav .menu-toggle{
+    display:block;flex-shrink:0;border:0;background:transparent;
+    padding:7px;color:#312B29;cursor:pointer
+  }
+  .nav .links,.nav .nav-links{
+    display:none;position:absolute;top:78px;left:0;right:0;
+    z-index:50;flex-direction:column;align-items:stretch;
+    gap:0;padding:16px 28px 25px;
+    background:#FFFDFB;border-bottom:1px solid #EAE1DD;
+    white-space:normal;font-size:16px
+  }
+  .nav .links.open,.nav .nav-links.open{display:flex}
+  .nav .links a,.nav .nav-links a{
+    display:block;padding:14px 0;border-bottom:1px solid #F3EBE8
+  }
+  .nav .links .lang,.nav .nav-links .lang{
+    padding:10px 15px;margin-top:10px;align-self:flex-start
+  }
+}
+@media(max-width:620px){
+  .nav .wrap.nav-in{padding-left:20px;padding-right:20px}
+  .nav .brand{gap:12px}
+  .nav .brand-logo,.nav.is-scrolled .brand-logo{
+    width:42px!important;height:42px!important
+  }
+  .nav .brand strong,.nav.is-scrolled .brand strong{font-size:18px!important}
+  .nav .brand small,.nav.is-scrolled .brand small{font-size:10px!important}
+}
+
+
+/* Nav brand and typography: identical to index.html */
+.nav .nav-in{height:88px!important;min-height:88px!important;gap:28px!important}
+.nav .brand{gap:14px!important;white-space:nowrap;flex-shrink:0}
+.nav .brand-logo{width:48px!important;height:48px!important;border-radius:14px!important;padding:4px!important;object-fit:cover}
+.nav .brand-copy strong{display:block;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:.06em!important;line-height:1.35!important}
+.nav .brand-copy small{display:block;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:.15em!important;line-height:1.5!important;margin-top:2px!important}
+.nav .links,.nav .nav-links{gap:18px!important;font-family:'Noto Sans TC',system-ui,sans-serif!important;font-size:16px!important;font-weight:600!important;line-height:1.5!important}
+.nav .links .lang,.nav .nav-links .lang{font-size:16px!important;border:1px solid #DECBC4!important;border-radius:999px!important;padding:10px 15px!important}
+@media(max-width:1180px){
+ .nav .nav-in{height:78px!important;min-height:78px!important}
+ .nav .links,.nav .nav-links{font-size:16px!important;gap:0!important}
+}
+@media(max-width:620px){
+ .nav .brand{gap:12px!important}
+ .nav .brand-logo{width:42px!important;height:42px!important}
+ .nav .brand-copy strong{font-size:18px!important}
+ .nav .brand-copy small{font-size:10px!important}
+}
+
 </style>
 </head>
 <body>
 <a href="#content" class="skip-link">跳至主要內容</a>
-<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html"><img class="brand-logo" src="福心照護logo.webp" alt="福心照護管理 Logo"><span><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links"><i data-lucide="menu"></i></button><nav class="nav-links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html" aria-current="page">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html"><img class="brand-logo" src="福心照護logo.webp" alt="福心照護管理 Logo"><span class="brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><button class="menu-toggle" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-links"><i data-lucide="menu"></i></button><nav class="nav-links" id="nav-links" aria-label="網站導覽"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="care-journal.html" aria-current="page">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a href="en.html" class="lang" lang="en">EN</a></nav></div></header>
 <main id="content">
 <section class="intro"><div class="wrap intro-grid"><div class="intro-copy"><div class="eyebrow">FUXIN CARE JOURNAL · 照護生活筆記</div><h1 class="title">照護管理專欄<br><span style="color:var(--rose)">從今天的小事，準備明天的安心。</span></h1><p>從海外返台退休、遠距家庭照護，到住院準備與生活安排。福心把實際經驗整理成容易閱讀、能夠用得上的指南，陪您一步步找到適合家庭的方式。</p></div></div></section>
 <section class="section" id="featured"><div class="wrap"><div class="head-row"><div><div class="eyebrow">EDITOR'S PICKS</div><h2 class="section-title">福心精選閱讀</h2><p>先從實用的指南開始，找到您現在需要的答案。</p></div><a class="more-link" href="#all">瀏覽所有文章 ↗</a></div><div class="featured"><a class="featured-main" href="blog-hospital-packing-list.html"><div class="cover pack"><div class="cover-orbit"></div><div class="cover-icon"><i data-lucide="briefcase-medical"></i></div><div class="cover-sub">HOSPITAL CHECKLIST</div></div><div class="feature-content"><span class="category">醫療與住院照護 · 熱門主題</span><h3>住院打包清單：入院前有哪些物品與事情要準備？</h3><p>從住院用品到家屬事前安排，先把容易遺漏的準備事項整理好。</p><span class="read-link">閱讀文章 <i data-lucide="arrow-up-right" width="15"></i></span></div></a><div class="feature-side-list"><a class="featured-side" href="blog-family-caregiving-shifts.html"><div class="cover family"><div class="cover-orbit"></div><div class="cover-icon"><i data-lucide="users-round"></i></div><div class="cover-sub">FAMILY CARE</div></div><div class="feature-content"><span class="category">遠距家庭與照護分工</span><h3>家人照顧如何分工？從照護輪班開始討論</h3><span class="read-link">閱讀文章 ↗</span></div></a><a class="featured-side" href="blog-hospital-caregiver-cost.html"><div class="cover cost"><div class="cover-orbit"></div><div class="cover-icon"><i data-lucide="hand-coins"></i></div><div class="cover-sub">CARE COST</div></div><div class="feature-content"><span class="category">醫療與住院照護</span><h3>住院看護費用怎麼看？先了解相關安排</h3><span class="read-link">閱讀文章 ↗</span></div></a></div></div></div></section>
