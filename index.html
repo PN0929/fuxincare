@@ -544,7 +544,11 @@
           <h2 class="h2">最新文章</h2>
           <p class="lead">分享海外家庭照護、台灣就醫安排與長照資源的實用知識，陪伴家庭跨越距離與資訊落差。</p>
         </div>
-        <div class="article-grid" id="latest-articles" aria-live="polite"><p class="article-status">正在載入最新文章…</p></div>
+        <div class="article-grid" id="latest-articles">
+          <article class="article-entry"><span class="topic">術後照護 · 2026.09.14</span><h3>關節置換手術後，居家環境怎麼準備？</h3><p>從居家動線、浴室到生活安排，整理術後返家前可以先準備的事項。</p><a href="blog-joint-replacement-home-preparation.html" aria-label="閱讀關節置換術後居家準備">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
+          <article class="article-entry"><span class="topic">海外返台 · 2026.09.14</span><h3>海外返台住院，要帶哪些用品？</h3><p>中英文用品清單、哪些建議先帶回台灣，以及抵台後的採買方向。</p><a href="blog-returning-taiwan-hospital-packing-list.html" aria-label="閱讀海外返台住院用品清單">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
+          <article class="article-entry"><span class="topic">住院看護 · 2026.07.31</span><h3>醫院看護一天多少錢？費用與詢價指南</h3><p>了解費用組成、照護模式與詢價注意事項，幫家庭準備合適的安排。</p><a href="blog-hospital-caregiver-cost.html" aria-label="閱讀醫院看護費用指南">閱讀文章 <i data-lucide="arrow-up-right" width="16" aria-hidden="true"></i></a></article>
+        </div>
         <div class="article-more"><a class="btn btn-outline" href="care-journal.html">查看更多文章 <i data-lucide="arrow-right" width="18" aria-hidden="true"></i></a></div>
       </div>
     </section>
@@ -651,32 +655,5 @@
     })();
   </script>
 
-  <script>
-    // 文章資料與 care-journal.html 共用。實際上線需使用 HTTP(S)（GitHub Pages）。
-    (async()=>{
-      const target=document.getElementById('latest-articles');
-      if(!target)return;
-      const message=(text)=>{target.replaceChildren();const p=document.createElement('p');p.className='article-status';p.textContent=text;target.append(p)};
-      try{
-        const response=await fetch('articles/articles.json',{cache:'no-cache'});
-        if(!response.ok)throw new Error('article data unavailable');
-        const records=await response.json();
-        if(!Array.isArray(records))throw new Error('invalid article data');
-        const valid=records.filter(item=>item && item.published===true && typeof item.title==='string' && /^\d{4}-\d{2}-\d{2}$/.test(item.date||'') && /^\.\/[a-zA-Z0-9_\/-]+\.html$/.test(item.url||''))
-          .sort((a,b)=>b.date.localeCompare(a.date)).slice(0,3);
-        if(!valid.length){message('文章正在整理中，歡迎前往專欄瀏覽最新更新。');return}
-        target.replaceChildren();
-        valid.forEach(item=>{
-          const card=document.createElement('article');card.className='article-entry';
-          const category=document.createElement('span');category.className='topic';category.textContent=item.category||'照護管理';
-          const h=document.createElement('h3');h.textContent=item.title;
-          const t=document.createElement('time');t.dateTime=item.date;t.textContent=item.date;
-          const p=document.createElement('p');p.textContent=item.summary||'';
-          const a=document.createElement('a');a.href='articles/'+item.url.slice(2);a.textContent='閱讀文章 →';a.setAttribute('aria-label','閱讀：'+item.title);
-          card.append(category,h,t,p,a);target.append(card);
-        });
-      }catch(error){message('文章暫時無法載入，請前往照護管理專欄查看。')}
-    })();
-  </script>
 </body>
 </html>
