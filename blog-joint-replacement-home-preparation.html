@@ -194,10 +194,259 @@ main.article-layout,main.layout{padding-top:56px!important}
 }
 @media(prefers-reduced-motion:reduce){.fx-links,.fx-links a,.fx-menu .fx-menu-lines::before,.fx-menu .fx-menu-lines::after,.fx-menu .fx-menu-lines span{transition:none!important;transition-delay:0s!important}}
 
+</style><style id="fuxin-journal-unified-20261113">.wrap{max-width:1200px;margin:auto;padding:0 28px}
+.nav{position:sticky;top:0;background:rgba(255,253,251,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:40}
+.nav-in{height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.brand-logo{width:48px;height:48px;border-radius:14px;object-fit:cover;background:#f7e3e4;border:1px solid #ead9d3;padding:4px}
+.brand strong{display:block;letter-spacing:.06em;font-size:19px}
+.brand small{display:block;letter-spacing:.14em;color:var(--muted);font-size:10px;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:16px;font-size:15px;font-weight:600}
+.nav-links a:hover,.nav-links [aria-current]{color:var(--rose)}
+.lang{border:1px solid #dec6c1;border-radius:100px;padding:9px 13px}
+.menu-toggle{display:none;background:none;border:0;color:var(--ink)}
+@media (max-width:1180px){
+.nav-links{gap:12px;font-size:13px}
+.menu-toggle{display:block}
+.nav-in{height:78px}
+.nav-links{display:none;position:absolute;top:78px;left:0;right:0;background:#fffdfb;border-bottom:1px solid var(--line);padding:14px 28px 24px;flex-direction:column;align-items:stretch;gap:0;font-size:15px}
+.nav-links.open{display:flex}
+.nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+}
+@media (max-width:620px){
+.wrap{padding:0 20px}
+}
+.nav{box-sizing:border-box;min-height:88px}
+.nav>.wrap{max-width:1200px;width:100%;padding-left:28px;padding-right:28px;margin-left:auto;margin-right:auto}
+.nav .nav-in,.nav .nav-inner{height:88px;min-height:88px;gap:20px;display:flex;align-items:center;justify-content:space-between}
+.nav .brand{flex:0 0 290px;min-width:0;gap:12px;display:flex;align-items:center;white-space:nowrap}
+.nav .brand-logo,.nav .brand-img,.nav.is-scrolled .brand-logo,.nav.is-scrolled .brand-img{width:48px;height:48px;flex:none;border-radius:14px;padding:4px}
+.nav .brand strong,.nav.is-scrolled .brand strong,.nav .brand-copy strong,.nav.is-scrolled .brand-copy strong{font-size:19px;letter-spacing:.04em;line-height:1.35}
+.nav .brand small,.nav.is-scrolled .brand small,.nav .brand-copy small,.nav.is-scrolled .brand-copy small{font-size:10px;letter-spacing:.14em;line-height:1.55;margin-top:2px}
+.nav .links,.nav .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:16px;font-size:15px;font-weight:600;flex-wrap:nowrap;white-space:nowrap}
+.nav .links>a,.nav .nav-links>a{flex-shrink:0}
+.nav .lang{border-radius:999px;padding:10px 15px;font-size:15px;line-height:1.3}
+.nav.is-scrolled .nav-in,.nav.is-scrolled .nav-inner{height:88px;min-height:88px}
+.nav .nav-in,.nav .nav-inner,.nav .brand-logo,.nav .brand-img,.nav .brand strong,.nav .brand small{transition:none}
+@media (max-width:1180px){
+.nav{min-height:78px}
+.nav .nav-in,.nav .nav-inner,.nav.is-scrolled .nav-in,.nav.is-scrolled .nav-inner{height:78px;min-height:78px;gap:12px}
+.nav .brand{flex:0 1 auto}
+.nav .menu,.nav .menu-toggle{display:block}
+.nav .links,.nav .nav-links{display:none;position:absolute;left:0;right:0;top:78px;z-index:50;padding:15px 28px 24px;background:#FFFDFB;border-bottom:1px solid #EAE1DD;flex-direction:column;align-items:stretch;gap:0;font-size:15px;white-space:normal}
+.nav .links.open,.nav .nav-links.open{display:flex}
+.nav .links>a,.nav .nav-links>a{padding:12px 0;border-bottom:1px solid #EAE1DD}
+.nav.is-scrolled .links,.nav.is-scrolled .nav-links{top:78px}
+}
+@media (max-width:620px){
+.nav>.wrap{padding-left:20px;padding-right:20px}
+.nav .brand-logo,.nav .brand-img,.nav.is-scrolled .brand-logo,.nav.is-scrolled .brand-img{width:42px;height:42px}
+.nav .brand strong,.nav.is-scrolled .brand strong,.nav .brand-copy strong,.nav.is-scrolled .brand-copy strong{font-size:17px}
+.nav .brand small,.nav.is-scrolled .brand small,.nav .brand-copy small,.nav.is-scrolled .brand-copy small{font-size:9px}
+}
+.nav .wrap.nav-in{max-width:1200px;width:100%;margin:0 auto;padding-left:28px;padding-right:28px;box-sizing:border-box}
+.nav .nav-in,.nav .nav-in.is-scrolled,.nav.is-scrolled .nav-in{
+  height:88px!important;min-height:88px!important;
+  display:flex;align-items:center;justify-content:space-between;gap:28px
+}
+.nav .brand{display:flex;align-items:center;gap:14px;flex-shrink:0;white-space:nowrap}
+.nav .brand-logo,.nav.is-scrolled .brand-logo{
+  width:48px!important;height:48px!important;flex-shrink:0;
+  padding:4px;border-radius:14px;object-fit:cover
+}
+.nav .brand strong,.nav.is-scrolled .brand strong{
+  display:block;font-size:20px!important;line-height:1.35;
+  font-weight:700;letter-spacing:.06em
+}
+.nav .brand small,.nav.is-scrolled .brand small{
+  display:block;font-size:11px!important;line-height:1.5;
+  font-weight:400;letter-spacing:.15em;color:#675F5B
+}
+.nav .links,.nav .nav-links{
+  display:flex;align-items:center;gap:18px;
+  font-size:16px;font-weight:600;white-space:nowrap
+}
+.nav .links a,.nav .nav-links a{flex-shrink:0}
+.nav .lang{
+  border:1px solid #DECBC4;border-radius:999px;padding:10px 15px;
+  font-size:16px;line-height:1.4
+}
+.nav .menu,.nav .menu-toggle{display:none}
+@media (max-width:1180px){
+.nav .nav-in,.nav.is-scrolled .nav-in{height:78px!important;min-height:78px!important}
+.nav .menu,.nav .menu-toggle{
+    display:block;flex-shrink:0;border:0;background:transparent;
+    padding:7px;color:#312B29;cursor:pointer
+  }
+.nav .links,.nav .nav-links{
+    display:none;position:absolute;top:78px;left:0;right:0;
+    z-index:50;flex-direction:column;align-items:stretch;
+    gap:0;padding:16px 28px 25px;
+    background:#FFFDFB;border-bottom:1px solid #EAE1DD;
+    white-space:normal;font-size:16px
+  }
+.nav .links.open,.nav .nav-links.open{display:flex}
+.nav .links a,.nav .nav-links a{
+    display:block;padding:14px 0;border-bottom:1px solid #F3EBE8
+  }
+.nav .links .lang,.nav .nav-links .lang{
+    padding:10px 15px;margin-top:10px;align-self:flex-start
+  }
+}
+@media (max-width:620px){
+.nav .wrap.nav-in{padding-left:20px;padding-right:20px}
+.nav .brand{gap:12px}
+.nav .brand-logo,.nav.is-scrolled .brand-logo{
+    width:42px!important;height:42px!important
+  }
+.nav .brand strong,.nav.is-scrolled .brand strong{font-size:18px!important}
+.nav .brand small,.nav.is-scrolled .brand small{font-size:10px!important}
+}
+.nav .nav-in{height:88px!important;min-height:88px!important;gap:28px!important}
+.nav .brand{gap:14px!important;white-space:nowrap;flex-shrink:0}
+.nav .brand-logo{width:48px!important;height:48px!important;border-radius:14px!important;padding:4px!important;object-fit:cover}
+.nav .brand-copy strong{display:block;font-family:"Noto Sans TC",system-ui,sans-serif!important;font-size:20px!important;font-weight:700!important;letter-spacing:.06em!important;line-height:1.35!important}
+.nav .brand-copy small{display:block;font-family:"Noto Sans TC",system-ui,sans-serif!important;font-size:11px!important;font-weight:400!important;letter-spacing:.15em!important;line-height:1.5!important;margin-top:2px!important}
+.nav .links,.nav .nav-links{gap:18px!important;font-family:"Noto Sans TC",system-ui,sans-serif!important;font-size:16px!important;font-weight:600!important;line-height:1.5!important}
+.nav .links .lang,.nav .nav-links .lang{font-size:16px!important;border:1px solid #DECBC4!important;border-radius:999px!important;padding:10px 15px!important}
+@media (max-width:1180px){
+.nav .nav-in{height:78px!important;min-height:78px!important}
+.nav .links,.nav .nav-links{font-size:16px!important;gap:0!important}
+}
+@media (max-width:620px){
+.nav .brand{gap:12px!important}
+.nav .brand-logo{width:42px!important;height:42px!important}
+.nav .brand-copy strong{font-size:18px!important}
+.nav .brand-copy small{font-size:10px!important}
+}
+.fuxin-mobile-language{display:none}
+@media (max-width:1180px){
+.nav .nav-in,.nav .nav-inner{position:relative}
+.nav .fuxin-mobile-language{
+    display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    margin-left:auto;flex:none;min-width:68px;height:40px;padding:0 10px;
+    border:1px solid #DECBC4;border-radius:999px;background:rgba(255,253,251,.94);
+    color:#8F635D;text-decoration:none;font-size:13px;font-weight:700;
+    white-space:nowrap;line-height:1;transition:background .2s,border-color .2s;
+  }
+.nav .fuxin-mobile-language:hover{background:#FBF1F0;border-color:#C9AAA1}
+.nav .fuxin-mobile-language svg{display:block;width:20px;height:20px;flex:none}
+.nav .menu-toggle{
+    position:relative;width:44px;height:44px;min-width:44px;flex:none;
+    margin-left:4px;padding:0;display:grid;place-items:center;
+    border:0;border-radius:12px;background:transparent;cursor:pointer;
+    transition:background .2s ease;
+  }
+.nav .menu-toggle:hover{background:#FBF1F0}
+.nav .menu-toggle>i,.nav .menu-toggle>svg{display:none!important}
+.nav .menu-toggle::before,.nav .menu-toggle::after{
+    content:"";position:absolute;left:10px;width:24px;height:2px;border-radius:3px;
+    background:#312B29;transition:top .32s cubic-bezier(.22,1,.36,1),transform .32s cubic-bezier(.22,1,.36,1),box-shadow .18s;
+  }
+.nav .menu-toggle::before{top:15px;box-shadow:0 7px 0 #312B29}
+.nav .menu-toggle::after{top:29px}
+.nav .menu-toggle[aria-expanded="true"]::before{top:22px;transform:rotate(45deg);box-shadow:0 0 0 transparent}
+.nav .menu-toggle[aria-expanded="true"]::after{top:22px;transform:rotate(-45deg)}
+.nav .nav-links,.nav .nav-links.open{
+    display:flex!important;flex-direction:column;align-items:stretch;
+    max-height:0;overflow:hidden;visibility:hidden;opacity:0;
+    pointer-events:none;transform:translateY(-10px);
+    padding-top:0!important;padding-bottom:0!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .24s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s linear .32s,
+      padding-top .32s ease,padding-bottom .32s ease;
+    box-shadow:0 16px 30px rgba(72,48,44,.05);
+  }
+.nav .nav-links.open{
+    max-height:min(82dvh,760px);overflow-y:auto;
+    visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0);
+    padding-top:14px!important;padding-bottom:22px!important;
+    transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .22s ease,
+      transform .32s cubic-bezier(.22,1,.36,1),visibility 0s,
+      padding-top .32s ease,padding-bottom .32s ease;
+  }
+.nav .nav-links>a{
+    opacity:0;transform:translateY(-6px);
+    transition:opacity .14s ease,transform .18s ease;
+  }
+.nav .nav-links.open>a{opacity:1;transform:none;
+    transition:opacity .22s ease,transform .28s cubic-bezier(.22,1,.36,1);
+    transition-delay:calc(var(--fuxin-nav-index,0) * 35ms);
+  }
+.nav .nav-links>a.lang{display:none!important}
+}
+@media (max-width:380px){
+.nav .fuxin-mobile-language{min-width:43px;padding:0 9px;gap:4px;font-size:11px}
+.nav .fuxin-mobile-language svg{width:18px;height:18px}
+}
+@media (prefers-reduced-motion:reduce){
+.nav .nav-links,.nav .nav-links.open,
+  .nav .nav-links>a,.nav .nav-links.open>a,
+  .nav .menu-toggle::before,.nav .menu-toggle::after{transition:none!important}
+}
+@media  (max-width:700px){
+.nav .nav-in,.nav .nav-inner{gap:8px!important;}
+.nav .brand{flex:1 1 auto;min-width:0;max-width:calc(100% - 104px);}
+.nav .brand-copy,.nav .brand>span{min-width:0;max-width:100%;}
+.nav .brand-copy small,.nav .brand>span small{
+    white-space:nowrap;overflow:hidden;text-overflow:clip;
+  }
+.nav .fuxin-mobile-language{
+    width:42px!important;min-width:42px!important;height:42px!important;
+    margin-left:auto!important;padding:0!important;gap:0!important;
+    flex:0 0 42px!important;border-radius:50%!important;
+  }
+.nav .fuxin-mobile-language svg{width:21px!important;height:21px!important;}
+.nav .fuxin-mobile-language span{display:none!important;}
+.nav .menu-toggle,.nav .menu{margin-left:0!important;flex:0 0 44px!important;}
+}
+@media  (max-width:380px){
+.nav .brand-copy small,.nav .brand>span small{font-size:8px!important;letter-spacing:.06em!important;}
+}
+
+/* Unified Fuxin article shell: same navigation metrics as care-journal.html */
+:root{--bg:#FFFDFB;--soft:#F8F5F1;--blush:#FBF1F0;--ink:#312B29;--muted:#675F5B;--rose:#8F635D;--line:#EAE1DD}
+body{margin:0;background:#FFFDFB;color:#312B29;font-family:'Noto Sans TC',system-ui,sans-serif}
+.fuxin-article-shell .nav{font-family:'Noto Sans TC',system-ui,sans-serif}
+header.nav{font-size:16px;line-height:1.5;isolation:isolate}
+header.nav .nav-links{list-style:none;margin:0}
+header.nav .nav-links a{font-size:15px;font-weight:600;letter-spacing:normal}
+header.nav .brand{text-decoration:none;color:#312B29;line-height:1.35}
+header.nav .brand strong{font-size:19px;font-weight:700}
+header.nav .brand small{font-size:10px}
+/* Consistent article hero and body proportions, preserving existing content widgets. */
+.page-header{background:linear-gradient(125deg,#FBF1F0,#FFFDFB 72%)!important;padding:55px 22px 46px!important;color:#312B29!important;text-align:left!important}
+.page-header .container,.page-header .wrap{max-width:940px!important;margin-inline:auto!important}
+.page-header h1{font-size:clamp(29px,3.7vw,46px)!important;line-height:1.4!important;letter-spacing:-.035em!important;margin-top:13px!important;margin-bottom:18px!important;color:#312B29!important}
+.page-header .article-summary,.page-header .lead-copy,.page-header p{color:#675F5B!important;line-height:1.95}
+.article-layout,.phone-layout,main.layout{max-width:1180px!important;gap:38px!important;margin-inline:auto!important;align-items:start!important}
+.fx-article-column{min-width:0;max-width:100%}
+.fx-article-column>.article,.fx-article-column>.article-body,.fx-article-column>.phone-article{width:100%;max-width:100%;min-width:0;margin-top:24px}
+.fx-quick-summary{background:#fff;border:1px solid #DEC7C2;border-radius:24px;padding:28px 31px;box-shadow:0 15px 36px rgba(72,48,44,.055);margin:0 0 22px;color:#312B29;text-align:left}
+.fx-quick-summary h2{border:0!important;padding:0!important;font-size:22px!important;font-weight:700!important;margin:0 0 15px!important;line-height:1.45!important;color:#312B29!important}
+.fx-quick-summary ul{margin:0;padding-left:23px}.fx-quick-summary li{color:#675F5B!important;font-size:16px!important;line-height:1.85;margin:9px 0}
+.fx-quicklinks{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.fx-quicklinks a{display:inline-flex;align-items:center;background:#FBF1F0;border:1px solid #DEC7C2;border-radius:999px;padding:7px 15px;color:#8F635D!important;font-size:14px;font-weight:700;text-decoration:none}
+.fx-quicklinks a:hover{background:#F4E4E1}
+.fx-mobile-toc{display:none;border:1px solid #EAE1DD;border-radius:17px;background:#fff;padding:14px 18px;margin:16px 0}
+.fx-mobile-toc summary{font-weight:700;cursor:pointer;color:#312B29}
+.fx-mobile-toc a{display:block;padding:8px 5px;color:#8F635D;text-decoration:none;font-size:14px;line-height:1.5}
+.fx-article-column .article,.fx-article-column .article-body,.fx-article-column .phone-article{border-color:#EAE1DD!important;border-radius:24px!important;box-shadow:0 15px 36px rgba(72,48,44,.055)!important;background:white!important}
+.fx-article-column .article h2,.fx-article-column .article-body h2,.fx-article-column .phone-article h2{border-left-color:#B78380!important;scroll-margin-top:108px}
+.fx-article-column .article h3,.fx-article-column .article-body h3,.fx-article-column .phone-article h3{color:#312B29}
+.fx-article-column .article p,.fx-article-column .article li,.fx-article-column .article-body p,.fx-article-column .article-body li,.fx-article-column .phone-article p,.fx-article-column .phone-article li{line-height:1.98}
+.fx-article-column .article table,.fx-article-column .article-body table,.fx-article-column .phone-article table{max-width:100%}
+.fx-article-column .table-wrap,.fx-article-column .tablescroll,.fx-article-column .table-responsive{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.fx-article-column .form-card,.fx-article-column .tool,.fx-article-column .checkpanel{max-width:100%;min-width:0}
+html{scroll-padding-top:108px}
+@media(max-width:1180px){header.nav .nav-links a{font-size:15px}}
+@media(max-width:960px){.fx-mobile-toc{display:block}.article-layout,.phone-layout,main.layout{grid-template-columns:1fr!important;max-width:820px!important;gap:20px!important}.fx-article-column{order:0}.toc,.phone-toc{display:none!important}}
+@media(max-width:620px){.page-header{padding:36px 20px 34px!important}.fx-quick-summary{padding:22px 19px;border-radius:18px}.fx-quick-summary h2{font-size:20px!important}.fx-quick-summary li{font-size:15px!important}.fx-article-column>.article,.fx-article-column>.article-body,.fx-article-column>.phone-article{padding:22px 19px!important;border-radius:18px!important}.fx-article-column .form-grid,.fx-article-column .quote-grid{grid-template-columns:1fr}}
+@media print{.fx-mobile-toc{display:none!important}.fx-quick-summary{box-shadow:none}}
 </style></head>
 <body><a class="fx-skip" href="#fx-article-body">跳至文章內容</a><div aria-label="閱讀進度" aria-valuemax="100" aria-valuemin="0" class="fx-reading" role="progressbar"><div class="fx-reading-bar" id="fx-reading-bar"></div></div>
 <div aria-hidden="true" class="reading-progress" id="readingProgress"></div>
-<header class="fx-nav" id="site-navigation"><div class="fx-nav-inner"><a aria-label="福心照護管理｜首頁" class="fx-brand" href="index.html"><img alt="福心照護管理 Logo" height="48" src="福心照護logo.webp" width="48"/><span class="fx-brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><a class="fx-mobile-lang" href="en.html" lang="en" aria-label="Switch to English" title="English"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-3.2 3-3.2 15 0 18M12 3c3.2 3 3.2 15 0 18"/></svg></a><button aria-controls="fx-nav-links" aria-expanded="false" aria-label="開啟選單" class="fx-menu" type="button"><span class="fx-menu-lines" aria-hidden="true"><span></span></span></button><nav aria-label="網站導覽" class="fx-links" id="fx-nav-links"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a aria-current="page" href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a class="fx-lang" href="en.html" lang="en">EN</a></nav></div></header>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="index.html"><img alt="福心照護管理 Logo" class="brand-logo" src="福心照護logo.webp"/><span class="brand-copy"><strong>福心照護管理</strong><small>FUXIN CARE MANAGEMENT</small></span></a><a aria-label="切換到英文版" class="fuxin-mobile-language" href="en.html"><svg aria-hidden="true" fill="none" height="21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24" width="21"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.7 4 5.7 4 9s-1.5 6.3-4 9c-2.5-2.7-4-5.7-4-9s1.5-6.3 4-9Z"></path></svg><span>EN</span></a><button aria-controls="nav-links" aria-expanded="false" aria-label="開啟選單" class="menu-toggle" type="button"><i data-lucide="menu"></i></button><nav aria-label="網站導覽" class="nav-links" id="nav-links"><a href="index.html">首頁</a><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a aria-current="page" href="care-journal.html">照護管理專欄</a><a href="hospital-care.html">醫院看護服務</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a><a class="lang" href="en.html" lang="en">EN</a></nav></div></header>
 <header class="page-header">
 <div class="container">
 <div class="breadcrumbs"><a href="index.html">首頁</a> ／ 人工髖關節、膝關節置換術後居家準備</div>
@@ -212,7 +461,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 </div>
 </header>
 <main class="layout">
-<article class="article" id="article"><span id="fx-article-body" tabindex="-1"></span>
+<div class="fx-article-column"><section aria-label="3 分鐘先看重點" class="fx-quick-summary"><h2>3 分鐘先看重點</h2><ul><li>返家前先檢查走道、浴室，以及床椅是否方便安全移動。</li><li>如果住處有樓梯或沒有電梯，應先評估術後返家動線。</li><li>必要時可考慮短期適合休養的住所，實際仍依醫療團隊建議安排。</li></ul><div class="fx-quicklinks"><a href="#three-areas">走道、浴室、床椅</a><a href="#stairs">樓梯與無電梯公寓</a><a href="#temporary-stay">術後短期休養住所</a></div></section><details class="fx-mobile-toc"><summary>文章目錄｜點選跳轉章節</summary><a href="#three-areas">走道、浴室、床椅</a><a href="#stairs">樓梯與無電梯公寓</a><a href="#temporary-stay">術後短期休養住所</a></details><article class="article" id="article"><span id="fx-article-body" tabindex="-1"></span>
 <p class="lead-answer"><strong>先看三個地方：</strong>走道能不能讓助行器順利通過、浴室是否安全好施力、床和椅子坐下後能不能順利起身。若家裡有樓梯，也要把「怎麼回到家」一起算進術後安排。</p>
 <p>很多人從國外返台做人工髖關節或膝關節置換時，會先把機票、手術日期、住院和看護安排好，但「出院後回哪裡住、家裡適不適合休養」，常常比較晚才想到。</p>
 <p>真的回家後才發現，原本每天都在用的環境，現在不一定那麼方便。像是床太低、沙發太軟、浴室沒有扶手、地上還有容易絆到的地毯，甚至臥室和廁所在不同樓層，每天都得上下樓梯。</p>
@@ -281,7 +530,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <h2 id="ctaTitle">準備返台做人工髖關節或膝關節置換嗎？</h2>
 <p>除了住院與看護安排，也可以把出院後的住宿、無障礙環境與日常照護一起提前規劃。若不確定住處是否適合，也可以把現場照片、影片或需求傳給福心一起確認。</p>
 <div class="d-flex flex-wrap justify-content-center gap-2">
-<a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i class="fab fa-line" aria-hidden="true" style="margin-right:8px;color:#fff"></i>LINE 諮詢</a>
+<a class="btn btn-gold px-4" href="https://lin.ee/Tm80P16" rel="noopener" target="_blank"><i aria-hidden="true" class="fab fa-line" style="margin-right:8px;color:#fff"></i>LINE 諮詢</a>
 <a class="btn btn-outline-secondary px-4" href="fuxin_returing_taiwan_surgery.html">查看海外返台手術服務</a>
 </div>
 </section>
@@ -289,7 +538,7 @@ main.article-layout,main.layout{padding-top:56px!important}
 <h3 id="noticeTitle">一般性資訊聲明</h3>
 <p class="mb-0">本文提供一般術後居家環境準備資訊，不代替個別醫療、復健、物理治療或職能治療建議。人工髖關節或膝關節置換後的活動限制、輔具使用、上下樓梯、坐姿、洗澡與如廁方式，可能依手術方式、病況與恢復進度不同，請以手術醫師及治療團隊的個別指示為準。</p>
 </section>
-</article>
+</article></div>
 <aside aria-label="文章目錄" class="toc">
 <div class="toc-title">文章目錄</div>
 <a href="#three-areas">走道、浴室、床椅</a>
@@ -297,8 +546,6 @@ main.article-layout,main.layout{padding-top:56px!important}
 <a href="#temporary-stay">術後短期休養住所</a>
 </aside>
 </main>
-
-
 <section aria-label="相關文章推薦" class="fx-related"><div class="fx-related-inner"><div class="fx-related-head"><div><span class="fx-related-kicker">KEEP READING · FUXIN CARE JOURNAL</span><h2>你可能也喜歡</h2></div><a class="fx-all" href="care-journal.html">更多文章 ↗</a></div><div class="fx-related-grid"><a class="fx-reco" href="blog-returning-taiwan-hospital-packing-list.html"><span class="fx-reco-tag">海外返台</span><h3>海外返台住院要帶什麼？中英文用品清單</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a><a class="fx-reco" href="blog-family-caregiving-shifts.html"><span class="fx-reco-tag">遠距家庭</span><h3>家人怎麼輪流陪病？陪病交班表、問醫師與醫療資訊整理</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a><a class="fx-reco" href="blog-hospital-caregiver-cost.html"><span class="fx-reco-tag">住院照護</span><h3>醫院看護一天多少錢？2026 費用組成與詢價清單</h3><span class="fx-excerpt">福心照護管理專欄・閱讀更多實用指南與照護準備建議。</span><span class="fx-reco-more">閱讀文章 ↗</span></a></div></div></section><footer class="fx-footer"><div class="fx-footer-inner"><div><h3>福心照護管理</h3><p>FUXIN CARE MANAGEMENT<br/>讓每個家庭都有合適的照護支持。</p></div><div><h4>服務探索</h4><a href="family-care-management.html">遠距家庭照護管家</a><a href="retirement-in-taiwan.html">海外返台退休計畫</a><a href="hospital-care.html">醫院看護服務</a></div><div><h4>更多資訊</h4><a href="care-journal.html">照護管理專欄</a><a href="about-fuxin.html">關於福心</a><a href="about-fuxin.html#contact">聯絡我們</a></div><div><h4>聯絡福心</h4><a href="tel:0229670360">02-2967-0360</a><a href="https://lin.ee/Tm80P16" rel="noopener noreferrer" target="_blank">LINE 官方帳號</a><p>電話聯絡時間 09:00–20:00</p></div></div><div class="fx-copyright">© Fuxin Care Management. All rights reserved.</div></footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -329,5 +576,5 @@ if(btn&&links){
 const bar=document.getElementById('fx-reading-bar');
 function update(){const article=document.querySelector('main article')||document.querySelector('main');if(!article||!bar)return;const rect=article.getBoundingClientRect();const total=Math.max(1,article.offsetHeight-window.innerHeight*.25);const passed=Math.max(0,-rect.top+window.innerHeight*.2);const pct=Math.min(100,Math.round(passed/total*100));bar.style.width=pct+'%';bar.parentElement.setAttribute('aria-valuenow',String(pct));}
 window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
-})();</script></body>
+})();</script><script id="fuxin-nav-updated-20261113">(function(){const header=document.querySelector('header.nav'),button=header&&header.querySelector('.menu-toggle'),panel=header&&header.querySelector('.nav-links');if(!header||!button||!panel)return;panel.querySelectorAll(':scope > a').forEach((a,i)=>a.style.setProperty('--fuxin-nav-index',i));const close=()=>{panel.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','開啟選單');};button.addEventListener('click',()=>{const open=!panel.classList.contains('open');panel.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'關閉選單':'開啟選單');});panel.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('pointerdown',e=>{if(panel.classList.contains('open')&&!header.contains(e.target))close()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('open')){close();button.focus()}});window.addEventListener('resize',()=>{if(innerWidth>1180&&panel.classList.contains('open'))close()},{passive:true});})();</script></body>
 </html>
